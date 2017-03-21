@@ -1,0 +1,135 @@
+<header class="primary-header">
+	<nav class="primary-header__nav">
+		<div class="container">
+			<div class="row">
+				<div id="header_logo" class="col-xs-3 col-sm-4 col-md-3 primary-header__logo">
+					<a href="https://www.carfinance247.co.uk/">
+                        <%= image_tag 'logo_white_sky.png' %>
+					</a>
+				</div>
+				<div class="col-xs-9 col-sm-8 col-md-9 col-lg-8 pull-right primary-header__navigation">
+					<div class="primary-header__navigation--clearfix">
+						<a href="https://www.carfinance247.co.uk/apply?utm_source=www.carfinance247.co.uk&amp;utm_medium=direct" class="primary-header__apply" data-ga-item="data-ga-item" data-ga-label="Apply now" data-ga-action="Apply now" data-ga-category="Main nav" data-ga-event="Navigation">Apply 
+<b>now</b>
+</a>
+						<div class="primary-header__chat hidden-xs hidden-sm">
+							<div>
+								<div id="sub-box-button" class="bcText">
+									<img src="<%= image_path('chat_purple.png') %>"></img>
+									<a href="https://www.carfinance247.co.uk/#">
+										<span >Have a question?
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+						<a class="primary-header__phone" id="sub-box-button">
+							<img src="<%= image_path('phone-receiver_purple.png') %>"></img>
+
+							<span class="primary-header__phone-text hidden-xs">0333 247 1247
+</span>
+						</a>
+						<div id="mobile-menu" class="primary-header__toggle-navigation btn-toggle-nav hidden-md hidden-lg">
+
+							<span class="primary-header__toggle-navigation-text hidden-xs">Menu
+</span>
+							<div class="icon-bar">
+								<img src="<%= image_path('menu.png') %>"></img>
+							</div>
+						</div>
+					</div>
+					<div class="hidden-xs hidden-sm primary-header__pages">
+						<ul>
+							<li class="active">
+								<a href="<%= home_index_path %>" title="Home">Home</a>
+							</li>
+							<li>
+								<a href="<%= home_set_your_budget_path %>" title="Set your budget">Set your budget</a>
+							</li>
+							<li>
+								<a href="<%= home_how_it_works_path %>" title="How it works">How it works</a>
+							</li>
+							<li>
+								<a href="" title="Help &amp; advice">Help &amp; advice</a>
+							</li>
+							<li>
+								<a href="<%= home_about_us_path %>" title="About us">About us</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+    <div class="hidden-md hidden-lg" id="bgOverlay" style="position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.498039); z-index: 9998; display: none;"></div>
+    
+	<nav id="mobile-nav" style="display: none;" class="hidden-md hidden-lg">
+		<div class="container">
+			<div class="hidden-md hidden-lg">
+				<div id="mobile-navigation" class="row">
+					<div class="col-xs-12">
+						<div class="row">
+							<div class="mobile-nav-header">
+								<div class="col-xs-9 col-sm-7 mobile-nav-expanded-buttons">
+									<a href="https://www.carfinance247.co.uk/apply?utm_source=www.carfinance247.co.uk&amp;utm_medium=direct" class="btn btn-green btn-apply-nav mobile-nav-expanded-buttons__button">Apply now
+<i class="fa fa-chevron-right"></i>
+</a>
+									<div class="btn btn-purple btn-phone-nav mobile-nav-expanded-buttons__button">
+										<a href="tel:03332471247">
+											<span style="color: white;">0333 247 1247
+</span>
+										</a>
+									</div>
+									<div class="btn btn-purple btn-live-chat-nav mobile-nav-expanded-buttons__button">
+										<div style="text-align: center; white-space: nowrap;" class="popup">
+											<div id="0.35302548474862716" class="bcText">
+												<a href="https://www.carfinance247.co.uk/#">
+													<img src="<%= image_path('chat.png') %>"></img>
+													<div id="0.38586825503636324">Have a question?
+													</div>
+												</a>
+											</div>
+										</div>
+									</div>
+									<a href="https://www.carfinance247.co.uk/car-finance-calculator" class="btn btn-purple btn-set-budget-nav mobile-nav-expanded-buttons__button">
+										<span>Set your budget
+</span>
+									</a>
+								</div>
+								<div class="col-xs-3 col-sm-5">
+									<div id="close" class="btn  pull-left">
+										<span class="">Close
+</span>
+										<div class="glyphicon glyphicon-remove">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 mobile-navigation-list">
+						<ul>
+							<li class="active">
+								<a href="https://www.carfinance247.co.uk/" title="Home">Home</a>
+							</li>
+							<li>
+								<a href="https://www.carfinance247.co.uk/how-it-works" title="How it works">How it works</a>
+							</li>
+							<li>
+								<a href="https://www.carfinance247.co.uk/faq" title="Help &amp; advice">Help &amp; advice</a>
+							</li>
+							<li>
+								<a href="https://www.carfinance247.co.uk/about" title="About us">About us</a>
+							</li>
+							<li>
+								<a href="https://www.carfinance247.co.uk/careers" title="Careers">Careers</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 social-section">
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>

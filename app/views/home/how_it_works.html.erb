@@ -1,0 +1,84 @@
+
+
+<div class="container-fluid">
+	<div class="row">
+		<%= render 'template/navheader' %>
+
+		<nav id="breadcrumb" class="hidden-xs">
+	        <div class="container">
+	            <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+	                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+	                            <a itemprop="item" href="/">
+	                                <span itemprop="name">Home</span>
+	                            </a>
+	                        <meta itemprop="position" content="1">
+	                    </li>
+	                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+	                            <a itemprop="item" href="/car-finance-calculator">
+	                                <span itemprop="name">About us</span>
+	                            </a>
+	                        <meta itemprop="position" content="2">
+	                    </li>
+	            </ol>
+	        </div>
+	    </nav>
+
+
+		<section id="content-area-style-grey">
+		    <div class="container col-md-12">
+				<div class="inner-content-area">
+					<div class="col-md-12"> 
+				    	<div class="col-md-7">
+							<h2 class="featurette-heading" style="color:#151515">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+
+							<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+
+				    	</div>
+				    	<div class="col-md-5" style="text-align:center">
+				    		<img style="width:80%; " src="<%= image_path('sample-img.png') %>"></img>
+				    	</div>
+			    	</div>
+				    <hr>
+					<div class="col-md-12"> 
+				    	<div class="col-md-5" style="text-align:center">
+				    		<img style="width:80%; " src="<%= image_path('sample-img.png') %>"></img>
+				    	</div>
+
+				    	<div class="col-md-7">
+							<h2 class="featurette-heading" style="color:#151515">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+
+							<p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+
+				    	</div>
+			    	</div>
+
+		    	</div>
+
+		    </div>
+		</section>
+
+
+	</div>
+</div>
+		<script>
+			$(document).ready(function() {
+				setLikeUrl('/faqlike');
+				setRatingUrl('/faqrating');
+
+				$('#mobile-menu').click(function() {
+					$('#mobile-nav').css('display', 'block')
+				})
+			});
+
+		</script>
+
+		<script>
+	        (function (w, d, s, l, i) {
+	        w[l] = w[l] || []; w[l].push({
+	        'gtm.start':
+	        new Date().getTime(), event: 'gtm.js'
+	        }); var f = d.getElementsByTagName(s)[0],
+	        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+	        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+	        })(window, document, 'script', 'dataLayer', 'GTM-KMQ6CT');
+	    </script>
