@@ -26,3 +26,5 @@
 //= require accounting-0.4.1.min.js
 //= require pages.min.js
 //= require site.min.js
+
+//= require home

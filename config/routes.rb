@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get 'home/about_us'
   get 'home/how_it_works'
+  
+  get 'home/help_and_advice'
+  get 'home/apply'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
