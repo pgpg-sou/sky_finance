@@ -6,7 +6,5 @@ console.log("hello")
 $('#send').click ->
     console.log("sample")
 
-    setLikeUrl('/faqlike');
-    setRatingUrl('/faqrating');
 
 
