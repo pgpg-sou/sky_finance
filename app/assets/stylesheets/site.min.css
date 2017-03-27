@@ -10581,7 +10581,7 @@ nav#breadcrumb ol a, nav#breadcrumb ol span {
 }
 .home-page-new__ul li {
 	line-height: 25px;
-	color: #fff;
+	color: #151515;
 	font-size: 1em
 }
 .home-page-new__ul li:before {
@@ -11260,7 +11260,7 @@ p.expertQuote {
 #your-questions {
 	background-color: #868DC1;
 	padding: 0;
-	margin-top: 20px
+	margin-top: 0px
 }
 #your-questions .mobileQuestionsHeader {
 	display: inline-block
@@ -11279,7 +11279,7 @@ p.expertQuote {
 	position: absolute;
 	width: 840px;
 	height: 734px;
-	top: -25px;
+	top: -20px;
 	left: -390px
 }
 @media only screen and (min-width: 768px) {
@@ -11747,7 +11747,7 @@ ul.blog-pills li, ul.blog-pills li:hover {
 }
 @media only screen and (min-width: 768px) {
 	#expert-section .expert-header {
-		height: 210px
+		height: 20px
 	}
 	#expert-section .expert-header .container {
 		width: 500px

@@ -84,8 +84,9 @@
 										<div style="text-align: center; white-space: nowrap;" class="popup">
 											<div id="0.35302548474862716" class="bcText">
 												<a href="https://www.carfinance247.co.uk/#">
-													<img src="<%= image_path('chat.png') %>"></img>
-													<div id="0.38586825503636324">Have a question?
+													<div id="0.38586825503636324">
+													<img src="<%= image_path('chat_purple.png') %>"></img>
+                                                        Have a question?
 													</div>
 												</a>
 											</div>
@@ -97,7 +98,7 @@
 									</a>
 								</div>
 								<div class="col-xs-3 col-sm-5">
-									<div id="close" class="btn  pull-left">
+									<div id="close" class="btn  pull-left" >
 										<span class="">Close
 </span>
 										<div class="glyphicon glyphicon-remove">
@@ -110,19 +111,19 @@
 					<div class="col-xs-12 mobile-navigation-list">
 						<ul>
 							<li class="active">
-								<a href="https://www.carfinance247.co.uk/" title="Home">Home</a>
+								<a href="<%= home_index_path %>" title="Home">Home</a>
 							</li>
 							<li>
-								<a href="https://www.carfinance247.co.uk/how-it-works" title="How it works">How it works</a>
+								<a href="<%= home_set_your_budget_path %>" title="Set your budget">Set your budget</a>
 							</li>
 							<li>
-								<a href="https://www.carfinance247.co.uk/faq" title="Help &amp; advice">Help &amp; advice</a>
+								<a href="<%= home_how_it_works_path %>" title="How it works">How it works</a>
 							</li>
 							<li>
-								<a href="https://www.carfinance247.co.uk/about" title="About us">About us</a>
+								<a href="<%= home_help_and_advice_path %>" title="Help &amp; advice">Help &amp; advice</a>
 							</li>
 							<li>
-								<a href="https://www.carfinance247.co.uk/careers" title="Careers">Careers</a>
+								<a href="<%= home_about_us_path %>" title="About us">About us</a>
 							</li>
 						</ul>
 					</div>
