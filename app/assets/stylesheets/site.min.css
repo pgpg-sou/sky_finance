@@ -12643,7 +12643,7 @@ blockquote footer:before {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
-	background-size: cover
+	background-size: cover !important;
 }
 .about-us-header .purple-h2 {
 	color: #30225d

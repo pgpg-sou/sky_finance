@@ -3,8 +3,15 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 console.log("hello")
-$('#send').click ->
-    console.log("sample")
+
+$(document).ready ->
+    $('button#send').click ->
+        arg = new Object
+        $('.form-group').each ->
+            console.log $(this).find('input')
+            console.log $(this).find('input').attr('name')
+            console.log $(this).find('input').value
+            arg[$(this).find('input').attr('name')] = $(this).find('input').val
 
 
 
