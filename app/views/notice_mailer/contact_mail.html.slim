@@ -1,0 +1,131 @@
+
+
+scss:
+    tr { 
+        page-break-inside:avoid; 
+        page-break-after:auto 
+    } 
+
+    table.type01 {
+        border-collapse: collapse;
+        text-align: left;
+        line-height: 1.5;
+    }
+    table.type01 th {
+        width: 150px;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+        border: 1px solid #ccc;
+    }
+    table.type01 td {
+        width: 350px;
+        padding: 10px;
+        vertical-align: top;
+        border: 1px solid #ccc;
+    }
+
+
+    img {
+        width: 25%;
+        padding-bottom: 25px;
+    }
+
+    body.gray-bg {
+        background-color: #f3f3f4;
+    }
+
+    #background {
+        background-color: #f3f3f4;
+        color: #5D5D5D;
+    }
+    #row {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .passwordBox {
+        max-width: 740px;
+        margin: 0 auto;
+        padding: 35px 20px 20px 20px;
+    }
+    .ibox-content {
+        background-color: white;
+        color: inherit;
+        padding: 55px 90px 90px 90px;
+        border-color: #e7eaec;
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 6px 60px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+    .btn-primary {
+        background-color: #21c4a7;
+        border-color: #21c4a7;
+        color: white;
+    }
+
+
+
+body.gray-bg style="background-color: #f3f3f4;"
+    #background
+        div#row 
+            div class="passwordBox"
+                center
+                    = image_tag attachments["logo.png"].url, alt: 'My Photo', class: 'photos'
+                div.ibox-content
+                    p 担当者各位
+                    p #{@application["first_name"]}様から下記の内容で申し込みがございました。
+
+
+
+                    h3 アプリケーション内容
+                    table.type01 style="border-collapse: collapse; text-align:left; line-height:1.5;"
+                        tr
+                            th score="row"   Title
+                            td  #{@application["title"]}
+                        tr
+                            th score="row"  First Name
+                            td  #{@application["first_name"]}
+                        tr
+                            th score="row"  Middle Name
+                            td  #{@application["middle_name"]}
+                        tr
+                            th score="row"  Surname
+                            td  #{@application["last_name"]}
+                        tr
+                            th score="row"   Date of Birth
+                            td  #{@application["date_of_birth"]}
+                        tr
+                            th score="row"   IRD number
+                            td  #{@application["ird_number"]}
+                        tr
+                            th score="row"   Home phone
+                            td  #{@application["home_phone"]}
+                        tr
+                            th score="row"   Mobile phone
+                            td  #{@application["mobile_phone"]}
+
+
+
+
+

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   get 'home/help_and_advice'
   get 'home/apply'
+  
+  post 'home/apply_mail'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  protect_from_forgery :except => [:apply_mail]
+
   def index
   end
 
@@ -19,7 +21,15 @@ class HomeController < ApplicationController
   
   def apply
       render :layout => 'other_page'
-    
+  end
+  
+  
+  def apply_mail
+      @application = params[:application].to_json
+      NoticeMailer.contact_mail(@application).deliver
+
+      personal = {'name' => 'Yamada'}
+      render :json => personal
   end
 
 end
