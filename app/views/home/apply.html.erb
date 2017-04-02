@@ -26,72 +26,95 @@
 		        <div class="inner-content-area">
 		            <h1 class="h1-mimic__h3">Application</h1>
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Title</label>
-                            <div class="col-sm-10">
-                                <input name="title" class="form-control"  >
+
+                        <%= form_tag("apply_mail", method: "post") do %>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Title</label>
+                                <div id="title_error" class="error-message" style="display:none"> <p>Please select a title</p> </div>
+                                <ol class="col-md-12  col-sm-12 col-xs-12">
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="employmentStatus" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">Mr</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="employmentStatus" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">Mrs</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="employmentStatus" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">Ms</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="employmentStatus" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">Miss</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                </ol>
+
                             </div>
-                        </div>
-                        <p></p>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">First name</label>
-                            <div class="col-sm-10">
-                                <input name="first_name" class="form-control"  >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Middle name</label>
-                            <div class="col-sm-10">
-                                <input name="middle_name" class="form-control" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Surname</label>
-                            <div class="col-sm-10">
-                                <input name="last_name" class="form-control"  >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Date of birth</label>
-                            <div class="col-sm-10">
-                                <input name="date_of_birth" class="form-control" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">IRD number</label>
-                            <div class="col-sm-10">
-                                <input name="ird_number" class="form-control"  >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Home phone</label>
-                            <div class="col-sm-10">
-                                <input name="home_phone" class="form-control"  >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label">Mobile phone</label>
-                            <div class="col-sm-10">
-                                <input name="mobile_phone" class="form-control" >
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-2 control-label" style="color:red">Email Address</label>
-                            <div class="col-sm-10">
-                                <input name="email" class="form-control" >
-                            </div>
-                        </div>
 
 
 
 
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">First name</label>
+                                <input name="first_name" type="text" class="form-control apply required">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Middle name</label>
+                                <input name="middle_name" type="text" class="form-control apply required">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Surname</label>
+                                <input name="last_name" class="form-control apply required"  >
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Date of birth</label>
+                                <input name="date_of_birth" class="form-control apply required input-mask" data-mask="99/99/9999" placeholder="dd/mm/yyyy" >
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">IRD number</label>
+                                <input name="ird_number" class="form-control apply required"  >
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Home phone</label>
+                                <input name="home_phone" class="form-control apply required input-mask-phone" data-mask="(999) 999-9999" placeholder="(   )    -     " >
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Mobile phone</label>
+                                <input name="mobile_phone" class="form-control apply required input-mask-phone"  data-mask="(999) 999-9999" placeholder="(   )    -     ">
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" style="color:red">Email Address</label>
+                                <input name="email" class="form-control apply required" >
+                            </div>
+
+                            <center>
+                            <section class="main-section">
+                                <%= submit_tag("Apply now", :id=> "apply_now", :class=> "hidden-xs hidden-sm btn btn-green btn-apply-now") %>
+                            </section>
+                            </center>
+                        <% end %>
 
 
 
                     </div>
-                    <center>
-                    <button id="send" class="btn btn-green">Apply Now</button>
-                    </center>
 		        </div>
 		    </div>
 		</section>

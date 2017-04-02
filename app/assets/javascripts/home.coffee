@@ -5,13 +5,20 @@
 console.log("hello")
 
 $(document).ready ->
+    $('li.radio').click ->
+        $('#title_error').css("display","none")
+        $('li.radio').each ->
+            $(this).find('label').removeClass("error-check")
+            $(this).find('label').removeClass("checked")
+            $(this).find('label').addClass("unselected")
+        $(this).find('label').removeClass("error-check")
+        $(this).find('label').removeClass("unselected")
+        $(this).find('label').addClass("checked")
+
     $('button#send').click ->
         arg = new Object
         application = new Object
         $('.form-group').each ->
-            console.log $(this).find('input')
-            console.log $(this).find('input').attr('name')
-            console.log $(this).find('input').val()
             application[$(this).find('input').attr('name')] = $(this).find('input').val()
         arg["application"] = application
 

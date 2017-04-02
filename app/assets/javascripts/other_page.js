@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 
+//= require jquery-3.1.1.min.js
 //= require jquery.min.js
 //= require jquery.mark.min.js
 //= require jquery-ui.min.js
@@ -21,5 +22,10 @@
 
 //= require accounting-0.4.1.min.js
 //= require pages.min.js
+
+//= require jasny-bootstrap.js
+//= require validate/jquery.validate.min.js
+//= require agency.coffee
+
 
 //= require home
