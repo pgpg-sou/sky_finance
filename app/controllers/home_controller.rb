@@ -25,7 +25,7 @@ class HomeController < ApplicationController
   
   
   def apply_mail
-      @application = params[:application].to_json
+      @application = params.to_json
       NoticeMailer.contact_mail(@application).deliver
 
       personal = {'name' => 'Yamada'}

@@ -21,16 +21,17 @@ $(document).ready ->
         $('form').validate({
         })
 
+        has = false
         $('li.radio').each ->
-            has = false
-            if $(this).hasClass("checked")
+            if $(this).find('label').hasClass("checked")
+                console.log "sample"
                 has = true
 
-            if has == false
-                $('#title_error').css("display","block")
-                $('li.radio').each ->
-                    $(this).find('label').removeClass("unselected")
-                    $(this).find('label').addClass("error-check")
+        if has == false
+            $('#title_error').css("display","block")
+            $('li.radio').each ->
+                $(this).find('label').removeClass("unselected")
+                $(this).find('label').addClass("error-check")
 
 
     
