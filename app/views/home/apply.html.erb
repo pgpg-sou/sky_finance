@@ -24,9 +24,9 @@
 		<section id="content-area-style-grey">
 		    <div id="application" class="container">
 		        <div class="inner-content-area">
-		            <h1 class="h1-mimic__h3">Application</h1>
                     <div class="col-md-12">
 
+                        <h1 class="h1-mimic__h3">About you</h1>
                         <%= form_tag("apply_mail", method: "post") do %>
                             <div class="form-group">
                                 <label class="col-sm-12 control-label">Title</label>
@@ -65,7 +65,6 @@
                                         </label>
                                     </li>
                                 </ol>
-
                             </div>
 
 
@@ -104,6 +103,280 @@
                                 <label class="col-sm-12 control-label" style="color:red">Email Address</label>
                                 <input name="email" class="form-control apply required" >
                             </div>
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >No. of dependant children</label>
+                                <div class="col-md-4 no-padding">
+                                    <%= select_tag "no_of_dependent_children", options_for_select([1, 2, 3, 4, 5, 6, 7, 8, 9, 19]), :class => "form-control" %>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Drivers Licence type</label>
+                                <div id="title_error" class="error-message" style="display:none"> <p>Please select a title</p> </div>
+                                <ol class="col-md-12  col-sm-12 col-xs-12">
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="title" value="Mr" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected" value="Learners">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">Learners</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="title" value="Mrs" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected" value="Restricted">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">Restricted</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="title" value="Ms" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected" value="Full">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">Full</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Material status</label>
+                                <input name="material_status" class="form-control apply required" >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Residential status</label>
+                                <input name=">residential_status" class="form-control apply required" >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Home Address</label>
+                                <input name="home_address" class="form-control apply required" >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >How long have you lived at this address?</label>
+                                <input name="how_long" class="form-control apply required" >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Postal address(if diffrent from adove address)</label>
+                                <input name="postal_address" class="form-control apply required" >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Previous address(if less than 2 years at current address)</label>
+                                <input name="postal_address" class="form-control apply required" >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >How long did you live at this address?</label>
+                                <div class="col-md-4 no-padding">
+                                    <%= select_tag "no_of_dependent_children", options_for_select([1, 2, 3, 4, 5, 6, 7, 8, 9, 19]), :class => "form-control" %>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Landlord’s details(if you rent or board)</label>
+                                <input name="postal_address" class="form-control apply required" >
+                            </div>
+
+                            <h1 class="h1-mimic__h3">Employement </h1>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Occupation</label>
+                                <input name="home_address" class="form-control apply required" >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Employer's name</label>
+                                <input name="how_long" class="form-control apply required" >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Employer's address</label>
+                                <input name="postal_address" class="form-control apply required" >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Employer's phone</label>
+                                <input name="postal_address" class="form-control apply required" >
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >How long employed?</label>
+                                <div class="col-md-4 no-padding">
+                                    <%= select_tag "no_of_dependent_children", options_for_select([1, 2, 3, 4, 5, 6, 7, 8, 9, 19]), :class => "form-control" %>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Previous employer</label>
+                                <input name="postal_address" class="form-control apply required" >
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >How long employed?</label>
+                                <div class="col-md-4 no-padding">
+                                    <%= select_tag "no_of_dependent_children", options_for_select([1, 2, 3, 4, 5, 6, 7, 8, 9, 19]), :class => "form-control" %>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label">Self employed?</label>
+                                <div id="title_error" class="error-message" style="display:none"> <p>Please select a title</p> </div>
+                                <ol class="col-md-12  col-sm-12 col-xs-12">
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="title" value="Mr" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected" value="Learners">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">Yes</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+                                    <li class="radio ng-scope col-md-3 col-sm-6 col-xs-6" >
+                                        <input type="radio" name="title" value="Mrs" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+                                        <label class="unselected" value="Restricted">
+                                            <strong>
+                                                <span data-ng-bind="option.label" class="ng-binding">No</span>
+                                            </strong>
+                                        </label>
+                                    </li>
+
+                                </ol>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Your Account</label>
+                                <input name="postal_address" class="form-control apply required" >
+                            </div>
+                            
+                            <h1 class="h1-mimic__h3">Your Financial position </h1>
+                            <h2 class="h1-mimic__h3">monthly income & expenses </h2>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Texable Income</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income" data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Any other Income</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income" data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Total Income</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"  data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Mortage/rent/board</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"  data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Loans and HPs</label>
+                                <input name="home_address" class="form-control apply required  input-mask-texable_income"  data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Credit card/retail debt</label>
+                                <input name="how_long" class="form-control apply required  input-mask-texable_income"  data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Living expense</label>
+                                <input name="postal_address" class="form-control apply required  input-mask-texable_income"  data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Child support</label>
+                                <input name="postal_address" class="form-control apply required  input-mask-texable_income"  data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Total Expenses</label>
+                                <input name="postal_address" class="form-control apply required  input-mask-texable_income"  data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+                            <h2 class="h1-mimic__h3">YOUR ASSETS </h2>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Your home</label>
+                                <input name="home_address" class="form-control apply required  input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >Bach/rental property</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >investments</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >money in bank account/s</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >vehicle/s</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >furniture</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >jewellery</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >other</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-12 control-label" >total assets</label>
+                                <input name="postal_address" class="form-control apply required input-mask-texable_income"   data-mask="$ 999,999,999" placeholder="$ ">
+                            </div>
+
+
+
+
+
+
+
+
+
+
 
                             <center>
                             <section class="main-section">

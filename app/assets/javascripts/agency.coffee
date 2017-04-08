@@ -41,3 +41,7 @@ $(document).ready ->
     $('.input-mask-phone').inputmask({
         mask: '(999) 999-9999'
     })
+    $('.input-mask-texable_income').inputmask({
+        mask: '$ 999,999'
+    })
+
