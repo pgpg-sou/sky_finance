@@ -13,5 +13,5 @@
  *= require lity.min.css
  *= require site.min.css
  *= require home.scss
- *= require_self
+ *= require style.css
  */

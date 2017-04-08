@@ -1,0 +1,99 @@
+
+/*Responsive CSS*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'roboto', sans-serif;
+  color: #666;
+  font-size: 16px;
+  background: #f9f9f9;
+  line-height: 1.6em;
+}
+
+ul, li { list-style: none; }
+
+#container {
+  width: 60%;
+  margin: 150px auto;
+  overflow: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  height: 40px;
+  background: #6bb170;
+  color: white;
+  text-align: center;
+  padding-top: 13px;
+}
+
+.faq li { padding: 20px; }
+
+.faq li.q {
+  background: #4FC2E;
+  font-weight: bold;
+  font-size: 120%;
+  border-bottom: 1px #ddd solid;
+  cursor: pointer;
+}
+.faq li.q.active {
+  color: #30225d;
+}
+
+
+.faq li.q img {
+  margin-right: 15px;
+}
+
+.faq li.a {
+  display: none;
+  color:#000;
+}
+
+.rotate {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+@media (max-width:800px) {
+
+#container { width: 90%; }
+}
+
+
+.w-tabs-section-control {
+    top: 50%;
+    line-height: 30px;
+    height: 22px;
+    width: 22px;
+    text-align: center;
+    transition: transform 0.3s;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    float: right;
+}
+
+
+.w-tabs-section-control.rotate {
+    transform: rotate(180deg);
+}
+
+
+.w-tabs-section-control {
+    
+    font-family: fontawesome;
+    font-size: 24px;
+    vertical-align: top;
+}
+
+
