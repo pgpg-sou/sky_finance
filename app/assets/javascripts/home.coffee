@@ -49,3 +49,51 @@ $(document).ready ->
         $(this).toggleClass('active');
     )
 
+    $('#fase1').click ->
+        name = parseInt($(this).attr("name"))
+        $('li.q').each((index) ->
+            if name == (index+1)
+                console.log("sample")
+                $(this).next().slideToggle(500)
+                $(this).toggleClass('active')
+        )
+    $('#fase2').click ->
+        name = parseInt($(this).attr("name"))
+        $('li.q').each((index) ->
+            if name == (index+1)
+                console.log("sample")
+                $(this).next().slideToggle(500)
+                $(this).toggleClass('active')
+        )
+    $('#fase3').click ->
+        name = parseInt($(this).attr("name"))
+        $('li.q').each((index) ->
+            if name == (index+1)
+                console.log("sample")
+                $(this).next().slideToggle(500)
+                $(this).toggleClass('active')
+        )
+
+    $('#fase4').click ->
+        name = parseInt($(this).attr("name"))
+        $('li.q').each((index) ->
+            if name == (index+1)
+                console.log("sample")
+                $(this).next().slideToggle(500)
+                $(this).toggleClass('active')
+        )
+    $('#fase5').click ->
+        name = parseInt($(this).attr("name"))
+        $('li.q').each((index) ->
+            if name == (index+1)
+                $(this).next().slideToggle(500)
+                $(this).toggleClass('active')
+        )
+
+
+
+
+
+
+
+

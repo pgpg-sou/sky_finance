@@ -20,7 +20,7 @@ class HomeController < ApplicationController
   end
   
   def apply
-      render :layout => 'other_page'
+      render :layout => 'apply'
   end
   
   

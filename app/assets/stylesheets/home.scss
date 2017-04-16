@@ -23,11 +23,11 @@
         padding-bottom: 20px;
     }
     label {
-        color: #652E90;
+        color: #323232;
         font-size: 20px;
         font-weight: 700;
         margin: 0 0 0 -3px;
-        padding: 12px 0 12px;
+        padding: 10px 0 10px;
         display: block;
     }
     label.small {
@@ -124,11 +124,13 @@ input[type=radio]+label, input[type=checkbox]+input+label, input[type=checkbox]+
 }
 
 #application .apply {
-    height: 45px;
+    height: 40px;
     background-color: #f7f7dc;
     border: 2px solid #cbcbcb;
     box-shadow: inset 0 10px hsla(60,31%,87%,.45);
-    margin-bottom: 0px;
+    margin: 0px 5px;
+    border-radius: 4px;
+
 }
 #application .apply:hover {
     border-color: #442f70;
@@ -209,8 +211,8 @@ select {
 }
 
 .no-padding {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 #how_it_works {
@@ -231,4 +233,8 @@ select {
     padding: 30px 157px;
 }
 
-
+.btn-apply {
+    background-color: #8CD447;
+    padding: 6px 50px;
+    font-size: 24px;
+}

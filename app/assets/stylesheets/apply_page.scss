@@ -1,0 +1,172 @@
+
+
+
+.faq li { 
+  padding: 16px 12px 10px 0px;
+}
+
+.faq li.q {
+  background-color: white;
+  border-radius: 6px 0px 0px 6px;
+  margin-bottom: 15px;
+}
+
+.faq li.q.active {
+  color: #30225d;
+}
+
+
+.faq li.q span {
+  background-color: #642E90;
+  color: white;
+  font-size: 30px;
+  padding: 9px 18px;
+  border-radius: 6px 0px 0px 6px;
+}
+
+.faq li.q span.title {
+  background-color: white;
+  color: #642E90;
+  font-size: 30px;
+  padding: 9px;
+}
+
+.faq li.a {
+  display: none;
+  color:#000;
+}
+.faq li .col-md-6{ padding: 10px; }
+
+
+.faq .col-md-12 {
+    padding: 5px 15px;
+}
+
+
+ol > li.radio {
+    width: 100px;
+}
+ol > li.radio.other {
+    width: 150px;
+}
+
+ol > li.radio.income {
+    width: 180px;
+}
+
+.radio strong, .radio input.checked strong.plus-sign {
+    width: 90px;
+    height: 90px;
+    border-radius: 45px;
+}
+
+
+.radio strong span {
+    font-size: 13px;
+}
+
+#otherAmount {
+
+    padding: 10px 6px;
+    font: 700 12px/12px Arial;
+    width: 100px;
+    margin: auto;
+    position: absolute;
+    top: 45px;
+    left: 22px;
+    outline: 0;
+    color: #888;
+
+}
+
+
+
+ .radio.other>label {
+    width: 245px;
+    height: 100px;
+    padding: 0;
+}
+
+.radio.selected>label>strong {
+    //border: 3px solid #00AEEF;
+    background-color: #fff;
+    width: 100%;
+    display: block;
+}
+
+
+
+.radio.selected label strong {
+    width: 100%;
+}
+
+.radio.income.active label strong {
+    background-color: #00AEEF;
+    border-color: #00AEEF;
+    color: #FFF;
+}
+.radio.income.active label strong span{
+    color: #FFF;
+
+}
+
+.radio.selected label strong span {
+    color: #888;
+    display: block;
+    font-size: 13px;
+    position: relative;
+    text-align: center;
+    top: 16px;
+    width: 100%;
+}
+
+
+ol > li.radio.income  label strong span{
+    top: 9px;
+}
+
+ol > li.radio.income #otherAmount {
+    width: 130px;
+}
+
+
+
+ol > li > div.liability {
+    background-color: white;
+    border-color: #00AEEF;
+
+    border: 3px solid #DCDCDC;
+    background-color: #FFF;
+    color: #888;
+    font: 700 18px Arial;
+    border-radius: 10px;
+    label {
+        text-align: center;
+        color: #9A9A9A !important;
+    }
+    strong {
+        padding: 5px 0px;
+    }
+
+    label.control-label {
+        color: #9A9A9A !important;
+        font-size: 16px !important;
+        text-align: left !important;
+        margin: 0px !important;
+        
+    }
+    input.apply {
+        margin: 0px !important;
+        height: 33px !important;
+    }
+    .col-md-12 {
+        padding: 2px 10px;
+    }
+}
+.faq li.liabilities {
+    padding: 10px;
+}
+
+
+
+
