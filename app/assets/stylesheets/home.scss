@@ -130,6 +130,7 @@ input[type=radio]+label, input[type=checkbox]+input+label, input[type=checkbox]+
     box-shadow: inset 0 10px hsla(60,31%,87%,.45);
     margin: 0px 5px;
     border-radius: 4px;
+    margin-bottom: 10px;
 
 }
 #application .apply:hover {
@@ -232,6 +233,50 @@ select {
 #content-area-style-grey .inner-content-area {
     padding: 30px 157px;
 }
+@media (min-width: 200px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 0px;
+    }
+}
+
+@media (min-width: 500px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 0px;
+    }
+ol {
+    padding-bottom: 50px;
+}
+
+}
+
+@media (min-width: 768px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 40px;
+    }
+.faq .col-md-12 ol {
+    padding-bottom: 50px;
+}
+
+}
+
+
+@media (min-width: 900px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 50px;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 157px;
+    }
+}
+
+
+
+
 
 .btn-apply {
     background-color: #8CD447;

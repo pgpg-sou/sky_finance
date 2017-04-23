@@ -2,22 +2,128 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-console.log("hello")
 
 $(document).ready ->
-    $('li.radio').click ->
-        $('#title_error').css("display","none")
-        $('li.radio').each ->
+
+    assemble = (selector, total) ->
+        select = parseInt($(selector).val())
+        total_value = parseInt($(total).val())
+        $(total).val(select + total_value)
+
+    $('#texable_income').change( ->
+        texable_income = parseInt($('#texable_income').val())
+        total_income = parseInt($('#total_income').val())
+        $('#total_income').val(total_income + texable_income)
+    )
+    $('#any_other_income').change( ->
+        any_other_income = parseInt($('#any_other_income').val())
+        total_income = parseInt($('#total_income').val())
+        $('#total_income').val(total_income + any_other_income)
+    )
+    $('#mortage_rent_board').change( ->
+        mortage_rent_board = parseInt($('#mortage_rent_board').val())
+        total_expenses = parseInt($('#total_expenses').val())
+        $('#total_expenses').val(total_expenses + mortage_rent_board)
+    )
+    $('#loans_and_hps').change( ->
+        mortage_rent_board = parseInt($('#loans_and_hps').val())
+        total_expenses = parseInt($('#total_expenses').val())
+        $('#total_expenses').val(total_expenses + mortage_rent_board)
+    )
+    $('#living').change( ->
+        mortage_rent_board = parseInt($('#living').val())
+        total_expenses = parseInt($('#total_expenses').val())
+        $('#total_expenses').val(total_expenses + mortage_rent_board)
+    )
+    $('#child_support').change( ->
+        mortage_rent_board = parseInt($('#child_support').val())
+        total_expenses = parseInt($('#total_expenses').val())
+        $('#total_expenses').val(total_expenses + mortage_rent_board)
+    )
+    $('#credit_card').change( ->
+        mortage_rent_board = parseInt($('#credit_card').val())
+        total_expenses = parseInt($('#total_expenses').val())
+        $('#total_expenses').val(total_expenses + mortage_rent_board)
+    )
+
+    $('#home').change( ->
+        assemble('#home', '#total_assets')
+    )
+    $('#investment').change( ->
+        assemble('#investment', '#total_assets')
+    )
+    $('#money_in_bank').change( ->
+        assemble('#money_in_bank', '#total_assets')
+    )
+
+    $('#rental_property').change( ->
+        assemble('#rental_property', '#total_assets')
+    )
+
+    $('#vehicle').change( ->
+        assemble('#vehicle', '#total_assets')
+    )
+    $('#furniture').change( ->
+        assemble('#furniture', '#total_assets')
+    )
+    $('#jewelry').change( ->
+        assemble('#jewelry', '#total_assets')
+    )
+    $('#other').change( ->
+        assemble('#other', '#total_assets')
+    )
+
+
+
+
+
+
+
+
+
+    update_radio_box = (selector, _this) ->
+        selector.each ->
             $(this).find('label').removeClass("error-check")
             $(this).find('label').removeClass("checked")
             $(this).find('label').addClass("unselected")
             $(this).find('input[name=title]').removeAttr('checked')
-        $(this).find('label').removeClass("error-check")
-        $(this).find('label').removeClass("unselected")
-        $(this).find('label').addClass("checked")
-        $(this).find('input[name=title]').attr('checked', 'checked')
+        $(_this).find('label').removeClass("error-check")
+        $(_this).find('label').removeClass("unselected")
+        $(_this).find('label').addClass("checked")
+        $(_this).find('input[name=title]').attr('checked', 'checked')
 
-    $('button#send').click ->
+
+    $('li.radio.driver_licence').click ->
+        $('#title_error').css("display","none")
+        update_radio_box($('li.radio.driver_licence'), this)
+
+    $('li.radio.residential_status').click ->
+        $('#title_error').css("display","none")
+        update_radio_box($('li.radio.residential_status'), this)
+
+    $('li.radio.how_long_lived').click ->
+        update_radio_box($('li.radio.how_long_lived'), this)
+
+    $('li.radio.how_long_lived_here').click ->
+        update_radio_box($('li.radio.how_long_lived_here'), this)
+
+    $('li.radio.how_long_employed').click ->
+        update_radio_box($('li.radio.how_long_employed'), this)
+
+    $('li.radio.how_long_employed2').click ->
+        update_radio_box($('li.radio.how_long_employed2'), this)
+
+    $('li.radio.self_employed').click ->
+        update_radio_box($('li.radio.self_employed'), this)
+    
+    $('li.radio.income').click ->
+        update_radio_box($('li.radio.income'), this)
+ 
+    total_income = $('#texable_income').val() + $('#any_other_income').val()
+    $('#total_income').val()
+
+
+    $('#apply_send').click ->
         arg = new Object
         application = new Object
         $('.form-group').each ->
@@ -42,26 +148,25 @@ $(document).ready ->
                      return
                  )
 
-    $('li.q').on('click', ->
-        $(this).next().slideToggle(500)
-        img = $(this).children('div')
-        img.toggleClass('rotate')
-        $(this).toggleClass('active');
-    )
+
 
     $('#fase1').click ->
         name = parseInt($(this).attr("name"))
+
+            
+
         $('li.q').each((index) ->
             if name == (index+1)
-                console.log("sample")
                 $(this).next().slideToggle(500)
                 $(this).toggleClass('active')
         )
+
+
+
     $('#fase2').click ->
         name = parseInt($(this).attr("name"))
         $('li.q').each((index) ->
             if name == (index+1)
-                console.log("sample")
                 $(this).next().slideToggle(500)
                 $(this).toggleClass('active')
         )
@@ -69,7 +174,6 @@ $(document).ready ->
         name = parseInt($(this).attr("name"))
         $('li.q').each((index) ->
             if name == (index+1)
-                console.log("sample")
                 $(this).next().slideToggle(500)
                 $(this).toggleClass('active')
         )
@@ -78,7 +182,6 @@ $(document).ready ->
         name = parseInt($(this).attr("name"))
         $('li.q').each((index) ->
             if name == (index+1)
-                console.log("sample")
                 $(this).next().slideToggle(500)
                 $(this).toggleClass('active')
         )

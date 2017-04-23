@@ -65,7 +65,12 @@ ol > li.radio.income {
     font-size: 13px;
 }
 
-#otherAmount {
+#otherAmount,
+#total_income, #any_other_income, #texable_income , #total_expenses,
+#mortage_rent_board, #loans_and_hps, #credit_card,
+#living, #child_support,
+#home, #rental_property, #investment, #money_in_bank, #vehicle,
+#furniture, #jewelry, #other, #total_assets {
 
     padding: 10px 6px;
     font: 700 12px/12px Arial;
@@ -125,7 +130,29 @@ ol > li.radio.income  label strong span{
     top: 9px;
 }
 
-ol > li.radio.income #otherAmount {
+ol > li.radio.income #otherAmount, 
+ol > li.radio.income #total_income, 
+ol > li.radio.income #any_other_income,
+ol > li.radio.income #texable_income ,
+ol > li.radio.income #total_expenses,
+ol > li.radio.income #mortage_rent_board, 
+ol > li.radio.income #loans_and_hps,
+ol > li.radio.income #living ,
+ol > li.radio.income #child_support,
+ol > li.radio.income #credit_card,
+ol > li.radio.income #home ,
+ol > li.radio.income #rental_property,
+ol > li.radio.income #investment, 
+ol > li.radio.income #money_in_bank,
+ol > li.radio.income #vehicle ,
+ol > li.radio.income #furniture,
+ol > li.radio.income #jewelry,
+ol > li.radio.income #other,
+ol > li.radio.income #total_assets
+
+
+
+{
     width: 130px;
 }
 

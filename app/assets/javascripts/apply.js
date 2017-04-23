@@ -24,7 +24,12 @@
 //= require accounting-0.4.1.min.js
 //= require pages.min.js
 
+//= require jasny-bootstrap.js
+//= require validate/jquery.validate.min.js
+
+
 //= require home
+//= require agency
 //= require apply_page
 
 
