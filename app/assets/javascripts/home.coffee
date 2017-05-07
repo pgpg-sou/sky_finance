@@ -4,6 +4,7 @@
 
 
 $(document).ready ->
+    $.validate();
 
     assemble = (selector, total) ->
         select = parseInt($(selector).val())
@@ -148,28 +149,103 @@ $(document).ready ->
                      return
                  )
 
+    select_box_value = (selector) ->
+        result_text = ""
+        $(selector).each ->
+            if $(this).find('label').hasClass('checked')
+                result_text = $(this).find('label').attr("value")
+                if result_text == undefined
+                    result_text = $(this).find('input').val()
+
+                #application["title"] = $(this).find('label').attr("value")
+        return result_text
+
+    select_validate_check = (selector) ->
+        if select_box_value(selector) == ""
+            $(selector).each ->
+                $(this).find('label').removeClass("unselected")
+                $(this).find('label').addClass("error-check")
+
+            return false
+        else 
+            return true
+
+    input_validate_check = (selector) ->
+        if $(selector).val() == ""
+            console.log $(selector)
+            $(selector).addClass("error")
+            return false
+        else
+            return true
+
+
+    validate_result = (array) ->
+        test = true
+        $.each(array,(index,val) ->
+            if val == false
+                test = false
+        );
+        return test
 
 
     $('#fase1').click ->
+        ids = ["[name=no_of_dependent_children]", "#first_name", "#middle_name", "#sur_name", "#date_of_birth", "#ird_number", "#home_phone", "#mobile_phone", "#material_status"]
+        validates = []
         name = parseInt($(this).attr("name"))
 
-            
+        validates.push(select_validate_check('li.radio.driver_licence'))
+        validates.push(select_validate_check('li.radio.residential_status'))
 
-        $('li.q').each((index) ->
-            if name == (index+1)
-                $(this).next().slideToggle(500)
-                $(this).toggleClass('active')
-        )
+        $.each(ids,(index,val) ->
+            validates.push(input_validate_check(val))
+        );
+
+        if validate_result(validates) == true
+            $('#about_you_error').css("display","none")
+            $('li.q').each((index) ->
+                if name == (index+1)
+                    $(this).next().slideToggle(500)
+                    $(this).toggleClass('active')
+            )
+        else
+            $('#about_you_error').css("display","block")
+            speed = 400; 
+            target = $("#about_you_title");
+            position = target.offset().top;
+            $('body, html').animate({scrollTop:position}, speed, 'swing');
 
 
 
     $('#fase2').click ->
+        ids = ["#postal_address", "#previous_address", "#previous_address_phone", "#previous_address_name", "#previous_address_address"]
+        validates = []
         name = parseInt($(this).attr("name"))
-        $('li.q').each((index) ->
-            if name == (index+1)
-                $(this).next().slideToggle(500)
-                $(this).toggleClass('active')
-        )
+        validates.push(select_validate_check('li.radio.how_long_lived'))
+        validates.push(select_validate_check('li.radio.how_long_lived_here'))
+
+        $.each(ids,(index,val) ->
+            validates.push(input_validate_check(val))
+        );
+
+
+        if validate_result(validates) == true
+            $('#home_address_title').css("display","none")
+            $('li.q').each((index) ->
+                if name == (index+1)
+                    $(this).next().slideToggle(500)
+                    $(this).toggleClass('active')
+            )
+        else
+            $('#home_address_error').css("display","block")
+            speed = 400; 
+            target = $("#home_address_title");
+            position = target.offset().top;
+            $('body, html').animate({scrollTop:position}, speed, 'swing');
+
+
+
+
+
     $('#fase3').click ->
         name = parseInt($(this).attr("name"))
         $('li.q').each((index) ->

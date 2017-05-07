@@ -13,7 +13,7 @@
 	                    </li>
 	                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 	                            <a itemprop="item" href="/car-finance-calculator">
-	                                <span itemprop="name">About us</span>
+	                                <span itemprop="name">Application</span>
 	                            </a>
 	                        <meta itemprop="position" content="2">
 	                    </li>
@@ -45,17 +45,18 @@
                         <ul class="faq">
                             <li class="q">
                                 <span>1</span>
-                                <span class="title">About You</span>
+                                <span id="about_you_title" class="title">About You</span>
                             </li>
                             <li  class="a">
                                 <form id="about_you">
+                                <div id="about_you_error" class="error-message" style="display:none"> <p>Please input red boarder box</p> </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label class="col-md-3 control-label">Title</label>
                                         <%= select_tag "no_of_dependent_children", options_for_select(["Mrs", "Ms", "M"]), :class => "col-md-1 col-xs-12 apply required" %>
-                                        <input name="first_name" id="first_name" placeholder="First Name" type="text" class="col-md-2 col-sm-12 col-xs-12 apply required">
-                                        <input name="first_name" id="middle_name" placeholder="Middle Name " type="text" class="col-md-2 col-sm-12 col-xs-12 apply required">
-                                        <input name="first_name" id="sur_name" placeholder="Sur Name" type="text" class="col-md-2 col-xs-12 apply required">
+                                        <input name="first_name" data-validation="required" id="first_name" placeholder="First Name" type="text" class="col-md-2 col-sm-12 col-xs-12 apply required">
+                                        <input name="first_name" data-validation="required" id="middle_name" placeholder="Middle Name " type="text" class="col-md-2 col-sm-12 col-xs-12 apply required">
+                                        <input name="first_name" data-validation="required" id="sur_name" placeholder="Sur Name" type="text" class="col-md-2 col-xs-12 apply required">
                                     </div>
                                 </div>
 
@@ -63,13 +64,13 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label class="col-md-4 control-label">Date of Birth</label>
-                                        <input id="date_of_birth" class="col-md-5 col-xs-12 apply required input-mask" data-mask="99/99/9999" placeholder="dd/mm/yyyy" >
+                                        <input id="date_of_birth"  data-validation="required" class="col-md-5 col-xs-12 apply required input-mask" data-mask="99/99/9999" placeholder="dd/mm/yyyy" >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label class="col-md-4 control-label">IRD Number</label>
-                                        <input id="ird_number" class="col-md-5 col-xs-12 apply required"  >
+                                        <input id="ird_number" data-validation="required"  class="col-md-5 col-xs-12 apply required"  >
                                     </div>
                                 </div>
 
@@ -77,13 +78,13 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label class="col-md-4 control-label">Home phone</label>
-                                        <input id="home_phone" class="col-md-5 col-xs-12  apply required input-mask-phone" data-mask="(999) 999-9999" placeholder="(   )    -     " >
+                                        <input id="home_phone" data-validation="required" class="col-md-5 col-xs-12  apply required input-mask-phone" data-mask="(999) 999-9999" placeholder="(   )    -     " >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label class="col-md-4 col-sm-12 col-xs-12 control-label">Mobile phone</label>
-                                        <input id="mobile_phone" class="col-md-5 col-xs-12 apply required input-mask-phone"  data-mask="(999) 999-9999" placeholder="(   )    -     ">
+                                        <input id="mobile_phone" data-validation="required" class="col-md-5 col-xs-12 apply required input-mask-phone"  data-mask="(999) 999-9999" placeholder="(   )    -     ">
                                     </div>
                                 </div>
 
@@ -126,7 +127,7 @@
                                 <div class="form-group">
                                     <div class="col-md-12 " style="position: inherit">
                                         <label class="col-md-4 col-xs-12 control-label" >Material status</label>
-                                        <input id="material_status" class="col-md-5 col-xs-12 apply required" >
+                                        <input id="material_status"  data-validation="required" class="col-md-5 col-xs-12 apply required" >
                                     </div>
                                 </div>
 
@@ -209,14 +210,13 @@
 
                             <li class="q">
                                 <span>2</span>
-                                <span class="title"> Home Address</span>
+                                <span id="home_address_title" class="title"> Home Address</span>
                                 
                             </li>
                             <li class="a">
 
-
-
                                 <div class="form-group">
+                                    <div id="home_address_error" class="error-message" style="display:none"> <p>Please input red boarder box</p> </div>
                                     <div class="col-md-12">
                                         <label class="col-md-12 control-label">How long have you lived at this address?</label>
                                         <div id="title_error" class="error-message" style="display:none"> <p>Please select a title</p> </div>
@@ -302,14 +302,14 @@
                                 <div class="form-group">
                                     <div class="col-md-12" style="position: inherit">
                                         <label class="col-sm-12 control-label" style="position: inherit" >Postal address(if diffrent from adove address)</label>
-                                        <input id="postal_address" class="col-md-12  col-xs-12 apply required" >
+                                        <input data-validation="required" id="postal_address" class="col-md-12  col-xs-12 apply required" >
                                     </div>
                                 </div>
                             
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <label class="col-sm-12 control-label" >Previous address(if less than 2 years at current address)</label>
-                                        <input id="previous_address" class="col-md-12  col-xs-12 apply required" >
+                                        <input data-validation="required" id="previous_address" class="col-md-12  col-xs-12 apply required" >
                                     </div>
                                 </div>
  
@@ -399,13 +399,13 @@
                                     <div class="col-md-12" style="position: inherit">
                                         <label class="col-sm-12 control-label"  style="position: inherit">Previous address(if less than 2 years at current address)</label>
                                         <div class="col-md-6 " style="padding: 0px 5px;">
-                                            <input id="previous_address_name" class="col-md-12 col-xs-12 apply required" placeholder="Name">
+                                            <input data-validation="required" id="previous_address_name" class="col-md-12 col-xs-12 apply required" placeholder="Name">
                                         </div>
                                         <div class="col-md-6 " style="padding: 0px 5px">
-                                            <input id="previous_address_phone" class="col-md-12 col-xs-12 apply required" placeholder="Phone">
+                                            <input data-validation="required"  id="previous_address_phone" class="col-md-12 col-xs-12 apply required" placeholder="Phone">
                                         </div>
                                         <div class="col-md-12 " style="padding: 0px 5px;">
-                                            <input id="previous_address_address" class="col-md-12 col-xs-12 apply required" placeholder="Address">
+                                            <input  data-validation="required" id="previous_address_address" class="col-md-12 col-xs-12 apply required" placeholder="Address">
                                         </div>
                                     </div>
                                 </div>

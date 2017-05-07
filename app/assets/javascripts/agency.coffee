@@ -92,7 +92,6 @@ $(document).ready ->
         arg["how_long_have_you_lived"] = select_box_value('li.radio.how_long_lived')
         arg["how_long_lived_here"] = select_box_value('li.radio.how_long_lived_here')
     
-        console.log select_box_value('li.radio.how_long_lived') 
      
         ##### Employment Section #####
         arg["occupation"] = $('#occupation').val()

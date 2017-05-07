@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 gem 'slim-rails'
 gem 'roadie-rails', '~> 1.0'
 
-gem 'jquery-validation-rails'
+#gem 'jquery-validation-rails'
+gem "jquery-form-validator-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
