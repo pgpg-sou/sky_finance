@@ -1,45 +1,24 @@
-<header class="primary-header">
-	<nav class="primary-header__nav">
-		<div class="container">
+<header class="primary-header" style="background-color: white; padding:0px;">
+	<nav class="primary-header__nav" style="background-color: #0368B8;">
+		<div class="">
 			<div class="row">
-				<div id="header_logo" class="col-xs-3 col-sm-4 col-md-3 primary-header__logo">
-					<a href="<%= home_index_path %>">
-                        <%= image_tag 'logo_white_sky.png' %>
-					</a>
+                <div class="col-xs-12 col-sm-12 col-md-12" style="background-color: white; padding: 0px 0px 10px 25px;">
+				<div id="header_logo" class="col-xs-6 col-sm-6 col-md-6 col-lg-4 primary-header__logo">
+                    <h2 style="font-size: 3.1em; color:#333333; font-weight:400">Sky Finance</h2>
+                    <p style="font-size:1.2em; color:#333333">something text here</p>
 				</div>
-				<div class="col-xs-9 col-sm-8 col-md-9 col-lg-8 pull-right primary-header__navigation">
+				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-8 pull-right primary-header__navigation">
 					<div class="primary-header__navigation--clearfix">
-						<a href="<%= home_apply_path %>" class="primary-header__apply" data-ga-item="data-ga-item" data-ga-label="Apply now" data-ga-action="Apply now" data-ga-category="Main nav" data-ga-event="Navigation">Apply 
-<b>now</b>
-</a>
-						<div class="primary-header__chat hidden-xs hidden-sm">
-							<div>
-								<div id="sub-box-button" class="bcText">
-									<img src="<%= image_path('chat_purple.png') %>"></img>
-									<a href="https://www.carfinance247.co.uk/#">
-										<span >Have a question?
-										</span>
-									</a>
-								</div>
-							</div>
-						</div>
-						<a class="primary-header__phone" id="sub-box-button">
-							<img src="<%= image_path('phone-receiver_purple.png') %>"></img>
-
-							<span class="primary-header__phone-text hidden-xs">0333 247 1247
-</span>
-						</a>
-						<div id="mobile-menu" class="primary-header__toggle-navigation btn-toggle-nav hidden-md hidden-lg">
-
-							<span class="primary-header__toggle-navigation-text hidden-xs">Menu
-</span>
-							<div class="icon-bar">
-								<img src="<%= image_path('menu.png') %>"></img>
-							</div>
-						</div>
+                        <div class="col-md-12 text-right">
+                            <img src="<%= image_path('color_logo.png') %>" style="width: 230px"></img>
+                        </div>
 					</div>
-					<div class="hidden-xs hidden-sm primary-header__pages">
-						<ul>
+
+				</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center primary-header__navigation" style="height:50px; margin-top:0px;">
+					<div class=" primary-header__pages">
+						<ul style="text-align:center">
 							<li class="active">
 								<a href="<%= home_index_path %>" title="Home">Home</a>
 							</li>
@@ -57,7 +36,7 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+                </div>
 			</div>
 		</div>
 	</nav>
