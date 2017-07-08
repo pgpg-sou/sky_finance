@@ -4,7 +4,7 @@
 
 
 $(document).ready ->
-    $.validate();
+    #$.validate();
 
     assemble = (selector, total) ->
         select = parseInt($(selector).val())
