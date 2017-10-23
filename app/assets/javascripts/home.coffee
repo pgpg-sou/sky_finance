@@ -270,9 +270,56 @@ $(document).ready ->
         )
 
 
+    $('#identification input:file').uploadThumbs({
+        position : 1,
+        imgbreak : false});
+
+    $('#identification input:file').on("change", () -> 
+          file = this.files[0];
+          if(file != null) 
+              formData = new FormData();
+              formData.append("file", file, file.name);
+
+              $.ajax({
+                  type:   "POST",
+                  url:    "/home/upload_file",
+                  xhr: -> 
+                      myXhr = $.ajaxSettings.xhr();
+                      
+                      return myXhr;
+                  ,
+                  async: true,
+                  data: formData,
+                  cache: false,
+                  contentType: false,
+                  processData: false,
+                  timeout: 60000,
+                  success: (data) -> 
+                    console.log "success"
+                    driver_licence = $.parseJSON(data["driver_licence"])
+                    words = data["words"]
+                    
+                    $('input#first_name').val(driver_licence["first_name"])
+                    $('input#sur_name').val(driver_licence["last_name"])
+                    $('input#date_of_birth').val(driver_licence["birth_date"].replace(/-/g, "/"))
+                    console.log words.join(",")
+                    $.each(words, (index, word) ->
+                        $('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
+                    )
+
+                  ,
+                  error: (error) -> 
+                    console.log "error"
+                    console.log error
+                  
+
+                  }).done((data) -> 
+                  )
+                  
 
 
 
+    );
 
 
 

@@ -47,8 +47,8 @@
 }
 
 ol>li.radio {
-    border: 1px solid #F2F2F2;
-    background-color: #F2F2F2;
+    border: 1px solid white;
+    background-color: white;
     position: relative;
     padding: 13px 105px 13px 10px;
     transition: all .4s linear;
@@ -283,3 +283,39 @@ ol {
     padding: 6px 50px;
     font-size: 24px;
 }
+
+img.thumb {
+    width: 100%;
+    padding: 10px;
+    border: 2px dashed #0087F7;
+    border-radius: 5px;
+
+}
+ul#tag_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul#tag_list li {
+    display: inline-block;
+    margin: 0 0 .5em 0.5em;
+}
+ul#tag_list li a {
+    font-size: 12px;
+}
+
+.btn-primary {
+    background-color: #23D1B2;
+    border-color: #23D1B2;
+    color: white
+}
+
+.btn-rounded {
+    border-radius: 50px;
+}
+
+
+
+
+
+

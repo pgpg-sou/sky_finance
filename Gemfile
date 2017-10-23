@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'google-analytics-rails'
+gem 'google-cloud'
+gem 'google-cloud-vision'
+gem 'google-cloud-translate'
+
 
 gem 'slim-rails'
 gem 'roadie-rails', '~> 1.0'

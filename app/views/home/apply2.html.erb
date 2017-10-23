@@ -1,0 +1,319 @@
+
+<div class="container-fluid">
+	<div class="row">
+		<%= render 'template/navheader2' %>
+
+		<nav id="breadcrumb" class="hidden-xs">
+	        <div class="container">
+	            <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+	                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+	                            <a itemprop="item" href="/">
+	                                <span itemprop="name">Home</span>
+	                            </a>
+	                        <meta itemprop="position" content="1">
+	                    </li>
+	                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+	                            <a itemprop="item" href="/car-finance-calculator">
+	                                <span itemprop="name">Application</span>
+	                            </a>
+	                        <meta itemprop="position" content="2">
+	                    </li>
+	            </ol>
+	        </div>
+	    </nav>
+
+
+
+						<section id="top-area">
+							<header>
+						         <div class="container">
+						            <div class="row">
+						        	<div class="col-md-4 col-xs-3" id="logo"><a href="index.html">Planio Survey template</a></div>
+						            
+						            <div class="btn-responsive-menu"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </div>
+
+						            
+						         </div><!-- End row -->
+						         </div><!-- End container -->
+						        </header> <!-- End header -->
+						        	
+						            <div class="container">
+						             <div class="row">
+						                 <div class="col-md-12 main-title">
+						                 <h1>Applicatioin</h1>
+						                </div>
+						       		</div>
+						            </div>
+						 </section>   
+
+						<section class="container" id="main">
+
+
+
+
+
+
+						<!-- Start Survey container -->
+						<div id="survey_container">
+
+							<div id="top-wizard">
+								<strong>Progress <span id="location"></span></strong>
+								<div id="progressbar"></div>
+								<div class="shadow"></div>
+							</div><!-- end top-wizard -->
+						    
+							<form name="example-1" id="wrapped" action="survey_send_1.php" method="POST">
+								<div id="middle-wizard">
+									<div class="step">
+										<div class="row">
+											<h3 class="col-md-10">Enter your personal info</h3>
+											<div id="application" class="col-md-12">
+
+
+
+
+					                                <div id="about_you">
+					                                <div id="about_you_error" class="error-message" style="display:none"> <p>Please input red boarder box</p> </div>
+                                                    <div id="identification" class="col-md-12 col-xs-12">
+                                                         <input type="file" name="images[]" multiple="multiple" />
+                                                    </div>
+                                                    
+					                                <div class="form-group">
+					                                    <div class="col-md-12 col-xs-12">
+					                                        <label class="col-md-3 col-xs-12 control-label">Title</label>
+					                                        <%= select_tag "no_of_dependent_children", options_for_select(["Mrs", "Ms", "M"]), :class => "col-md-1 col-xs-12 apply required" %>
+					                                        <input name="first_name" data-validation="required" id="first_name" placeholder="First Name" type="text" class="col-md-2 col-sm-12 col-xs-12 apply required">
+					                                        <input name="first_name" data-validation="required" id="middle_name" placeholder="Middle Name " type="text" class="col-md-2 col-sm-12 col-xs-12 apply required">
+					                                        <input name="first_name" data-validation="required" id="sur_name" placeholder="Sur Name" type="text" class="col-md-2 col-xs-12 apply required">
+					                                    </div>
+                                                        
+					                                </div>
+
+
+					                                <div class="form-group">
+					                                    <div class="col-md-12">
+					                                        <label class="col-md-4 col-xs-12 control-label">Date of Birth</label>
+                                                            <div  class="col-md-8">
+                                                                <input id="date_of_birth"  data-validation="required" class="col-md-12 col-xs-12 apply required input-mask" data-mask="99/99/9999" placeholder="dd/mm/yyyy" >
+                                                                <div  id="recommend_form" class="cl-md-12">
+                                                                    <ul id="tag_list">
+                                                                        <li>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+					                                    </div>
+					                                </div>
+					                                <div class="form-group">
+					                                    <div class="col-md-12">
+					                                        <label class="col-md-4 col-xs-12 control-label">IRD Number</label>
+					                                        <input id="ird_number" data-validation="required"  class="col-md-5 col-xs-12 apply required"  >
+					                                    </div>
+					                                </div>
+
+
+					                                <div class="form-group">
+					                                    <div class="col-md-12">
+					                                        <label class="col-md-4 col-xs-12  control-label">Home phone</label>
+					                                        <input id="home_phone" data-validation="required" class="col-md-5 col-xs-12  apply required input-mask-phone" data-mask="(999) 999-9999" placeholder="(   )    -     " >
+					                                    </div>
+					                                </div>
+					                                <div class="form-group">
+					                                    <div class="col-md-12">
+					                                        <label class="col-md-4 col-sm-12 col-xs-12 control-label">Mobile phone</label>
+					                                        <input id="mobile_phone" data-validation="required" class="col-md-5 col-xs-12 apply required input-mask-phone"  data-mask="(999) 999-9999" placeholder="(   )    -     ">
+					                                    </div>
+					                                </div>
+
+
+
+					                                <div class="form-group">
+					                                    <div class="col-md-12">
+					                                        <label class="col-md-12 col-xs-12  control-label">Drivers Licence type</label>
+					                                        <div id="title_error" class="error-message" style="display:none"> <p>Please select a title</p> </div>
+					                                        <ol class="col-md-12 col-sm-12 col-xs-12 no-padding">
+					                                            <li class="radio driver_licence ng-scope col-md-3 col-sm-6 col-xs-6" >
+					                                                <input type="radio" name="title" value="Mr" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+					                                                <label class="unselected" value="Learners">
+					                                                    <strong>
+					                                                        <span data-ng-bind="option.label" class="ng-binding">Learners</span>
+					                                                    </strong>
+					                                                </label>
+					                                            </li>
+					                                            <li class="radio driver_licence ng-scope col-md-3 col-sm-6 col-xs-6" >
+					                                                <input type="radio" name="title" value="Mrs" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+					                                                <label class="unselected" value="Restricted">
+					                                                    <strong>
+					                                                        <span data-ng-bind="option.label" class="ng-binding">Restrictad</span>
+					                                                    </strong>
+					                                                </label>
+					                                            </li>
+					                                            <li class="radio driver_licence ng-scope col-md-3 col-sm-6 col-xs-6" >
+					                                                <input type="radio" name="title" value="Ms" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+					                                                <label class="unselected" value="Full">
+					                                                    <strong>
+					                                                        <span data-ng-bind="option.label" class="ng-binding">Full</span>
+					                                                    </strong>
+					                                                </label>
+					                                            </li>
+					                                        </ol>
+					                                    </div>
+					                                </div>
+
+
+					                                <div class="form-group">
+					                                    <div class="col-md-12 " style="position: inherit">
+					                                        <label class="col-md-4 col-xs-12 control-label" >Material status</label>
+					                                        <input id="material_status"  data-validation="required" class="col-md-5 col-xs-12 apply required" >
+					                                    </div>
+					                                </div>
+
+
+					                                <div class="form-group">
+					                                    <div class="col-md-12">
+					                                        <label class="col-md-4 col-xs-12  control-label">Residential status</label>
+					                                        <div id="title_error" class="error-message" style="display:none"> <p>Please select a title</p> </div>
+					                                        <ol class="col-md-12  col-sm-12 col-xs-12 no-padding">
+					                                            <li class="radio residential_status ng-scope col-md-2 col-sm-6 col-xs-6" >
+					                                                <input type="radio" name="title" value="Mr" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+					                                                <label class="unselected" value="Renting">
+					                                                    <strong>
+					                                                        <span data-ng-bind="option.label" class="ng-binding">Renting</span>
+					                                                    </strong>
+					                                                </label>
+					                                            </li>
+					                                            <li class="radio residential_status ng-scope col-md-2 col-sm-6 col-xs-6" >
+					                                                <input type="radio" name="title" value="Mrs" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+					                                                <label class="unselected" value="Own home paying a mortage">
+					                                                    <strong>
+					                                                        <span data-ng-bind="option.label" class="ng-binding">Own home paying a mortage</span>
+					                                                    </strong>
+					                                                </label>
+					                                            </li>
+					                                            <li class="radio residential_status ng-scope col-md-2 col-sm-6 col-xs-6" >
+					                                                <input type="radio" name="title" value="Ms" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+					                                                <label class="unselected" value="Freehold">
+					                                                    <strong>
+					                                                        <span data-ng-bind="option.label" class="ng-binding">Freehold</span>
+					                                                    </strong>
+					                                                </label>
+					                                            </li>
+					                                            <li class="radio residential_status ng-scope col-md-2 col-sm-6 col-xs-6" >
+					                                                <input type="radio" name="title" value="Ms" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+					                                                <label class="unselected" value="Boarding">
+					                                                    <strong>
+					                                                        <span data-ng-bind="option.label" class="ng-binding">Boarding</span>
+					                                                    </strong>
+					                                                </label>
+					                                            </li>
+
+					                                            <li class="radio residential_status ng-scope col-md-2 col-sm-6 col-xs-6" >
+					                                                <input type="radio" name="title" value="Ms" id="employmentStatusfullTime" class="ng-pristine ng-invalid ng-invalid-required">
+					                                                <label class="unselected" value="Living with relatives">
+					                                                    <strong>
+					                                                        <span data-ng-bind="option.label" class="ng-binding">Living with relatives</span>
+					                                                    </strong>
+					                                                </label>
+					                                            </li>
+
+
+
+
+					                                        </ol>
+					                                    </div>
+					                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					                                </div>
+
+					                                <div class="text-right">
+					                                    <a id="fase1" class="btn btn-primary btn-apply" name="2"> Next > </a>
+					                                </div>
+					                            
+					                            </li>
+
+
+
+
+
+
+
+
+
+											</div><!-- end col-md-6 -->
+
+										</div><!-- end row -->
+					                
+									</div><!-- end step-->
+						            
+									<div class="step row">
+										<div class="col-md-12">
+											<h3>Please rate your overall satisfaction about the service provided.</h3>
+                                            <%= render 'template/apply_form_step2' %>
+										</div>
+									</div><!-- end step -->
+						            
+									<div class="step row">
+										<div class="col-md-12">
+											<h3>How did you hear about our company?</h3>
+                                            <%= render 'template/apply_form_step3' %>
+										</div>
+									</div><!-- end step -->
+						            
+									<div class="step row">
+										<div class="col-md-10">
+											<h3>Do you think to suggest our company to a friend or parent?</h3>
+                                            <%= render 'template/apply_form_step4' %>
+											
+										</div>
+									</div><!-- end step -->
+
+
+									<div class="step row">
+										<div class="col-md-10">
+											<h3>Do you think to suggest our company to a friend or parent?</h3>
+                                            <%= render 'template/apply_form_step5' %>
+											
+										</div>
+									</div><!-- end step -->
+
+
+
+						            
+									<div class="submit step" id="complete">
+						                    	<i class="icon-check"></i>
+												<h3>Survey complete! Thank you for you time.</h3>
+												<button type="submit" name="process" class="submit">Submit the survey</button>
+									</div><!-- end submit step -->
+						            
+								</div><!-- end middle-wizard -->
+						        
+								<div id="bottom-wizard">
+									<button type="button" name="backward" class="backward">Backward</button>
+									<button type="button" name="forward" class="forward">Forward </button>
+								</div><!-- end bottom-wizard -->
+							</form>
+							<form name="example-2" id="wrapped" action="survey_send_2.php" method="POST">
+							</form>
+
+						    
+						</div><!-- end Survey container -->
+						</section>
+
+	</div>
+</div>
+
+

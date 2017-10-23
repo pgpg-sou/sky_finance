@@ -152,13 +152,13 @@ $(document).ready ->
 
 
     
-    $('.input-mask').inputmask({
-          mask: '99/99/9999'
-    })
-    $('.input-mask-phone').inputmask({
-        mask: '(999) 999-9999'
-    })
-    $('.input-mask-texable_income').inputmask({
-        mask: '$ 999,999'
-    })
+    #$('.input-mask').inputmask({
+    #      mask: '99/99/9999'
+    #})
+    #$('.input-mask-phone').inputmask({
+    #    mask: '(999) 999-9999'
+    #})
+    #$('.input-mask-texable_income').inputmask({
+    #    mask: '$ 999,999'
+    #})
 

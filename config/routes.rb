@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  post 'home/upload_file'
   get 'home/index'
 
   get 'home/set_your_budget'
@@ -7,6 +9,8 @@ Rails.application.routes.draw do
   get 'home/how_it_works'
   
   get 'home/help_and_advice'
+  get 'home/apply2'
+  get 'home/apply3'
   get 'home/apply'
   
   post 'home/apply_mail'
