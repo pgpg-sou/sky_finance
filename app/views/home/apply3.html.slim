@@ -1,0 +1,159 @@
+.container-fluid
+  .row
+    = render 'template/navheader2'
+    nav#breadcrumb.hidden-xs
+      .container
+        ol.breadcrumb[itemscope="" itemtype="http://schema.org/BreadcrumbList"]
+          li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+            a[itemprop="item" href="/"]
+              span[itemprop="name"]
+                | Home
+      meta[itemprop="position" content="1"]
+      li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+        a[itemprop="item" href="/car-finance-calculator"]
+          span[itemprop="name"]
+            | Application
+      meta[itemprop="position" content="2"]
+  section#top-area
+    header
+      .container
+        .row
+          #logo.col-md-4.col-xs-3
+            a[href="index.html"]
+              | Planio Survey template
+          .btn-responsive-menu
+            span.bar
+            span.bar
+            span.bar
+    .container
+      .row
+        .col-md-12.main-title
+          h1
+            | Applicatioin
+  section#main.container
+    #survey_container
+      #top-wizard
+        strong
+          | Progress 
+          span#location
+        #progressbar
+        .shadow
+      form#wrapped[name="example-1" action="survey_send_1.php" method="POST"]
+        #middle-wizard
+          .step
+            .row
+              h3.col-md-10
+                | Enter your personal info
+              #application.col-md-12
+
+              .col-md-6
+                ul.data-list
+                  li
+                    .styled-select
+                      select.form-control.required[name="country"]
+                        option[value="" selected]
+                          | Select your country
+                        option[value="Europe"]
+                          | Europe
+                        option[value="Asia"]
+                          | Asia
+                        option[value="North America"]
+                          | North America
+                        option[value="South America"]
+                          | South America
+                ul.data-list
+                  li
+                    .qty-buttons
+                      input.qtyplus[type="button" value="+" name="quantity"]
+                      input.qty.form-control.required[type="text" name="quantity" value="" placeholder="none"]
+                      input.qtyminus[type="button" value="-" name="quantity"]
+                      span
+                        | Your incrementer
+            .row
+              .col-md-4.col-md-offset-4
+                ul#terms.data-list
+                  li
+                    strong
+                      | Do you accept 
+                      a[href="#" data-toggle="modal" data-target="#terms-txt"]
+                        | terms and conditions
+                      |  ?
+          .step.row
+            .col-md-10
+              h3
+                | Please rate your overall satisfaction about the service provided.
+              ul.data-list-2
+                li
+                  input.required.check_radio[name="rate" type="radio" value="Not Satisfied"]
+                  label
+                    | Not Satisfied
+                li
+                  input.required.check_radio[name="rate" type="radio" value="Quite Satisfied"]
+                  label
+                    | Quite Satisfied
+                li
+                  input.required.check_radio[name="rate" type="radio" value="Satisfied"]
+                  label
+                    | Satisfied
+                li
+                  input.required.check_radio[name="rate" type="radio" value="Completely Satisfied"]
+                  label
+                    | Completely Satisfied
+          .step.row
+            .col-md-10
+              h3
+                | How did you hear about our company?
+              ul.data-list-2
+                li
+                  input.required.check_radio[name="question_1[]" type="checkbox" value="Google"]
+                  label
+                    | Google
+                li
+                  input.required.check_radio[name="question_1[]" type="checkbox" value="A friend of mine"]
+                  label
+                    | A friend of mine
+                li
+                  input.required.check_radio[name="question_1[]" type="checkbox" value="Print advertise"]
+                  label
+                    | Print advertise
+                li
+                  input.required.check_radio[name="question_1[]" type="checkbox" value="Newspaper"]
+                  label
+                    | Newspaper
+          .step.row
+            .col-md-10
+              h3
+                | Do you think to suggest our company to a friend or parent?
+              ul.data-list-2.clearfix
+                li
+                  input.required.check_radio[name="question_2" type="radio" value="No"]
+                  label
+                    | No
+                li
+                  input.required.check_radio[name="question_2" type="radio" value="Maybe"]
+                  label
+                    | Maybe
+                li
+                  input.required.check_radio[name="question_2" type="radio" value="Probably"]
+                  label
+                    | Probably 
+                li
+                  input.required.check_radio[name="question_2" type="radio" value="100% Sure"]
+                  label
+                    | 100% Sure
+                li
+                  strong
+                    | In no, please describe with few words why
+                  textarea.form-control[name="message_suggest_no"]
+          #complete.submit.step
+            i.icon-check
+            h3
+              | Survey complete! Thank you for you time.
+            button.submit[type="submit" name="process"]
+              | Submit the survey
+        #bottom-wizard
+          button.backward[type="button" name="backward"]
+            | Backward
+          button.forward[type="button" name="forward"]
+            | Forward 
+      form#wrapped[name="example-2" action="survey_send_2.php" method="POST"]

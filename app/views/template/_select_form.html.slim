@@ -1,0 +1,7 @@
+- select_data.each do |k, v|
+  li class="radio #{class_type} ng-scope col-md-2 col-sm-6 col-xs-6"
+    input.ng-pristine.ng-invalid.ng-invalid-required id="#{k}" type="radio" name="title" value="Mr"
+    label.unselected[value="#{v}"]
+      strong
+        span.ng-binding[data-ng-bind="option.label"]
+          = v

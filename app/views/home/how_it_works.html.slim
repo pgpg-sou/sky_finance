@@ -1,0 +1,43 @@
+.container-fluid
+  .row
+    = render 'template/navheader'
+    nav#breadcrumb.hidden-xs
+      .container
+        ol.breadcrumb[itemscope="" itemtype="http://schema.org/BreadcrumbList"]
+          li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+            a[itemprop="item" href="/"]
+              span[itemprop="name"]
+                | Home
+      meta[itemprop="position" content="1"]
+      li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+        a[itemprop="item" href="/car-finance-calculator"]
+          span[itemprop="name"]
+            | How it works
+      meta[itemprop="position" content="2"]
+  section#content-area-style-grey.col-md-12
+    #how_it_works.inner-content-area.col-md-12
+      h1.h1-mimic__h3
+        | HOW IT WORKS
+      h1.h1-mimic__h3
+        | A SIMPLE 3 STEP before you start
+      #steps.col-md-12
+        .col-md-4.text-center
+          |  <img src="
+          = image_path('handshake1.png')
+          | ">
+          h1
+            | Apply for Financing
+        .col-md-4.text-center
+          |  <img src="
+          = image_path('approve1.png')
+          | ">
+          h1
+            | Approved
+        .col-md-4.text-center
+          |  <img src="
+          = image_path('barcode1.png')
+          | ">
+          h1
+            | Buy
+script
+  |  (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KMQ6CT'); 

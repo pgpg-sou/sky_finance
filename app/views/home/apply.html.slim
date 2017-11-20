@@ -1,0 +1,698 @@
+.container-fluid
+  .row
+    = render 'template/navheader'
+    nav#breadcrumb.hidden-xs
+      .container
+        ol.breadcrumb[itemscope="" itemtype="http://schema.org/BreadcrumbList"]
+          li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+            a[itemprop="item" href="/"]
+              span[itemprop="name"]
+                | Home
+      meta[itemprop="position" content="1"]
+      li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+        a[itemprop="item" href="/car-finance-calculator"]
+          span[itemprop="name"]
+            | Application
+      meta[itemprop="position" content="2"]
+  section#content-area-style-grey
+    #application.container
+      .inner-content-area
+        .col-md-12
+          h1.h1-mimic__h3
+            | Application
+          ul.faq
+            li.q
+              span
+                | 1
+              span#about_you_title.title
+                | About You
+            li.a
+              form#about_you
+                #about_you_error.error-message[style="display:none"]
+                  p
+                    | Please input red boarder box
+                .form-group
+                  .col-md-12
+                    label.col-md-3.control-label
+                      | Title
+                    = select_tag "no_of_dependent_children", options_for_select(["Mrs", "Ms", "M"]), :class => "col-md-1 col-xs-12 apply required"
+                    input#first_name.col-md-2.col-sm-12.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="First Name" type="text"]
+                    input#middle_name.col-md-2.col-sm-12.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="Middle Name " type="text"]
+                    input#sur_name.col-md-2.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="Sur Name" type="text"]
+                .form-group
+                  .col-md-12
+                    label.col-md-4.control-label
+                      | Date of Birth
+                    input#date_of_birth.col-md-5.col-xs-12.apply.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy"]
+                .form-group
+                  .col-md-12
+                    label.col-md-4.control-label
+                      | IRD Number
+                    input#ird_number.col-md-5.col-xs-12.apply.required[data-validation="required"]
+                .form-group
+                  .col-md-12
+                    label.col-md-4.control-label
+                      | Home phone
+                    input#home_phone.col-md-5.col-xs-12.apply.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     "]
+                .form-group
+                  .col-md-12
+                    label.col-md-4.col-sm-12.col-xs-12.control-label
+                      | Mobile phone
+                    input#mobile_phone.col-md-5.col-xs-12.apply.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     "]
+                .form-group
+                  .col-md-12
+                    label.col-md-12.control-label
+                      | Drivers Licence type
+                    #title_error.error-message[style="display:none"]
+                      p
+                        | Please select a title
+                    ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                      li.radio.driver_licence.ng-scope.col-md-3.col-sm-6.col-xs-6
+                        input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                        label.unselected[value="Learners"]
+                          strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | Learners
+                      li.radio.driver_licence.ng-scope.col-md-3.col-sm-6.col-xs-6
+                        input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                        label.unselected[value="Restricted"]
+                          strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | Restrictad
+                      li.radio.driver_licence.ng-scope.col-md-3.col-sm-6.col-xs-6
+                        input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                        label.unselected[value="Full"]
+                          strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | Full
+                .form-group
+                  .col-md-12[style="position: inherit"]
+                    label.col-md-4.col-xs-12.control-label
+                      | Material status
+                    input#material_status.col-md-5.col-xs-12.apply.required[data-validation="required"]
+                .form-group
+                  .col-md-12
+                    label.col-md-4.control-label
+                      | Residential status
+                    #title_error.error-message[style="display:none"]
+                      p
+                        | Please select a title
+                    ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                      li.radio.residential_status.ng-scope.col-md-2.col-sm-6.col-xs-6
+                        input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                        label.unselected[value="Renting"]
+                          strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | Renting
+                      li.radio.residential_status.ng-scope.col-md-2.col-sm-6.col-xs-6
+                        input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                        label.unselected[value="Own home paying a mortage"]
+                          strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | Own home paying a mortage
+                      li.radio.residential_status.ng-scope.col-md-2.col-sm-6.col-xs-6
+                        input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                        label.unselected[value="Freehold"]
+                          strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | Freehold
+                      li.radio.residential_status.ng-scope.col-md-2.col-sm-6.col-xs-6
+                        input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                        label.unselected[value="Boarding"]
+                          strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | Boarding
+                      li.radio.residential_status.ng-scope.col-md-2.col-sm-6.col-xs-6
+                        input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                        label.unselected[value="Living with relatives"]
+                          strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | Living with relatives
+              .text-right
+                a#fase1.btn.btn-primary.btn-apply[name="2"]
+                  |  Next > 
+            li.q
+              span
+                | 2
+              span#home_address_title.title
+                |  Home Address
+            li.a
+              .form-group
+                #home_address_error.error-message[style="display:none"]
+                  p
+                    | Please input red boarder box
+                .col-md-12
+                  label.col-md-12.control-label
+                    | How long have you lived at this address?
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                      label.unselected[value="1 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 1 year
+                    li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                      label.unselected[value="2 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 2 year
+                    li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="4 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 4 year
+                    li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="5 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 5 year
+                    li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="6 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 6 year
+                    li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="7 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 7 year
+                    li.radio.how_long_lived.selected.other
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | More
+                      input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px; "]
+              .form-group
+                .col-md-12[style="position: inherit"]
+                  label.col-sm-12.control-label[style="position: inherit"]
+                    | Postal address(if diffrent from adove address)
+                  input#postal_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
+              .form-group
+                .col-md-12
+                  label.col-sm-12.control-label
+                    | Previous address(if less than 2 years at current address)
+                  input#previous_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
+              .form-group
+                .col-md-12
+                  label.col-md-12.control-label
+                    | How long have you lived at this address?
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                      label.unselected[value="1 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 1 year
+                    li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                      label.unselected[value="2 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 2 year
+                    li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="4 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 4 year
+                    li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="5 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 5 year
+                    li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="6 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 6 year
+                    li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="7 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 7 year
+                    li.radio.how_long_lived_here.selected.other
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | More
+                      input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px; "]
+              .form-group
+                .col-md-12[style="position: inherit"]
+                  label.col-sm-12.control-label[style="position: inherit"]
+                    | Previous address(if less than 2 years at current address)
+                  .col-md-6[style="padding: 0px 5px;"]
+                    input#previous_address_name.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="Name"]
+                  .col-md-6[style="padding: 0px 5px"]
+                    input#previous_address_phone.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="Phone"]
+                  .col-md-12[style="padding: 0px 5px;"]
+                    input#previous_address_address.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="Address"]
+              .text-right
+                a#fase2.btn.btn-primary.btn-apply[name="3"]
+                  |  Next > 
+            li.q
+              span
+                | 3
+              span.title
+                |  Employment
+            li.a
+              .form-group
+                .col-md-12
+                  label.col-md-4.control-label
+                    | Occupation
+                  input#occupation.col-md-5.col-xs-12.apply.required
+              .form-group
+                .col-md-12
+                  label.col-md-4.control-label
+                    | Employer's name
+                  input#employer_name.col-md-5.col-xs-12.apply.required
+              .form-group
+                .col-md-12
+                  label.col-md-4.control-label
+                    | Employer's address
+                  input#employer_address.col-md-5.col-xs-12.apply.required
+              .form-group
+                .col-md-12
+                  label.col-md-4.control-label
+                    | Employer's phone
+                  input#employer_phone.col-md-5.col-xs-12.apply.required
+              .form-group
+                .col-md-12
+                  label.col-md-12.control-label
+                    | How long employed?
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.radio.how_long_employed.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                      label.unselected[value="1 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 1 year
+                    li.radio.how_long_employed.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                      label.unselected[value="2 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 2 year
+                    li.radio.how_long_employed.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="4 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 4 year
+                    li.radio.how_long_employed.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="5 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 5 year
+                    li.radio.how_long_employed.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="6 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 6 year
+                    li.radio.how_long_employed.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="7 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 7 year
+                    li.radio.how_long_employed.selected.other
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | More
+                      input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px; "]
+              .form-group
+                .col-md-12[style="position: inherit"]
+                  label.col-md-4.control-label[style="position: inherit"]
+                    | Previous employer
+                  input.col-md-5.col-xs-12.apply.required[name="previous_employer"]
+              .form-group
+                .col-md-12
+                  label.col-md-12.control-label
+                    | How long employed?
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.radio.how_long_employed2.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                      label.unselected[value="1 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 1 year
+                    li.radio.how_long_employed2.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                      label.unselected[value="2 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 2 year
+                    li.radio.how_long_employed2.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="4 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 4 year
+                    li.radio.how_long_employed2.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="5 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 5 year
+                    li.radio.how_long_employed2.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="6 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 6 year
+                    li.radio.how_long_employed2.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                      label.unselected[value="7 year"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | 7 year
+                    li.radio.how_long_employed2.selected.other
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | More
+                      input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px; "]
+              .form-group
+                .col-md-12[style="position: inherit"]
+                  label.col-md-12.col-xs-12.control-label[style="position: inherit"]
+                    | Self employed?
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-5.col-sm-12.col-xs-12
+                    li.radio.self_employed.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                      label.unselected[value="Yes"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | Yes
+                    li.radio.self_employed.ng-scope.col-md-2.col-sm-6.col-xs-6
+                      input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                      label.unselected[value="No"]
+                        strong
+                          span.ng-binding[data-ng-bind="option.label"]
+                            | No
+              .form-group
+                .col-md-12[style="position: inherit"]
+                  label.col-md-4.control-label[style="position: inherit"]
+                    | Your Account
+                  input#your_account.col-md-5.col-xs-12.apply.required
+              .text-right
+                a#fase3.btn.btn-primary.btn-apply[name="4"]
+                  |  Next 
+            li.q
+              span
+                | 4
+              span.title
+                |  Monthly Income & Expenses
+            li.a
+              .form-group
+                .col-md-12
+                  label.col-md-12.control-label
+                    | Income
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.radio.income.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Taxable Income
+                      input#texable_income.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.income.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Any Ohter Income
+                      input#any_other_income.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+              .form-group
+                .col-md-12
+                  label.col-md-12.control-label
+                    | Expenses
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.radio.expenses.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Mortage rent board
+                      input#mortage_rent_board.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.expenses.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Loans and HPs
+                      input#loans_and_hps.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.expenses.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Credit Card
+                      input#credit_card.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.expenses.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Living
+                      input#living.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.expenses.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Child Support
+                      input#child_support.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+              .form-group
+                .col-md-12
+                  label.col-md-12.control-label
+                    | Income
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.radio.selected.income.active
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Total Income
+                      input#total_income.apply[type="tel" name="total_income" style="margin:0px; " placeholder="$" value="0"]
+                    li.radio.selected.income.active
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Total Expenses
+                      input#total_expenses.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$" value="0"]
+              .text-right
+                a#fase4.btn.btn-primary.btn-apply[name="5"]
+                  |  Next 
+            li.q
+              span
+                | 5
+              span.title
+                |  Your Assets
+            li.a
+              .form-group
+                .col-md-12
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.radio.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | home
+                      input#home.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | rental property
+                      input#rental_property.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Investment
+                      input#investment.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | money in bank
+                      input#money_in_bank.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Vehicle
+                      input#vehicle.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | furniture
+                      input#furniture.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | jewelry
+                      input#jewelry.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+                    li.radio.selected.income
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Other
+                      input#other.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+              .form-group
+                .col-md-12
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-10.col-sm-12.col-xs-12.no-padding
+                    li.radio.selected.income.active
+                      label.other-input[for="otherAmount"]
+                        strong
+                          span
+                            | Total Assets
+                      input#total_assets.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$" value="0"]
+              .text-right
+                a#fase5.btn.btn-primary.btn-apply[name="6"]
+                  |  Next 
+            li.q
+              span
+                | 6
+              span.title
+                |  Your Liabilities
+            li.a.liabilities
+              .form-group
+                .col-md-12
+                  #title_error.error-message[style="display:none"]
+                    p
+                      | Please select a title
+                  ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    li.col-md-6.col-xs-6
+                      .liability
+                        label#mortages.other-input
+                          strong
+                            span
+                              | Mortages
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Balance Owed
+                            input#balance_owed.col-md-6.apply.required[placeholder="$"]
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Monthly replayment
+                            input#monthly_replayment.col-md-6.apply.required[placeholder="$"]
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Provider
+                            input#provider.col-md-6.apply.required[placeholder="$"]
+                        .text-right
+                          a#fase5.btn.btn-primary.btn-apply[name="6" style="visibility:hidden"]
+
+                    li.col-md-6.col-xs-6
+                      .liability
+                        label#personal_loan.other-input
+                          strong
+                            span
+                              | personal loan
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Balance Owed
+                            input#balance_owed.col-md-6.apply.required[placeholder="$"]
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Monthly replayment
+                            input#monthly_replayment.col-md-6.apply.required[placeholder="$"]
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Provider
+                            input#provider.col-md-6.apply.required[placeholder="$"]
+                        .text-right
+                          a#fase5.btn.btn-primary.btn-apply[name="6" style="visibility:hidden"]
+
+                    li.col-md-6.col-xs-6
+                      .liability
+                        label#credit_card_1.other-input
+                          strong
+                            span
+                              | credit card 1
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Balance Owed
+                            input#balance_owed.col-md-6.apply.required[placeholder="$"]
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Monthly replayment
+                            input#monthly_replayment.col-md-6.apply.required[placeholder="$"]
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Provider
+                            input#provider.col-md-6.apply.required[placeholder="$"]
+                        .text-right
+                          a#fase5.btn.btn-primary.btn-apply[name="6" style="visibility:hidden"]
+
+                    li.col-md-6.col-xs-6
+                      .liability
+                        label.other-input[for="otherAmount"]
+                          strong
+                            span
+                              | credit card 2
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Balance Owed
+                            input.col-md-6.apply.required[name="ird_number" placeholder="$"]
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Monthly replayment
+                            input.col-md-6.apply.required[name="ird_number" placeholder="$"]
+                        .form-group
+                          .col-md-12
+                            label.col-md-6.control-label.text-left
+                              | Provider
+                            input.col-md-6.apply.required[name="ird_number" placeholder="$"]
+                        .text-right
+                          a#fase5.btn.btn-primary.btn-apply[name="6" style="visibility:hidden"]
+
+                  .text-right
+                    .col-md-12
+                      a#apply_now.btn.btn-primary.btn-apply[name="6"]
+                        |  apply 

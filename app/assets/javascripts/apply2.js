@@ -10,6 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+//= require jquery
+//= require jquery_ujs
+
+
 //= require annova_js/jquery-1.10.2.js 
 //= require annova_js/jquery-ui-1.8.22.min.js 
 //= require annova_js/jquery.bxslider.min.js
@@ -32,9 +37,19 @@
 
 //= require annova_js/functions.js 
 
+//= require jasny-bootstrap.js
+//= require validate/jquery.validate.min.js
+//= require jquery.form-validator
+
 
 
 //= require jquery.uploadThumbs.js
+
+
+//= require webcam/qrcodelib.js 
+//= require webcam/WebCodeCam.js 
+//= require webcam/DecoderWorker.js 
+//= require webcam/main.js 
 
 
 //= require home

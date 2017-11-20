@@ -1,0 +1,43 @@
+li#application
+    .form-group
+        .col-md-12
+            label.col-md-4.control-label Nearest FirstName
+            input#nearest_first_name.col-md-5.col-xs-12.apply.required
+    .form-group
+        .col-md-12
+            label.col-md-4.control-label Nearest LastName
+            input#nearest_last_name.col-md-5.col-xs-12.apply.required
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Nearest address
+            .col-md-8
+                input#nearest_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Nearest phone Number 
+            .col-md-8
+                input#nearest_phone_number.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Nearest Relation ship
+            .col-md-8
+                input#nearest_relation_ship.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+
+
+
+
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label credit rating
+            #title_error.error-message[style="display:none"]
+                p Please select a title
+            ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                = render partial: 'template/select_form', locals: {select_data: {"credit_ex" => "Excellent", "credit_good" => "Good", "credti_not_good" => "Not so Good", "credit_difficult" => "Have difficult"}, class_type: "credit_rating"}
+
+

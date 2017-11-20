@@ -6,6 +6,51 @@
 $(document).ready ->
     #$.validate();
 
+    initAF = () -> 
+        widget = new AddressFinder.Widget(
+            document.getElementById('postal_address'),
+            'GJ8U3Y7FWET4PB6NCXMH',
+            'NZ'
+        );
+        widget.on('result:select', (fullAddress, metaData) ->
+            selected = new AddressFinder.NZSelectedAddress(fullAddress, metaData)
+        ) 
+    initAF_2 = () -> 
+        widget = new AddressFinder.Widget(
+            document.getElementById('previous_address'),
+            'GJ8U3Y7FWET4PB6NCXMH',
+            'NZ'
+        );
+        widget.on('result:select', (fullAddress, metaData) ->
+            selected = new AddressFinder.NZSelectedAddress(fullAddress, metaData)
+        )
+    initAF_3 = () -> 
+        widget = new AddressFinder.Widget(
+            document.getElementById('current_company_address'),
+            'GJ8U3Y7FWET4PB6NCXMH',
+            'NZ'
+        );
+        widget.on('result:select', (fullAddress, metaData) ->
+            selected = new AddressFinder.NZSelectedAddress(fullAddress, metaData)
+        )
+    initAF_4 = () -> 
+        widget = new AddressFinder.Widget(
+            document.getElementById('previous_company_address'),
+            'GJ8U3Y7FWET4PB6NCXMH',
+            'NZ'
+        );
+        widget.on('result:select', (fullAddress, metaData) ->
+            selected = new AddressFinder.NZSelectedAddress(fullAddress, metaData)
+        )
+ 
+
+    $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF);
+    $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF_2);
+    $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF_3);
+    $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF_4);
+
+
+
     assemble = (selector, total) ->
         select = parseInt($(selector).val())
         total_value = parseInt($(total).val())
@@ -227,7 +272,6 @@ $(document).ready ->
             validates.push(input_validate_check(val))
         );
 
-
         if validate_result(validates) == true
             $('#home_address_title').css("display","none")
             $('li.q').each((index) ->
@@ -241,10 +285,6 @@ $(document).ready ->
             target = $("#home_address_title");
             position = target.offset().top;
             $('body, html').animate({scrollTop:position}, speed, 'swing');
-
-
-
-
 
     $('#fase3').click ->
         name = parseInt($(this).attr("name"))
@@ -269,6 +309,55 @@ $(document).ready ->
                 $(this).toggleClass('active')
         )
 
+    $('#identification_visa input:file').uploadThumbs({
+        position : 1,
+        imgbreak : false});
+
+    $('#identification_visa input:file').on("change", () -> 
+          file = this.files[0];
+          if(file != null) 
+              formData = new FormData();
+              formData.append("file", file, file.name);
+
+              $.ajax({
+                  type:   "POST",
+                  url:    "/home/upload_file_visa",
+                  xhr: -> 
+                      myXhr = $.ajaxSettings.xhr();
+                      
+                      return myXhr;
+                  ,
+                  async: true,
+                  data: formData,
+                  cache: false,
+                  contentType: false,
+                  processData: false,
+                  timeout: 60000,
+                  success: (data) -> 
+                      visa_licence = $.parseJSON(data["visa_licence"])
+                      words = data["words"]
+                      
+                      console.log "visa"
+                      console.log visa_licence
+                      $('input#visa_expire_date').val(visa_licence["expire_date"])
+                      $('input#citizen_ship').val(visa_licence["citizen_ship"])
+
+                      console.log words.join(",")
+                      $.each(words, (index, word) ->
+                          $('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
+                      )
+
+                        
+
+                  ,
+                  error: (error) -> 
+                    console.log "error"
+                    console.log error
+                  
+
+                  }).done((data) -> 
+                  )
+    );
 
     $('#identification input:file').uploadThumbs({
         position : 1,
@@ -295,18 +384,22 @@ $(document).ready ->
                   processData: false,
                   timeout: 60000,
                   success: (data) -> 
-                    console.log "success"
-                    driver_licence = $.parseJSON(data["driver_licence"])
-                    words = data["words"]
-                    
-                    $('input#first_name').val(driver_licence["first_name"])
-                    $('input#sur_name').val(driver_licence["last_name"])
-                    $('input#date_of_birth').val(driver_licence["birth_date"].replace(/-/g, "/"))
-                    console.log words.join(",")
-                    $.each(words, (index, word) ->
-                        $('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
-                    )
+                      driver_licence = $.parseJSON(data["driver_licence"])
+                      words = data["words"]
+                      
+                      $('input#first_name').val(driver_licence["first_name"])
+                      $('input#sur_name').val(driver_licence["last_name"])
+                      $('input#date_of_birth').val(driver_licence["birth_date"])
+                     
+                       
+                      $('input#driver_licence').val(driver_licence["driver_licence_no"])
+                      $('input#driver_licence_version').val(driver_licence["card_version_no"])
+                      $('input#drivers_licence_expire_date').val(driver_licence["expire_date"])
 
+                      console.log words.join(",")
+                      $.each(words, (index, word) ->
+                          $('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
+                      )
                   ,
                   error: (error) -> 
                     console.log "error"
@@ -316,10 +409,5 @@ $(document).ready ->
                   }).done((data) -> 
                   )
                   
-
-
-
     );
-
-
 

@@ -1,0 +1,13 @@
+doctype html
+html.wf-lato-n4-active.wf-montserrat-n4-active.wf-lato-n9-active.wf-montserrat-n7-active.wf-lato-n7-active.wf-lato-n3-active.wf-active
+  head
+    title
+      | Skyfinance
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    = yield
+    = render 'template/footer'
+    script
+      |  $(document).ready(function() { setLikeUrl('/faqlike'); setRatingUrl('/faqrating'); $('#mobile-menu').click(function() { $('#bgOverlay').css("display", "block") $('#mobile-nav').css('display', 'block') }) $('#close').click(function() { $('#bgOverlay').css("display", "none") $('#mobile-nav').css('display', 'none') $('#mobile-nav').animate({'marginRight':'0px'},500) }) }); 

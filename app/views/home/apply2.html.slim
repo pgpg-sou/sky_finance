@@ -1,0 +1,79 @@
+.container-fluid
+    .row
+        = render 'template/navheader2'
+        nav#breadcrumb.hidden-xs
+            .container
+                ol.breadcrumb[itemscope="" itemtype="http://schema.org/BreadcrumbList"]
+                    li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+                        a[itemprop="item" href="/"]
+                            span[itemprop="name"]
+                              | Home
+            meta[itemprop="position" content="1"]
+            li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+                a[itemprop="item" href="/car-finance-calculator"]
+                    span[itemprop="name"] Application
+            meta[itemprop="position" content="2"]
+
+
+    section#top-area
+        header
+            .container
+                .row
+                    #logo.col-md-4.col-xs-3
+                        a[href="index.html"] Planio Survey template
+                    .btn-responsive-menu
+                        span.bar
+                        span.bar
+                        span.bar
+        .container
+            .row
+                .col-md-12.main-title
+                    h1 Applicatioin
+  
+    section#main.container
+        #survey_container
+            #top-wizard
+                strong Progress
+                    span#location
+                #progressbar
+                .shadow
+            form#wrapped[name="example-1" action="survey_send_1.php" method="POST"]
+                #middle-wizard
+                    .step
+                        .row
+                            h3.col-md-10 Enter your personal info
+                            = render 'template/apply_form_step1'
+                            .text-right
+                                a#fase1.btn.btn-primary.btn-apply[name="2"] Next > 
+  
+                    .step.row
+                        .col-md-12
+                            h3 Please rate your overall satisfaction about the service provided.
+                            = render 'template/apply_form_step2'
+  
+                    .step.row
+                        .col-md-12
+                            h3 How did you hear about our company?
+                            = render 'template/apply_form_step3'
+  
+                    .step.row
+                        .col-md-10
+                            h3 Do you think to suggest our company to a friend or parent?
+                            = render 'template/apply_form_step4'
+  
+                    .step.row
+                        .col-md-10
+                            h3 Do you think to suggest our company to a friend or parent?
+                            = render 'template/apply_form_step5'
+  
+  
+                    #complete.submit.step
+                        i.icon-check
+                        h3 Survey complete! Thank you for you time.
+                        button.submit[type="submit" name="process"] Submit the survey
+
+                #bottom-wizard
+                    button.backward[type="button" name="backward"] Backward
+                    button.forward[type="button" name="forward"] Forward 
+
+            form#wrapped[name="example-2" action="survey_send_2.php" method="POST"]

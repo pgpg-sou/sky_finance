@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post 'home/upload_file_visa'
   post 'home/upload_file'
   get 'home/index'
 

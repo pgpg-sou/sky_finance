@@ -1,0 +1,178 @@
+li#application.a
+
+    .form-group
+        .col-md-12
+            label.col-sm-12.control-label Tenancy
+            ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                = render partial: 'template/select_form', locals: {select_data: {"tenancy_boarding" => "Boarding", "tenancy_renting" => "Renting", "tenancy_living_parent" => "Living with Parent", "tenancy_living_relative" => "Living with Relative", "tenancy_owner" => "Owner Mortage", "tenancy_home_owner" => "Home owner FreeHold", "tenancy_other" => "Other"}, class_type: "tenancy"}
+
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Current address
+            .col-md-8
+                input#postal_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+    .form-group
+        #home_address_error.error-message[style="display:none"]
+            p Please input red boarder box
+        .col-md-12
+            label.col-md-12.control-label How long have you lived at this address?
+            #title_error.error-message[style="display:none"]
+                p Please select a title
+            ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                    label.unselected[value="1 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | 1 year
+                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                    label.unselected[value="2 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                              | 2 year
+                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                    label.unselected[value="4 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                                | 4 year
+                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                    label.unselected[value="5 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                                | 5 year
+                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                    label.unselected[value="6 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                                | 6 year
+                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                    label.unselected[value="7 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"]
+                                | 7 year
+                li.radio.how_long_lived.selected.other
+                    label.other-input[for="otherAmount"]
+                        strong
+                            span More
+                    input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px; "]
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Previous address(if less than 2 years at current address)
+            .col-md-8
+                input#previous_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+
+
+
+    .form-group
+        .col-md-12
+            label.col-md-12.control-label How long have you lived at this address?
+            #title_error.error-message[style="display:none"]
+                p Please select a title
+            ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
+                    label.unselected[value="1 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"] 1 year
+                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
+                    label.unselected[value="2 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"] 2 year
+                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                    label.unselected[value="4 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"] 4 year
+                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                    label.unselected[value="5 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"] 5 year
+                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                    label.unselected[value="6 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"]  6 year
+                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
+                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
+                    label.unselected[value="7 year"]
+                        strong
+                            span.ng-binding[data-ng-bind="option.label"] 7 year
+                li.radio.how_long_lived_here.selected.other
+                    label.other-input[for="otherAmount"]
+                        strong
+                            span More
+                    input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px; "]
+
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Current company
+            .col-md-8
+                input#current_company.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Current Address
+            .col-md-8
+                input#current_company_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Current Employer phone
+            .col-md-8
+                input#current_phone_number.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Current Employer Type
+            .col-md-8
+                input#current_employ_type.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+
+
+    .form-group
+        .col-md-12
+            label.col-md-12.control-label How long have you worked at this company?
+            #title_error.error-message[style="display:none"]
+                p Please select a title
+            ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                = render partial: 'template/select_form', locals: {select_data: {"how_long_work" => "1 year", "how_long_work2" => "2 year", "how_long_work4" => "4 year", "how_long_work5" => "5 year", "how_long_work6" => "6 year", "how_long_work7" => "7 year", "how_long_work_other" => "Other"}, class_type: "how_long_work"}
+
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Previous Company
+            .col-md-8
+                input#previous_company.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+    .form-group
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label Previous Company Address
+            .col-md-8
+                input#previous_company_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+
+    .form-group
+        .col-md-12
+            label.col-md-12.control-label How long have you worked at previous company?
+            #title_error.error-message[style="display:none"]
+                p Please select a title
+            ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                = render partial: 'template/select_form', locals: {select_data: {"how_long_work_p" => "1 year", "how_long_work_p2" => "2 year", "how_long_work_p4" => "4 year", "how_long_work_p5" => "5 year", "how_long_work_p6" => "6 year", "how_long_work_p7" => "7 year", "how_long_work_p_other" => "Other"}, class_type: "how_long_work_previous"}
+
+
+
+

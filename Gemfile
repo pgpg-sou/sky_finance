@@ -5,7 +5,7 @@ gem 'google-cloud'
 gem 'google-cloud-vision'
 gem 'google-cloud-translate'
 
-
+gem 'html2slim'
 gem 'slim-rails'
 gem 'roadie-rails', '~> 1.0'
 

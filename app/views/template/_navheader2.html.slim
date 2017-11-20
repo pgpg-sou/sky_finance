@@ -1,0 +1,40 @@
+header.primary-header[style="background-color: white; padding:0px;"]
+  nav.primary-header__nav[style="background-color: #0368B8;"]
+    div
+      .row
+        .col-xs-12.col-sm-12.col-md-12[style="background-color: white; padding: 0px 0px 10px 25px;"]
+          .container.no-padding
+            #header_logo.col-xs-6.col-sm-6.col-md-6.col-lg-4.primary-header__logo.no-padding
+              h2[style="font-size: 3.0em; color:#333333;"]
+                | Sky Finance
+              p[style="font-size:1.2em; color:#333333"]
+                | something text here
+            .col-xs-6.col-sm-6.col-md-6.col-lg-8.pull-right.primary-header__navigation
+              .primary-header__navigation--clearfix
+                .col-md-12.text-right
+                  |  <img src="
+                  = image_path('color_logo.png')
+                  | " style="width: 230px">
+        .col-xs-12.col-sm-12.col-md-12.col-lg-12.text-center.primary-header__navigation[style="height:50px; margin-top:0px;"]
+          .primary-header__pages
+            ul[style="text-align:center"]
+              li.active
+                |  <a href="
+                = home_index_path
+                | " title="Home">Home
+              li
+                |  <a href="
+                = home_set_your_budget_path
+                | " title="Set your budget">Set your budget
+              li
+                |  <a href="
+                = home_how_it_works_path
+                | " title="How it works">How it works
+              li
+                |  <a href="
+                = home_help_and_advice_path
+                | " title="Help & advice">Help & advice
+              li
+                |  <a href="
+                = home_about_us_path
+                | " title="About us">About us

@@ -1,0 +1,82 @@
+li#application
+  .form-group
+    .col-md-12
+      label.col-md-12.control-label
+        | Income
+      #title_error.error-message[style="display:none"]
+        p
+          | Please select a title
+      ol.col-md-12.col-sm-12.col-xs-12.no-padding
+        li.radio.income.selected.income
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Taxable Income
+          input#texable_income.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+        li.radio.income.selected.income
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Any Ohter Income
+          input#any_other_income.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+  .form-group
+    .col-md-12
+      label.col-md-12.control-label
+        | Expenses
+      #title_error.error-message[style="display:none"]
+        p
+          | Please select a title
+      ol.col-md-12.col-sm-12.col-xs-12.no-padding
+        li.radio.expenses.selected.income
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Mortage rent board
+          input#mortage_rent_board.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+        li.radio.expenses.selected.income
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Loans and HPs
+          input#loans_and_hps.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+        li.radio.expenses.selected.income
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Credit Card
+          input#credit_card.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+        li.radio.expenses.selected.income
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Living
+          input#living.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+        li.radio.expenses.selected.income
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Child Support
+          input#child_support.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$"]
+  .form-group
+    .col-md-12
+      label.col-md-12.control-label
+        | Income
+      #title_error.error-message[style="display:none"]
+        p
+          | Please select a title
+      ol.col-md-12.col-sm-12.col-xs-12.no-padding
+        li.radio.selected.income.active
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Total Income
+          input#total_income.apply[type="tel" name="total_income" style="margin:0px; " placeholder="$" value="0"]
+        li.radio.selected.income.active
+          label.other-input[for="otherAmount"]
+            strong
+              span
+                | Total Expenses
+          input#total_expenses.apply[type="tel" name="otherAmount" style="margin:0px; " placeholder="$" value="0"]
+  .text-right
+    a#fase4.btn.btn-primary.btn-apply[name="5"]
+      |  Next 
