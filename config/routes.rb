@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'business/search'
+  post 'business/search'
+
   post 'home/upload_file_visa'
   post 'home/upload_file'
   get 'home/index'

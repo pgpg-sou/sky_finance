@@ -118,14 +118,82 @@ $(document).ready ->
     $('#other').change( ->
         assemble('#other', '#total_assets')
     )
+    width = $('#current_company').width() 
+    $('#ui-id-1').css({'cssText': 'width: ' + width + ' !important;'})
+
+    $(document).on('keyup', '#current_company', (e) ->
+        arg = new Object
+        arg["name"] = $(this).val()
+        $.ajax({
+            type:   "POST",
+            url:    "/business/search",
+            data: arg,
+            }).done((data) -> 
+                business_list = []
+                $.each(data, (index, d) ->
+                    json = {"id" : d["id"], "name": d["name"], "value": d["name"], "phone": d["phone"]}
+                    business_list.push(json)
+                )
+                $('#current_company').autocomplete({
+                    minLength: 0,
+                    source: business_list,
+                    select:  (e, ui) ->
+                        $('#current_phone_number').val(ui["item"]["phone"])
+                    ,
+                    open:  ->
+                        $("ul.ui-menu").width( $(this).innerWidth() );
+
+                }).focus( -> 
+                )
+
+                return
+            )
+    );
+    width = $('#previous_company').width() 
+    $('#ui-id-1').css({'cssText': 'width: ' + width + ' !important;'})
+
+    $(document).on('keyup', '#previous_company', (e) ->
+        arg = new Object
+        arg["name"] = $(this).val()
+        $.ajax({
+            type:   "POST",
+            url:    "/business/search",
+            data: arg,
+            }).done((data) -> 
+                business_list = []
+                $.each(data, (index, d) ->
+                    json = {"id" : d["id"], "name": d["name"], "value": d["name"], "phone": d["phone"]}
+                    business_list.push(json)
+                )
+                $('#previous_company').autocomplete({
+                    minLength: 0,
+                    source: business_list,
+                    select:  (e, ui) ->
+                        console.log ui
+                    ,
+                    open:  ->
+                        $("ul.ui-menu").width( $(this).innerWidth() );
+
+                }).focus( -> 
+                )
+
+                return
+            )
+    );
 
 
 
 
 
-
-
-
+    ##############################################################################
+    ###  SELECT FORM RADIO BOX SETTING 
+    ##############################################################################
+    initialize_radio_box = (selector) ->
+        selector.each ->
+            $(this).find('label').removeClass("error-check")
+            $(this).find('label').removeClass("checked")
+            $(this).find('label').addClass("unselected")
+            $(this).find('input[name=title]').removeAttr('checked')
 
     update_radio_box = (selector, _this) ->
         selector.each ->
@@ -162,8 +230,32 @@ $(document).ready ->
     $('li.radio.self_employed').click ->
         update_radio_box($('li.radio.self_employed'), this)
     
-    $('li.radio.income').click ->
-        update_radio_box($('li.radio.income'), this)
+    $('li.radio.material_status').click ->
+        update_radio_box($('li.radio.material_status'), this)
+    
+    $('li.radio.material_status').click ->
+        update_radio_box($('li.radio.material_status'), this)
+    
+    $('li.radio.tenancy_status').click ->
+        update_radio_box($('li.radio.tenancy_status'), this)
+    
+    $('li.radio.employmentStatusfullTime').click ->
+        update_radio_box($('li.radio.employmentStatusfullTime'), this)
+
+    $('li.radio.employment_previous_address').click ->
+        update_radio_box($('li.radio.employment_previous_address'), this)
+
+    $('li.radio.how_long_work').click ->
+        update_radio_box($('li.radio.how_long_work'), this)
+    
+    $('li.radio.how_long_work_previous').click ->
+        update_radio_box($('li.radio.how_long_work_previous'), this)
+
+    ##############################################################################
+    ###  END   
+    ##############################################################################
+
+
  
     total_income = $('#texable_income').val() + $('#any_other_income').val()
     $('#total_income').val()
@@ -337,18 +429,16 @@ $(document).ready ->
                       visa_licence = $.parseJSON(data["visa_licence"])
                       words = data["words"]
                       
-                      console.log "visa"
-                      console.log visa_licence
                       $('input#visa_expire_date').val(visa_licence["expire_date"])
                       $('input#citizen_ship').val(visa_licence["citizen_ship"])
 
-                      console.log words.join(",")
-                      $.each(words, (index, word) ->
-                          $('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
-                      )
+                      if visa_licence["visa_type"] == "Student Visa"
+                          initialize_radio_box($('li.radio.residential_status'))
+                          $('#residential_student_label').attr("class", "checked")
 
-                        
-
+                      #$.each(words, (index, word) ->
+                      #    $('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
+                      #)
                   ,
                   error: (error) -> 
                     console.log "error"
@@ -390,15 +480,14 @@ $(document).ready ->
                       $('input#first_name').val(driver_licence["first_name"])
                       $('input#sur_name').val(driver_licence["last_name"])
                       $('input#date_of_birth').val(driver_licence["birth_date"])
-                     
                        
                       $('input#driver_licence').val(driver_licence["driver_licence_no"])
                       $('input#driver_licence_version').val(driver_licence["card_version_no"])
                       $('input#drivers_licence_expire_date').val(driver_licence["expire_date"])
 
-                      console.log words.join(",")
+                      #console.log words.join(",")
                       $.each(words, (index, word) ->
-                          $('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
+                          #$('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
                       )
                   ,
                   error: (error) -> 

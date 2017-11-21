@@ -1,7 +1,17 @@
 - select_data.each do |k, v|
-  li class="radio #{class_type} ng-scope col-md-2 col-sm-6 col-xs-6"
-    input.ng-pristine.ng-invalid.ng-invalid-required id="#{k}" type="radio" name="title" value="Mr"
-    label.unselected[value="#{v}"]
-      strong
-        span.ng-binding[data-ng-bind="option.label"]
-          = v
+    li class="radio #{class_type} ng-scope col-md-2 col-sm-6 col-xs-6"
+        input.ng-pristine.ng-invalid.ng-invalid-required id="#{k}" type="radio" name="title" value="Mr"
+        label.unselected value="#{v}" id="#{k}_label"
+            strong
+                span.ng-binding[data-ng-bind="option.label"]
+                  = v
+
+
+- if is_other == true
+    li class="radio #{class_type} selected other"
+        label.other-input[for="otherAmount"]
+            strong
+                span More
+        input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px;"]
+
+

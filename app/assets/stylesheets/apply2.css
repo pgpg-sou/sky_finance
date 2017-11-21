@@ -23,8 +23,10 @@
 
  *= require lity.min.css
  *= require site.min.css
+ *= require elements.scss
  *= require home.scss
  *= require style.css
  *= require apply_page.scss
+ *= require jquery-ui/jquery-ui.css
 
  */

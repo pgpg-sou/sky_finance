@@ -18,7 +18,6 @@
 //= require annova_js/jquery-1.10.2.js 
 //= require annova_js/jquery-ui-1.8.22.min.js 
 //= require annova_js/jquery.bxslider.min.js
-//= require annova_js/jquery.validate.js 
 //= require annova_js/jquery.placeholder.js 
 //= require annova_js/jquery.wizard.js 
 //= require annova_js/bootstrap.js

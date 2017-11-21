@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'rails-jquery-autocomplete'
+gem 'kaminari'
+
+gem 'geocoder'
+gem 'mysql2'
+
 gem 'google-analytics-rails'
 gem 'google-cloud'
 gem 'google-cloud-vision'
@@ -15,7 +21,7 @@ gem "jquery-form-validator-rails"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

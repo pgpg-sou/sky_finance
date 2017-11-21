@@ -4,7 +4,7 @@ li#application.a
         .col-md-12
             label.col-sm-12.control-label Tenancy
             ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"tenancy_boarding" => "Boarding", "tenancy_renting" => "Renting", "tenancy_living_parent" => "Living with Parent", "tenancy_living_relative" => "Living with Relative", "tenancy_owner" => "Owner Mortage", "tenancy_home_owner" => "Home owner FreeHold", "tenancy_other" => "Other"}, class_type: "tenancy"}
+                = render partial: 'template/select_form', locals: {select_data: {"tenancy_boarding" => "Boarding", "tenancy_renting" => "Renting", "tenancy_living_parent" => "Living with Parent", "tenancy_living_relative" => "Living with Relative", "tenancy_owner" => "Owner Mortage", "tenancy_home_owner" => "Home owner FreeHold", "tenancy_other" => "Other"}, class_type: "tenancy_status", is_other: false}
 
 
     .form-group
@@ -21,47 +21,8 @@ li#application.a
             #title_error.error-message[style="display:none"]
                 p Please select a title
             ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
-                    label.unselected[value="1 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"]
-                              | 1 year
-                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
-                    label.unselected[value="2 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"]
-                              | 2 year
-                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
-                    label.unselected[value="4 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"]
-                                | 4 year
-                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
-                    label.unselected[value="5 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"]
-                                | 5 year
-                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
-                    label.unselected[value="6 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"]
-                                | 6 year
-                li.radio.how_long_lived.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
-                    label.unselected[value="7 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"]
-                                | 7 year
-                li.radio.how_long_lived.selected.other
-                    label.other-input[for="otherAmount"]
-                        strong
-                            span More
-                    input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px; "]
+                = render partial: 'template/select_form', locals: {select_data: {"how_address_1" => "1 year", "how_address_2" => "2 year", "how_address_4" => "4 year", "how_address_5" => "5 year", "how_address_6" => "6 year", "how_address_7" => "7 year"}, class_type: "employmentStatusfullTime", is_other: true}
+
 
     .form-group
         .col-md-12[style="position: inherit"]
@@ -78,41 +39,7 @@ li#application.a
             #title_error.error-message[style="display:none"]
                 p Please select a title
             ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mr"]
-                    label.unselected[value="1 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"] 1 year
-                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Mrs"]
-                    label.unselected[value="2 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"] 2 year
-                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
-                    label.unselected[value="4 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"] 4 year
-                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
-                    label.unselected[value="5 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"] 5 year
-                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
-                    label.unselected[value="6 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"]  6 year
-                li.radio.how_long_lived_here.ng-scope.col-md-2.col-sm-6.col-xs-6
-                    input#employmentStatusfullTime.ng-pristine.ng-invalid.ng-invalid-required[type="radio" name="title" value="Ms"]
-                    label.unselected[value="7 year"]
-                        strong
-                            span.ng-binding[data-ng-bind="option.label"] 7 year
-                li.radio.how_long_lived_here.selected.other
-                    label.other-input[for="otherAmount"]
-                        strong
-                            span More
-                    input#otherAmount.apply[type="tel" name="otherAmount" style="margin:0px; "]
+                = render partial: 'template/select_form', locals: {select_data: {"how_address_1" => "1 year", "how_address_2" => "2 year", "how_address_4" => "4 year", "how_address_5" => "5 year", "how_address_6" => "6 year", "how_address_7" => "7 year"}, class_type: "employment_previous_address", is_other: true}
 
 
     .form-group
@@ -149,7 +76,7 @@ li#application.a
             #title_error.error-message[style="display:none"]
                 p Please select a title
             ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"how_long_work" => "1 year", "how_long_work2" => "2 year", "how_long_work4" => "4 year", "how_long_work5" => "5 year", "how_long_work6" => "6 year", "how_long_work7" => "7 year", "how_long_work_other" => "Other"}, class_type: "how_long_work"}
+                = render partial: 'template/select_form', locals: {select_data: {"how_long_work" => "1 year", "how_long_work2" => "2 year", "how_long_work4" => "4 year", "how_long_work5" => "5 year", "how_long_work6" => "6 year", "how_long_work7" => "7 year", "how_long_work_other" => "Other"}, class_type: "how_long_work", is_other: true}
 
 
     .form-group
@@ -171,7 +98,7 @@ li#application.a
             #title_error.error-message[style="display:none"]
                 p Please select a title
             ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"how_long_work_p" => "1 year", "how_long_work_p2" => "2 year", "how_long_work_p4" => "4 year", "how_long_work_p5" => "5 year", "how_long_work_p6" => "6 year", "how_long_work_p7" => "7 year", "how_long_work_p_other" => "Other"}, class_type: "how_long_work_previous"}
+                = render partial: 'template/select_form', locals: {select_data: {"how_long_work_p" => "1 year", "how_long_work_p2" => "2 year", "how_long_work_p4" => "4 year", "how_long_work_p5" => "5 year", "how_long_work_p6" => "6 year", "how_long_work_p7" => "7 year", "how_long_work_p_other" => "Other"}, class_type: "how_long_work_previous", is_other: true}
 
 
 

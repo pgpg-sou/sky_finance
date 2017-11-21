@@ -38,6 +38,6 @@ li#application
             #title_error.error-message[style="display:none"]
                 p Please select a title
             ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"credit_ex" => "Excellent", "credit_good" => "Good", "credti_not_good" => "Not so Good", "credit_difficult" => "Have difficult"}, class_type: "credit_rating"}
+                = render partial: 'template/select_form', locals: {select_data: {"credit_ex" => "Excellent", "credit_good" => "Good", "credti_not_good" => "Not so Good", "credit_difficult" => "Have difficult"}, class_type: "credit_rating", is_other: false }
 
 

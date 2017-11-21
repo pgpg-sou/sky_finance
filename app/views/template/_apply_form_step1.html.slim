@@ -11,17 +11,12 @@
                     #identification.col-md-12.col-xs-12
                         input[type="file" name="images[]" multiple="multiple"]
 
-
         .form-group
             .col-md-12
                 label.col-md-4.col-xs-12.control-label Visa Image
                 .col-md-8
                     #identification_visa.col-md-12.col-xs-12
                         input.btn.btn-primary[type="file" name="images[]" multiple="multiple"]
-
-
-
-
 
         .form-group
             .col-md-12.col-xs-12
@@ -52,7 +47,7 @@
                 #title_error.error-message[style="display:none"]
                     p Please select a title
                 ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                    = render partial: 'template/select_form', locals: {select_data: {"material_single" => "Single", "material_married" => "married", "material_defacto" => "defacto", "material_devorce" => "divorced", "material_separated" => "separated", "material_widowed" => "widowed", "material_unknown" => "unknown"}, class_type: "driver_licence"}
+                    = render partial: 'template/select_form', locals: {select_data: {"material_single" => "Single", "material_married" => "married", "material_defacto" => "defacto", "material_devorce" => "divorced", "material_separated" => "separated", "material_widowed" => "widowed", "material_unknown" => "unknown"}, class_type: "material_status", is_other: false}
 
  
 
@@ -95,7 +90,7 @@
                 #title_error.error-message[style="display:none"]
                     p Please select a title
                 ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                    = render partial: 'template/select_form', locals: {select_data: {"licence_learners" => "Learners", "licence_restricted" => "Restrictad", "licence_full" => "Full"}, class_type: "driver_licence"}
+                    = render partial: 'template/select_form', locals: {select_data: {"licence_learners" => "Learners", "licence_restricted" => "Restrictad", "licence_full" => "Full"}, class_type: "driver_licence", is_other: false}
 
         .form-group
             .col-md-12
@@ -132,6 +127,6 @@
             #title_error.error-message[style="display:none"]
                 p Please select a title
             ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"residential_citizen" => "citizen", "Residential_residential" => "resident", "residential_work" => "Work Visa", "residential_working_holiday" => "Working Holiday", "residential_visitor" => "Visitor Visa", "residential_student" => "Student Visa", "residental_other" => "Other"}, class_type: "residential_status"}
+                = render partial: 'template/select_form', locals: {select_data: {"residential_citizen" => "citizen", "Residential_residential" => "resident", "residential_work" => "Work Visa", "residential_working_holiday" => "Working Holiday", "residential_visitor" => "Visitor Visa", "residential_student" => "Student Visa", "residental_other" => "Other"}, class_type: "residential_status", is_other: false}
 
 
