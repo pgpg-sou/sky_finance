@@ -42,12 +42,21 @@ $(document).ready ->
         widget.on('result:select', (fullAddress, metaData) ->
             selected = new AddressFinder.NZSelectedAddress(fullAddress, metaData)
         )
- 
+     initAF_5 = () -> 
+        widget = new AddressFinder.Widget(
+            document.getElementById('nearest_address'),
+            'GJ8U3Y7FWET4PB6NCXMH',
+            'NZ'
+        );
+        widget.on('result:select', (fullAddress, metaData) ->
+            selected = new AddressFinder.NZSelectedAddress(fullAddress, metaData)
+        )
 
     $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF);
     $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF_2);
     $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF_3);
     $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF_4);
+    $.getScript('https://api.addressfinder.io/assets/v3/widget.js', initAF_5);
 
 
 
@@ -131,14 +140,16 @@ $(document).ready ->
             }).done((data) -> 
                 business_list = []
                 $.each(data, (index, d) ->
-                    json = {"id" : d["id"], "name": d["name"], "value": d["name"], "phone": d["phone"]}
+                    json = {"id" : d["id"], "name": d["name"], "value": d["name"], "phone": d["phone"], "address": d["address"]}
                     business_list.push(json)
                 )
                 $('#current_company').autocomplete({
                     minLength: 0,
                     source: business_list,
                     select:  (e, ui) ->
+                        console.log ui 
                         $('#current_phone_number').val(ui["item"]["phone"])
+                        $('#current_company_address').val(ui["item"]["address"])
                     ,
                     open:  ->
                         $("ul.ui-menu").width( $(this).innerWidth() );
@@ -162,14 +173,14 @@ $(document).ready ->
             }).done((data) -> 
                 business_list = []
                 $.each(data, (index, d) ->
-                    json = {"id" : d["id"], "name": d["name"], "value": d["name"], "phone": d["phone"]}
+                    json = {"id" : d["id"], "name": d["name"], "value": d["name"], "phone": d["phone"], "address": d["address"]}
                     business_list.push(json)
                 )
                 $('#previous_company').autocomplete({
                     minLength: 0,
                     source: business_list,
                     select:  (e, ui) ->
-                        console.log ui
+                        $('#previous_company_address').val(ui["item"]["address"])
                     ,
                     open:  ->
                         $("ul.ui-menu").width( $(this).innerWidth() );
@@ -250,6 +261,12 @@ $(document).ready ->
     
     $('li.radio.how_long_work_previous').click ->
         update_radio_box($('li.radio.how_long_work_previous'), this)
+
+    $('li.radio.credit_rating').click ->
+        update_radio_box($('li.radio.credit_rating'), this)
+
+    $('li.radio.relation_ship').click ->
+        update_radio_box($('li.radio.relation_ship'), this)
 
     ##############################################################################
     ###  END   

@@ -43,8 +43,6 @@
                         .row
                             h3.col-md-10 Enter your personal info
                             = render 'template/apply_form_step1'
-                            .text-right
-                                a#fase1.btn.btn-primary.btn-apply[name="2"] Next > 
   
                     .step.row
                         .col-md-12
@@ -55,16 +53,22 @@
                         .col-md-12
                             h3 How did you hear about our company?
                             = render 'template/apply_form_step3'
-  
+
                     .step.row
-                        .col-md-10
-                            h3 Do you think to suggest our company to a friend or parent?
+                        .col-md-12
+                            h3 Assets Information
                             = render 'template/apply_form_step4'
-  
+ 
                     .step.row
-                        .col-md-10
-                            h3 Do you think to suggest our company to a friend or parent?
-                            = render 'template/apply_form_step5'
+                        .col-md-12
+                            h3 Morgage Information
+                            = render 'template/apply_form_step6'
+
+                    .step.row
+                        .col-md-12
+                            h3 Revenue balance information
+                            = render 'template/apply_form_step7'
+ 
   
   
                     #complete.submit.step

@@ -65,8 +65,8 @@ li#application.a
     .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Current Employer Type
-            .col-md-8
-                input#current_employ_type.col-md-12.col-xs-12.apply.required[data-validation="required"]
+            ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                = render partial: 'template/select_form', locals: {select_data: {"employtype_full" => "Full", "employtype_part" => "Part time"}, class_type: "employtype", is_other: true}
 
 
 

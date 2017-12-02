@@ -11,24 +11,21 @@ li#application
     .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Nearest address
-            .col-md-8
+            .col-md-8.no-padding 
                 input#nearest_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
     .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Nearest phone Number 
-            .col-md-8
+            .col-md-8.no-padding
                 input#nearest_phone_number.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
 
     .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Nearest Relation ship
-            .col-md-8
-                input#nearest_relation_ship.col-md-12.col-xs-12.apply.required[data-validation="required"]
-
-
-
+            ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                = render partial: 'template/select_form', locals: {select_data: {"relationship_mother" => "Mother", "relationship_father" => "Father", "relationship_gm" => "Grand mother", "relationship_gf" => "Grand father"}, class_type: "relation_ship", is_other: true }
 
 
 

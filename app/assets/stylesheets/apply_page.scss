@@ -194,6 +194,24 @@ ol > li > div.liability {
     padding: 10px;
 }
 
+#add_income_area,
+#add_liability,
+#add_morgage_area,
+#add_outgoing_area {
+    height: 40px;
+    border-radius: 8px;
+    border: 4px dotted grey;
+    text-align: center;
+    font-size: 21px;
+    padding-top: 5px;
+}
 
+.apply[disabled], .apply[readonly]  {
+    background-color: #eee !important;
+    opacity: 1;
+}
 
+.space {
+    height: 30px
+}
 
