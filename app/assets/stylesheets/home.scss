@@ -234,47 +234,6 @@ select {
 #content-area-style-grey .inner-content-area {
     padding: 30px 157px;
 }
-@media (min-width: 200px) {
-#content-area-style-grey .inner-content-area {
-        padding: 30px 0px;
-    }
-}
-
-@media (min-width: 500px) {
-#content-area-style-grey .inner-content-area {
-        padding: 30px 0px;
-    }
-ol {
-    padding-bottom: 50px;
-}
-
-}
-
-@media (min-width: 768px) {
-#content-area-style-grey .inner-content-area {
-        padding: 30px 20px;
-    }
-.faq .col-md-12 ol {
-    padding-bottom: 50px;
-}
-
-}
-
-
-@media (min-width: 900px) {
-#content-area-style-grey .inner-content-area {
-        padding: 30px 40px;
-    }
-
-
-}
-
-@media (min-width: 1200px) {
-#content-area-style-grey .inner-content-area {
-        padding: 30px 157px;
-    }
-}
-
 
 
 
@@ -346,6 +305,57 @@ ul#tag_list li a {
             border-right: solid red 5px;
         }
 
+/*============================================================================================*/
+/* 5.  MEDIA QUERIES */
+/*============================================================================================*/
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    #application label {
+        font-size: 27px;
+    }
+}
+
+
+@media (min-width: 200px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 0px;
+    }
+}
+
+@media (min-width: 500px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 0px;
+    }
+ol {
+    padding-bottom: 50px;
+}
+
+}
+
+@media (min-width: 768px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 20px;
+    }
+.faq .col-md-12 ol {
+    padding-bottom: 50px;
+}
+
+}
+
+
+@media (min-width: 900px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 40px;
+    }
+
+
+}
+
+@media (min-width: 1200px) {
+#content-area-style-grey .inner-content-area {
+        padding: 30px 157px;
+    }
+}
 
 
 

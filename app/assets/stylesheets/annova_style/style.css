@@ -779,8 +779,10 @@ ul.data-list-2 li label.error {
 
 @media (min-width: 768px) and (max-width: 1200px) {
 
-#middle-wizard {padding: 40px 60px 35px 60px;}
-
+#middle-wizard {padding: 40px 20px 35px 20px;}
+#application label {
+    font-size: 27px;
+}
 }
 @media (min-width: 768px) and (max-width: 979px) {
 
@@ -817,7 +819,7 @@ ul.data-list-2 li label.error {
 h2, h3 {font-size: 26px;line-height:26px;margin-bottom:30px;}
 h2 span, h3 span{font-size: 16px; line-height:18px}
 
-#top-wizard {padding:15px 6s0px;}
+#top-wizard {padding:15px 60px;}
 #middle-wizard {padding: 20px 10px 20px 10px;}
 
 ul.floated li#age {margin-bottom:-10px; } 
