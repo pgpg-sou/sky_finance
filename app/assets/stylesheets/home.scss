@@ -311,7 +311,14 @@ ul#tag_list li a {
 
 @media (min-width: 768px) and (max-width: 1200px) {
     #application label {
-        font-size: 27px;
+        font-size: 36px;
+    }
+    #application .apply {
+        height: 70px;
+        font-size: 30px
+    }
+    .step h3 {
+        font-size: 45px;
     }
 }
 
