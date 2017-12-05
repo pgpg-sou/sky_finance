@@ -1,0 +1,161 @@
+
+#application.col-md-12
+    #about_you
+        #about_you_error.error-message[style="display:none"]
+            p Please input red boarder box
+
+
+
+        .form-group
+            .col-md-12
+                label.col-md-12.col-xs-12.control-label Supplies
+                #title_error.error-message[style="display:none"]
+                    p Please select a title
+                ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    = render partial: 'template/select_form', locals: {select_data: {"supplies_yes" => "Single", "supplies_no" => "married"}, class_type: "supplies_form", is_other: false}
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-xs-12.control-label Company Name 
+                .col-md-8
+                    input#company_name.col-md-12.col-xs-12.apply.form-control.required
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-xs-12.control-label Trading Name 
+                .col-md-8
+                    input#trading_name.col-md-12.col-xs-12.apply.form-control.required
+
+
+
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-xs-12.control-label Company Registration Number
+                .col-md-8
+                    input#dependentsCount.col-md-12.col-xs-12.apply.form-control.required data-validation="required"  type="number"
+        .form-group
+            .col-md-12
+                label.col-md-4.col-xs-12.control-label GST Number 
+                .col-md-8
+                    input#gst_number.col-md-12.col-xs-12.apply.form-control.required data-validation="required" pattern="\d*" type="number"
+        .form-group
+            .col-md-12
+                label.col-md-4.col-xs-12.control-label Number Of Employees
+                .col-md-8
+                    input#number_of_employees.col-md-12.col-xs-12.apply.form-control.required
+        .form-group
+            .col-md-12
+                label.col-md-4.col-sm-12.col-xs-12.control-label Company Address
+                .col-md-8
+                    input#company_address.col-md-12.col-xs-12.apply.form-control.required
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-sm-12.col-xs-12.control-label company PO Box
+                .col-md-8
+                    input#company_po_box.col-md-12.col-xs-12.apply.form-control.required[data-validation="required"]
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-sm-12.col-xs-12.control-label Company Tel 
+                .col-md-8
+                    input#company_tel.col-md-12.col-xs-12.form-control.apply.required[data-validation="required"]
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-sm-12.col-xs-12.control-label Company E-mail
+                .col-md-8
+                    input#company_email.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-sm-12.col-xs-12.control-label Company Website
+                .col-md-8
+                    input#company_website.col-md-12.col-xs-12.apply.required[data-validation="required"]
+
+
+
+        .form-group
+            .col-md-12
+                label.col-md-12.col-xs-12.control-label Business type 
+                #title_error.error-message[style="display:none"]
+                    p Please select a title
+                ol.col-md-12.col-sm-12.col-xs-12.no-padding
+                    = render partial: 'template/select_form', locals: {select_data: {"material_single" => "Single", "material_married" => "married", "material_defacto" => "defacto", "material_devorce" => "divorced", "material_separated" => "separated", "material_widowed" => "widowed", "material_unknown" => "unknown"}, class_type: "material_status", is_other: false}
+
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-xs-12.control-label Business Main Category 
+                .col-md-8
+                    input#business_main_category.col-md-12.col-xs-12.apply.form-control.required
+
+
+
+        .form-group
+            .col-md-12
+                label.col-md-4.col-xs-12.control-label Business Sub Category 
+                .col-md-8
+                    input#business_sub_category.col-md-12.col-xs-12.apply.form-control.required[data-validation="required"]
+
+
+
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label Business Type Company Type
+            .col-md-8
+                input#business_type_company_type.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy"]
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label Contact Person First Name
+            .col-md-8
+                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required
+
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label Contact Person Middle Name
+            .col-md-8
+                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label Contact Person Last Name
+            .col-md-8
+                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required
+
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label Contact Person Position
+            .col-md-8
+                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required
+
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label Contact Person Phone
+            .col-md-8
+                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required
+
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label Contact Person E-mail 
+            .col-md-8
+                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required
+
+    .form-group
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label Company Physical Address
+            .col-md-8
+                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required
+
+
+
+
+
+

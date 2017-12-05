@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'home/apply2'
   get 'home/apply3'
   get 'home/apply'
+  get 'home/business_apply'
   
   post 'home/apply_mail'
 

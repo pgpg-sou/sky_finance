@@ -1,0 +1,62 @@
+.container-fluid
+    .row
+        = render 'template/navheader2'
+        nav#breadcrumb.hidden-xs
+            .container
+                ol.breadcrumb[itemscope="" itemtype="http://schema.org/BreadcrumbList"]
+                    li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+                        a[itemprop="item" href="/"]
+                            span[itemprop="name"]
+                              | Home
+            meta[itemprop="position" content="1"]
+            li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
+                a[itemprop="item" href="/car-finance-calculator"]
+                    span[itemprop="name"] Application
+            meta[itemprop="position" content="2"]
+
+
+    section#top-area
+        header
+            .container
+                .row
+                    #logo.col-md-4.col-xs-3
+                        a[href="index.html"] Planio Survey template
+                    .btn-responsive-menu
+                        span.bar
+                        span.bar
+                        span.bar
+        .container
+            .row
+                .col-md-12.main-title
+                    h1 Business Applicatioin
+  
+    section#main.container
+        #survey_container
+            #top-wizard
+                strong Progress
+                    span#location
+                #progressbar
+                .shadow
+            form#wrapped[name="example-1" action="survey_send_1.php" method="POST"]
+                #middle-wizard
+                    .step
+                        .row
+                            h3.col-md-10 Enter Company info 
+                            = render 'template/Business/apply_form_step1'
+  
+                    .step.row
+                        .col-md-12
+                            h3 Company ceo information 
+                            = render 'template/Business/apply_form_step2'
+   
+  
+                    #complete.submit.step
+                        i.icon-check
+                        h3 Survey complete! Thank you for you time.
+                        button.submit[type="submit" name="process"] Submit the survey
+
+                #bottom-wizard
+                    button.backward[type="button" name="backward"] Backward
+                    button.forward[type="button" name="forward"] Forward 
+
+            form#wrapped[name="example-2" action="survey_send_2.php" method="POST"]

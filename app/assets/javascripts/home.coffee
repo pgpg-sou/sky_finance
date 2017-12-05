@@ -193,7 +193,45 @@ $(document).ready ->
     );
 
 
+    $(document).on('keyup', '#company_name', (e) ->
+        arg = new Object
+        arg["name"] = $(this).val()
+        $.ajax({
+            type:   "POST",
+            url:    "/business/search",
+            data: arg,
+            }).done((data) -> 
+                business_list = []
+                $.each(data, (index, d) ->
+                    json = {"id" : d["id"], "name": d["name"], "value": d["name"], "phone": d["phone"], "address": d["address"], "website": d["website"], "category": d["category"], "sub_category_1": d["sub_category_1"], "e-mail": d["email"]}
+                    business_list.push(json)
+                )
+                $('#company_name').autocomplete({
+                    minLength: 0,
+                    source: business_list,
+                    select:  (e, ui) ->
+                        $('#company_address').val(ui["item"]["address"])
+                        $('#company_tel').val(ui["item"]["phone"])
+                        $('#company_email').val(ui["item"]["email"])
+                        $('#company_website').val(ui["item"]["website"])
+                        $('#business_main_category').val(ui["item"]["category"])
+                        $('#business_sub_category').val(ui["item"]["sub_category_1"])
+                    ,
+                    open:  ->
+                        $("ul.ui-menu").width( $(this).innerWidth() );
 
+                }).focus( -> 
+                )
+
+                return
+            )
+    );
+
+
+
+
+
+ 
 
 
     ##############################################################################

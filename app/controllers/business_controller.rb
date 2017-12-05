@@ -3,7 +3,7 @@ class BusinessController < ApplicationController
     def search
         name = params[:name]
         page_num = params[:page]
-        businesses = Business.select(["id", "name", "address", "phone"]).where('name LIKE(?)', "%#{name}%").page(page_num)
+        businesses = Business.select(["id", "name", "address", "phone", "website", "email","category", "sub_category_1", "sub_category_2"]).where('name LIKE(?)', "%#{name}%").page(page_num)
         
         render json: businesses.to_json
     end
