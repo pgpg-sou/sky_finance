@@ -147,9 +147,8 @@ $(document).ready ->
                     minLength: 0,
                     source: business_list,
                     select:  (e, ui) ->
-                        console.log ui 
-                        $('#current_phone_number').val(ui["item"]["phone"])
-                        $('#current_company_address').val(ui["item"]["address"])
+                        $('#current_phone_number').val(ui["item"]["phone"]).addClass("valid")
+                        $('#current_company_address').val(ui["item"]["address"]).addClass("valid")
                     ,
                     open:  ->
                         $("ul.ui-menu").width( $(this).innerWidth() );
@@ -180,7 +179,7 @@ $(document).ready ->
                     minLength: 0,
                     source: business_list,
                     select:  (e, ui) ->
-                        $('#previous_company_address').val(ui["item"]["address"])
+                        $('#previous_company_address').val(ui["item"]["address"]).addClass("valid")
                     ,
                     open:  ->
                         $("ul.ui-menu").width( $(this).innerWidth() );
@@ -210,12 +209,12 @@ $(document).ready ->
                     minLength: 0,
                     source: business_list,
                     select:  (e, ui) ->
-                        $('#company_address').val(ui["item"]["address"])
-                        $('#company_tel').val(ui["item"]["phone"])
-                        $('#company_email').val(ui["item"]["email"])
-                        $('#company_website').val(ui["item"]["website"])
-                        $('#business_main_category').val(ui["item"]["category"])
-                        $('#business_sub_category').val(ui["item"]["sub_category_1"])
+                        $('#company_address').val(ui["item"]["address"]).addClass("valid")
+                        $('#company_tel').val(ui["item"]["phone"]).addClass("valid")
+                        $('#company_email').val(ui["item"]["email"]).addClass("valid")
+                        $('#company_website').val(ui["item"]["website"]).addClass("valid")
+                        $('#business_main_category').val(ui["item"]["category"]).addClass("valid")
+                        $('#business_sub_category').val(ui["item"]["sub_category_1"]).addClass("valid")
                     ,
                     open:  ->
                         $("ul.ui-menu").width( $(this).innerWidth() );
@@ -455,103 +454,4 @@ $(document).ready ->
                 $(this).next().slideToggle(500)
                 $(this).toggleClass('active')
         )
-
-    $('#identification_visa input:file').uploadThumbs({
-        position : 1,
-        imgbreak : false});
-
-    $('#identification_visa input:file').on("change", () -> 
-          file = this.files[0];
-          if(file != null) 
-              formData = new FormData();
-              formData.append("file", file, file.name);
-
-              $.ajax({
-                  type:   "POST",
-                  url:    "/home/upload_file_visa",
-                  xhr: -> 
-                      myXhr = $.ajaxSettings.xhr();
-                      
-                      return myXhr;
-                  ,
-                  async: true,
-                  data: formData,
-                  cache: false,
-                  contentType: false,
-                  processData: false,
-                  timeout: 60000,
-                  success: (data) -> 
-                      visa_licence = $.parseJSON(data["visa_licence"])
-                      words = data["words"]
-                      
-                      $('input#visa_expire_date').val(visa_licence["expire_date"])
-                      $('input#citizen_ship').val(visa_licence["citizen_ship"])
-
-                      if visa_licence["visa_type"] == "Student Visa"
-                          initialize_radio_box($('li.radio.residential_status'))
-                          $('#residential_student_label').attr("class", "checked")
-
-                      #$.each(words, (index, word) ->
-                      #    $('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
-                      #)
-                  ,
-                  error: (error) -> 
-                    console.log "error"
-                    console.log error
-                  
-
-                  }).done((data) -> 
-                  )
-    );
-
-    $('#identification input:file').uploadThumbs({
-        position : 1,
-        imgbreak : false});
-
-    $('#identification input:file').on("change", () -> 
-          file = this.files[0];
-          if(file != null) 
-              formData = new FormData();
-              formData.append("file", file, file.name);
-
-              $.ajax({
-                  type:   "POST",
-                  url:    "/home/upload_file",
-                  xhr: -> 
-                      myXhr = $.ajaxSettings.xhr();
-                      
-                      return myXhr;
-                  ,
-                  async: true,
-                  data: formData,
-                  cache: false,
-                  contentType: false,
-                  processData: false,
-                  timeout: 60000,
-                  success: (data) -> 
-                      driver_licence = $.parseJSON(data["driver_licence"])
-                      words = data["words"]
-                      
-                      $('input#first_name').val(driver_licence["first_name"])
-                      $('input#sur_name').val(driver_licence["last_name"])
-                      $('input#date_of_birth').val(driver_licence["birth_date"])
-                       
-                      $('input#driver_licence').val(driver_licence["driver_licence_no"])
-                      $('input#driver_licence_version').val(driver_licence["card_version_no"])
-                      $('input#drivers_licence_expire_date').val(driver_licence["expire_date"])
-
-                      #console.log words.join(",")
-                      $.each(words, (index, word) ->
-                          #$('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
-                      )
-                  ,
-                  error: (error) -> 
-                    console.log "error"
-                    console.log error
-                  
-
-                  }).done((data) -> 
-                  )
-                  
-    );
 

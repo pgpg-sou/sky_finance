@@ -13,17 +13,14 @@ section#expert-section
             .col-xs-6
               button.btn.btn-blue[data-ga-item="" data-ga-label="Click to call" data-ga-action="Click to call" data-ga-category="Experts" data-ga-event="Experts" style="background-color: #342791; border-color:#342791"]
 
-              a[style="color: white; text-decoration: none; font-size: inherit;" href="tel:03332471247"]
+                a[style="color: white; text-decoration: none; font-size: inherit;" href="tel:03332471247"]
 
-              .cf-sprite.phone-icon--white.sprite-inline.hidden-xs
-                |  <img src="
-                = image_path('phone-receiver_white.png')
-                | ">
-              | 0333 247 1247 
+                  .cf-sprite.phone-icon--white.sprite-inline.hidden-xs
+                    image src="#{image_path('phone-receiver_white.png')}"  
+                  a style="color: white;" 0333 247 1247
+
             .col-xs-6
-              |  <a href="
-              = home_apply_path()
-              | " class="btn btn-green" >Apply now
+              a.btn.btn-green href="#{home_apply_path()}" Apply now
         .secondary-buttons-section.dealer-enquiries-buttons.col-xs-12.col-sm-4.col-sm-offset-2.col-md-5.col-md-offset-1
           .secondary-buttons-inner
             .visible-md.visible-lg.additional-details

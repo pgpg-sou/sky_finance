@@ -141,6 +141,12 @@ input[type=radio]+label, input[type=checkbox]+input+label, input[type=checkbox]+
     border-width: 2px;
     border-color: #f87a7a;
 }
+#application .apply.valid {
+    border-width: 3px;
+    border-color: #1ab9a7
+}
+
+
 div.error-message {
     display: block;
     clear: both;
@@ -311,15 +317,53 @@ ul#tag_list li a {
 
 @media (min-width: 768px) and (max-width: 1200px) {
     #application label {
-        font-size: 36px;
+        font-size: 40px;
+        padding-bottom: 15px;
     }
     #application .apply {
-        height: 80px;
+        height: 85px;
         font-size: 36px
     }
     .step h3 {
         font-size: 45px;
     }
+
+    #application .apply:hover {
+        border-color: #442f70;
+    }
+    #application .apply.error {
+        border-width: 4px;
+        border-color: #f87a7a;
+    }
+    #application .apply.valid {
+        border-width: 5px;
+        border-color: #1ab9a7
+    }
+
+
+    ol > li.radio {
+        width: 120px;
+    }
+    ol > li.radio.other {
+        width: 150px;
+    }
+
+    ol > li.radio.income {
+        width: 180px;
+    }
+
+    .radio strong, .radio input.checked strong.plus-sign {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }
+
+
+    .radio strong span {
+        font-size: 21px;
+    }
+
+
 }
 
 

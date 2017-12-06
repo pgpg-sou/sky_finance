@@ -32,6 +32,9 @@ class HomeController < ApplicationController
       render :layout => 'apply2'
   end
 
+  def vehicle_apply
+      render :layout => 'apply2'
+  end
 
   def apply3
       render :layout => 'apply2'
