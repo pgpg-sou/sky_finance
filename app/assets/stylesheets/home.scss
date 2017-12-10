@@ -79,7 +79,7 @@ ol > li.radio {
     vertical-align: top;
 }
 
- .radio input[type=radio]+label {
+.radio input[type=radio]+label {
     padding: 0;
     margin: 0;
     text-align: center;
@@ -123,12 +123,53 @@ input[type=radio]+label, input[type=checkbox]+input+label, input[type=checkbox]+
     border: 3px solid #dc6767;
 }
 
+input#e_mail_address,
+input#first_name,
+input#middle_name,
+input#sur_name,
+input#dependentsCount, 
+input#dependentsAge,
+input#home_phone,
+input#mobile_phone,
+input#driver_licence,
+input#driver_licence_version,
+input#driver_licence_country,
+input#drivers_licence_expire_date, 
+input#citizen_ship,
+input#last_entry_date,
+input#visa_expire_date{
+    
+    &:valid {
+        background: url(image_path('checked.png'));
+        background-size: 23px;
+        background-repeat: no-repeat;
+        background-position: right;
+
+        border-width: 2px;
+        border-color: #4ACBBA
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+        background: url(image_path('cancel.png'));
+        background-size: 23px;
+        background-repeat: no-repeat;
+        background-position: right;
+
+        border-width: 2px;
+        border-color: #DC585A
+    }
+   
+}
+
+
+
+
 #application .apply {
     font-size: 20px;
     height: 50px;
-    background-color: #f7f7dc;
+    background-color: white;
     border: 2px solid #cbcbcb;
-    box-shadow: inset 0 10px hsla(60,31%,87%,.45);
+    box-shadow: inset 0 10px rgba(255, 255, 255, 0.45);
     margin: 0px 5px;
     border-radius: 4px;
     margin-bottom: 10px;
@@ -142,9 +183,10 @@ input[type=radio]+label, input[type=checkbox]+input+label, input[type=checkbox]+
     border-color: #f87a7a;
 }
 #application .apply.valid {
-    border-width: 3px;
-    border-color: #1ab9a7
+    border-width: 2px;
+    border-color: #4ACBBA
 }
+
 
 
 div.error-message {
@@ -207,6 +249,7 @@ select.form-control {
 
 
 }
+
 
 
 
@@ -311,14 +354,127 @@ ul#tag_list li a {
             border-right: solid red 5px;
         }
 
+
+ul#title,
+ul#gender,
+ul#title_tag_list,
+ul#material_status,
+ul#driver_licence,
+ul#residential_status {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: inline-block;
+        margin: 0 0 .5em 0.5em;
+        padding: 8px 16px;
+        a {
+            span {
+                margin-right: 5px
+            }
+
+            font-size: 1.0375em;
+            font-weight: 700;
+            padding: .875em;
+            padding-left: .0em;
+            padding-right: .4em;
+            letter-spacing: 1px;
+        }
+        .active {
+            background-color: #23D1B2;
+            border-color: #23D1B2;
+            color: white;
+            -webkit-box-shadow: none
+        }
+        a#icon {
+
+            top: 50%;
+            right: .5em;
+            width: 1.875em;
+            height: 1.875em;
+            background-color: #fff;
+            border-radius: .9375em;
+            font-size: .9375em;
+            font-weight: 400;
+            line-height: 1.875em;
+            color: #484848;
+            border-radius: 100%;
+            padding: 7px;
+            opacity: .9;
+
+
+        }
+    }
+    li.btn.btn-gray.btn-rounded:hover {
+        background-color: #cfcfcf;
+        border-color: #cfcfcf;
+        color: white;
+        -webkit-box-shadow: none        
+    }
+    li.btn.btn-gray.btn-rounded.active:hover {
+        background-color: #23D1B2;
+        border-color: #23D1B2;
+        color: white;
+        -webkit-box-shadow: none        
+    }
+ 
+    li.btn-gray {
+        background-color: #f5f5f5;
+        border-color: #f5f5f5;
+        a {
+            color: #484848;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+    }
+    li.btn-gray.active a {
+        color: white;
+    }
+    li.active {
+        background-color: #23D1B2;
+        border-color: #23D1B2;
+        color: white;
+        -webkit-box-shadow: none
+        a {
+            color: white;
+        }
+
+    }
+}
+
+#about_information,
+#material_information,
+#driver_information {
+    border: 3px solid #fafafa;
+    padding: 20px;
+    box-shadow: 0.5px 0.8px 4.75px 0.25px rgba(38, 38, 38, 0.1);
+    margin: 12px 0px;
+}
+.col-md-12.about_information,
+.col-md-12.material_information,
+.col-md-12.driver_information  {
+    padding: 4px;
+}
+
+
+
+
+
+
+
+
+
+
 /*============================================================================================*/
 /* 5.  MEDIA QUERIES */
 /*============================================================================================*/
 
 @media (min-width: 768px) and (max-width: 1200px) {
     #application label {
-        font-size: 40px;
+        font-size: 33px;
         padding-bottom: 15px;
+        color: #686868;
     }
     #application .apply {
         height: 85px;
@@ -336,32 +492,105 @@ ul#tag_list li a {
         border-color: #f87a7a;
     }
     #application .apply.valid {
-        border-width: 5px;
-        border-color: #1ab9a7
+        border-width: 4px;
+        border-color: #4ACBBA
     }
 
 
-    ol > li.radio {
-        width: 120px;
-    }
-    ol > li.radio.other {
-        width: 150px;
+    ul#title,
+    ul#gender,
+    ul#title_tag_list,
+    ul#material_status,
+    ul#driver_licence,
+    ul#residential_status {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            display: inline-block;
+            margin: 0 0 .5em 0.5em;
+            padding: 8px 16px;
+            a {
+                span {
+                    font-size: 25px;
+                    margin-right: 10px;
+                }
+                font-size: 2.2375em;
+                font-weight: 700;
+                padding: .875em;
+                padding-left: .0em;
+                padding-right: .4em;
+                letter-spacing: 1px;
+            }
+            .active {
+                background-color: #23D1B2;
+                border-color: #23D1B2;
+                color: white;
+                -webkit-box-shadow: none
+            }
+            a#icon {
+
+                top: 50%;
+                right: .5em;
+                width: 1.875em;
+                height: 1.875em;
+                background-color: #fff;
+                border-radius: .9375em;
+                font-size: .9375em;
+                font-weight: 400;
+                line-height: 1.875em;
+                color: #484848;
+                border-radius: 100%;
+                padding: 7px;
+                opacity: .9;
+
+
+            }
+        }
+        li.btn.btn-gray.btn-rounded:hover {
+            background-color: #cfcfcf;
+            border-color: #cfcfcf;
+            color: white;
+            -webkit-box-shadow: none        
+        }
+        li.btn.btn-gray.btn-rounded.active:hover {
+            background-color: #23D1B2;
+            border-color: #23D1B2;
+            color: white;
+            -webkit-box-shadow: none        
+        }
+     
+        li.btn-gray {
+            background-color: #f5f5f5;
+            border-color: #f5f5f5;
+            a {
+                color: #484848;
+            }
+            a:hover{
+                text-decoration: none;
+            }
+        }
+        li.btn-gray.active a {
+            color: white;
+        }
+        li.active {
+            background-color: #23D1B2;
+            border-color: #23D1B2;
+            color: white;
+            -webkit-box-shadow: none
+            a {
+                color: white;
+            }
+
+        }
     }
 
-    ol > li.radio.income {
-        width: 180px;
-    }
-
-    .radio strong, .radio input.checked strong.plus-sign {
-        width: 120px;
-        height: 120px;
-        border-radius: 50%;
-    }
 
 
-    .radio strong span {
-        font-size: 21px;
-    }
+
+
+
+
 
 
 }

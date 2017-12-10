@@ -343,8 +343,8 @@ ul#footer-nav li {
 /** Form area ============================= **/
 #top-wizard {
 	text-align:center;
-	padding:15px 120px;
-	background-color:#f3f3f3;
+	padding:45px 120px;
+	background-color:#FAFAFA;
 	border-bottom:1px solid #e7e7e7;
 	position:relative;
 	text-transform:uppercase;
@@ -369,7 +369,7 @@ ul#footer-nav li {
 
 #survey_container {
 	background-color:#fff;
-	 box-shadow: 0 0 5px #777;
+	 box-shadow: 0 0 0px #777;
 	 margin-top:-300px;
 	 margin-bottom:60px;
 	 z-index:9;

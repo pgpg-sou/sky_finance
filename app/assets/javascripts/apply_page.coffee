@@ -3,9 +3,11 @@
 
 $(document).ready ->
 
+    $('input#e_mail_address').css("")
+
     $('input').blur( ->
-        if $(this).val() != ""
-            $(this).addClass("valid")
+        #if $(this).val() != ""
+            #$(this).addClass("valid")
     )
 
 

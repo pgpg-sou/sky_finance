@@ -9,6 +9,10 @@ Rails.application.config.assets.precompile += %w( apply.js )
 
 Rails.application.config.assets.precompile += %w( apply2.css )
 Rails.application.config.assets.precompile += %w( apply2.js ) 
+
+
+Rails.application.config.assets.precompile +=  %w( *.woff *.eot *.svg *.ttf )
+
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

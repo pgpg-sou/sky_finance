@@ -455,3 +455,39 @@ $(document).ready ->
                 $(this).toggleClass('active')
         )
 
+
+
+    $('ul#recommend_tag_list li').click ->
+        $('ul#recommend_tag_list li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+    $('ul#title_tag_list li').click ->
+        $('ul#title_tag_list li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+    $('ul#material_status li').click ->
+        $('ul#material_status li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+    $('ul#title li').click ->
+        $('ul#title li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+    $('ul#gender li').click ->
+        $('ul#gender li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+
+
+
+
