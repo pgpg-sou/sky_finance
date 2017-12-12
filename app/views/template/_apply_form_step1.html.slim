@@ -1,3 +1,5 @@
+
+
 #application.col-md-12
     #about_you
         #about_information.col-md-12.col-xs-12
@@ -5,16 +7,18 @@
                 p Please input red boarder box
 
             .col-md-12.col-xs-12.about_information
-                label.col-md-4.col-xs-12.control-label Driver Licence Image
-                .col-md-8.col-xs-12
-                    #identification.col-md-12.col-xs-12
-                        input[type="file" name="images[]" multiple="multiple"]
+                label.col-md-4.col-xs-12.control-label Driver Licence Imageas
+                .dropzone.col-md-8.col-xs-12
+                    form class="dropzone needsclick dz-clickable"
+                        div.dz-message.needsclick
+                            p Upload here Driver Licence 
 
             .col-md-12.col-xs-12.about_information
                 label.col-md-4.col-xs-12.control-label Visa Image
-                .col-md-8.col-xs-12
-                    #identification_visa.col-md-12.col-xs-12
-                        input.btn.btn-primary[type="file" name="images[]" multiple="multiple"]
+                .col-md-8.col-xs-12.no-padding
+                    div class="visa_dropzone needsclick dz-clickable"
+                        div.dz-message.needsclick
+                            p Upload here Visa Image 
 
 
             .col-md-12.col-xs-12.about_information

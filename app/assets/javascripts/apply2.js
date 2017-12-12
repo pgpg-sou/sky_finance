@@ -47,6 +47,7 @@
 //= require webcam/main.js 
 
 
+//= require dropzone.js 
 //= require home
 //= require agency
 //= require apply_page

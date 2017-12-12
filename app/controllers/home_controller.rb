@@ -71,7 +71,7 @@ class HomeController < ApplicationController
         prohabit_word_list = ["*", ".", "-", "NEW", "ZEALAND", "DRIVER", "LICENCE"]
         annotation.text.words.each do |word|
             if prohabit_word_list.include?(word.text) == false
-                logger.debug word.text
+                #logger.debug word.text
                 if word.text.to_i == 0
                     @word_data << word.text 
                 end
@@ -152,10 +152,14 @@ class HomeController < ApplicationController
 
   def driver_licence_crop(text)
      licence_variable = {"1. " => "last_name", "2. " => "first_name", "3. " => "birth_date", "4a. " => "issue_date", "4b. " => "expire_date", "4G. " => "donor_indicator", "5a. " => "driver_licence_no", "5b. " => "card_version_no", "7. " => "classes"}
+     licence_keyword = {"Surname" => "last_name", "First Names" => "first_name", "Date of birth" => "birth_date"}
 
      document = text.to_str
      driver_licence = Hash.new 
+
+     hit_label = ""
      document.each_line do |line|
+        puts line.to_s
         licence_variable.each do |licence_no, label|
             if line.include?(licence_no)
                 data = line.split(licence_no)[1]
@@ -167,7 +171,23 @@ class HomeController < ApplicationController
                 end
             end 
         end
+        if hit_label != ""
+            driver_licence[hit_label] = line.to_s
+            hit_label = ""
+        end
+        
+        licence_keyword.each do |keyword, label|
+            if line.to_s.strip == keyword || line.include?(keyword)
+                if keyword == "Date of birth"
+                    data = line.split(keyword)[1]
+                    driver_licence[label] = data.strip.gsub('-','/')
+                else 
+                    hit_label = label
+                end
+            end
+        end
      end
+     puts driver_licence
      return driver_licence
   end
 end

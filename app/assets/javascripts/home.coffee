@@ -486,8 +486,98 @@ $(document).ready ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
+    $('ul#residential_status li').click ->
+        $('ul#gender li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
 
+    Dropzone.autoDiscover = false
+    $("div.dropzone").dropzone({ 
+        url: "/home/upload_file",
+        maxFiles: 2,
+        success: (file, data) ->
+          console.log data 
+          console.log data["driver_licence"]
+          driver_licence = $.parseJSON(data["driver_licence"])
+          words = data["words"]
+          
+          $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
+          $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
+          $('input#date_of_birth').val(driver_licence["birth_date"]).addClass("valid")
+           
+          $('input#driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
+          $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
+          $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
 
+          #console.log words.join(",")
+          $.each(words, (index, word) ->
+              #$('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
+          )
+
+    })
+    $("div.visa_dropzone").dropzone({ 
+        url: "/home/upload_file_visa",
+        maxFiles: 2,
+        success: (file, data) ->
+          console.log data 
+          console.log data["driver_licence"]
+          driver_licence = $.parseJSON(data["driver_licence"])
+          words = data["words"]
+          
+          $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
+          $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
+          $('input#date_of_birth').val(driver_licence["birth_date"]).addClass("valid")
+           
+          $('input#driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
+          $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
+          $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
+
+          #console.log words.join(",")
+          $.each(words, (index, word) ->
+              #$('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
+          )
+
+    })
+
+    #Dropzone.options.myDropZoneForm = {
+    #    url: 'url/here',
+    #    autoProcessQueue: false,
+    #    uploadMultiple: true,
+    #    parallelUploads: 100,       
+    #    addRemoveLinks: true,
+    #    uploadMultiple: true,
+    #    acceptedFiles: 'image/*, audio/*, video/*',
+    #    maxFiles: 10,
+    #    init:  () ->
+    #        vthisDropzone = this;
+    #
+    #        this.on('addedfile', (file) ->
+    #            console.log "added file"
+    #            #totalFiles += 1;
+    #            #totalFilesFormatted = totalFiles.toFixed(2);
+    #            #$('#showTotalFileCount').html(totalFilesFormatted);
+    #        );
+    #        #this.on('removedfile', function(file){
+    #        #    totalFiles -= 1;
+    #        #    totalFilesFormatted = totalFiles.toFixed(2);
+    #        #    $('#showTotalFileCount').html(totalFilesFormatted);
+    #        #});
+    #        #this.on('maxfilesreached', function(file){
+    #        #    alert('maxFiles reached');
+    #        #});
+    #        #this.on('maxfilesexceeded', function(file){
+    #        #    alert('files dropped exceeded maxFiles');
+    #        #});
+    #        #this.on("sendingmultiple", function(){
+    #        #    // event when files are being sent
+    #        #});
+    #        #this.on("successmultiple", function(files, response) {
+    #        #    // event when files are successfully uploaded
+    #        #    // you can return a response string and process it here through 'response'
+    #        #});
+    #        #this.on("errormultiple", function(files, response) {
+    #        #});
+    #}
 
 
 
