@@ -360,7 +360,16 @@ ul#gender,
 ul#title_tag_list,
 ul#material_status,
 ul#driver_licence,
-ul#residential_status {
+ul#residential_status,
+ul#tenancy_status,
+ul#living_period,
+ul#previous_living_period,
+ ul#employtype,
+ ul#how_long_work,
+ ul#how_long_work_previous,
+ ul#relation_ship,
+ ul#credit_rating,
+  {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -445,12 +454,36 @@ ul#residential_status {
 
 #about_information,
 #material_information,
-#driver_information {
+#driver_information,
+#living_information,
+#work_information,
+#nearest_information,
+#liability_information,
+#loans_information,
+#previous_work_information {
     border: 3px solid #fafafa;
     padding: 20px;
     box-shadow: 0.5px 0.8px 4.75px 0.25px rgba(38, 38, 38, 0.1);
     margin: 12px 0px;
+    div.col-md-12 {
+        padding: 5px 0px;
+    }
 }
+#about_information.focus,
+#material_information.focus,
+#driver_information.focus,
+#living_information.focus,
+#work_information.focus,
+#nearest_information.focus,
+#liability_information.focus,
+#loans_information.focus,
+#previous_work_information.focus {
+    border: 1px solid #4ACBBA;
+    padding: 20px;
+    box-shadow: 2.5px 0.8px 4.75px 0.25px rgba(74, 203, 91, 0.3);
+    margin: 12px 0px;
+}
+
 .col-md-12.about_information,
 .col-md-12.material_information,
 .col-md-12.driver_information  {
@@ -502,7 +535,14 @@ ul#residential_status {
     ul#title_tag_list,
     ul#material_status,
     ul#driver_licence,
-    ul#residential_status {
+    ul#residential_status,
+    ul#tenancy_status,
+    ul#living_period,
+    ul#previous_living_period,
+    ul#employtype,
+    ul#relation_ship,
+    ul#credit_rating,
+      {
         margin: 0;
         padding: 0;
         list-style: none;

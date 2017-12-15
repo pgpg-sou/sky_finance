@@ -40,6 +40,7 @@
 //= require validate/jquery.validate.min.js
 //= require jquery.form-validator
 
+
 //= require jquery.uploadThumbs.js
 //= require webcam/qrcodelib.js 
 //= require webcam/WebCodeCam.js 

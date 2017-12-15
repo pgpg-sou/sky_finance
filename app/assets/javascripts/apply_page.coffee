@@ -5,9 +5,22 @@ $(document).ready ->
 
     $('input#e_mail_address').css("")
 
-    $('input').blur( ->
-        #if $(this).val() != ""
-            #$(this).addClass("valid")
+    $('input').focus( ->
+        parent_block = $(this).parent().parent().parent()
+        parent_block.addClass("focus")
+    ).blur( ->
+        parent_block = $(this).parent().parent().parent()
+        complete_block =  true
+        parent_block.find('input').each( ->
+            console.log $(this).val()
+            if $(this).val() == ""
+                complete_block = false
+        )
+        if complete_block
+            parent_block.addClass("focus")
+        else
+            parent_block.removeClass("focus")
+
     )
 
 
@@ -35,6 +48,25 @@ $(document).ready ->
                                         '<input class="col-md-5 apply" placeholder="asset name"/>' +
                                         '<input class="col-md-5 apply" placeholder="$"/>' +
                                    '</div>')
+
+    $('#add_liability').click ->
+        $('#liability_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4  ">' +
+                                        '<input class="col-md-5 apply" placeholder="asset name"/>' +
+                                        '<input class="col-md-5 apply" placeholder="$"/>' +
+                                   '</div>')
+
+    $('#add_loan').click ->
+        $('#loan_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 ">' +
+                                        '<input class="col-md-5 apply" placeholder="asset name"/>' +
+                                        '<input class="col-md-5 apply" placeholder="$"/>' +
+                                   '</div>')
+
+
+
+
+
+
+
 
 
     $('#dependentsCount').blur( ->

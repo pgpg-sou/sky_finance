@@ -1,40 +1,30 @@
 li#application
-    .form-group
+    #nearest_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-4.control-label Nearest FirstName
-            input#nearest_first_name.col-md-5.col-xs-12.apply.required
-    .form-group
+            input#nearest_first_name.col-md-5.col-xs-12.apply.required placeholder="First Name" type="text" required="true" data-validation="required"
         .col-md-12
             label.col-md-4.control-label Nearest LastName
-            input#nearest_last_name.col-md-5.col-xs-12.apply.required
+            input#nearest_last_name.col-md-5.col-xs-12.apply.required placeholder="Last Name" type="text" required="true" data-validation="required"
 
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Nearest address
             .col-md-8.no-padding 
                 input#nearest_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Nearest phone Number 
             .col-md-8.no-padding
-                input#nearest_phone_number.col-md-12.col-xs-12.apply.required[data-validation="required"]
+                input#nearest_phone_number.col-md-12.col-xs-12.apply.form-control.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     " required="true"]
 
-
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Nearest Relation ship
-            ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"relationship_mother" => "Mother", "relationship_father" => "Father", "relationship_gm" => "Grand mother", "relationship_gf" => "Grand father"}, class_type: "relation_ship", is_other: true }
+            .col-md-8.col-xs-12.no-padding
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Mother", "Father", "Grand mother", "Grand father"], id_name: "relation_ship",is_other: false}
 
-
-
-    .form-group
         .col-md-12
             label.col-md-4.col-xs-12.control-label credit rating
-            #title_error.error-message[style="display:none"]
-                p Please select a title
-            ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"credit_ex" => "Excellent", "credit_good" => "Good", "credti_not_good" => "Not so Good", "credit_difficult" => "Have difficult"}, class_type: "credit_rating", is_other: false }
+            .col-md-8.col-xs-12.no-padding
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Excellent", "Good", "Not so Good", "Have difficult"], id_name: "credit_rating",is_other: false}
 
 

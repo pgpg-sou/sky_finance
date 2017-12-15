@@ -4,7 +4,7 @@
 
 
 $(document).ready ->
-    #$.validate();
+    $.validate();
 
     initAF = () -> 
         widget = new AddressFinder.Widget(
@@ -487,9 +487,57 @@ $(document).ready ->
         $(this).addClass('active')
 
     $('ul#residential_status li').click ->
-        $('ul#gender li').each ->
+        $('ul#residential_status li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
+
+
+    $('ul#driver_licence li').click ->
+        $('ul#driver_licence li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#tenancy_status li').click ->
+        $('ul#tenancy_status li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#living_period li').click ->
+        $('ul#living_period li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#previous_living_period li').click ->
+        $('ul#previous_living_period li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#employtype li').click ->
+        $('ul#employtype li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#how_long_work li').click ->
+        $('ul#how_long_work li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#how_long_work_previous li').click ->
+        $('ul#how_long_work_previous li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#credit_rating li').click ->
+        $('ul#credit_rating li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#relation_ship li').click ->
+        $('ul#relation_ship li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
 
     Dropzone.autoDiscover = false
     $("div.dropzone").dropzone({ 

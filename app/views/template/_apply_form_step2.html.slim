@@ -1,105 +1,76 @@
 li#application
-
-    .form-group
+    #living_information.col-md-12.col-xs-12
         .col-md-12
-            label.col-sm-12.control-label Tenancy
-            ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"tenancy_boarding" => "Boarding", "tenancy_renting" => "Renting", "tenancy_living_parent" => "Living with Parent", "tenancy_living_relative" => "Living with Relative", "tenancy_owner" => "Owner Mortage", "tenancy_home_owner" => "Home owner FreeHold", "tenancy_other" => "Other"}, class_type: "tenancy_status", is_other: false}
+            label.col-sm-4.col-xs-12.control-label Tenancy
+            .col-md-8.col-xs-12 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Boarding", "Renting", "Living with Parent", "Living with Relative", "Owner Mortage", "Home owner FreeHold", "Other"], id_name: "tenancy_status",is_other: false}
 
 
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Current address
             .col-md-8
                 input#postal_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-    .form-group
-        #home_address_error.error-message[style="display:none"]
-            p Please input red boarder box
         .col-md-12
-            label.col-md-12.control-label How long have you lived at this address?
-            #title_error.error-message[style="display:none"]
-                p Please select a title
-            ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"how_address_1" => "1 year", "how_address_2" => "2 year", "how_address_4" => "4 year", "how_address_5" => "5 year", "how_address_6" => "6 year", "how_address_7" => "7 year"}, class_type: "employmentStatusfullTime", is_other: true}
+            label.col-md-4.col-xs-12.control-label How long have you lived at this address?
+            .col-md-8.col-xs-12 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "living_period",is_other: false}
 
-
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Previous address(if less than 2 years at current address)
             .col-md-8
                 input#previous_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-
-
-
-    .form-group
         .col-md-12
-            label.col-md-12.control-label How long have you lived at this address?
-            #title_error.error-message[style="display:none"]
-                p Please select a title
-            ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"how_address_1" => "1 year", "how_address_2" => "2 year", "how_address_4" => "4 year", "how_address_5" => "5 year", "how_address_6" => "6 year", "how_address_7" => "7 year"}, class_type: "employment_previous_address", is_other: true}
+            label.col-md-4.col-xs-12.control-label How long have you lived at this address?
+            .col-md-8.col-xs-12 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "previous_living_period",is_other: false}
 
 
-    .form-group
+    #work_information.col-md-12.col-xs-12
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Current company
             .col-md-8
                 input#current_company.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Current Address
             .col-md-8
                 input#current_company_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
 
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Current Employer phone
             .col-md-8
                 input#current_phone_number.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
 
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Current Employer Type
-            ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"employtype_full" => "Full", "employtype_part" => "Part time"}, class_type: "employtype", is_other: true}
+            .col-md-8.col-xs-12 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Full", "Part time"], id_name: "employtype",is_other: false}
 
-
-
-    .form-group
         .col-md-12
-            label.col-md-12.control-label How long have you worked at this company?
-            #title_error.error-message[style="display:none"]
-                p Please select a title
-            ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"how_long_work" => "1 year", "how_long_work2" => "2 year", "how_long_work4" => "4 year", "how_long_work5" => "5 year", "how_long_work6" => "6 year", "how_long_work7" => "7 year", "how_long_work_other" => "Other"}, class_type: "how_long_work", is_other: true}
+            label.col-md-4.col-xs-12.control-label How long have you worked at this company?
+            .col-md-8.col-xs-12 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "how_long_work",is_other: false}
 
 
-    .form-group
+    #previous_work_information.col-md-12.col-xs-12
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Previous Company
             .col-md-8
                 input#previous_company.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-    .form-group
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Previous Company Address
             .col-md-8
                 input#previous_company_address.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-
-    .form-group
         .col-md-12
-            label.col-md-12.control-label How long have you worked at previous company?
-            #title_error.error-message[style="display:none"]
-                p Please select a title
-            ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                = render partial: 'template/select_form', locals: {select_data: {"how_long_work_p" => "1 year", "how_long_work_p2" => "2 year", "how_long_work_p4" => "4 year", "how_long_work_p5" => "5 year", "how_long_work_p6" => "6 year", "how_long_work_p7" => "7 year", "how_long_work_p_other" => "Other"}, class_type: "how_long_work_previous", is_other: true}
-
+            label.col-md-4.col-xs-12.control-label How long have you worked at previous company?
+            .col-md-8.col-xs-12 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "how_long_work_previous",is_other: false}
 
 
 

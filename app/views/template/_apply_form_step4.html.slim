@@ -2,7 +2,7 @@
 
 
 li#application
-    .form-group
+    #liability_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-4.control-label Liability
             .col-md-8.col-xs-12
@@ -24,15 +24,17 @@ li#application
                 input#total_liability.col-md-5.apply placeholder="$" disabled="true"
                 input#total_num.col-md-5.apply placeholder="3" disabled="true"
 
-        .col-md-12.space
+
+    #loans_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-4.control-label Loans Company
-            .col-md-8.col-xs-12
-                input#company_name.col-md-5.apply placeholder="asset name"
-                input#loans.col-md-5.apply placeholder="$"
+            #loan_form
+                .col-md-8.col-xs-12
+                    input#company_name.col-md-5.apply placeholder="asset name"
+                    input#loans.col-md-5.apply placeholder="$"
 
             #custom_liability.col-md-8.col-xs-12.col-md-offset-4
-                p#add_liability.col-md-10 click to add information
+                p#add_loan.col-md-10 click to add information
 
         .col-md-12
             label.col-md-4.control-label Total
