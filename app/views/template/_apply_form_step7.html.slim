@@ -1,6 +1,6 @@
 
 li#application
-    .form-group
+    #outgoing_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-4.control-label Outgoing Other 
             #outgoing_form
@@ -14,16 +14,17 @@ li#application
         .col-md-12
             label.col-md-4.control-label Total
             .col-md-8.col-xs-12
-                input#total_liability.col-md-5.apply placeholder="$" disabled="true"
-                input#total_num.col-md-5.apply placeholder="3" disabled="true"
+                input#total_outgoing.col-md-5.apply placeholder="$" disabled="true"
+                input#total_outgoing_num.col-md-5.apply placeholder="3" disabled="true"
 
         .col-md-12.space
+    #income_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-4.control-label Income other 
             #income_form
                 .col-md-8.col-xs-12
-                    input#company_name.col-md-5.apply placeholder="asset name"
-                    input#loans.col-md-5.apply placeholder="$"
+                    input#income_name.col-md-5.apply placeholder="asset name"
+                    input#income.col-md-5.apply placeholder="$"
             #custom_income.col-md-8.col-xs-12.col-md-offset-4
                 p#add_income_area.col-md-10 click to add information
 
@@ -31,15 +32,16 @@ li#application
         .col-md-12
             label.col-md-4.control-label Total
             .col-md-8.col-xs-12
-                input#total_liability.col-md-5.apply placeholder="$" disabled="true"
-                input#total_num.col-md-5.apply placeholder="3" disabled="true"
+                input#total_income_other.col-md-5.apply placeholder="$" disabled="true"
+                input#total_income_num.col-md-5.apply placeholder="3" disabled="true"
 
         .col-md-12.space
+    #expence_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-4.control-label expences
             .col-md-8.col-xs-12
-                input#liability_morgage.col-md-12.apply placeholder="$Mortage rent"
-                input#liability_creditcard.col-md-12.apply placeholder="$Hp credit"
-                input#liability_bankod.col-md-12.apply placeholder="$living "
+                input#liability_morgage.col-md-12.apply placeholder="$Mortage rent" type="number" required="true"
+                input#liability_creditcard.col-md-12.apply placeholder="$Hp credit" type="number" required="true"
+                input#liability_bankod.col-md-12.apply placeholder="$living " type="number" required="true"
 
 

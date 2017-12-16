@@ -204,7 +204,9 @@ ol > li > div.liability {
 }
 
 .apply[disabled], .apply[readonly]  {
-    background-color: #eee !important;
+    background-color: #AAE2D9 !important;
+    border: 2px solid #AAE2D9 !important;
+    box-shadow: none !important;
     opacity: 1;
 }
 

@@ -137,7 +137,20 @@ input#driver_licence_country,
 input#drivers_licence_expire_date, 
 input#citizen_ship,
 input#last_entry_date,
-input#visa_expire_date{
+input#visa_expire_date, 
+input#liability_morgage, 
+input#liability_creditcard,
+input#liability_bankod,
+input#postal_address,
+input#current_company,
+input#current_company_address,
+input#current_phone_number,
+input#nearest_first_name,
+input#nearest_last_name,
+input#nearest_address,
+input#nearest_phone_number,
+input#date_of_birth
+{
     
     &:valid {
         background: url(image_path('checked.png'));
@@ -183,8 +196,8 @@ input#visa_expire_date{
     border-color: #f87a7a;
 }
 #application .apply.valid {
-    border-width: 2px;
-    border-color: #4ACBBA
+    //border-width: 2px;
+    //border-color: #4ACBBA
 }
 
 
@@ -460,13 +473,22 @@ ul#previous_living_period,
 #nearest_information,
 #liability_information,
 #loans_information,
-#previous_work_information {
+#previous_work_information,
+#outgoing_information,
+#income_information,
+#expence_information,
+#assets_information
+ {
     border: 3px solid #fafafa;
     padding: 20px;
     box-shadow: 0.5px 0.8px 4.75px 0.25px rgba(38, 38, 38, 0.1);
     margin: 12px 0px;
     div.col-md-12 {
         padding: 5px 0px;
+    }
+    label span {
+        color: #D03883;
+        font-size: 21px;
     }
 }
 #about_information.focus,
@@ -477,11 +499,17 @@ ul#previous_living_period,
 #nearest_information.focus,
 #liability_information.focus,
 #loans_information.focus,
-#previous_work_information.focus {
+#previous_work_information.focus,
+#outgoing_information.focus,
+#income_information.focus,
+#expence_information.focus,
+#assets_information.focus
+ {
     border: 1px solid #4ACBBA;
     padding: 20px;
     box-shadow: 2.5px 0.8px 4.75px 0.25px rgba(74, 203, 91, 0.3);
     margin: 12px 0px;
+
 }
 
 .col-md-12.about_information,

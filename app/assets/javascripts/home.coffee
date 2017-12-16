@@ -148,7 +148,8 @@ $(document).ready ->
                     source: business_list,
                     select:  (e, ui) ->
                         $('#current_phone_number').val(ui["item"]["phone"]).addClass("valid")
-                        $('#current_company_address').val(ui["item"]["address"]).addClass("valid")
+                        if ui["item"]["address"] != ""
+                            $('#current_company_address').val(ui["item"]["address"]).addClass("valid")
                     ,
                     open:  ->
                         $("ul.ui-menu").width( $(this).innerWidth() );
@@ -179,7 +180,8 @@ $(document).ready ->
                     minLength: 0,
                     source: business_list,
                     select:  (e, ui) ->
-                        $('#previous_company_address').val(ui["item"]["address"]).addClass("valid")
+                        if ui["item"]["address"] != ""
+                            $('#previous_company_address').val(ui["item"]["address"]).addClass("valid")
                     ,
                     open:  ->
                         $("ul.ui-menu").width( $(this).innerWidth() );
@@ -567,18 +569,18 @@ $(document).ready ->
         url: "/home/upload_file_visa",
         maxFiles: 2,
         success: (file, data) ->
-          console.log data 
-          console.log data["driver_licence"]
-          driver_licence = $.parseJSON(data["driver_licence"])
+          visa_licence = $.parseJSON(data["visa_licence"])
           words = data["words"]
           
-          $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
-          $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
-          $('input#date_of_birth').val(driver_licence["birth_date"]).addClass("valid")
-           
-          $('input#driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
-          $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
-          $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
+          $('input#visa_expire_date').val(visa_licence["expire_date"]).addClass("valid")
+          $('input#citizen_ship').val(visa_licence["citizen_ship"]).addClass("valid")
+
+          if visa_licence["visa_type"] == "Student Visa"
+              initialize_radio_box($('li.radio.residential_status'))
+              $('#residential_student_label').attr("class", "checked")
+
+
+
 
           #console.log words.join(",")
           $.each(words, (index, word) ->

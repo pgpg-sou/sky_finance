@@ -4,15 +4,155 @@
 $(document).ready ->
 
     $('input#e_mail_address').css("")
+    get_liablity = (element) ->
+        if element.val() == ""
+            return 0
+        else
+            return parseInt(element.val())
+    valid_liability_form = (element) ->
+        if element.val() == ""
+            return 0
+        else
+            return 1
 
-    $('input').focus( ->
-        parent_block = $(this).parent().parent().parent()
+
+############################################################################
+############# 合計を出すプログラム 
+############################################################################
+
+    $('#liability_information input').blur( ->
+        total = 0
+
+        morgage = get_liablity($('#liability_morgage'))
+        creditcard = get_liablity($('#liability_creditcard'))
+        bankod = get_liablity($('#liability_bankod'))
+        total = morgage + creditcard + bankod 
+        total_num = valid_liability_form($('#liability_morgage')) + valid_liability_form($('#liability_creditcard')) + valid_liability_form($('#liability_bankod'))
+
+        $('#liability_form input#other_liability').each(->
+            total += get_liablity($(this))
+            total_num += valid_liability_form($(this))
+        )
+
+        if $(this).attr('id') == "other_liability_name"
+        else
+            $('#total_liability').val(total)
+            $('#total_num_liability').val(total_num)
+    )
+
+    $('#assets_information input').blur( ->
+        total = 0
+
+        home = get_liablity($('#assets_home'))
+        furnishing = get_liablity($('#assets_furnishing'))
+        bank_account = get_liablity($('#assets_bank_account'))
+        car = get_liablity($('#assets_car'))
+        investments = get_liablity($('#assets_investments'))
+
+        total = home + furnishing +  bank_account + car + investments
+        total_num = valid_liability_form($('#assets_home')) + valid_liability_form($('#assets_furnishing')) + valid_liability_form($('#assets_bank_account')) + valid_liability_form($('#assets_car')) + valid_liability_form($('#assets_investments'))
+
+        $('#morgages_other input#morgage').each(->
+            total += get_liablity($(this))
+            total_num += valid_liability_form($(this))
+        )
+
+        if $(this).attr('id') == "morgages_other"
+        else
+            $('#total_assets_info').val(total)
+            $('#total_assets_num').val(total_num)
+    )
+
+
+    $('#loans_information input').blur( ->
+        total = 0
+        total_num = 0
+
+        $('#loan_form input#loans').each(->
+            total += get_liablity($(this))
+            total_num += valid_liability_form($(this))
+        )
+
+        if $(this).attr('id') == "loan_company_name"
+        else
+            $('#total_liability').val(total)
+            $('#total_num').val(total_num)
+
+    )
+
+    $('#income_information input').blur( ->
+        total = 0
+        total_num = 0
+
+        $('#income_form input#income').each( ->
+            total += get_liablity($(this))
+            total_num += valid_liability_form($(this))
+        )
+
+        if $(this).attr('id') == "total_income"
+        else
+            $('#total_income_other').val(total)
+            $('#total_income_num').val(total_num)
+    )
+
+
+    $('#outgoing_information input').blur( ->
+        total = 0
+        total_num = 0
+
+        $('#outgoing_form input#other_liability').each(->
+            total += get_liablity($(this))
+            total_num += valid_liability_form($(this))
+        )
+
+        if $(this).attr('id') == "other_name"
+        else
+            $('#total_outgoing').val(total)
+            $('#total_outgoing_num').val(total_num)
+
+    )
+
+
+############################################################################
+############# ここまで
+############################################################################
+
+
+############################################################################
+############# 枠を性が駆除するプログラム
+############################################################################
+
+    focus_func = (element) ->
+        parent_block = element.parent().parent().parent().parent()
         parent_block.addClass("focus")
-    ).blur( ->
-        parent_block = $(this).parent().parent().parent()
+
+    blur_func = (element) ->
+        parent_block = element.parent().parent().parent().parent()
         complete_block =  true
         parent_block.find('input').each( ->
-            console.log $(this).val()
+            if element.val() == ""
+                complete_block = false
+        )
+        if complete_block
+            parent_block.addClass("focus")
+        else
+            parent_block.removeClass("focus")
+
+
+    $('#liability_information input').focus( ->
+        focus_func($(this))
+    ).blur( ->
+        blur_func($(this))
+    )
+
+
+    $('#income_information input').focus( ->
+        parent_block = $(this).parent().parent().parent().parent()
+        parent_block.addClass("focus")
+    ).blur( ->
+        parent_block = $(this).parent().parent().parent().parent()
+        complete_block =  true
+        parent_block.find('input').each( ->
             if $(this).val() == ""
                 complete_block = false
         )
@@ -22,6 +162,87 @@ $(document).ready ->
             parent_block.removeClass("focus")
 
     )
+
+
+
+    $('#outgoing_information input').focus( ->
+        parent_block = $(this).parent().parent().parent().parent()
+        parent_block.addClass("focus")
+    ).blur( ->
+        parent_block = $(this).parent().parent().parent().parent()
+        complete_block =  true
+        parent_block.find('input').each( ->
+            if $(this).val() == ""
+                complete_block = false
+        )
+        if complete_block
+            parent_block.addClass("focus")
+        else
+            parent_block.removeClass("focus")
+
+    )
+
+
+
+
+    $('#loans_information input').focus( ->
+        parent_block = $(this).parent().parent().parent().parent()
+        parent_block.addClass("focus")
+    ).blur( ->
+        parent_block = $(this).parent().parent().parent().parent()
+        complete_block =  true
+        parent_block.find('input').each( ->
+            if $(this).val() == ""
+                complete_block = false
+        )
+        if complete_block
+            parent_block.addClass("focus")
+        else
+            parent_block.removeClass("focus")
+
+    )
+
+
+    $('#assets_information input').focus( ->
+        parent_block = $(this).parent().parent()
+        parent_block.addClass("focus")
+    ).blur( ->
+        parent_block = $(this).parent().parent()
+        complete_block =  true
+        parent_block.find('input').each( ->
+            if $(this).val() == ""
+                complete_block = false
+        )
+        if complete_block
+            parent_block.addClass("focus")
+        else
+            parent_block.removeClass("focus")
+
+    )
+
+
+
+
+
+    $('input').focus( ->
+        parent_block = $(this).parent().parent().parent()
+        parent_block.addClass("focus")
+    ).blur( ->
+        parent_block = $(this).parent().parent().parent()
+        complete_block =  true
+        parent_block.find('input').each( ->
+            if $(this).val() == ""
+                complete_block = false
+        )
+        if complete_block
+            parent_block.addClass("focus")
+        else
+            parent_block.removeClass("focus")
+
+    )
+############################################################################
+############# ここまで
+############################################################################
 
 
     $('li.q').each((index) ->
@@ -39,20 +260,20 @@ $(document).ready ->
 
     $('#add_income_area').click ->
         $('#income_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4">' +
-                                        '<input class="col-md-5 apply" placeholder="asset name"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$"/>' +
+                                        '<input class="col-md-5 apply" placeholder="asset name" id="income_name"/>' +
+                                        '<input class="col-md-5 apply" placeholder="$" id="income"/>' +
                                    '</div>')
 
     $('#add_morgage_area').click ->
         $('#morgages_other').append('<div class="col-md-8 col-xs-12 col-md-offset-3 no-padding ">' +
-                                        '<input class="col-md-5 apply" placeholder="asset name"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$"/>' +
+                                        '<input class="col-md-5 apply" placeholder="asset name" id="morgage_other"/>' +
+                                        '<input class="col-md-5 apply" placeholder="$" id="morgage"/>' +
                                    '</div>')
 
     $('#add_liability').click ->
         $('#liability_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4  ">' +
-                                        '<input class="col-md-5 apply" placeholder="asset name"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$"/>' +
+                                        '<input class="col-md-5 apply" id="other_liability_name" placeholder="asset name"/>' +
+                                        '<input class="col-md-5 apply" id="other_liability" placeholder="$"/>' +
                                    '</div>')
 
     $('#add_loan').click ->
@@ -76,7 +297,7 @@ $(document).ready ->
         if num > 0
             $('#depend_age_form').empty()
             for i in [1..num]
-                $('#depend_age_form').append('<input id="dependentsAge" class="col-md-12 col-xs-12 apply required">')
+                $('#depend_age_form').append('<input id="dependentsAge" class="col-md-12 col-xs-12 apply required" placeholder="Age ' + (i+1) + '" required>')
 
     )
 

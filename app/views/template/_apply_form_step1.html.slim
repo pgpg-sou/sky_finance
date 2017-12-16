@@ -26,88 +26,114 @@
 
 
             .col-md-12.col-xs-12.about_information
-                label.col-md-4.col-xs-12.control-label Title
+                label.col-md-4.col-xs-12.control-label 
+                    | Title
+                    span * 
                 .col-md-8.col-xs-12.no-padding 
                     = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Mr", "Mrs", "Miss", "Ms"], id_name: "title",is_other: false}
 
             .col-md-12.col-xs-12.about_information
-                label.col-md-4.col-xs-12.control-label Name 
+                label.col-md-4.col-xs-12.control-label  
+                    | Name
+                    span * 
                 input#first_name.col-md-2.col-sm-12.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="First Name" type="text" required="true"]
                 input#middle_name.col-md-2.col-sm-12.col-xs-12.apply[name="first_name" placeholder="Middle Name " type="text" required="true"]
                 input#sur_name.col-md-2.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="Sur Name" type="text" required="true"]
 
             .col-md-12.about_information
-                label.col-md-4.col-xs-12.control-label E-mail Address
+                label.col-md-4.col-xs-12.control-label 
+                    | E-mail Address
+                    span * 
                 .col-md-8.col-xs-12.no-padding 
                     input#e_mail_address.col-md-12.col-xs-12.apply.form-control name="e_mail_address" type="email" required="true" placeholder="e-mail"
 
             .col-md-12.about_information
-                label.col-md-4.col-xs-12.control-label Date of Birth
+                label.col-md-4.col-xs-12.control-label 
+                    | Date of Birth
+                    span * 
                 .col-md-8.col-xs-12.no-padding 
-                    input#date_of_birth.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy"]
+                    input#date_of_birth.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
 
 
             .col-md-12.about_information
-                label.col-md-4.col-xs-12.control-label Gender
+                label.col-md-4.col-xs-12.control-label 
+                    | Gender
+                    span * 
                 .col-md-8.col-xs-12.no-padding 
                     = render partial: 'template/select_tag_form', locals: {select_tag_data: ["male", "female", "unknown"], id_name: "gender",is_other: false}
 
 
         #material_information.col-md-12.col-xs-12
             .col-md-12.material_information
-                label.col-md-4.col-xs-12.control-label Material status
+                label.col-md-4.col-xs-12.control-label 
+                    | Material status
+                    span * 
                 .col-md-8.col-xs-12.no-padding 
                     = render partial: 'template/select_tag_form', locals: {select_tag_data: ["single", "married", "defacto", "divorced", "separated", "widowed", "unknown"], id_name: "material_status",is_other: false}
 
             .col-md-12.material_information
-                label.col-md-4.col-xs-12.control-label Dependests Count
+                label.col-md-4.col-xs-12.control-label 
+                    | Dependests Count
+                    span * 
                 .col-md-8
-                    input#dependentsCount.col-md-12.col-xs-12.apply.form-control type="number" required="true" placeholder="Depen"
+                    input#dependentsCount.col-md-12.col-xs-12.apply.form-control type="number" required="true" placeholder="Dependest Count"
             .col-md-12.material_information
                 label.col-md-4.col-xs-12.control-label Dependests Age
                 .col-md-8
-                    input#dependentsAge.col-md-5.col-xs-12.apply.form-control pattern="\d*" type="number" required="true"  placeholder="count"
-                    #depend_age_form.col-md-5.col-xs-12.col-md-offset-4.no-padding 
+                    input#dependentsAge.col-md-5.col-xs-12.apply.form-control pattern="\d*" type="number" required="true"  placeholder="Age 1"
+                    #depend_age_form.col-md-12.col-xs-12.no-padding 
             .col-md-12.material_information
-                label.col-md-4.col-xs-12.control-label Home phone
+                label.col-md-4.col-xs-12.control-label  
+                    | Phone Number
+                    span * 
                 .col-md-8
                     input#home_phone.col-md-12.col-xs-12.apply.form-control.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     " required="true"]
-            .col-md-12.material_information
-                label.col-md-4.col-sm-12.col-xs-12.control-label Mobile phone
-                .col-md-8
-                    input#mobile_phone.col-md-12.col-xs-12.apply.form-control.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     " required="true"]
 
         #driver_information.col-md-12.col-xs-12
             .col-md-12.driver_information
-                label.col-md-4.col-sm-12.col-xs-12.control-label Driver Licence Number
+                label.col-md-4.col-sm-12.col-xs-12.control-label 
+                    | Driver Licence Number
+                    span * 
                 .col-md-8
                     input#driver_licence.col-md-12.col-xs-12.apply.form-control[data-validation="required" required="true"  placeholder="Driver licence number"]
 
             .col-md-12.driver_information
-                label.col-md-4.col-sm-12.col-xs-12.control-label Driver Licence Version
+                label.col-md-4.col-sm-12.col-xs-12.control-label 
+                    | Driver Licence Version
+                    span * 
                 .col-md-8
                     input#driver_licence_version.col-md-12.col-xs-12.form-control.apply[data-validation="required" required="true" placeholder="Driver licence version"]
 
             .col-md-12.driver_information
-                label.col-md-4.col-sm-12.col-xs-12.control-label Driver Licence Country
+                label.col-md-4.col-sm-12.col-xs-12.control-label 
+                    | Driver Licence Country
+                    span * 
+
                 .col-md-8
                     input#driver_licence_country.col-md-12.col-xs-12.apply[data-validation="required"  required="true" placeholder="Driver licence country"]
 
             .col-md-12.driver_information
-                label.col-md-4.col-xs-12.control-label Drivers Licence type
+                label.col-md-4.col-xs-12.control-label 
+                    | Driver Licence type
+                    span * 
+
                 .col-md-8.col-xs-12 
                     = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Learners", "Restrictad", "International", "Full"], id_name: "driver_licence",is_other: false}
 
 
             .col-md-12.driver_information
-                label.col-md-4.col-xs-12.control-label Drivers Licence Expire Date
+                label.col-md-4.col-xs-12.control-label 
+                    | Driver Licence Expire Date
+                    span * 
                 .col-md-8
                     input#drivers_licence_expire_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
 
 
 
             .col-md-12.driver_information
-                label.col-md-4.col-xs-12.control-label Citizen ship
+                label.col-md-4.col-xs-12.control-label 
+                    | Citizen ship
+                    span * 
                 .col-md-8
                     input#citizen_ship.col-md-12.col-xs-12.apply.form-control.required[data-validation="required" required="true" placeholder="CITIZEN"]
 
@@ -115,17 +141,26 @@
 
 
             .col-md-12.driver_information
-                label.col-md-4.col-xs-12.control-label Last Entry Date
+                label.col-md-4.col-xs-12.control-label 
+                    | Last Entry Date
+                    span * 
+
                 .col-md-8
                     input#last_entry_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
             .col-md-12.driver_information
-                label.col-md-4.col-xs-12.control-label Visa Expire Date
+                label.col-md-4.col-xs-12.control-label 
+                    | Visa Expire Date
+                    span * 
+
                 .col-md-8
                     input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
 
 
             .col-md-12.driver_information
-                label.col-md-4.col-xs-12.control-label Residential status
+                label.col-md-4.col-xs-12.control-label 
+                    | Residential status
+                    span * 
+
                 .col-md-8.col-xs-12 
                     = render partial: 'template/select_tag_form', locals: {select_tag_data: ["citizen", "resident", "work visa", "working holiday", "visitor visa", "student visa", "other"], id_name: "residential_status",is_other: false}
 
