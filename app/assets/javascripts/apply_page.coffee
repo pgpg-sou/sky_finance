@@ -20,6 +20,20 @@ $(document).ready ->
 ############# 合計を出すプログラム 
 ############################################################################
 
+    @update_liability_information = ()->
+        total = 0
+        total_num = 0
+        $('#liability_information input').each( ->
+            if $(this).attr('id') != "other_liability_name" && $(this).attr('id') != "total_liability" && $(this).attr('id') != "total_num_liability"
+                cash = get_liablity($(this))
+                if cash != 0 && cash != ""
+                    total += cash
+                    total_num += valid_liability_form($(this))
+
+        )
+        $('#total_liability').val(total)
+        $('#total_num_liability').val(total_num)
+
     $('#liability_information input').blur( ->
         total = 0
 
@@ -39,6 +53,22 @@ $(document).ready ->
             $('#total_liability').val(total)
             $('#total_num_liability').val(total_num)
     )
+
+    @update_assets_information = ()->
+        total = 0
+        total_num = 0
+        $('#assets_information input').each( ->
+            if $(this).attr('id') != "morgage_other" && $(this).attr('id') != "total_assets_info" && $(this).attr('id') != "total_assets_num"
+                cash = get_liablity($(this))
+                if cash != 0 && cash != ""
+                    total += cash
+                    total_num += valid_liability_form($(this))
+
+        )
+        $('#total_assets_info').val(total)
+        $('#total_assets_num').val(total_num)
+
+
 
     $('#assets_information input').blur( ->
         total = 0
@@ -63,6 +93,20 @@ $(document).ready ->
             $('#total_assets_num').val(total_num)
     )
 
+    @update_loans_information = ()->
+        total = 0
+        total_num = 0
+        $('#loans_information input').each( ->
+            if $(this).attr('id') != "loan_company_name" && $(this).attr('id') != "total_liability" && $(this).attr('id') != "total_num"
+                cash = get_liablity($(this))
+                if cash != 0 && cash != ""
+                    total += cash
+                    total_num += valid_liability_form($(this))
+
+        )
+        $('#total_liability').val(total)
+        $('#total_num').val(total_num)
+
 
     $('#loans_information input').blur( ->
         total = 0
@@ -79,6 +123,20 @@ $(document).ready ->
             $('#total_num').val(total_num)
 
     )
+    @update_income_information = ()->
+        total = 0
+        total_num = 0
+        $('#income_information input').each( ->
+            if $(this).attr('id') != "income_name" && $(this).attr('id') != "total_income_other" && $(this).attr('id') != "total_income_num"
+                cash = get_liablity($(this))
+                if cash != 0 && cash != ""
+                    total += cash
+                    total_num += valid_liability_form($(this))
+
+        )
+        $('#total_income_other').val(total)
+        $('#total_income_num').val(total_num)
+
 
     $('#income_information input').blur( ->
         total = 0
@@ -94,6 +152,20 @@ $(document).ready ->
             $('#total_income_other').val(total)
             $('#total_income_num').val(total_num)
     )
+
+    @update_outgoing_information = ()->
+        total = 0
+        total_num = 0
+        $('#outgoing_information input').each( ->
+            if $(this).attr('id') != "other_name" && $(this).attr('id') != "total_outgoing" && $(this).attr('id') != "total_outgoing_num"
+                cash = get_liablity($(this))
+                if cash != 0 && cash != ""
+                    total += cash
+                    total_num += valid_liability_form($(this))
+
+        )
+        $('#total_outgoing').val(total)
+        $('#total_outgoing_num').val(total_num)
 
 
     $('#outgoing_information input').blur( ->
@@ -254,32 +326,32 @@ $(document).ready ->
     $('#add_outgoing_area').click ->
         $('#outgoing_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4">' +
                                         '<input id="other_name" class="col-md-5 apply" placeholder="asset name"/>' +
-                                        '<input id="other_liability" class="col-md-5 apply" placeholder="$"/>' +
+                                        '<input id="other_liability" class="col-md-5 apply" placeholder="$" onblur="update_outgoing_information()"/>' +
                                    '</div>')
 
 
     $('#add_income_area').click ->
         $('#income_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4">' +
                                         '<input class="col-md-5 apply" placeholder="asset name" id="income_name"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$" id="income"/>' +
+                                        '<input class="col-md-5 apply" placeholder="$" id="income" onblur="update_income_information()"/>' +
                                    '</div>')
 
     $('#add_morgage_area').click ->
         $('#morgages_other').append('<div class="col-md-8 col-xs-12 col-md-offset-3 no-padding ">' +
                                         '<input class="col-md-5 apply" placeholder="asset name" id="morgage_other"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$" id="morgage"/>' +
+                                        '<input class="col-md-5 apply" placeholder="$" id="morgage" onblur="update_assets_information()"/>' +
                                    '</div>')
 
     $('#add_liability').click ->
         $('#liability_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4  ">' +
                                         '<input class="col-md-5 apply" id="other_liability_name" placeholder="asset name"/>' +
-                                        '<input class="col-md-5 apply" id="other_liability" placeholder="$"/>' +
+                                        '<input class="col-md-5 apply" id="other_liability" placeholder="$" onblur="update_liability_information()"/>' +
                                    '</div>')
 
     $('#add_loan').click ->
         $('#loan_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 ">' +
-                                        '<input class="col-md-5 apply" placeholder="asset name"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$"/>' +
+                                        '<input class="col-md-5 apply" placeholder="asset name" id="loan_company_name"/>' +
+                                        '<input class="col-md-5 apply" placeholder="$" id="loans" onblur="update_loans_information()"/>' +
                                    '</div>')
 
 

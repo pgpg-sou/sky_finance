@@ -36,9 +36,9 @@
 
 
     label.error {
-        color: #f87a7a;
+        color: white;
         font-size: 16px;
-        padding: 8px 0 0px;
+        padding: 0px 11px;
     }
     h2 {
         font-size: 16px;
@@ -131,6 +131,7 @@ input#dependentsCount,
 input#dependentsAge,
 input#home_phone,
 input#mobile_phone,
+input#previous_address,
 input#driver_licence,
 input#driver_licence_version,
 input#driver_licence_country,
@@ -149,12 +150,28 @@ input#nearest_first_name,
 input#nearest_last_name,
 input#nearest_address,
 input#nearest_phone_number,
-input#date_of_birth
+input#date_of_birth,
+input#previous_company,
+input#previous_company_address,
+input#other_liability_name,
+input#other_liability,
+input#loans,
+input#loan_company_name,
+input#assets_home,
+input#assets_furnishing,
+input#assets_bank_account,
+input#assets_car,
+input#assets_investments,
+input#morgage_other,
+input#morgage,
+input#other_name,
+input#income_name,
+input#income
 {
     
-    &:valid {
+    &:valid:not(:placeholder-shown) {
         background: url(image_path('checked.png'));
-        background-size: 23px;
+        background-size: 30px;
         background-repeat: no-repeat;
         background-position: right;
 
@@ -164,7 +181,7 @@ input#date_of_birth
 
     &:invalid:not(:focus):not(:placeholder-shown) {
         background: url(image_path('cancel.png'));
-        background-size: 23px;
+        background-size: 30px;
         background-repeat: no-repeat;
         background-position: right;
 

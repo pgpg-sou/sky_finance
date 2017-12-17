@@ -2,26 +2,36 @@
 li#application
     #assets_information.col-md-12.col-xs-12
         .col-md-12
-            label.col-md-3.control-label home
-            input#assets_home.col-md-7.col-xs-12.apply placeholder="$" type="number" 
+            label.col-md-3.control-label 
+                | home
+                span *
+            input#assets_home.col-md-7.col-xs-12.apply placeholder="$" type="number" required="true"
         .col-md-12
-            label.col-md-3.control-label furnishing
-            input#assets_furnishing.col-md-7.col-xs-12.apply placeholder="$" type="number" 
+            label.col-md-3.control-label 
+                | furnishing
+                span *
+            input#assets_furnishing.col-md-7.col-xs-12.apply placeholder="$" type="number"  required="true"
         .col-md-12
-            label.col-md-3.control-label bank Account
-            input#assets_bank_account.col-md-7.col-xs-12.apply placeholder="$" type="number" 
+            label.col-md-3.control-label 
+                | bank Account
+                span *
+            input#assets_bank_account.col-md-7.col-xs-12.apply placeholder="$" type="number" required="true"
         .col-md-12
-            label.col-md-3.control-label car
-            input#assets_car.col-md-7.col-xs-12.apply placeholder="$" type="number" 
+            label.col-md-3.control-label 
+                | car
+                span *
+            input#assets_car.col-md-7.col-xs-12.apply placeholder="$" type="number" required="true"
         .col-md-12
-            label.col-md-3.control-label investments
-            input#assets_investments.col-md-7.col-xs-12.apply placeholder="$" type="number" 
+            label.col-md-3.control-label 
+                | investments
+                span *
+            input#assets_investments.col-md-7.col-xs-12.apply placeholder="$" type="number" required="true"
         .col-md-12
             label.col-md-3.control-label Other 
             #morgages_other 
                 .col-md-8.col-xs-12.no-padding
-                    input#morgage_other.col-md-5.apply placeholder="asset name"
-                    input#morgage.col-md-5.apply placeholder="$"
+                    input#morgage_other.col-md-5.apply placeholder="asset name" type="text"
+                    input#morgage.col-md-5.apply placeholder="$" type="number"
 
             #custom_income.col-md-7.col-xs-12.col-md-offset-3.no-padding 
                 p#add_morgage_area.col-md-12 click to add information

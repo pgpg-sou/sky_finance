@@ -1,25 +1,31 @@
 li#application
     #living_information.col-md-12.col-xs-12
         .col-md-12
-            label.col-sm-4.col-xs-12.control-label Tenancy
+            label.col-sm-4.col-xs-12.control-label 
+                | Tenancy
+                span * 
             .col-md-8.col-xs-12 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Boarding", "Renting", "Living with Parent", "Living with Relative", "Owner Mortage", "Home owner FreeHold", "Other"], id_name: "tenancy_status",is_other: false}
 
 
         .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label Current address
+            label.col-md-4.col-xs-12.control-label 
+                | Current address
+                span * 
             .col-md-8
                 input#postal_address.col-md-12.col-xs-12.apply.required[data-validation="required" required="true" placeholder="21A..."] 
 
         .col-md-12
-            label.col-md-4.col-xs-12.control-label How long have you lived at this address?
+            label.col-md-4.col-xs-12.control-label 
+                | How long have you lived at this address?
+                span * 
             .col-md-8.col-xs-12 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "living_period",is_other: false}
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Previous address(if less than 2 years at current address)
             .col-md-8
-                input#previous_address.col-md-12.col-xs-12.apply[placeholder="21A..."]
+                input#previous_address.col-md-12.col-xs-12.apply[placeholder="21A..." type="text"]
 
         .col-md-12
             label.col-md-4.col-xs-12.control-label How long have you lived at this address?
@@ -29,29 +35,39 @@ li#application
 
     #work_information.col-md-12.col-xs-12
         .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label Current company
+            label.col-md-4.col-xs-12.control-label 
+                | Current company
+                span * 
             .col-md-8
                 input#current_company.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="Sample Inc" required="true"]
 
         .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label Current Address
+            label.col-md-4.col-xs-12.control-label 
+                | Current Address
+                span *
             .col-md-8
                 input#current_company_address.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="company Address" required="true"]
 
 
         .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label Current Employer phone
+            label.col-md-4.col-xs-12.control-label 
+                | Current Employer phone
+                span * 
             .col-md-8
                 input#current_phone_number.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="(   )    -     "  required="true"]
 
 
         .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label Current Employer Type
+            label.col-md-4.col-xs-12.control-label 
+                | Current Employer Type
+                span * 
             .col-md-8.col-xs-12 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Full", "Part time"], id_name: "employtype",is_other: false}
 
         .col-md-12
-            label.col-md-4.col-xs-12.control-label How long have you worked at this company?
+            label.col-md-4.col-xs-12.control-label 
+                | How long have you worked at this company?
+                span *
             .col-md-8.col-xs-12 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "how_long_work",is_other: false}
 
