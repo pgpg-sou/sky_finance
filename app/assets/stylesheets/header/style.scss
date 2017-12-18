@@ -1,0 +1,553 @@
+@charset "utf-8";
+
+/*================================================================================
+
+全デバイス共通
+
+================================================================================*/
+
+/*---------------
+
+common
+
+-------------------------*/
+
+.layout {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    display: block;
+}
+
+section{
+	width: 100%;
+	padding: 100px 0;
+	overflow: hidden;
+}
+
+a{
+	transition: 0.3s;
+}
+
+a:hover{
+	opacity: 0.7;
+}
+
+p{
+	line-height: 1.6;
+}
+
+img{
+	max-width: 100%;
+}
+
+a.pageTop{
+	color: #fff;
+	line-height:1.7;
+	font-size: 32px;
+	text-align: center;
+	text-decoration: none;
+	background: #3dd425;
+	position: fixed;
+	z-index: 9999;
+	right: 20px;
+	bottom: 20px;
+	width: 60px;
+	height: 60px;
+	transition: all .4s;
+}
+
+a.pageTop:hover{
+	opacity: 1;
+	line-height: 1.3;
+}
+
+/*---------------
+
+ナビ
+
+-------------------------*/
+
+nav{
+	position: fixed;
+	width: 100%;
+	background: transparent;
+	z-index: 9999;
+}
+
+nav h1 a{
+	width: 170px;
+	margin: 0 auto;
+}
+
+nav img{
+	width: 140px;
+	padding: 9px;
+	float: left;
+}
+
+nav ul{text-align: center;}
+
+nav ul li{
+	display: inline-block;
+	padding: 29px 25px 29px 25px;
+}
+
+nav ul li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: 'Montserrat', sans-serif; 
+}
+
+/*---------------
+
+header
+
+-------------------------*/
+
+header{
+	width: 100%;
+	background: url(image_path('bg_mainvisual.png'));
+	background-size: cover;
+	background-position: inherit;
+	background-repeat: no-repeat;
+	height: 750px;
+	text-align: center;
+}
+
+header p{
+	color: #fff;
+}
+
+header video{
+	width: 580px;
+	float: left;
+	position: relative;
+	top: 210px;
+	display: none;
+}
+
+header p.catch{
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1.1;
+    letter-spacing: 0.1em;
+    position: relative;
+    top: 250px;
+    float: left;
+    text-align: left;
+}
+
+header a.arrow {
+	position: relative;
+	top: 82%;
+	width: 80px;
+	margin: 0 auto;
+	display: block;
+}
+
+header a.arrow:hover {
+	top: 84%;
+}
+
+header a.arrow img{
+	width: 60px;
+}
+
+header h1 img{
+	margin-top: 240px;
+	width: 50%;
+}
+
+/*---------------
+
+about
+
+-------------------------*/
+
+#about{
+
+}
+
+#about p.title{
+	text-align: center;
+	font-size: 147%;
+	letter-spacing: -1px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 60px;
+}
+
+#about p.title span{
+	display: block;
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#about p.desc{
+	text-align: center;
+}
+
+#about ul{
+	text-align: center;
+	overflow: hidden;
+	margin-top: 60px;
+}
+
+#about ul li{
+	width: 200px;
+	float: left;
+}
+
+#about ul li img{
+	width: 100%;
+}
+
+/*---------------
+
+middle
+
+-------------------------*/
+
+#middle{
+	background: url(img/bg_middle.jpg);
+	background-size: cover;
+	background-position: bottom;
+	text-align: center;
+	padding: 54px 0;
+}
+
+#middle img{
+	width: 240px;
+	margin:0 auto;
+}
+
+/*---------------
+
+contact
+
+-------------------------*/
+
+#contact {padding-top: 20px;}
+
+#contact ul{
+	text-align: center;
+}
+
+#contact ul li{
+	display: inline-block;
+	margin:0 10px;
+}
+
+#contact p.desc{
+	text-align: center;
+	margin-top: 80px;
+}
+
+#contact a{
+	display: block;
+	width: 200px;
+	padding: 20px 0;
+	margin: 40px auto 0;
+	text-align: center;
+	text-decoration: none;
+	background: #dd3333;
+	color: #fff;
+}
+
+#contact a.hp{
+	background: #000;
+}
+
+#contact a.hp i{
+	margin-left: 10px;
+}
+
+#contact a.instagram{
+	background:linear-gradient(-135deg,#1400c8,#b900b4,#f50000 74% ,#ffe668);
+	font-size: 18px;
+	padding: 13px 0;
+	width: 160px;
+}
+
+#contact a.twitter{
+	background: #00aced;
+	font-size: 18px;
+	padding: 13px 0;
+	width: 160px;
+}
+
+#contact a.instagram i,#contact a.twitter i{
+	margin-right: 10px;
+	margin-left: -5px;
+}
+
+/*---------------
+
+footer
+
+-------------------------*/
+
+footer{
+	padding: 30px 10px 20px;
+	background-color: #000000;
+	color: #ffffff;
+	text-align: center;
+}
+
+footer img.logo{
+	width: 130px;
+}
+
+footer p.desc{
+	margin-top: 30px;
+	font-size: 14px;
+	line-height: 1.8;
+}
+
+footer p.copy{
+	margin-top: 30px;
+	font-size: 14px;
+}
+
+/*================================================================================
+
+レスポンシブ（幅999px以下）タブレット以下
+
+================================================================================*/
+
+@media only screen and (max-width: 999px){
+
+/*---------------
+
+common
+
+-------------------------*/
+
+.pc{
+	display: none;
+}
+
+.layout {
+    width: 90%;
+}
+
+a{
+	display: block;
+	text-align: center;
+}
+
+/*---------------
+
+ナビ
+
+-------------------------*/
+
+nav img{
+	float: none;
+	width: 110px;
+}
+
+/* nav ul{
+	display: none;
+}
+ */
+a.menu-trigger:hover{
+	opacity: 1;
+}
+
+/* --------------  //Reset Styles  ----------------- */
+
+.gblnv_box{background-color: #444444; width: 100%; height: 124px; }
+.gblnv_box a {margin: 38px;}
+.gblnv_block{color: #ffffff;display: none;}
+.gblnv_block ul{padding: 10px;width: 100%;background: #0d2554;}
+.gblnv_block ul li{width: 100%;padding: 20px 0;}
+.gblnv_block ul li a{color: #ffffff; font-size: 26px; line-height: 260%;}
+.onanimation{display: block;}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all .4s;
+  box-sizing: border-box;
+}
+.menu-trigger {
+  position: absolute;
+  width: 34px;
+  height: 28px;
+  right: 15px;
+  top: 18px;
+}
+.menu-trigger span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 12px;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+.menu-trigger.active {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.menu-trigger.active span:nth-of-type(1) {
+  -webkit-transform: translateY(20px) rotate(-45deg);
+  transform: translateY(12px) rotate(-45deg);
+}
+.menu-trigger.active span:nth-of-type(2) {
+  -webkit-transform: translateY(0) rotate(45deg);
+  transform: translateY(0) rotate(45deg);
+}
+.menu-trigger.active span:nth-of-type(3) {
+  opacity: 0;
+}
+
+/*---------------
+
+header
+
+-------------------------*/
+
+header{
+	background-size: auto 100vh;
+	/*background-position: 85% 6vh;*/
+	height: 100vh;
+}
+
+header video{
+	/* display: none; */
+	position: absolute;
+	left: 6.5vw;
+	width: 88vw;
+	top: 104vh;
+}
+
+header p.catch{
+    font-size: 48px;
+    text-align: center;
+    float: none;
+    line-height: 1.1;
+    top: 62vh;
+}
+
+header p.catch span{
+}
+
+header a.arrow {
+	position: relative;
+	top: 68vh;
+	width: 100px;
+	margin: 0 auto;
+}
+
+header a.arrow:hover {
+	top:70vh;
+}
+
+header h1 img{
+	margin-top: 290px;
+}
+
+/*---------------
+
+about
+
+-------------------------*/
+
+#about{
+	margin-top: 58vw;
+}
+
+
+#about ul li{
+	width: 100%;
+}
+
+#about ul li img{
+	width: 70%;
+}
+
+/*---------------
+
+sns
+
+-------------------------*/
+
+/*#sns ul li h3 {
+    padding:;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}*/
+
+}
+
+/*================================================================================
+
+レスポンシブ（幅999px以下）スマホのみ
+
+================================================================================*/
+
+@media only screen and (max-width: 481px){
+
+/*---------------
+
+about
+
+-------------------------*/
+
+#about ul li{
+	width: 100%;
+}
+
+#about ul li img{
+	width: 70%;
+}
+
+/*---------------
+
+sns
+
+-------------------------*/
+
+#sns ul li {
+    width: 100%;
+    display: inline-block;
+    margin: 0 0 30px 0;
+}
+
+}
+/*================================================================================
+
+レスポンシブ（幅1000px以上）大画面PCのみに適応
+
+================================================================================*/
+
+@media only screen and (min-width: 1000px){
+
+/*---------------
+
+common
+
+-------------------------*/
+
+.sp{
+	display:none;
+}
+
+}

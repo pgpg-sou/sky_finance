@@ -14,4 +14,7 @@
  *= require site.min.css
  *= require home.scss
  *= require style.css
+
+ *= require header/reset.scss 
+ *= require header/style.scss
  */

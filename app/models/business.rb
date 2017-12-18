@@ -4,22 +4,22 @@ class Business < ActiveRecord::Base
 
     def self.generate(row)
         business = Business.new
-        business.name = row["business_name"] 
-        business.category = row["business_category"] 
-        business.sub_category_1 = row["sub_category_1"] 
-        business.sub_category_2 = row["sub_category_2"] 
+        business.name = row["Business Name"] 
+        business.category = row["Business Category"] 
+        business.sub_category_1 = row["Sub Category 1"] 
+        business.sub_category_2 = row["Sub Category 2"] 
         business.address = ""
-        business.city = row["city"] 
-        business.state = row["state"] 
-        business.phone = row["phone"] 
-        business.mobile = row["mobile"] 
-        business.fax = row["fax"] 
-        business.website = row["website"] 
-        business.email = row["email"] 
-        business.latitude = row["latitude"].to_f 
-        business.longitude = row["longitude"].to_f
-        business.facebook_page = row["facebook_page"] 
-        business.twitter_page = row["twitter_page"] 
+        business.city = row["City"] 
+        business.state = row["State"] 
+        business.phone = row["Phone"] 
+        business.mobile = row["Mobile"] 
+        business.fax = row["Fax"] 
+        business.website = row["Website"] 
+        business.email = row["Email"] 
+        business.latitude = row["Latitude"].to_f 
+        business.longitude = row["Longitude"].to_f
+        business.facebook_page = row["Facebook Page"] 
+        business.twitter_page = row["Twitter"] 
 
         return business
     end

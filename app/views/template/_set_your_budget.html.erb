@@ -1,0 +1,98 @@
+<div class="panel panel-default calculator-mini-widget">
+	<div class="panel-heading">
+		Set your budget
+	</div>
+	<div class="panel-arrow-down">
+	</div>
+	<div class="panel-body">
+		<div class="form-horizontal" role="form">
+			<div class="form-group eight-below">
+				<label class="control-label col-sm-12" for="amount-to-borrow-mini">Amount to borrow</label>
+				<div class="col-sm-12">
+					<div class="borrow-group borrow-blue-out">
+						<a style="width: 40px; float: left;">
+							<svg style="width:40px;height:40px;cursor:pointer;" onclick="alterCalcAmount(false)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.74 197.67">
+								<title>Asset 6</title>
+								<g id="Layer_2" data-name="Layer 2">
+									<g id="Calc_Box" data-name="Calc Box">
+										<path class="minus-svg-1" d="M25.34,0H177.39a25.34,25.34,0,0,1,25.34,25.34v147a25.34,25.34,0,0,1-25.34,25.35H25.34A25.34,25.34,0,0,1,0,172.32v-147A25.34,25.34,0,0,1,25.34,0Z"></path>
+										<path class="minus-svg-2" d="M150.59,107.12a2.86,2.86,0,0,1-3.08,2.53l-92.62-.05a2.86,2.86,0,0,1-3.09-2.53V96.94a2.85,2.85,0,0,1,3.08-2.53l92.61.05A2.87,2.87,0,0,1,150.59,97Z"></path>
+									</g>
+								</g>
+							</svg>
+						</a>
+						<div class="borrow-mini-section">
+							<span>&#163;
+</span>
+							<input type="text" class="form-control-borrow-mini" value="7500">
+						</div>
+						<a style="width: 40px; margin-left: 5px; float: left;">
+							<svg style="width:40px;height:40px;cursor:pointer;" onclick="alterCalcAmount(true)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.74 197.67">
+								<title>Asset 6</title>
+								<g id="Layer_2" data-name="Layer 2">
+									<g id="Calc_Box" data-name="Calc Box">
+										<path class="plus-svg-1" d="M25.34,0H177.39a25.34,25.34,0,0,1,25.34,25.34v147a25.34,25.34,0,0,1-25.34,25.35H25.34A25.34,25.34,0,0,1,0,172.32v-147A25.34,25.34,0,0,1,25.34,0Z"></path>
+										<path class="plus-svg-2" d="M142.58,107.27a2.6,2.6,0,0,1-2.59,2.59H111.46a2.6,2.6,0,0,0-2.59,2.59V141a2.6,2.6,0,0,1-2.59,2.59l-10.38,0A2.61,2.61,0,0,1,93.3,141V112.42a2.61,2.61,0,0,0-2.6-2.6l-28.53,0a2.6,2.6,0,0,1-2.6-2.6V96.83a2.6,2.6,0,0,1,2.59-2.59l28.54,0a2.6,2.6,0,0,0,2.59-2.59V63.13a2.6,2.6,0,0,1,2.59-2.59h10.38a2.61,2.61,0,0,1,2.59,2.6V91.68a2.61,2.61,0,0,0,2.59,2.6l28.53,0a2.61,2.61,0,0,1,2.59,2.6Z"></path>
+									</g>
+								</g>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="form-group">
+					<input type="text" name="bootstrapSlider" data-provide="slider" data-value="7500" value="7500" data-slider-min="1000" data-slider-max="250000" style="display: none;" data-slider-step="250" data-slider-value="7500">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-12" for="sel1">To pay back over</label>
+				<div class="col-sm-12">
+					<div class="pay-back-group">
+						<a>
+							<svg style="width:40px;height:40px;cursor:pointer;" onclick="changeCalcYears(false)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.74 197.67">
+								<title>Asset 6</title>
+								<g id="Layer_2" data-name="Layer 2">
+									<g id="Calc_Box" data-name="Calc Box">
+										<path class="minus-svg-1" d="M25.34,0H177.39a25.34,25.34,0,0,1,25.34,25.34v147a25.34,25.34,0,0,1-25.34,25.35H25.34A25.34,25.34,0,0,1,0,172.32v-147A25.34,25.34,0,0,1,25.34,0Z"></path>
+										<path class="minus-svg-2" d="M150.59,107.12a2.86,2.86,0,0,1-3.08,2.53l-92.62-.05a2.86,2.86,0,0,1-3.09-2.53V96.94a2.85,2.85,0,0,1,3.08-2.53l92.61.05A2.87,2.87,0,0,1,150.59,97Z"></path>
+									</g>
+								</g>
+							</svg>
+						</a>
+						<input type="text" placeholder="4 years" class="hidden">
+						<div class="text-holder">
+							<span class="calc-term-holder">4 years
+</span>
+						</div>
+						<a>
+							<svg style="width:40px;height:40px;cursor:pointer;" onclick="changeCalcYears(true)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.74 197.67">
+								<title>Asset 6</title>
+								<g id="Layer_2" data-name="Layer 2">
+									<g id="Calc_Box" data-name="Calc Box">
+										<path class="plus-svg-1" d="M25.34,0H177.39a25.34,25.34,0,0,1,25.34,25.34v147a25.34,25.34,0,0,1-25.34,25.35H25.34A25.34,25.34,0,0,1,0,172.32v-147A25.34,25.34,0,0,1,25.34,0Z"></path>
+										<path class="plus-svg-2" d="M142.58,107.27a2.6,2.6,0,0,1-2.59,2.59H111.46a2.6,2.6,0,0,0-2.59,2.59V141a2.6,2.6,0,0,1-2.59,2.59l-10.38,0A2.61,2.61,0,0,1,93.3,141V112.42a2.61,2.61,0,0,0-2.6-2.6l-28.53,0a2.6,2.6,0,0,1-2.6-2.6V96.83a2.6,2.6,0,0,1,2.59-2.59l28.54,0a2.6,2.6,0,0,0,2.59-2.59V63.13a2.6,2.6,0,0,1,2.59-2.59h10.38a2.61,2.61,0,0,1,2.59,2.6V91.68a2.61,2.61,0,0,0,2.59,2.6l28.53,0a2.61,2.61,0,0,1,2.59,2.6Z"></path>
+									</g>
+								</g>
+							</svg>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-12">
+		            <button style="display: block; margin: 0 auto; padding: 10px 15px; margin-top: 5px;" class="btn btn-blue scroll-to-element mini-calc-btn-scroller" data-scroll-target="#large-calculator">
+
+		                <img class="hidden-sm" src="<%= image_path('calc.png') %>" style="margin-right: 10px;" alt="white calculator">
+
+		                Calculate your loan
+
+		                <img class="hidden-sm" src="<%= image_path('down-arrow.png') %>" alt="down arrow" style="margin-left: 10px; transform: rotate(180deg);">
+		            </button>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
