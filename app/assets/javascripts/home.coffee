@@ -539,10 +539,16 @@ $(document).ready ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
+    $('ul#previous_employtype li').click ->
+        $('ul#previous_employtype li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
 
 
     Dropzone.autoDiscover = false
-    $("div.dropzone").dropzone({ 
+    $("div.dropzone_front").dropzone({ 
         url: "/home/upload_file",
         maxFiles: 2,
         success: (file, data) ->
@@ -558,13 +564,37 @@ $(document).ready ->
           $('input#driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
           $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
           $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
+          $('input#driver_licence_country').val(driver_licence["licence_country"]).addClass("valid")
 
-          #console.log words.join(",")
-          $.each(words, (index, word) ->
-              #$('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
-          )
+          
+          if driver_licence["licence_type"] == "LEARNER"
+              $('ul#driver_licence li').each ->
+                  $(this).removeClass('active')
+              $('ul#driver_licence > li:nth-child(1)').addClass('active')
+          else if driver_licence["licence_type"] == "RESTRICTED"
+              $('ul#driver_licence li').each ->
+                  $(this).removeClass('active')
+              $('ul#driver_licence > li:nth-child(2)').addClass('active')
+          else 
+              $('ul#driver_licence li').each ->
+                  $(this).removeClass('active')
+              $('ul#driver_licence > li:nth-child(4)').addClass('active')
+
+
 
     })
+
+    $("div.dropzone_back").dropzone({ 
+        url: "/home/upload_driver_licence_back",
+        maxFiles: 2,
+        success: (file, data) ->
+          console.log data["driver_licence"]
+          driver_licence = $.parseJSON(data["driver_licence"])
+
+    })
+
+
+
     $("div.visa_dropzone").dropzone({ 
         url: "/home/upload_file_visa",
         maxFiles: 2,
@@ -578,14 +608,22 @@ $(document).ready ->
           if visa_licence["visa_type"] == "Student Visa"
               initialize_radio_box($('li.radio.residential_status'))
               $('#residential_student_label').attr("class", "checked")
+          else if visa_licence["visa_type"] == "Work Visa"
+              $('ul#residential_status li').each ->
+                  $(this).removeClass('active')
+              $('ul#residential_status > li:nth-child(3)').addClass('active')
 
 
+          if visa_licence["gender"] == "Female"
+              $('ul#gender li').each ->
+                  $(this).removeClass('active')
+              $('ul#gender > li:nth-child(2)').addClass('active')
+          else if visa_licence["gender"] == "Male"
+              $('ul#gender li').each ->
+                  $(this).removeClass('active')
+              $('ul#gender > li:nth-child(1)').addClass('active')
 
 
-          #console.log words.join(",")
-          $.each(words, (index, word) ->
-              #$('ul#tag_list').append("<li><a class='btn btn-primary btn-rounded'>" + word + "</a></li>")
-          )
 
     })
 

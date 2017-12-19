@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'business/search'
 
   post 'home/upload_file_visa'
+  post 'home/upload_driver_licence_back'
   post 'home/upload_file'
   get 'home/index'
 

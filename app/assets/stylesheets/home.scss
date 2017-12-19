@@ -166,7 +166,10 @@ input#morgage_other,
 input#morgage,
 input#other_name,
 input#income_name,
-input#income
+input#income,
+input#previous_occupation,
+input#current_occupation,
+
 {
     
     &:valid:not(:placeholder-shown) {
@@ -399,6 +402,7 @@ ul#previous_living_period,
  ul#how_long_work_previous,
  ul#relation_ship,
  ul#credit_rating,
+ ul#previous_employtype 
   {
     margin: 0;
     padding: 0;

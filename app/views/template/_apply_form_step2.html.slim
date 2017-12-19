@@ -20,7 +20,7 @@ li#application
                 | How long have you lived at this address?
                 span * 
             .col-md-8.col-xs-12 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "living_period",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "living_period",is_other: true}
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Previous address(if less than 2 years at current address)
@@ -30,7 +30,7 @@ li#application
         .col-md-12
             label.col-md-4.col-xs-12.control-label How long have you lived at this address?
             .col-md-8.col-xs-12 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "previous_living_period",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "previous_living_period",is_other: true}
 
 
     #work_information.col-md-12.col-xs-12
@@ -56,20 +56,28 @@ li#application
             .col-md-8
                 input#current_phone_number.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="(   )    -     "  required="true"]
 
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label 
+                | Current Occupation
+                span * 
+            .col-md-8
+                input#current_occupation.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="Web Director"  required="true"]
+
+
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label 
                 | Current Employer Type
                 span * 
             .col-md-8.col-xs-12 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Full", "Part time"], id_name: "employtype",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["fullTime","commissionEarner","contractWorker","selfEmployed","partTime","casual","seasonal","beneficiary","student","retire","unemployed"], id_name: "employtype",is_other: false}
 
         .col-md-12
             label.col-md-4.col-xs-12.control-label 
                 | How long have you worked at this company?
                 span *
             .col-md-8.col-xs-12 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "how_long_work",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "how_long_work",is_other: true}
 
 
     #previous_work_information.col-md-12.col-xs-12
@@ -79,14 +87,26 @@ li#application
                 input#previous_company.col-md-12.col-xs-12.apply[ placeholder="previous company"]
 
         .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label Previous Company Address
+            label.col-md-4.col-xs-12.control-label 
+                | Previous Company Occupation
             .col-md-8
-                input#previous_company_address.col-md-12.col-xs-12.apply[placeholder="previous company address"]
+                input#previous_occupation.col-md-12.col-xs-12.apply[data-validation="required" placeholder="Web Director" ]
+
+
+
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label 
+                | Previous Employer Type
+            .col-md-8.col-xs-12 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["fullTime","commissionEarner","contractWorker","selfEmployed","partTime","casual","seasonal","beneficiary","student","retire","unemployed"], id_name: "previous_employtype",is_other: false}
+
+
+
 
         .col-md-12
             label.col-md-4.col-xs-12.control-label How long have you worked at previous company?
             .col-md-8.col-xs-12 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "how_long_work_previous",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "4 year", "5 year", "6 year", "7 year"], id_name: "how_long_work_previous",is_other: true}
 
 
 
