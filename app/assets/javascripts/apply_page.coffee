@@ -325,33 +325,33 @@ $(document).ready ->
 
     $('#add_outgoing_area').click ->
         $('#outgoing_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4">' +
-                                        '<input id="other_name" class="col-md-5 apply" placeholder="asset name"/>' +
-                                        '<input id="other_liability" class="col-md-5 apply" placeholder="$" onblur="update_outgoing_information()"/>' +
+                                        '<input id="other_name" class="col-md-5 col-xs-5 apply" placeholder="asset name"/>' +
+                                        '<input id="other_liability" class="col-md-5 col-xs-5 apply" placeholder="$" onblur="update_outgoing_information()"/>' +
                                    '</div>')
 
 
     $('#add_income_area').click ->
         $('#income_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4">' +
-                                        '<input class="col-md-5 apply" placeholder="asset name" id="income_name"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$" id="income" onblur="update_income_information()"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" placeholder="asset name" id="income_name"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="income" onblur="update_income_information()"/>' +
                                    '</div>')
 
     $('#add_morgage_area').click ->
         $('#morgages_other').append('<div class="col-md-8 col-xs-12 col-md-offset-3 no-padding ">' +
-                                        '<input class="col-md-5 apply" placeholder="asset name" id="morgage_other"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$" id="morgage" onblur="update_assets_information()"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" placeholder="asset name" id="morgage_other"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="morgage" onblur="update_assets_information()"/>' +
                                    '</div>')
 
     $('#add_liability').click ->
         $('#liability_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4  ">' +
-                                        '<input class="col-md-5 apply" id="other_liability_name" placeholder="asset name"/>' +
-                                        '<input class="col-md-5 apply" id="other_liability" placeholder="$" onblur="update_liability_information()"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" id="other_liability_name" placeholder="asset name"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" id="other_liability" placeholder="$" onblur="update_liability_information()"/>' +
                                    '</div>')
 
     $('#add_loan').click ->
         $('#loan_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 ">' +
-                                        '<input class="col-md-5 apply" placeholder="asset name" id="loan_company_name"/>' +
-                                        '<input class="col-md-5 apply" placeholder="$" id="loans" onblur="update_loans_information()"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" placeholder="asset name" id="loan_company_name"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="loans" onblur="update_loans_information()"/>' +
                                    '</div>')
 
 

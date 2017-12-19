@@ -526,10 +526,10 @@ ul#previous_living_period,
 #expence_information.focus,
 #assets_information.focus
  {
-    border: 1px solid #4ACBBA;
-    padding: 20px;
-    box-shadow: 2.5px 0.8px 4.75px 0.25px rgba(74, 203, 91, 0.3);
-    margin: 12px 0px;
+        border: 1px solid #4ACBBA;
+        padding: 20px;
+        box-shadow: 2.5px 0.8px 4.75px 0.25px rgba(74, 203, 91, 0.3);
+        margin: 12px 0px;
 
 }
 
@@ -542,7 +542,17 @@ ul#previous_living_period,
 
 
 
-
+ul.af_list {
+    width: 35%    
+}
+ul.af_list li.af_item {
+    padding: 15px 12px !important;
+    font-size: 21px !important;
+    border-bottom: 1px solid #e6e6e6;
+    span {
+        font-size: 21px !important;
+    }
+}
 
 
 
@@ -555,12 +565,14 @@ ul#previous_living_period,
 @media (min-width: 768px) and (max-width: 1200px) {
     #application label {
         font-size: 33px;
-        padding-bottom: 15px;
+        padding-bottom: 25px;
         color: #686868;
+        line-height: 40px;
     }
     #application .apply {
         height: 85px;
-        font-size: 36px
+        font-size: 36px;
+        margin-bottom: 18px;
     }
     .step h3 {
         font-size: 45px;
@@ -579,6 +591,8 @@ ul#previous_living_period,
     }
 
 
+
+
     ul#title,
     ul#gender,
     ul#title_tag_list,
@@ -588,13 +602,17 @@ ul#previous_living_period,
     ul#tenancy_status,
     ul#living_period,
     ul#previous_living_period,
-    ul#employtype,
-    ul#relation_ship,
-    ul#credit_rating,
+     ul#employtype,
+     ul#how_long_work,
+     ul#how_long_work_previous,
+     ul#relation_ship,
+     ul#credit_rating,
+     ul#previous_employtype 
       {
         margin: 0;
         padding: 0;
         list-style: none;
+        padding-bottom: 15px;
         li {
             display: inline-block;
             margin: 0 0 .5em 0.5em;
@@ -675,11 +693,167 @@ ul#previous_living_period,
     }
 
 
+#about_information,
+#material_information,
+#driver_information,
+#living_information,
+#work_information,
+#nearest_information,
+#liability_information,
+#loans_information,
+#previous_work_information,
+#outgoing_information,
+#income_information,
+#expence_information,
+#assets_information
+ {
+    border: 3px solid #fafafa;
+    padding: 20px;
+    box-shadow: 0.5px 0.8px 4.75px 0.25px rgba(38, 38, 38, 0.1);
+    margin: 12px 0px;
+    div.col-md-12 {
+        padding: 5px 0px;
+    }
+    label span {
+        color: #D03883;
+        font-size: 21px;
+    }
+}
+#about_information.focus,
+#material_information.focus,
+#driver_information.focus,
+#living_information.focus,
+#work_information.focus,
+#nearest_information.focus,
+#liability_information.focus,
+#loans_information.focus,
+#previous_work_information.focus,
+#outgoing_information.focus,
+#income_information.focus,
+#expence_information.focus,
+#assets_information.focus
+ {
+        border: 3px solid #4ACBBA;
+        padding: 20px;
+        box-shadow: 2.5px 0.8px 4.75px 0.25px rgba(74, 203, 91, 0.3);
+        margin: 12px 0px;
+
+}
 
 
+input#e_mail_address,
+input#first_name,
+input#middle_name,
+input#sur_name,
+input#dependentsCount, 
+input#dependentsAge,
+input#home_phone,
+input#mobile_phone,
+input#previous_address,
+input#driver_licence,
+input#driver_licence_version,
+input#driver_licence_country,
+input#drivers_licence_expire_date, 
+input#citizen_ship,
+input#last_entry_date,
+input#visa_expire_date, 
+input#liability_morgage, 
+input#liability_creditcard,
+input#liability_bankod,
+input#postal_address,
+input#current_company,
+input#current_company_address,
+input#current_phone_number,
+input#nearest_first_name,
+input#nearest_last_name,
+input#nearest_address,
+input#nearest_phone_number,
+input#date_of_birth,
+input#previous_company,
+input#previous_company_address,
+input#other_liability_name,
+input#other_liability,
+input#loans,
+input#loan_company_name,
+input#assets_home,
+input#assets_furnishing,
+input#assets_bank_account,
+input#assets_car,
+input#assets_investments,
+input#morgage_other,
+input#morgage,
+input#other_name,
+input#income_name,
+input#income,
+input#previous_occupation,
+input#current_occupation,
+
+{
+    
+    &:valid:not(:placeholder-shown) {
+        background: url(image_path('checked.png'));
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: right;
+
+        border-width: 2px;
+        border-color: #4ACBBA
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+        background: url(image_path('cancel.png'));
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: right;
+
+        border-width: 2px;
+        border-color: #DC585A
+    }
+   
+}
 
 
+    ul.af_list {
+        width: 80% !important   
+    }
+    ul.af_list li.af_item {
+        padding: 30px 12px !important;
+        font-size: 35px !important;
+        border-bottom: 1px solid #e6e6e6;
+        color: #666;
+        span {
+            font-size: 35px !important;
+        }
+    }
 
+    .ui-menu .ui-menu-item {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 90px;
+        border-bottom: 1px solid #e6e6e6;
+        list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+    }
+
+
+    .ui-menu .ui-menu-item a {
+        text-decoration: none;
+        display: block;
+        padding: 2px .4em;
+        line-height: 3.5;
+        min-height: 0;
+        font-weight: normal;
+        font-size: 35px;
+    }
+
+    #add_income_area, #add_liability, #add_loan, #add_morgage_area, #add_outgoing_area {
+        height: 80px;
+        border-radius: 8px;
+        border: 4px dotted grey;
+        text-align: center;
+        font-size: 42px;
+        padding-top: 25px;
+    }
 
 
 }

@@ -550,7 +550,7 @@ $(document).ready ->
     Dropzone.autoDiscover = false
     $("div.dropzone_front").dropzone({ 
         url: "/home/upload_file",
-        maxFiles: 2,
+        maxFiles: 1,
         success: (file, data) ->
           console.log data 
           console.log data["driver_licence"]
@@ -586,7 +586,7 @@ $(document).ready ->
 
     $("div.dropzone_back").dropzone({ 
         url: "/home/upload_driver_licence_back",
-        maxFiles: 2,
+        maxFiles: 1,
         success: (file, data) ->
           console.log data["driver_licence"]
           driver_licence = $.parseJSON(data["driver_licence"])
@@ -606,8 +606,9 @@ $(document).ready ->
           $('input#citizen_ship').val(visa_licence["citizen_ship"]).addClass("valid")
 
           if visa_licence["visa_type"] == "Student Visa"
-              initialize_radio_box($('li.radio.residential_status'))
-              $('#residential_student_label').attr("class", "checked")
+              $('ul#residential_status li').each ->
+                  $(this).removeClass('active')
+              $('ul#residential_status > li:nth-child(3)').addClass('active')
           else if visa_licence["visa_type"] == "Work Visa"
               $('ul#residential_status li').each ->
                   $(this).removeClass('active')
