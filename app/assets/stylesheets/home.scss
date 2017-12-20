@@ -564,18 +564,40 @@ ul.af_list li.af_item {
 
 @media (min-width: 768px) and (max-width: 1200px) {
     #application label {
-        font-size: 33px;
+        font-size: 37px;
         padding-bottom: 25px;
         color: #686868;
         line-height: 40px;
     }
+
+
+    .forward {
+        padding: 17px 40px 17px 30px;
+        font-size: 32px;
+        margin-left: 50px;
+    }
+    .backward {
+        padding: 17px 40px 17px 30px;
+        font-size: 32px;
+    }
+
+
+
+    p {
+        font-size: 2.3em;
+        line-height: 32px;
+    }
+    small {
+        font-size: 1.8em
+    }
     #application .apply {
         height: 85px;
-        font-size: 36px;
+        font-size: 40px;
         margin-bottom: 18px;
     }
     .step h3 {
         font-size: 45px;
+        line-height: 45px;
     }
 
     #application .apply:hover {
