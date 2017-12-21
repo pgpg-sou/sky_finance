@@ -500,3 +500,87 @@ $(document).ready ->
 
 
 
+
+    Dropzone.autoDiscover = false
+    $("div.dropzone_front").dropzone({ 
+        url: "/home/upload_file",
+        maxFiles: 1,
+        success: (file, data) ->
+          console.log data 
+          console.log data["driver_licence"]
+          driver_licence = $.parseJSON(data["driver_licence"])
+          words = data["words"]
+          
+          $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
+          $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
+          $('input#date_of_birth').val(driver_licence["birth_date"]).addClass("valid")
+           
+          $('input#driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
+          $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
+          $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
+          $('input#driver_licence_country').val(driver_licence["licence_country"]).addClass("valid")
+
+          
+          if driver_licence["licence_type"] == "LEARNER"
+              $('ul#driver_licence li').each ->
+                  $(this).removeClass('active')
+              $('ul#driver_licence > li:nth-child(1)').addClass('active')
+          else if driver_licence["licence_type"] == "RESTRICTED"
+              $('ul#driver_licence li').each ->
+                  $(this).removeClass('active')
+              $('ul#driver_licence > li:nth-child(2)').addClass('active')
+          else 
+              $('ul#driver_licence li').each ->
+                  $(this).removeClass('active')
+              $('ul#driver_licence > li:nth-child(4)').addClass('active')
+
+
+
+    })
+
+    $("div.dropzone_back").dropzone({ 
+        url: "/home/upload_driver_licence_back",
+        maxFiles: 1,
+        success: (file, data) ->
+          console.log data["driver_licence"]
+          driver_licence = $.parseJSON(data["driver_licence"])
+
+    })
+
+
+
+    $("div.visa_dropzone").dropzone({ 
+        url: "/home/upload_file_visa",
+        maxFiles: 2,
+        success: (file, data) ->
+          visa_licence = $.parseJSON(data["visa_licence"])
+          words = data["words"]
+          
+          $('input#visa_expire_date').val(visa_licence["expire_date"]).addClass("valid")
+          $('input#citizen_ship').val(visa_licence["citizen_ship"]).addClass("valid")
+
+          if visa_licence["visa_type"] == "Student Visa"
+              $('ul#residential_status li').each ->
+                  $(this).removeClass('active')
+              $('ul#residential_status > li:nth-child(3)').addClass('active')
+          else if visa_licence["visa_type"] == "Work Visa"
+              $('ul#residential_status li').each ->
+                  $(this).removeClass('active')
+              $('ul#residential_status > li:nth-child(3)').addClass('active')
+
+
+          if visa_licence["gender"] == "Female"
+              $('ul#gender li').each ->
+                  $(this).removeClass('active')
+              $('ul#gender > li:nth-child(2)').addClass('active')
+          else if visa_licence["gender"] == "Male"
+              $('ul#gender li').each ->
+                  $(this).removeClass('active')
+              $('ul#gender > li:nth-child(1)').addClass('active')
+
+
+
+    })
+
+
+
