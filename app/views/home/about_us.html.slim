@@ -1,7 +1,7 @@
 .container-fluid
   .row
-    = render 'template/navheader'
-    nav#breadcrumb.hidden-xs
+    = render 'template/navheader2'
+    nav#breadcrumb.hidden-xs.col-md-12.no-padding
       .container
         ol.breadcrumb itemscope="" itemtype="http://schema.org/BreadcrumbList"
           li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
@@ -16,11 +16,7 @@
       meta itemprop="position" content="2"
       section class="about-us-header" style="background: url('#{image_path('material_cover/car6.jpg')}') center center no-repeat"
 
-  .container
-    .row
-      .col-xs-12
-
-  section#content-area-style-grey
+  section#content-area-style-grey.col-md-12
     .container
       .inner-content-area
         h1.h1-mimic__h3 About us
