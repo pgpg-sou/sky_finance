@@ -21,13 +21,21 @@
 
  *= require annova_style/check_radio/skins/square/aero.css
 
+
+
  *= require lity.min.css
  *= require site.min.css
  *= require elements.scss
  *= require style.css
  *= require apply_page.scss
+
+
  *= require jquery-ui/jquery-ui.css
  *= require dropzone/dropzone.css
  *= require home.scss
+ 
+ *= require header/reset.scss 
+ *= require header/style.scss
+
 
  */

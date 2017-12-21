@@ -18,21 +18,21 @@ common
     height: auto;
     margin: 0px auto;
     display: block;
+
+    a{
+        transition: 0.3s;
+    }
+
+    a:hover{
+        opacity: 0.7;
+        color: #fff;
+    }
+
 }
 
-section{
-	width: 100%;
-	padding: 100px 0;
-	overflow: hidden;
-}
 
-a{
-	transition: 0.3s;
-}
 
-a:hover{
-	opacity: 0.7;
-}
+
 
 p{
 	line-height: 1.6;
@@ -70,7 +70,7 @@ a.pageTop:hover{
 -------------------------*/
 
 nav{
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	background: transparent;
 	z-index: 9999;
@@ -82,8 +82,8 @@ nav h1 a{
 }
 
 nav img{
-	width: 140px;
-	padding: 9px;
+	width: 100px;
+	padding: 15px 0;
 	float: left;
 }
 
@@ -91,7 +91,7 @@ nav ul{text-align: center;}
 
 nav ul li{
 	display: inline-block;
-	padding: 29px 25px 29px 25px;
+	padding: 35px 20px 29px 20px;
 }
 
 nav ul li a{
@@ -108,13 +108,23 @@ header
 
 -------------------------*/
 
-header{
+header.top{
 	width: 100%;
 	background: url(image_path('bg_mainvisual.png'));
 	background-size: cover;
 	background-position: inherit;
 	background-repeat: no-repeat;
 	height: 750px;
+	text-align: center;
+}
+
+header.other{
+	width: 100%;
+	background: url(image_path('bg_mainvisual.png'));
+	background-size: cover;
+	background-position: inherit;
+	background-repeat: no-repeat;
+	height: 90px;
 	text-align: center;
 }
 
@@ -226,93 +236,8 @@ middle
 	margin:0 auto;
 }
 
-/*---------------
 
-contact
 
--------------------------*/
-
-#contact {padding-top: 20px;}
-
-#contact ul{
-	text-align: center;
-}
-
-#contact ul li{
-	display: inline-block;
-	margin:0 10px;
-}
-
-#contact p.desc{
-	text-align: center;
-	margin-top: 80px;
-}
-
-#contact a{
-	display: block;
-	width: 200px;
-	padding: 20px 0;
-	margin: 40px auto 0;
-	text-align: center;
-	text-decoration: none;
-	background: #dd3333;
-	color: #fff;
-}
-
-#contact a.hp{
-	background: #000;
-}
-
-#contact a.hp i{
-	margin-left: 10px;
-}
-
-#contact a.instagram{
-	background:linear-gradient(-135deg,#1400c8,#b900b4,#f50000 74% ,#ffe668);
-	font-size: 18px;
-	padding: 13px 0;
-	width: 160px;
-}
-
-#contact a.twitter{
-	background: #00aced;
-	font-size: 18px;
-	padding: 13px 0;
-	width: 160px;
-}
-
-#contact a.instagram i,#contact a.twitter i{
-	margin-right: 10px;
-	margin-left: -5px;
-}
-
-/*---------------
-
-footer
-
--------------------------*/
-
-footer{
-	padding: 30px 10px 20px;
-	background-color: #000000;
-	color: #ffffff;
-	text-align: center;
-}
-
-footer img.logo{
-	width: 130px;
-}
-
-footer p.desc{
-	margin-top: 30px;
-	font-size: 14px;
-	line-height: 1.8;
-}
-
-footer p.copy{
-	margin-top: 30px;
-	font-size: 14px;
-}
 
 /*================================================================================
 
@@ -346,6 +271,10 @@ a{
 ナビ
 
 -------------------------*/
+
+nav{
+	position: fixed;
+}
 
 nav img{
 	float: none;
@@ -423,11 +352,6 @@ header
 
 -------------------------*/
 
-header{
-	background-size: auto 100vh;
-	/*background-position: 85% 6vh;*/
-	height: 100vh;
-}
 
 header video{
 	/* display: none; */

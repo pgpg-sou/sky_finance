@@ -628,6 +628,18 @@ $(document).ready ->
 
     })
 
+
+    $(".menu-trigger").click(() ->
+        $(this).toggleClass("active");
+        $(this).next().toggleClass("onanimation");
+        $('ul li').hide();
+        $('ul li').each((i) ->
+            $(this).delay(10 * i).fadeIn(300);
+        );
+    );
+
+
+
     #Dropzone.options.myDropZoneForm = {
     #    url: 'url/here',
     #    autoProcessQueue: false,
