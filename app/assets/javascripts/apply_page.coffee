@@ -531,10 +531,10 @@ $(document).ready ->
         url: "/home/upload_file",
         maxFiles: 1,
         success: (file, data) ->
-          console.log data 
           console.log data["driver_licence"]
           driver_licence = $.parseJSON(data["driver_licence"])
           words = data["words"]
+          window.post_form_data["driver_licence_front_image"] = file.dataURL
           
           $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
           $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
@@ -567,8 +567,7 @@ $(document).ready ->
         url: "/home/upload_driver_licence_back",
         maxFiles: 1,
         success: (file, data) ->
-          console.log data["driver_licence"]
-          driver_licence = $.parseJSON(data["driver_licence"])
+          window.post_form_data["driver_licence_back_image"] = file.dataURL
 
     })
 
@@ -580,6 +579,7 @@ $(document).ready ->
         success: (file, data) ->
           visa_licence = $.parseJSON(data["visa_licence"])
           words = data["words"]
+          window.post_form_data["visa_image"] = file.dataURL
           
           $('input#visa_expire_date').val(visa_licence["expire_date"]).addClass("valid")
           $('input#citizen_ship').val(visa_licence["citizen_ship"]).addClass("valid")
