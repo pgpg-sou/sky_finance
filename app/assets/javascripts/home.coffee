@@ -307,6 +307,8 @@ $(document).ready ->
     $('li.radio.relation_ship').click ->
         update_radio_box($('li.radio.relation_ship'), this)
 
+
+
     ##############################################################################
     ###  END   
     ##############################################################################
@@ -543,6 +545,13 @@ $(document).ready ->
         $('ul#previous_employtype li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
+
+
+    $('ul#supplies li').click ->
+        $('ul#supplies li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
 
     $(".menu-trigger").click(() ->
         $(this).toggleClass("active");

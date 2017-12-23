@@ -1,74 +1,65 @@
 #application.col-md-12
     #about_you
-        #about_you_error.error-message[style="display:none"]
-            p Please input red boarder box
-
-
-
-        .form-group
+        #company_information.col-md-12.col-xs-12
+        
             .col-md-12
-                label.col-md-12.col-xs-12.control-label Car New or Old
-                #title_error.error-message[style="display:none"]
-                    p Please select a title
-                ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                    = render partial: 'template/select_form', locals: {select_data: {"new" => "New", "old" => "Old"}, class_type: "car_new_old", is_other: false}
+                label.col-md-4.col-xs-12.control-label  Car New or Old
+                .col-md-8.col-xs-12.no-padding 
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["New", "Old"], id_name: "new_or_old",is_other: false}
 
-
-        .form-group
+        
             .col-md-12
-                label.col-md-12.col-xs-12.control-label Car Hp or Lease
-                #title_error.error-message[style="display:none"]
-                    p Please select a title
-                ol.col-md-12.col-sm-12.col-xs-12.no-padding
-                    = render partial: 'template/select_form', locals: {select_data: {"hp" => "HP", "lease" => "Lease"}, class_type: "car_hp_lease", is_other: false}
+                label.col-md-4.col-xs-12.control-label  Car Hp or Lease
+                .col-md-8.col-xs-12.no-padding 
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["HP", "LEASE"], id_name: "hp_or_leace",is_other: false}
 
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label Car Maker
                 .col-md-8
                     input#car_maker.col-md-12.col-xs-12.apply.form-control.required
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label  Car model
                 .col-md-8
                     input#car_model.col-md-12.col-xs-12.apply.form-control.required
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label grade
                 .col-md-8
-                    input#car_grade.col-md-12.col-xs-12.apply.form-control.required data-validation="required"  type="number"
-        .form-group
+                    input#car_grade.col-md-12.col-xs-12.apply.form-control.required   type="number"
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label car year
                 .col-md-8
-                    input#car_year.col-md-12.col-xs-12.apply.form-control.required data-validation="required" pattern="\d*" type="number"
-        .form-group
+                    input#car_year.col-md-12.col-xs-12.apply.form-control.required  pattern="\d*" type="number"
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label car mileage
                 .col-md-8
                     input#car_mileage.col-md-12.col-xs-12.apply.form-control.required
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label Car Color 
                 .col-md-8
                     input#car_color.col-md-12.col-xs-12.apply.form-control.required
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car cc rating
                 .col-md-8
                     input#car_cc_rating.col-md-12.col-xs-12.apply.form-control.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label Car reg
                 .col-md-8
                     input#car_reg.col-md-12.col-xs-12.form-control.apply.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car vin
                 .col-md-8
@@ -77,96 +68,96 @@
 
 
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label Car Trade Maker
                 .col-md-8
                     input#car_trade_maker.col-md-12.col-xs-12.apply.form-control.required
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label  Car Trade model
                 .col-md-8
                     input#car_trade_model.col-md-12.col-xs-12.apply.form-control.required
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label Trade grade
                 .col-md-8
                     input#car_trade_grade.col-md-12.col-xs-12.apply.form-control.required data-validation="required"  type="number"
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label car Trade year
                 .col-md-8
                     input#car_trade_year.col-md-12.col-xs-12.apply.form-control.required data-validation="required" pattern="\d*" type="number"
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-xs-12.control-label car Trade mileage
                 .col-md-8
                     input#car_trade_mileage.col-md-12.col-xs-12.apply.form-control.required
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label Car Trade Color 
                 .col-md-8
                     input#car_trade_color.col-md-12.col-xs-12.apply.form-control.required
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car Trade cc rating
                 .col-md-8
                     input#car_trade_cc_rating.col-md-12.col-xs-12.apply.form-control.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label Car Trade reg
                 .col-md-8
                     input#car_trade_reg.col-md-12.col-xs-12.form-control.apply.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car Trade vin
                 .col-md-8
                     input#car_trade_vin.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label Car Trade Price
                 .col-md-8
                     input#car_trade_price.col-md-12.col-xs-12.form-control.apply.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car Trade Less Encubarance
                 .col-md-8
                     input#car_trade_less_encubarance.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car Trade allowance
                 .col-md-8
                     input#car_trade_allowance.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label Car Trade subtotal
                 .col-md-8
                     input#car_trade_subtotal.col-md-12.col-xs-12.form-control.apply.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car Trade Less netprice
                 .col-md-8
                     input#car_trade_netprice.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car Trade total cash
                 .col-md-8
                     input#car_trade_total_cash.col-md-12.col-xs-12.apply.required[data-validation="required"]
 
 
-        .form-group
+        
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label car Trade balance outstanding
                 .col-md-8

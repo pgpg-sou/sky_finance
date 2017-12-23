@@ -45,7 +45,6 @@ jQuery(function($) {
 						var inputs = $(this).wizard('state').step.find(':input');
 						return !inputs.length || !!inputs.valid();
 					}
-			
 
 				}).validate({
 					errorPlacement: function(error, element) { 
@@ -58,13 +57,42 @@ jQuery(function($) {
 					}
 				});
 
-				//  progress bar
-				$("#progressbar").progressbar();
 
 				$("#survey_container").wizard({
 					afterSelect: function( event, state ) {
-						$("#progressbar").progressbar("value", state.percentComplete);
-						$("#location").text("(" + state.stepsComplete + "/" + state.stepsPossible + ")");
+                        var next_step_state = false 
+                        if(state["isMovingForward"] == false && state["stepIndex"] == 5) {
+                            $('.wizard-progress .w_step').last().removeClass("complete").addClass("in-progress")
+
+                        } else if(state["isMovingForward"] == true) {
+                            $('.wizard-progress .w_step').each(function() {
+                                if(next_step_state == true) {
+                                    $(this).addClass("in-progress")
+                                    next_step_state = false
+                                } else if ($(this).hasClass("in-progress") == true) {
+                                    console.log("true")
+                                    $(this).removeClass("in-progress").addClass("complete")
+                                    next_step_state = true
+                                }
+                            })
+                        } else {
+                            var previous_index = 0
+                            $('.wizard-progress .w_step').each(function(index, element) {
+                                if ($(this).hasClass("in-progress") == true) {
+                                    $(this).removeClass("in-progress")
+                                    previous_index = index - 1
+                                }
+                            })
+                            $('.wizard-progress .w_step').each(function(index, element) {
+                                if(index == previous_index) {
+                                    $(this).removeClass("complete").addClass("in-progress")
+                                }
+                            })
+                        }
+                        
+
+
+
 					}
 				});
 
@@ -98,9 +126,4 @@ jQuery(function($) {
     
     });
 
-
-
-
-
-    
 

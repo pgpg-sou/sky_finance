@@ -12,10 +12,10 @@ li#application
                 input#liability_creditcard.col-md-12.col-xs-12.apply placeholder="$credit card" type="number" required="true"
                 input#liability_bankod.col-md-12.col-xs-12.apply placeholder="$bank od" type="number" required="true"
 
-            #liability_form
+            #liability_form.custome_form  
                 .col-md-8.col-xs-12.col-md-offset-4
-                    input#other_liability_name.col-md-5.col-xs-5.apply placeholder="asset name" type="text"
-                    input#other_liability.col-md-5.col-xs-5.apply placeholder="$" type="number"
+                    input#other_liability_name.col-md-5.col-xs-5.apply placeholder="asset name" type="text" name="key"
+                    input#other_liability.col-md-5.col-xs-5.apply placeholder="$" type="number" name="value"
 
             #custom_liability.col-md-8.col-xs-12.col-md-offset-4
                 p#add_liability.col-md-10.col-xs-12 click to add information
@@ -30,10 +30,10 @@ li#application
     #loans_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-4.col-xs-12.control-label Loans Company
-            #loan_form
+            #loan_form.custome_form
                 .col-md-8.col-xs-12
-                    input#loan_company_name.col-md-5.col-xs-5.apply placeholder="asset name" type="text"
-                    input#loans.col-md-5.col-xs-5.apply placeholder="$" type="number"
+                    input#loan_company_name.col-md-5.col-xs-5.apply placeholder="asset name" type="text" name="key"
+                    input#loans.col-md-5.col-xs-5.apply placeholder="$" type="number" name="value"
 
             #custom_liability.col-md-8.col-xs-12.col-md-offset-4
                 p#add_loan.col-md-10.col-xs-12 click to add information

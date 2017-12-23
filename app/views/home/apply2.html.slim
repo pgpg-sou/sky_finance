@@ -34,14 +34,47 @@
         #survey_container
             #top-wizard
                 strong style="font-size:27px" Progress
-                #progressbar
+
+                .wizard-progress 
+                  .w_step.in-progress
+                    | Personal Info
+                    .node
+                      p 1
+                  .w_step
+                    | Address & Company
+                    .node
+                      p 2
+                  .w_step
+                    | Nearest Info
+                    .node
+                      p 3
+                  .w_step
+                    | Assets
+                    .node
+                      p 4
+                  .w_step
+                    | Morgage
+                    .node
+                      p 5
+
+                  .w_step
+                    | Other
+                    .node
+                      p 6
                 .shadow
+
+
+
+
+
+
+
             form#wrapped[name="example-1" action="survey_send_1.php" method="POST"]
                 #middle-wizard
                     .step
                         .row
                             h3.col-md-10 Enter your personal info
-                            = render 'template/apply_form_step1'
+                            = render 'template/apply_form_step4'
   
                     .step.row
                         .col-md-12
@@ -68,8 +101,6 @@
                             h3 Revenue balance information
                             = render 'template/apply_form_step7'
  
-  
-  
                     #complete.submit.step
                         i.icon-check
                         h3 Survey complete! Thank you for you time.

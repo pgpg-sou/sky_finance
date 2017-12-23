@@ -1,0 +1,84 @@
+$mainColor: #49CCB4;
+$baseColor: #666;
+
+
+.wizard-progress{
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  position:relative;
+  padding: 15px 0px;
+  
+  .w_step{
+    display: table-cell;
+    text-align: center;
+    vertical-align: top;
+    overflow: visible;
+    position:relative;
+    font-size: 14px;
+    color: $baseColor;
+    font-weight: bold;
+    padding-left: 20px; 
+    
+    &:not(:last-child):before{
+      content: '';
+      display:block;
+      position: absolute;
+      left: 50%;
+      top: 48px;
+      background-color: $baseColor;
+      height: 12px;
+      width: 100%;
+    }
+    
+    .node{
+      display: inline-block;
+      border: 6px solid $baseColor;
+      background-color: $baseColor;
+      border-radius: 50%;
+      height: 60px;
+      width: 60px;
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      margin-left: -18px;
+        p {
+            color: #fff;
+            font-size: 30px;
+        }
+    }
+    
+    &.complete{
+      &:before{
+        background-color: $mainColor;
+      }
+      .node{
+        border-color: $mainColor;
+        background-color: $mainColor;
+        
+        p {
+            color: #fff;
+            font-size: 30px;
+        }
+      }
+    }
+    
+    &.in-progress{
+      &:before{
+        background: $mainColor;
+        background: -moz-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
+        background: -webkit-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
+        background: linear-gradient(to right,  $mainColor 0%, $baseColor 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(     startColorstr='#{$mainColor}', endColorstr='#{$baseColor}',GradientType=1 );
+      }
+      .node{
+        border-color: $mainColor;
+        p {
+            color: #fff;
+            font-size: 30px;
+        }
+
+      }
+    }
+  }
+}

@@ -33,10 +33,26 @@
     section#main.container
         #survey_container
             #top-wizard
-                strong Progress
-                    span#location
-                #progressbar
+                strong style="font-size:27px" Progress
+
+                .wizard-progress 
+                  .w_step.in-progress
+                    | Comapny Info
+                    .node
+                      p 1
+                  .w_step
+                    | Director info
+                    .node
+                      p 2
+
                 .shadow
+
+
+
+
+
+
+
             form#wrapped[name="example-1" action="survey_send_1.php" method="POST"]
                 #middle-wizard
                     .step
