@@ -410,8 +410,8 @@ ul#footer-nav li {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	font-size:18px;
-	border:2px solid  #8dc63f;
-	color:#8dc63f;
+	border:2px solid  #49CCB4;
+	color:#49CCB4;
 	padding:15px 35px;
 	text-decoration:none; 
 	transition: background .5s ease; 
@@ -425,7 +425,7 @@ ul#footer-nav li {
 	outline:none;
 	background:#fff;
 }
-#complete button:hover{background:#00aeef; color:#fff; border:2px solid  #00aeef;}
+#complete button:hover{background:#49CCB4; color:#fff; border:2px solid  #49CCB4;}
 
 
 /** Featuers and Question boxes ============================= **/
