@@ -9,8 +9,6 @@
                 .col-md-8.col-xs-12.no-padding 
                     = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Yes", "No"], id_name: "supplies",is_other: false}
 
-
-
             .col-md-12
                 label.col-md-4.col-xs-12.control-label  
                     | Company Name
@@ -68,7 +66,7 @@
                     | Company TEL
                     span * 
                 .col-md-8
-                    input#company_tel.col-md-12.col-xs-12.apply.required[required="true" type="text" placeholder="080"]
+                    input#company_tel.col-md-6.col-xs-12.apply.required[required="true" type="text" placeholder="080"]
 
         
             .col-md-12
@@ -76,7 +74,7 @@
                     | Company E-mail
                     span * 
                 .col-md-8
-                    input#company_email.col-md-12.col-xs-12.apply.form-control name="e_mail_address" type="email" required="true" placeholder="e-mail"
+                    input#company_email.col-md-6.col-xs-12.apply.form-control name="e_mail_address" type="email" required="true" placeholder="e-mail"
 
         
             .col-md-12
@@ -93,7 +91,7 @@
                     | Business Main Category 
                     span * 
                 .col-md-8
-                    input#business_main_category.col-md-12.col-xs-12.apply.form-control.required type="text" required="true" data-validation="required" placeholder="Finance"
+                    input#business_main_category.col-md-6.col-xs-12.apply.required type="text" required="true" data-validation="required" placeholder="Finance"
 
         
             .col-md-12
@@ -101,7 +99,7 @@
                     | Business Sub Category
                     span * 
                 .col-md-8
-                    input#business_sub_category.col-md-12.col-xs-12.apply.form-control.required type="text" required="true" data-validation="required" placeholder="Finance"
+                    input#business_sub_category.col-md-6.col-xs-12.apply.required type="text" required="true" data-validation="required" placeholder="Finance"
 
 
             .col-md-12
@@ -109,27 +107,19 @@
                     | Business Type Company Type
                     span * 
                 .col-md-8
-                    input#business_type_company_type.col-md-12.col-xs-12.apply.required type="text" required="true" data-validation="required" placeholder="Finance"
+                    input#business_type_company_type.col-md-6.col-xs-12.apply.required type="text" required="true" data-validation="required" placeholder="Finance"
 
         #about_information.col-md-12.col-xs-12
-        
-            .col-md-12
-                label.col-md-4.col-xs-12.control-label Contact Person First Name
-                .col-md-8
-                    input#contact_persion_first_name.col-md-12.col-xs-12.apply.form-control.required  type="text" required="true" placeholder=".."
 
-
-        
-            .col-md-12
-                label.col-md-4.col-xs-12.control-label Contact Person Middle Name
+            .col-md-12.col-xs-12
+                label.col-md-4.col-xs-12.control-label  
+                    | Contact Person Name
+                    span * 
                 .col-md-8
-                    input#contact_persion_middle_name.col-md-12.col-xs-12.apply.form-control.required type="text" required="true" placeholder=".."
+                    input#contact_persion_first_name.col-md-3.col-sm-12.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="First Name" type="text" required="true"]
+                    input#contact_persion_middle_name.col-md-3.col-sm-12.col-xs-12.apply[name="first_name" placeholder="Middle Name " type="text" ]
+                    input#contact_persion_last_name.col-md-3.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="Sur Name" type="text" required="true"]
 
-        
-            .col-md-12
-                label.col-md-4.col-xs-12.control-label Contact Person Last Name
-                .col-md-8
-                    input#contact_persion_last_name.col-md-12.col-xs-12.apply.form-control.required type="text" required="true" placeholder=".."
 
 
         
@@ -151,13 +141,6 @@
                 label.col-md-4.col-xs-12.control-label Contact Person E-mail 
                 .col-md-8
                     input#contact_persion_email.col-md-12.col-xs-12.apply.form-control.required type="text" required="true" placeholder=".."
-
-        
-            .col-md-12
-                label.col-md-4.col-xs-12.control-label Company Physical Address
-                .col-md-8
-                    input#contact_persion_address.col-md-12.col-xs-12.apply.form-control.required type="text" required="true" placeholder=".."
-
 
 
 

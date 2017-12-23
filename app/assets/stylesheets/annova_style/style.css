@@ -217,13 +217,14 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 	display:inline-block;
 	cursor:pointer;
 	font-weight:600;
-	text-transform:uppercase;
 	outline:none;
-	background:#282828;
+	background:#49CCB4;
 	position:relative;
+
+    border-radius: 3px;
    } 
    
-.backward {padding:7px 20px 7px 30px;} 
+.backward {padding:10px 40px 10px 40px;} 
 
  button[disabled].backward, button[disabled].forward {
 	border:none;
@@ -232,7 +233,6 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 }
 
 .backward:before {
-	 content: "\f053"; 
     font-family: FontAwesome;
     text-decoration: inherit;
     position: absolute;
@@ -243,9 +243,8 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 	font-size:9px
    } 
  
-.forward {padding:7px 30px 7px 20px;}  
+.forward {padding:10px 40px 10px 40px;}  
    .forward:before {
-	 content: "\f054"; 
     font-family: FontAwesome;
     text-decoration: inherit;
     position: absolute;
@@ -256,7 +255,7 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 	font-size:9px
    } 
    
-.backward:hover, .forward:hover {background:#00aeef; color:#fff;}
+.backward:hover, .forward:hover {background:#49CCB4; color:#fff;}
 
 
 /** Header ==================== **/

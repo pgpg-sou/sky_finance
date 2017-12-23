@@ -41,7 +41,7 @@
                     .node
                       p 1
                   .w_step
-                    | Address & Company
+                    | Work
                     .node
                       p 2
                   .w_step
@@ -69,32 +69,32 @@
 
 
 
-            form#wrapped[name="example-1" action="survey_send_1.php" method="POST"]
+            form#wrapped[type="POST"]
                 #middle-wizard
                     .step
                         .row
                             h3.col-md-10 Enter your personal info
-                            = render 'template/apply_form_step1'
+                            //= render 'template/apply_form_step1'
   
                     .step.row
                         .col-md-12
                             h3 Please rate your overall satisfaction about the service provided.
-                            = render 'template/apply_form_step2'
+                            //= render 'template/apply_form_step2'
   
                     .step.row
                         .col-md-12
                             h3 How did you hear about our company?
-                            = render 'template/apply_form_step3'
+                            //= render 'template/apply_form_step3'
 
                     .step.row
                         .col-md-12
                             h3 Assets Information
-                            = render 'template/apply_form_step4'
+                            //= render 'template/apply_form_step4'
  
                     .step.row
                         .col-md-12
                             h3 Morgage Information
-                            = render 'template/apply_form_step6'
+                            //= render 'template/apply_form_step6'
 
                     .step.row
                         .col-md-12
@@ -104,10 +104,10 @@
                     #complete.submit.step
                         i.icon-check
                         h3 Survey complete! Thank you for you time.
-                        button.submit[type="submit" name="process"] Submit the survey
+                        button#application_submit.submit Submit the survey
 
                 #bottom-wizard
-                    button.backward[type="button" name="backward"] Backward
-                    button.forward[type="button" name="forward"] Forward 
+                    button.backward[type="button" name="backward" style="margin-right: 15px;"] < Prev
+                    button.forward[type="button" name="forward"] Next >
 
             form#wrapped[name="example-2" action="survey_send_2.php" method="POST"]

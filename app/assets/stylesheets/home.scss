@@ -18,7 +18,7 @@
     color: white;
     border: 1px solid white;
 }
-#application {
+#application, #business_application {
     .col-sm-10 {
         padding-bottom: 20px;
     }
@@ -426,7 +426,10 @@ ul#previous_living_period,
  ul#previous_employtype ,
  ul#supplies, 
  ul#new_or_old,
- ul#hp_or_leace 
+ ul#hp_or_leace,
+ ul#director_person_home_owner,
+ ul#director_person_driver_type,
+ ul#director_person_title
   {
     margin: 0;
     padding: 0;

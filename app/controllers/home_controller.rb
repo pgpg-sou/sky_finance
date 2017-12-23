@@ -39,6 +39,15 @@ class HomeController < ApplicationController
   def apply3
       render :layout => 'apply2'
   end
+
+  def application_saver
+      @application = params.to_json
+      logger.debug "sample"
+      logger.debug @application
+
+    
+      render :json => {"driver_licence" => @application}
+  end
   
   def apply_mail
       @application = params.to_json

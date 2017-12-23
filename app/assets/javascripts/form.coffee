@@ -29,3 +29,21 @@ $(document).ready ->
 
         console.log window.post_form_data
     )
+
+
+    $('#application_submit').click( ->
+        console.log window.post_form_data
+        $.ajax({
+            type:   "POST",
+            url:    "/home/application_saver",
+            data: window.post_form_data,
+            success: (data) -> 
+
+            ,
+            error: (error) -> 
+
+            }).done((data) -> 
+            )
+    )
+
+
