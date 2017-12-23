@@ -169,6 +169,26 @@ input#income_name,
 input#income,
 input#previous_occupation,
 input#current_occupation,
+input#company_name,
+input#trading_name,
+input#company_registration_number,
+input#gst_number,
+input#number_of_employees,
+input#company_address,
+input#company_po_box,
+input#company_tel,
+input#company_email,
+input#company_website,
+input#business_main_category,
+input#business_sub_category,
+input#business_type_company_type,
+input#contact_persion_address,
+input#contact_persion_email,
+input#contact_persion_phone,
+input#contact_persion_position,
+input#contact_persion_last_name,
+input#contact_persion_middle_name,
+input#contact_persion_first_name,
 
 {
     
@@ -289,9 +309,10 @@ select.form-control {
 select {
     background: transparent;
     background-image: url(image_path('arrow.png'))!important;
-    background-position-y: 18px !important;
+    background-position-y: 13px !important;
     background-repeat: no-repeat;
     background-position: right 20px center;    
+    height: 40px;
 }
 
 .no-padding {
@@ -402,7 +423,10 @@ ul#previous_living_period,
  ul#how_long_work_previous,
  ul#relation_ship,
  ul#credit_rating,
- ul#previous_employtype 
+ ul#previous_employtype ,
+ ul#supplies, 
+ ul#new_or_old,
+ ul#hp_or_leace 
   {
     margin: 0;
     padding: 0;
@@ -498,7 +522,8 @@ ul#previous_living_period,
 #outgoing_information,
 #income_information,
 #expence_information,
-#assets_information
+#assets_information,
+#company_information
  {
     border: 3px solid #fafafa;
     padding: 20px;
@@ -524,7 +549,8 @@ ul#previous_living_period,
 #outgoing_information.focus,
 #income_information.focus,
 #expence_information.focus,
-#assets_information.focus
+#assets_information.focus,
+#company_information.focus
  {
         border: 1px solid #4ACBBA;
         padding: 20px;
@@ -809,7 +835,7 @@ input#income_name,
 input#income,
 input#previous_occupation,
 input#current_occupation,
-
+#company_information input, 
 {
     
     &:valid:not(:placeholder-shown) {
@@ -877,6 +903,33 @@ input#current_occupation,
         padding-top: 25px;
     }
 
+
+    .large-calculator .main-calc-section .amount-to-borrow-form label {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0px;
+    }
+
+
+
+    .main-calc-section .calculator-title h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .large-calculator .representative-example h3 {
+        font-size: 1.2em;
+        text-align: center;
+        padding: 15px 0px;
+    }
+
+    .large-calculator .main-calc-section .large-calc-custom-apply .apply {
+        font-size: 2.2em;
+        font-weight: 800;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
 
 }
 

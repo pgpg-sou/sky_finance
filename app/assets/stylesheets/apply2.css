@@ -37,5 +37,6 @@
  *= require header/reset.scss 
  *= require header/style.scss
 
+ *= require progress.scss
 
  */

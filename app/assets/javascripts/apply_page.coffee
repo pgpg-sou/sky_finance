@@ -16,6 +16,12 @@ $(document).ready ->
             return 1
 
 
+
+    
+
+
+
+
 ############################################################################
 ############# 合計を出すプログラム 
 ############################################################################
@@ -274,6 +280,23 @@ $(document).ready ->
 
     )
 
+    $('#company_information input').focus( ->
+        parent_block = $(this).parent().parent().parent()
+        parent_block.addClass("focus")
+    ).blur( ->
+        parent_block = $(this).parent().parent().parent()
+        complete_block =  true
+        parent_block.find('input').each( ->
+            if $(this).val() == ""
+                complete_block = false
+        )
+        if complete_block
+            parent_block.addClass("focus")
+        else
+            parent_block.removeClass("focus")
+
+    )
+
 
     $('#assets_information input').focus( ->
         parent_block = $(this).parent().parent()
@@ -310,8 +333,10 @@ $(document).ready ->
             parent_block.addClass("focus")
         else
             parent_block.removeClass("focus")
-
     )
+
+    
+
 ############################################################################
 ############# ここまで
 ############################################################################

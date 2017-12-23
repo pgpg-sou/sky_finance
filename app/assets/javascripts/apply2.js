@@ -33,6 +33,7 @@
 //= require annova_js/fancybox/source/helpers/jquery.fancybox-media.js 
 //= require annova_js/fancy_func.js
 
+//= require form
 
 //= require annova_js/functions.js 
 
