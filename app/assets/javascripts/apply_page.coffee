@@ -553,7 +553,13 @@ $(document).ready ->
     $("div.dropzone_front").dropzone({ 
         url: "/home/upload_file",
         maxFiles: 1,
+        thumbnailWidth: 230,
+        thumbnailHeight: 140,
         success: (file, data) ->
+          console.log file 
+          console.log data 
+
+          $("div.dropzone_front").addClass("active")
           console.log data["driver_licence"]
           driver_licence = $.parseJSON(data["driver_licence"])
           words = data["words"]
@@ -588,8 +594,11 @@ $(document).ready ->
 
     $("div.dropzone_back").dropzone({ 
         url: "/home/upload_driver_licence_back",
+        thumbnailWidth: 230,
+        thumbnailHeight: 140,
         maxFiles: 1,
         success: (file, data) ->
+          $("div.dropzone_back").addClass("active")
           window.post_form_data["driver_licence_back_image"] = file.dataURL
 
     })
@@ -599,7 +608,10 @@ $(document).ready ->
     $("div.visa_dropzone").dropzone({ 
         url: "/home/upload_file_visa",
         maxFiles: 2,
+        thumbnailWidth: 230,
+        thumbnailHeight: 140,
         success: (file, data) ->
+          $("div.visa_dropzone").addClass("active")
           visa_licence = $.parseJSON(data["visa_licence"])
           words = data["words"]
           window.post_form_data["visa_image"] = file.dataURL

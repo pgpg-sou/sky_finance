@@ -237,15 +237,20 @@
   * {
     box-sizing: border-box;
   }
+  
   min-height: 130px;
-  border: 2px dashed #0087F7;
+  border: 2px dashed #cbcbcb;
   background: white;
-  padding: 24px 24px;
+  padding: 16px 16px;
   margin: 15px 0px;
 
+  &.active {
+      border: 3px dashed #4ACBBA;
+  }
 
   &.dz-clickable {
     cursor: pointer;
+    text-align: center;
     * {
       cursor: default;
     }
@@ -273,7 +278,7 @@
     position: relative;
     display: inline-block;
     vertical-align: top;
-    margin: 16px;
+    margin: 4px;
     min-height: 100px;
     &:hover {
       z-index: 1000;
@@ -368,8 +373,8 @@
     .dz-image {
       border-radius: 20px;
       overflow: hidden;
-      width: 120px;
-      height: 120px;
+      width: 230px;
+      height: 140px;
       position: relative;
       display: block;
       z-index: 10;
