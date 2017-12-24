@@ -50,14 +50,14 @@ $baseColor: #fff;
     
     &.complete{
       &:before{
-        background-color: $mainColor;
+        background-color: white;
       }
       .node{
-        border-color: $mainColor;
-        background-color: $mainColor;
+        border-color: white;
+        background-color: white;
         
         p {
-            color: #e3e3e3;
+            color: #49CCB4;
             font-size: 30px;
         }
       }
@@ -65,10 +65,10 @@ $baseColor: #fff;
     
     &.in-progress{
       &:before{
-        background: $mainColor;
-        background: -moz-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
-        background: -webkit-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
-        background: linear-gradient(to right,  $mainColor 0%, $baseColor 100%);
+        background: white;
+        //background: -moz-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
+        //background: -webkit-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
+        //background: linear-gradient(to right,  $mainColor 0%, $baseColor 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(     startColorstr='#{$mainColor}', endColorstr='#{$baseColor}',GradientType=1 );
       }
       .node{
