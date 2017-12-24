@@ -312,8 +312,6 @@ $(document).ready ->
     ##############################################################################
     ###  END   
     ##############################################################################
-
-
  
     total_income = $('#texable_income').val() + $('#any_other_income').val()
     $('#total_income').val()
@@ -551,6 +549,25 @@ $(document).ready ->
         $('ul#supplies li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
+
+
+    $(document).on('click', 'ul#director_person_driver_type li', ->
+        $('ul#director_person_driver_type li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+    )
+
+    $(document).on('click', 'ul#director_person_home_owner li', ->
+        $('ul#director_person_home_owner li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+    )
+
+    $(document).on('click', 'ul#director_person_title li', ->
+        $('ul#director_person_title li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+    )
 
 
     $(".menu-trigger").click(() ->

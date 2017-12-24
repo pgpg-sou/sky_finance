@@ -4,43 +4,41 @@
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label  Car New or Old
-                .col-md-8.col-xs-12.no-padding 
+                .col-md-8.col-xs-12
                     = render partial: 'template/select_tag_form', locals: {select_tag_data: ["New", "Old"], id_name: "new_or_old",is_other: false}
 
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label  Car Hp or Lease
-                .col-md-8.col-xs-12.no-padding 
+                .col-md-8.col-xs-12
                     = render partial: 'template/select_tag_form', locals: {select_tag_data: ["HP", "LEASE"], id_name: "hp_or_leace",is_other: false}
-
-
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label Car Maker
                 .col-md-8
-                    input#car_maker.col-md-12.col-xs-12.apply.form-control.required
+                    input#car_maker.col-md-6.col-xs-12.apply.required placeholder="Toyota" type="text" required="true" data-validation="required"
 
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label  Car model
                 .col-md-8
-                    input#car_model.col-md-12.col-xs-12.apply.form-control.required
+                    input#car_model.col-md-6.col-xs-12.apply.required  placeholder="prius" type="text" required="true" data-validation="required"
 
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label grade
                 .col-md-8
-                    input#car_grade.col-md-12.col-xs-12.apply.form-control.required   type="number"
+                    input#car_grade.col-md-6.col-xs-12.apply.required  type="text" placeholder="grade" required="true"
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label car year
                 .col-md-8
-                    input#car_year.col-md-12.col-xs-12.apply.form-control.required  pattern="\d*" type="number"
+                    input#car_year.col-md-6.col-xs-12.apply.required  pattern="\d*" type="number"
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label car mileage
                 .col-md-8
-                    input#car_mileage.col-md-12.col-xs-12.apply.form-control.required
+                    input#car_mileage.col-md-12.col-xs-12.apply.required
         
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label Car Color 

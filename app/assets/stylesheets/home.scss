@@ -217,7 +217,7 @@ input#contact_persion_first_name,
 
 
 
-#application .apply {
+#application .apply , #business_application .apply {
     font-size: 20px;
     height: 50px;
     background-color: white;
@@ -228,10 +228,10 @@ input#contact_persion_first_name,
     margin-bottom: 10px;
 
 }
-#application .apply:hover {
+#application .apply:hover, #business_application .apply:hover  {
     border-color: #442f70;
 }
-#application .apply.error {
+#application .apply.error, #business_application .apply.error  {
     border-width: 2px;
     border-color: #f87a7a;
 }
@@ -429,7 +429,7 @@ ul#previous_living_period,
  ul#hp_or_leace,
  ul#director_person_home_owner,
  ul#director_person_driver_type,
- ul#director_person_title
+ ul#director_person_title,
   {
     margin: 0;
     padding: 0;
@@ -526,7 +526,8 @@ ul#previous_living_period,
 #income_information,
 #expence_information,
 #assets_information,
-#company_information
+#company_information,
+#director_information
  {
     border: 3px solid #fafafa;
     padding: 20px;
@@ -838,7 +839,18 @@ input#income_name,
 input#income,
 input#previous_occupation,
 input#current_occupation,
-#company_information input, 
+input#director_person_first_name,
+input#director_person_middle_name,
+input#director_person_last_name,
+input#director_person_phone,
+input#director_person_email,
+input#director_person_date_of_birth,
+input#director_person_address,
+input#director_person_share,
+input#director_person_driver_licence,
+input#director_person_driver_version,
+input#director_person_expire_date
+
 {
     
     &:valid:not(:placeholder-shown) {

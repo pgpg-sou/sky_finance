@@ -6,16 +6,11 @@ $(document).ready ->
     $('#company_director_count').blur( ->
         number = parseInt($(this).val())
         
-        director_number = $('#company_information').length 
-        $('#company_information').each((index, element) ->
-            console.log index 
-            if index == 0
-            else 
-                $(this).remove()
-        )
+        director_number = $('#director_information').length - 1
+        $('#director_form').empty()
 
         if director_number != number
-            for i in [1...number]
+            for i in [0...number]
                 console.log i
-                $('#company_information').clone().appendTo('#director')
+                $('#director_information').clone().css('display', 'block').appendTo('#director_form')
     )
