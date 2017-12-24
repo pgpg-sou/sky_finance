@@ -967,6 +967,13 @@ input#director_person_expire_date
         width: 100%;
         text-align: center;
         padding: 15px 0px;
+        font-size: 2em;
+    }
+    .large-calculator .main-calc-section .pay-back-group div.text-holder span {
+        font-size: 2em;
+    }
+    .large-calculator .main-calc-section .amount-to-borrow-form .form-control-borrow-mini {
+        font-size: 2em;
     }
 
 
@@ -978,7 +985,7 @@ input#director_person_expire_date
     }
 
     .large-calculator .representative-example h3 {
-        font-size: 1.2em;
+        font-size: 2em;
         text-align: center;
         padding: 15px 0px;
     }
@@ -1013,15 +1020,37 @@ input#director_person_expire_date
     }
 
     .main-footer-area .desktop-footer p {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
     .main-footer-area .desktop-footer ul li {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .footer-featured-buttons a {
         font-size: 1.4em;
         padding: 10px 40px;
+    }
+
+    #your-questions .question-and-answers-desktop h3 {
+        font-size: 2em;
+    }
+
+    #your-questions .question-and-answers-desktop p {
+        font-size: 1.5em;
+    }
+
+    .large-calculator .main-calc-section .amount-to-borrow-form p {
+        font-size: 1.7em;
+    }
+    .large-calculator .select-p-text {
+        width: 150px;
+        height: 55px; 
+    }
+    .large-calculator .brand-icons-calc p {
+        font-size: 1.5em 
+    }
+    .large-calculator .main-calc-section .tablet-ratings p {
+        font-size: 1.4em 
     }
 
 }
