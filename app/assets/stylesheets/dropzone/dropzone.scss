@@ -251,6 +251,7 @@
   &.dz-clickable {
     cursor: pointer;
     text-align: center;
+    border-radius: 7px;
     * {
       cursor: default;
     }
@@ -510,3 +511,30 @@
     }
   }
 }
+
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .dropzone, .visa_dropzone, .dropzone_front, .dropzone_back {
+        box-sizing: border-box;
+        min-height: 250px;
+        border: 2px dashed #cbcbcb;
+        background: white;
+        padding: 16px 16px;
+        margin: 15px 0px;
+        p {
+            font-size: 2.0em;
+        }
+        small {
+            font-size: 1.5em;
+        }
+    }
+    .dropzone .dz-message, .visa_dropzone .dz-message, .dropzone_front .dz-message, .dropzone_back .dz-message {
+        text-align: center;
+        margin: 4.0em 0;
+    }
+
+
+
+
+}
+

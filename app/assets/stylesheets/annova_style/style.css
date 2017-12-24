@@ -222,9 +222,10 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 	position:relative;
 
     border-radius: 3px;
+    font-size: 22px;
    } 
    
-.backward {padding:10px 40px 10px 40px;} 
+.backward {padding:20px 70px 20px 70px;} 
 
  button[disabled].backward, button[disabled].forward {
 	border:none;
@@ -243,7 +244,7 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 	font-size:9px
    } 
  
-.forward {padding:10px 40px 10px 40px;}  
+.forward {padding:20px 70px 20px 70px;}  
    .forward:before {
     font-family: FontAwesome;
     text-decoration: inherit;
@@ -341,7 +342,7 @@ ul#footer-nav li {
 /** Form area ============================= **/
 #top-wizard {
 	text-align:center;
-	padding:45px 120px;
+	padding:45px 45px;
 	background-color:#FAFAFA;
 	border-bottom:1px solid #e7e7e7;
 	position:relative;

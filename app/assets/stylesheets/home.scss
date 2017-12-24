@@ -231,6 +231,11 @@ input#contact_persion_first_name,
 #application .apply:hover, #business_application .apply:hover  {
     border-color: #979797;
 }
+#application .apply::-webkit-input-placeholder, #business_application .apply::-webkit-input-placeholder  {
+    color: #e1e1e1
+}
+
+
 #application .apply.error, #business_application .apply.error  {
     border-width: 2px;
     border-color: #f87a7a;
@@ -363,6 +368,8 @@ ul#tag_list li {
     display: inline-block;
     margin: 0 0 .5em 0.5em;
 }
+
+
 ul#tag_list li a {
     font-size: 12px;
 }
@@ -501,6 +508,23 @@ ul#previous_living_period,
     li.btn-gray.active a {
         color: white;
     }
+
+    li.other {
+        display: inline-block;
+        margin: 0 0 .5em 0.5em;
+        input {
+            width: 70px;
+            height: 25px;
+        }
+        input::-web-kit-placeholder {
+        }
+        a {
+            padding: .3em;
+            padding-left: .0em;
+            padding-right: .4em;
+        }
+    }
+
     li.active {
         background-color: #23D1B2;
         border-color: #23D1B2;
@@ -602,13 +626,13 @@ ul.af_list li.af_item {
 
 
     .forward {
-        padding: 17px 40px 17px 30px;
-        font-size: 32px;
-        margin-left: 50px;
+        padding: 20px 70px 20px 70px; 
+        font-size: 36px;
+        margin-left: 35px;
     }
     .backward {
-        padding: 17px 40px 17px 30px;
-        font-size: 32px;
+        padding: 20px 70px 20px 70px;
+        font-size: 36px;
     }
 
 
@@ -621,7 +645,7 @@ ul.af_list li.af_item {
         font-size: 1.8em
     }
     #application .apply {
-        height: 85px;
+        height: 95px;
         font-size: 40px;
         margin-bottom: 18px;
     }
@@ -742,6 +766,23 @@ ul.af_list li.af_item {
             }
 
         }
+        li.other {
+            display: inline-block;
+            margin: 0 0 .5em 0.5em;
+            input {
+                height: 65px;
+                width: 130px;
+            }
+            a {
+                padding: .3em;
+                padding-left: .0em;
+                padding-right: .4em;
+            }
+        }
+
+
+
+
     }
 
 
