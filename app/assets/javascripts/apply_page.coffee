@@ -414,8 +414,8 @@ $(document).ready ->
         num = parseInt($(this).val()) - 1
         if (num + 1) <= 10 && num >= 0
             $('#depend_age_form').empty()
-            for i in [1..num]
-                $('#depend_age_form').append('<input id="dependentsAge" class="col-md-12 col-xs-12 apply required" placeholder="Age ' + (i+1) + '" required>')
+            for i in [0...num]
+                $('#depend_age_form').append('<input id="dependentsAge" class="col-md-12 col-xs-12 apply required" placeholder="Age ' + (i+2) + '" required>')
 
     )
 
@@ -551,14 +551,10 @@ $(document).ready ->
     $("div.dropzone_front").dropzone({ 
         url: "/home/upload_file",
         maxFiles: 1,
-        thumbnailWidth: 230,
-        thumbnailHeight: 140,
+        thumbnailWidth: 460,
+        thumbnailHeight: 280,
         success: (file, data) ->
-          console.log file 
-          console.log data 
-
           $("div.dropzone_front").addClass("active")
-          console.log data["driver_licence"]
           driver_licence = $.parseJSON(data["driver_licence"])
           words = data["words"]
           window.post_form_data["driver_licence_front_image"] = file.dataURL
@@ -585,20 +581,16 @@ $(document).ready ->
               $('ul#driver_licence li').each ->
                   $(this).removeClass('active')
               $('ul#driver_licence > li:nth-child(4)').addClass('active')
-
-
-
     })
 
     $("div.dropzone_back").dropzone({ 
         url: "/home/upload_driver_licence_back",
-        thumbnailWidth: 230,
-        thumbnailHeight: 140,
+        thumbnailWidth: 460,
+        thumbnailHeight: 280,
         maxFiles: 1,
         success: (file, data) ->
           $("div.dropzone_back").addClass("active")
           window.post_form_data["driver_licence_back_image"] = file.dataURL
-
     })
 
 
@@ -606,8 +598,8 @@ $(document).ready ->
     $("div.visa_dropzone").dropzone({ 
         url: "/home/upload_file_visa",
         maxFiles: 2,
-        thumbnailWidth: 230,
-        thumbnailHeight: 140,
+        thumbnailWidth: 460,
+        thumbnailHeight: 280,
         success: (file, data) ->
           $("div.visa_dropzone").addClass("active")
           visa_licence = $.parseJSON(data["visa_licence"])
