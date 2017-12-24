@@ -608,7 +608,10 @@ ul.af_list li.af_item {
     }
 }
 
-
+.calculate_button {
+    font-size: 2em;
+    padding: 10px 15px;
+}
 
 
 
@@ -987,8 +990,41 @@ input#director_person_expire_date
         margin-bottom: 0;
     }
 
-}
 
+    
+
+    .h1-mimic__h3, h3 {
+        font-size: 2.5em;
+        padding: 1em 0em;
+    }
+
+   #content-area-style-grey p {
+       font-size: 2em;
+       color: rgba(0, 0, 0, .75);
+   } 
+    #how_it_works #steps h1 {
+        font-size: 3em;
+        padding: 60px 0px;
+    }
+
+    .calculate_button {
+        font-size: 2em;
+        padding: 20px 30px;
+    }
+
+    .main-footer-area .desktop-footer p {
+        font-size: 1.2em;
+    }
+    .main-footer-area .desktop-footer ul li {
+        font-size: 1.2em;
+    }
+
+    .footer-featured-buttons a {
+        font-size: 1.4em;
+        padding: 10px 40px;
+    }
+
+}
 
 @media (min-width: 200px) {
 #content-area-style-grey .inner-content-area {

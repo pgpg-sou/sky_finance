@@ -383,14 +383,15 @@ ul#footer-nav li {
 	 z-index:9;
 	 position:relative;
 }
-#middle-wizard {
+#wrapped {
 	padding: 50px 125px 35px 125px;
+}
+#middle-wizard {
+	padding: 0px;
 }
 #bottom-wizard {
 	text-align:center;
 	padding:15px 120px;
-	border-top:1px solid #e7e7e7;
-	background-color:#f3f3f3;
 }
 #complete{
 	text-align:center;
@@ -779,15 +780,22 @@ ul.data-list-2 li label.error {
 
 @media (min-width: 768px) and (max-width: 1200px) {
 
-#middle-wizard {padding: 40px 20px 35px 20px;}
+#middle-wizard {padding: 0px;}
+#wrapped {
+	padding: 14px;
+
+}
 #application label {
     font-size: 27px;
 }
 }
 @media (min-width: 768px) and (max-width: 979px) {
 
-#middle-wizard {padding: 40px 10px 35px 10px;}
+#middle-wizard {padding: 0px;}
 #contact { background:none;}
+#wrapped {
+	padding: 14px;
+}
 
 #footer_2 {text-align:center;}
 #contact { background:none;}
