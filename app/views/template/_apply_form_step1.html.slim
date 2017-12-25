@@ -1,20 +1,16 @@
 
-
 li#application
     #about_information.col-md-12.col-xs-12
-        #about_you_error.error-message[style="display:none"]
-            p Please input red boarder box
-
         .col-md-12.col-xs-12.about_information
             label.col-md-4.col-xs-12.control-label Driver Licence Imageas
             .col-md-8.col-xs-12.no-padding
-                .col-md-6.col-xs-6 style="padding-left: 0px;"
+                .col-md-6.col-xs-12 style="padding-left: 0px;"
                     div class="dropzone_front needsclick dz-clickable"
                         div.dz-message.needsclick
                             p Upload here Driver Licence Front
                             small 
                                 | (.png .jpg 1MB)
-                .col-md-6.col-xs-6.no-padding
+                .col-md-6.col-xs-12.no-padding
                     div class="dropzone_back needsclick dz-clickable"
                         div.dz-message.needsclick
                             p Upload here Driver Licence Back
@@ -82,18 +78,18 @@ li#application
             label.col-md-4.col-xs-12.control-label 
                 | Dependests Count
                 span * 
-            .col-md-8
-                input#dependentsCount.col-md-12.col-xs-12.apply.form-control type="number" required="true" placeholder="Dependest Count"
+            .col-md-8.col-xs-12.no-padding 
+                input#dependentsCount.col-md-12.col-xs-12.apply.form-control type="number" required="true" placeholder="Dependest Count" max="10" min="0"
         .col-md-12.material_information
             label.col-md-4.col-xs-12.control-label Dependests Age
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#dependentsAge.col-md-5.col-xs-12.apply.form-control pattern="\d*" type="number" required="true"  placeholder="Age 1"
                 #depend_age_form.col-md-12.col-xs-12.no-padding 
         .col-md-12.material_information
             label.col-md-4.col-xs-12.control-label  
                 | Phone Number
                 span * 
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#home_phone.col-md-12.col-xs-12.apply.form-control.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     " required="true"]
 
     #driver_information.col-md-12.col-xs-12
@@ -101,14 +97,14 @@ li#application
             label.col-md-4.col-sm-12.col-xs-12.control-label 
                 | Driver Licence Number
                 span * 
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#driver_licence.col-md-12.col-xs-12.apply.form-control[data-validation="required" required="true"  placeholder="Driver licence number"]
 
         .col-md-12.driver_information
             label.col-md-4.col-sm-12.col-xs-12.control-label 
                 | Driver Licence Version
                 span * 
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#driver_licence_version.col-md-12.col-xs-12.form-control.apply[data-validation="required" required="true" placeholder="Driver licence version"]
 
         .col-md-12.driver_information
@@ -116,7 +112,7 @@ li#application
                 | Driver Licence Country
                 span * 
 
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#driver_licence_country.col-md-12.col-xs-12.apply[data-validation="required"  required="true" placeholder="Driver licence country"]
 
         .col-md-12.driver_information
@@ -124,7 +120,7 @@ li#application
                 | Driver Licence type
                 span * 
 
-            .col-md-8.col-xs-12 
+            .col-md-8.col-xs-12.no-padding 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Learners", "Restrictad", "International", "Full"], id_name: "driver_licence",is_other: false}
 
 
@@ -132,7 +128,7 @@ li#application
             label.col-md-4.col-xs-12.control-label 
                 | Driver Licence Expire Date
                 span * 
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#drivers_licence_expire_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
 
 
@@ -141,7 +137,7 @@ li#application
             label.col-md-4.col-xs-12.control-label 
                 | Citizen ship
                 span * 
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#citizen_ship.col-md-12.col-xs-12.apply.form-control.required[data-validation="required" required="true" placeholder="CITIZEN"]
 
 
@@ -152,14 +148,14 @@ li#application
                 | Last Entry Date
                 span * 
 
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#last_entry_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
         .col-md-12.driver_information
             label.col-md-4.col-xs-12.control-label 
                 | Visa Expire Date
                 span * 
 
-            .col-md-8
+            .col-md-8.col-xs-12.no-padding 
                 input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
 
 
@@ -168,7 +164,7 @@ li#application
                 | Residential status
                 span * 
 
-            .col-md-8.col-xs-12 
+            .col-md-8.col-xs-12.no-padding 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["citizen", "resident", "work visa", "working holiday", "visitor visa", "student visa", "other"], id_name: "residential_status",is_other: false}
 
 

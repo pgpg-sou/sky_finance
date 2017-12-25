@@ -5469,7 +5469,8 @@ p.expertQuote {
 	color: #30225d
 }
 .h1-mimic__h3, h3 {
-	font-size: 1.4em
+	font-size: 1.4em;
+    padding: 1em 0em;
 }
 @media only screen and (min-width: 992px) {
 	.h1-mimic__h3, h3 {
@@ -10155,7 +10156,7 @@ nav#mobile-nav #mobile-navigation .youtube-svg-holder:hover .youtube-svg {
 @media only screen and (min-width: 768px) {
 	.large-calculator .representative-example p {
 		line-height: 1.7em;
-		font-size: 1.1em
+		font-size: 1.5em
 	}
 }
 .large-calculator .representative-example p span {

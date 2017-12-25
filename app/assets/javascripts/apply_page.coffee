@@ -224,6 +224,29 @@ $(document).ready ->
     )
 
 
+
+
+    $('#company_information input').focus( ->
+        parent_block = $(this).parent().parent().parent()
+        parent_block.addClass("focus")
+    ).blur( ->
+        parent_block = $(this).parent().parent().parent()
+        console.log parent_block
+        complete_block =  true
+        parent_block.find('input').each( ->
+            if $(this).val() == ""
+                complete_block = false
+        )
+        if complete_block
+            parent_block.addClass("focus")
+        else
+            parent_block.removeClass("focus")
+
+    )
+
+
+
+
     $('#income_information input').focus( ->
         parent_block = $(this).parent().parent().parent().parent()
         parent_block.addClass("focus")
@@ -349,32 +372,32 @@ $(document).ready ->
     )
 
     $('#add_outgoing_area').click ->
-        $('#outgoing_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4">' +
+        $('#outgoing_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding">' +
                                         '<input id="other_name" class="col-md-5 col-xs-5 apply" placeholder="asset name"/>' +
                                         '<input id="other_liability" class="col-md-5 col-xs-5 apply" placeholder="$" onblur="update_outgoing_information()"/>' +
                                    '</div>')
 
 
     $('#add_income_area').click ->
-        $('#income_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4">' +
+        $('#income_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding">' +
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="asset name" id="income_name"/>' +
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="income" onblur="update_income_information()"/>' +
                                    '</div>')
 
     $('#add_morgage_area').click ->
-        $('#morgages_other').append('<div class="col-md-8 col-xs-12 col-md-offset-3 no-padding ">' +
+        $('#morgages_other').append('<div class="col-md-8 col-xs-12 col-md-offset-3 no-padding no-padding ">' +
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="asset name" id="morgage_other"/>' +
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="morgage" onblur="update_assets_information()"/>' +
                                    '</div>')
 
     $('#add_liability').click ->
-        $('#liability_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4  ">' +
+        $('#liability_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding ">' +
                                         '<input class="col-md-5 col-xs-5 apply" id="other_liability_name" placeholder="asset name"/>' +
                                         '<input class="col-md-5 col-xs-5 apply" id="other_liability" placeholder="$" onblur="update_liability_information()"/>' +
                                    '</div>')
 
     $('#add_loan').click ->
-        $('#loan_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 ">' +
+        $('#loan_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding">' +
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="asset name" id="loan_company_name"/>' +
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="loans" onblur="update_loans_information()"/>' +
                                    '</div>')
@@ -388,13 +411,11 @@ $(document).ready ->
 
 
     $('#dependentsCount').blur( ->
-        console.log "test"
         num = parseInt($(this).val()) - 1
-
-        if num > 0
+        if (num + 1) <= 10 && num >= 0
             $('#depend_age_form').empty()
-            for i in [1..num]
-                $('#depend_age_form').append('<input id="dependentsAge" class="col-md-12 col-xs-12 apply required" placeholder="Age ' + (i+1) + '" required>')
+            for i in [0...num]
+                $('#depend_age_form').append('<input id="dependentsAge" class="col-md-12 col-xs-12 apply required" placeholder="Age ' + (i+2) + '" required>')
 
     )
 
@@ -530,11 +551,13 @@ $(document).ready ->
     $("div.dropzone_front").dropzone({ 
         url: "/home/upload_file",
         maxFiles: 1,
+        thumbnailWidth: 460,
+        thumbnailHeight: 280,
         success: (file, data) ->
-          console.log data 
-          console.log data["driver_licence"]
+          $("div.dropzone_front").addClass("active")
           driver_licence = $.parseJSON(data["driver_licence"])
           words = data["words"]
+          window.post_form_data["driver_licence_front_image"] = file.dataURL
           
           $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
           $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
@@ -558,18 +581,16 @@ $(document).ready ->
               $('ul#driver_licence li').each ->
                   $(this).removeClass('active')
               $('ul#driver_licence > li:nth-child(4)').addClass('active')
-
-
-
     })
 
     $("div.dropzone_back").dropzone({ 
         url: "/home/upload_driver_licence_back",
+        thumbnailWidth: 460,
+        thumbnailHeight: 280,
         maxFiles: 1,
         success: (file, data) ->
-          console.log data["driver_licence"]
-          driver_licence = $.parseJSON(data["driver_licence"])
-
+          $("div.dropzone_back").addClass("active")
+          window.post_form_data["driver_licence_back_image"] = file.dataURL
     })
 
 
@@ -577,9 +598,13 @@ $(document).ready ->
     $("div.visa_dropzone").dropzone({ 
         url: "/home/upload_file_visa",
         maxFiles: 2,
+        thumbnailWidth: 460,
+        thumbnailHeight: 280,
         success: (file, data) ->
+          $("div.visa_dropzone").addClass("active")
           visa_licence = $.parseJSON(data["visa_licence"])
           words = data["words"]
+          window.post_form_data["visa_image"] = file.dataURL
           
           $('input#visa_expire_date').val(visa_licence["expire_date"]).addClass("valid")
           $('input#citizen_ship').val(visa_licence["citizen_ship"]).addClass("valid")

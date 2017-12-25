@@ -2,18 +2,6 @@
     .row
         = render 'template/navheader2'
         nav#breadcrumb.hidden-xs
-            .container
-                ol.breadcrumb[itemscope="" itemtype="http://schema.org/BreadcrumbList"]
-                    li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
-                        a[itemprop="item" href="/"]
-                            span[itemprop="name"]
-                              | Home
-            meta[itemprop="position" content="1"]
-            li[itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"]
-                a[itemprop="item" href="/car-finance-calculator"]
-                    span[itemprop="name"] Application
-            meta[itemprop="position" content="2"]
-
 
     section#top-area
         header
@@ -41,7 +29,7 @@
                     .node
                       p 1
                   .w_step
-                    | Address & Company
+                    | Work
                     .node
                       p 2
                   .w_step
@@ -63,18 +51,12 @@
                       p 6
                 .shadow
 
-
-
-
-
-
-
-            form#wrapped[name="example-1" action="survey_send_1.php" method="POST"]
-                #middle-wizard
-                    .step
-                        .row
+            form#wrapped[type="POST" ]
+                #middle-wizard 
+                    .step.row
+                        .col-md-12
                             h3.col-md-10 Enter your personal info
-                            = render 'template/apply_form_step4'
+                            = render 'template/apply_form_step1'
   
                     .step.row
                         .col-md-12
@@ -83,7 +65,7 @@
   
                     .step.row
                         .col-md-12
-                            h3 How did you hear about our company?
+                            h3 Nearest Information
                             = render 'template/apply_form_step3'
 
                     .step.row
@@ -103,11 +85,11 @@
  
                     #complete.submit.step
                         i.icon-check
-                        h3 Survey complete! Thank you for you time.
-                        button.submit[type="submit" name="process"] Submit the survey
+                        h3 Application complete! Thank you for you time.
+                        button#application_submit.submit Submit the application
 
                 #bottom-wizard
-                    button.backward[type="button" name="backward"] Backward
-                    button.forward[type="button" name="forward"] Forward 
+                    button.backward[type="button" name="backward" style="margin-right: 15px;"] < Prev
+                    button.forward[type="button" name="forward"] Next >
 
             form#wrapped[name="example-2" action="survey_send_2.php" method="POST"]

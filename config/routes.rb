@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'business/search'
   post 'business/search'
+  post 'home/application_saver'
 
   post 'home/upload_file_visa'
   post 'home/upload_driver_licence_back'

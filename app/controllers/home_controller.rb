@@ -39,6 +39,15 @@ class HomeController < ApplicationController
   def apply3
       render :layout => 'apply2'
   end
+
+  def application_saver
+      @application = params.to_json
+      logger.debug "sample"
+      logger.debug @application
+
+    
+      render :json => {"driver_licence" => @application}
+  end
   
   def apply_mail
       @application = params.to_json
@@ -96,16 +105,8 @@ class HomeController < ApplicationController
         project: "46e9b8fc7d619db1971ff5d604b4858c5a95f33b",
         keyfile: Rails.root.to_s + "/lib/assets/spray-46e9b8fc7d61.json"
     )
-    begin
-        image = vision.image output_path
-        annotation = vision.annotate image, document: true, text: true
 
-        @driver_licence = driver_licence_back_crop(annotation.text)
-
-        render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
-    rescue Exception => e
-        puts e.message
-    end
+    render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
   end
 
   def upload_file_visa
