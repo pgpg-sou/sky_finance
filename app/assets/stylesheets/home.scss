@@ -13,6 +13,15 @@
         padding-top: 7px;
     }
 }
+#licence_front {
+    padding-right: 7px;
+    padding-left: 0px;
+}
+
+#licence_back {
+    padding-left: 7px;
+    padding-right: 0px;
+}
 
 #close {
     color: white;
@@ -1053,6 +1062,16 @@ input#director_person_expire_date
     }
     .large-calculator .main-calc-section .tablet-ratings p {
         font-size: 1.4em 
+    }
+
+    #licence_front {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+    #licence_back {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
 }
