@@ -101,10 +101,22 @@ class HomeController < ApplicationController
 	  fp.write  uploaded_file.read
 	end
 
+
+
     vision = Google::Cloud::Vision.new(
         project: "46e9b8fc7d619db1971ff5d604b4858c5a95f33b",
         keyfile: Rails.root.to_s + "/lib/assets/spray-46e9b8fc7d61.json"
     )
+
+
+    begin
+        image = vision.image output_path
+        annotation = vision.annotate image, document: true, text: true
+
+        @driver_licence = driver_licence_back_crop(annotation.text)
+    rescue
+    end
+
 
     render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
   end
@@ -184,21 +196,13 @@ class HomeController < ApplicationController
 
 
   def driver_licence_back_crop(text)
-     licence_keyword = {"Surname" => "last_name", "First Names" => "first_name", "Date of birth" => "birth_date", "Licence" => "driver_licence_no", "Version" => "card_version_no"}
-
      document = text.to_str
      driver_licence = Hash.new 
 
-     hit_label = ""
      document.each_line do |line|
-        puts line.to_s
-
-        if hit_label != ""
-            driver_licence[hit_label] = line.to_s
-            hit_label = ""
-        end
-        
-        licence_keyword.each do |keyword, label|
+        match = line.scan(/\d{2}\-\d{2}\-\d{4}/)
+        if match.length != 0
+            driver_licence["expire_date"] = match.last.gsub("-", "/")
         end
      end
      puts driver_licence

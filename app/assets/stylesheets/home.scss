@@ -198,7 +198,11 @@ input#contact_persion_position,
 input#contact_persion_last_name,
 input#contact_persion_middle_name,
 input#contact_persion_first_name,
-
+input#other_assets_name,
+input#other_assets,
+input#liability_car ,
+input#liability_other,
+input#liability
 {
     
     &:valid:not(:placeholder-shown) {
@@ -964,7 +968,7 @@ input#director_person_expire_date
         font-size: 35px;
     }
 
-    #add_income_area, #add_liability, #add_loan, #add_morgage_area, #add_outgoing_area {
+    #add_income_area, #add_liability, #add_loan, #add_morgage_area, #add_outgoing_area, #add_liability_area, #custom_assets , #add_assets{
         height: 80px;
         border-radius: 8px;
         border: 4px dotted grey;

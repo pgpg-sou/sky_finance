@@ -70,7 +70,7 @@ ol > li.radio.income {
 #mortage_rent_board, #loans_and_hps, #credit_card,
 #living, #child_support,
 #home, #rental_property, #investment, #money_in_bank, #vehicle,
-#furniture, #jewelry, #other, #total_assets {
+#furniture, #jewelry, #other,  {
     padding: 10px 6px;
     font: 700 12px/12px Arial;
     width: 100px;
@@ -194,7 +194,9 @@ ol > li > div.liability {
 #add_liability,
 #add_loan,
 #add_morgage_area,
-#add_outgoing_area {
+#add_outgoing_area,
+#add_assets,
+#add_liability_area {
     height: 40px;
     border-radius: 8px;
     border: 4px dotted #E3E3E3;
