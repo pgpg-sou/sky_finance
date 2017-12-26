@@ -38,5 +38,6 @@
  *= require header/style.scss
 
  *= require progress.scss
+ *= require mobile.scss
 
  */
