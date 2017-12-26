@@ -29,50 +29,68 @@ $(document).ready ->
     @update_liability_information = ()->
         total = 0
         total_num = 0
-        $('#liability_information input').each( ->
-            if $(this).attr('id') != "other_liability_name" && $(this).attr('id') != "total_liability" && $(this).attr('id') != "total_num_liability"
-                cash = get_liablity($(this))
-                if cash != 0 && cash != ""
-                    total += cash
-                    total_num += valid_liability_form($(this))
+        console.log "ample"
 
+        morgage = get_liablity($('#liability_morgage'))
+        car = get_liablity($('#liability_car'))
+        creditcard = get_liablity($('#liability_creditcard'))
+        bankod = get_liablity($('#liability_bankod'))
+        total = morgage + creditcard + bankod  + car
+        total_num = valid_liability_form($('#liability_morgage')) + valid_liability_form($('#liability_creditcard')) + valid_liability_form($('#liability_bankod')) + valid_liability_form($('#liability_car'))
+
+        $('#liability_form input#liability').each(->
+            cash = get_liablity($(this))
+            if cash != 0 && cash != ""
+                total += cash
+                total_num += valid_liability_form($(this))
         )
-        $('#total_liability').val(total)
-        $('#total_num_liability').val(total_num)
+        $('#total_liability_info').val(total)
+        $('#total_liability_num').val(total_num)
 
     $('#liability_information input').blur( ->
         total = 0
 
         morgage = get_liablity($('#liability_morgage'))
+        car = get_liablity($('#liability_car'))
         creditcard = get_liablity($('#liability_creditcard'))
         bankod = get_liablity($('#liability_bankod'))
-        total = morgage + creditcard + bankod 
-        total_num = valid_liability_form($('#liability_morgage')) + valid_liability_form($('#liability_creditcard')) + valid_liability_form($('#liability_bankod'))
+        total = morgage + creditcard + bankod  + car
+        total_num = valid_liability_form($('#liability_morgage')) + valid_liability_form($('#liability_creditcard')) + valid_liability_form($('#liability_bankod')) + valid_liability_form($('#liability_car'))
 
-        $('#liability_form input#other_liability').each(->
+        $('#liability_form input#liability').each(->
             total += get_liablity($(this))
             total_num += valid_liability_form($(this))
         )
 
         if $(this).attr('id') == "other_liability_name"
         else
-            $('#total_liability').val(total)
-            $('#total_num_liability').val(total_num)
+            $('#total_liability_info').val(total)
+            $('#total_liability_num').val(total_num)
     )
 
     @update_assets_information = ()->
         total = 0
         total_num = 0
-        $('#assets_information input').each( ->
-            if $(this).attr('id') != "morgage_other" && $(this).attr('id') != "total_assets_info" && $(this).attr('id') != "total_assets_num"
-                cash = get_liablity($(this))
-                if cash != 0 && cash != ""
-                    total += cash
-                    total_num += valid_liability_form($(this))
+
+        home = get_liablity($('#assets_home'))
+        furnishing = get_liablity($('#assets_furnishing'))
+        bank_account = get_liablity($('#assets_bank_account'))
+        car = get_liablity($('#assets_car'))
+        investments = get_liablity($('#assets_investments'))
+
+        total = home + furnishing +  bank_account + car + investments
+        total_num = valid_liability_form($('#assets_home')) + valid_liability_form($('#assets_furnishing')) + valid_liability_form($('#assets_bank_account')) + valid_liability_form($('#assets_car')) + valid_liability_form($('#assets_investments'))
+
+
+        $('#assets_form input#other_assets').each(->
+            cash = get_liablity($(this))
+            if cash != 0 && cash != ""
+                total += cash
+                total_num += valid_liability_form($(this))
 
         )
-        $('#total_assets_info').val(total)
-        $('#total_assets_num').val(total_num)
+        $('#total_assets').val(total)
+        $('#total_num_assets').val(total_num)
 
 
 
@@ -88,15 +106,15 @@ $(document).ready ->
         total = home + furnishing +  bank_account + car + investments
         total_num = valid_liability_form($('#assets_home')) + valid_liability_form($('#assets_furnishing')) + valid_liability_form($('#assets_bank_account')) + valid_liability_form($('#assets_car')) + valid_liability_form($('#assets_investments'))
 
-        $('#morgages_other input#morgage').each(->
+        $('#assets_form input#other_assets').each(->
             total += get_liablity($(this))
             total_num += valid_liability_form($(this))
         )
 
-        if $(this).attr('id') == "morgages_other"
+        if $(this).attr('id') == "other_assets_name"
         else
-            $('#total_assets_info').val(total)
-            $('#total_assets_num').val(total_num)
+            $('#total_assets').val(total)
+            $('#total_num_assets').val(total_num)
     )
 
     @update_loans_information = ()->
@@ -390,10 +408,10 @@ $(document).ready ->
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="morgage" onblur="update_assets_information()"/>' +
                                    '</div>')
 
-    $('#add_liability').click ->
-        $('#liability_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding ">' +
-                                        '<input class="col-md-5 col-xs-5 apply" id="other_liability_name" placeholder="asset name"/>' +
-                                        '<input class="col-md-5 col-xs-5 apply" id="other_liability" placeholder="$" onblur="update_liability_information()"/>' +
+    $('#add_assets').click ->
+        $('#assets_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding ">' +
+                                        '<input class="col-md-5 col-xs-5 apply" id="other_assets_name" placeholder="asset name"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" id="other_assets" placeholder="$" onblur="update_assets_information()"/>' +
                                    '</div>')
 
     $('#add_loan').click ->
@@ -402,6 +420,12 @@ $(document).ready ->
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="loans" onblur="update_loans_information()"/>' +
                                    '</div>')
 
+
+    $('#add_liability_area').click ->
+        $('#liability_form').append('<div class="col-md-8 col-xs-12 col-md-offset-3 no-padding">' +
+                                        '<input class="col-md-5 col-xs-5 apply" placeholder="asset name" id="liability_other"/>' +
+                                        '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="liability" onblur="update_liability_information()"/>' +
+                                   '</div>')
 
 
 
@@ -553,6 +577,8 @@ $(document).ready ->
         maxFiles: 1,
         thumbnailWidth: 460,
         thumbnailHeight: 280,
+        addRemoveLinks: true, 
+        dictRemoveFile:'remove',
         success: (file, data) ->
           $("div.dropzone_front").addClass("active")
           driver_licence = $.parseJSON(data["driver_licence"])
@@ -587,10 +613,15 @@ $(document).ready ->
         url: "/home/upload_driver_licence_back",
         thumbnailWidth: 460,
         thumbnailHeight: 280,
+        addRemoveLinks: true, 
+        dictRemoveFile:'remove',
         maxFiles: 1,
         success: (file, data) ->
           $("div.dropzone_back").addClass("active")
           window.post_form_data["driver_licence_back_image"] = file.dataURL
+          driver_licence = $.parseJSON(data["driver_licence"])
+          $("input#drivers_licence_expire_date").val(driver_licence["expire_date"])
+
     })
 
 
@@ -600,6 +631,8 @@ $(document).ready ->
         maxFiles: 2,
         thumbnailWidth: 460,
         thumbnailHeight: 280,
+        addRemoveLinks: true, 
+        dictRemoveFile:'remove',
         success: (file, data) ->
           $("div.visa_dropzone").addClass("active")
           visa_licence = $.parseJSON(data["visa_licence"])

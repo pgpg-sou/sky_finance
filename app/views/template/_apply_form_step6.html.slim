@@ -1,45 +1,44 @@
 
 li#application
-    #assets_information.col-md-12.col-xs-12
+    #liability_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-3.col-xs-12.control-label 
-                | home
+                | morgage
                 span *
             .col-md-7.col-xs-12.no-padding 
-                input#assets_home.col-md-12.col-xs-12.apply placeholder="$" type="number" required="true"
+                input#liability_morgage.col-md-12.col-xs-12.apply placeholder="$Morgage" type="number" required="true"
+
         .col-md-12
             label.col-md-3.col-xs-12.control-label 
-                | furnishing
+                | car finance
                 span *
             .col-md-7.col-xs-12.no-padding 
-                input#assets_furnishing.col-md-12.col-xs-12.apply placeholder="$" type="number"  required="true"
+                input#liability_car.col-md-12.col-xs-12.apply placeholder="$car finance" type="number" required="true"
+
+
+        .col-md-12
+            label.col-md-3.col-xs-12.control-label 
+                | credit card
+                span *
+            .col-md-7.col-xs-12.no-padding 
+                input#liability_creditcard.col-md-12.col-xs-12.apply placeholder="$credit card" type="number" required="true"
         .col-md-12
             label.col-md-3.col-xs-12.control-label 
                 | bank Account
                 span *
             .col-md-7.col-xs-12.no-padding 
-                input#assets_bank_account.col-md-11.col-xs-12.apply placeholder="$" type="number" required="true"
-        .col-md-12
-            label.col-md-3.col-xs-12.control-label 
-                | car
-                span *
-            .col-md-7.col-xs-12.no-padding 
-                input#assets_car.col-md-12.col-xs-12.apply placeholder="$" type="number" required="true"
-        .col-md-12
-            label.col-md-3.col-xs-12.control-label 
-                | investments
-                span *
-            .col-md-7.col-xs-12.no-padding 
-                input#assets_investments.col-md-12.col-xs-12.apply placeholder="$" type="number" required="true"
+                input#liability_bankod.col-md-12.col-xs-12.apply placeholder="$bank od" type="number" required="true"
+
+
         .col-md-12
             label.col-md-3.col-xs-12.control-label Other 
-            #morgages_other.custome_form
+            #liability_form.custome_form
                 .col-md-8.col-xs-12.no-padding
-                    input#morgage_other.col-md-5.col-xs-5.apply placeholder="asset name" type="text"
-                    input#morgage.col-md-5.col-xs-5.apply placeholder="$" type="number"
+                    input#liability_other.col-md-5.col-xs-5.apply placeholder="asset name" type="text"
+                    input#liability.col-md-5.col-xs-5.apply placeholder="$" type="number"
 
             #custom_income.col-md-7.col-xs-12.col-md-offset-3.no-padding 
-                p#add_morgage_area.col-md-10.col-xs-12.no-padding  
+                p#add_liability_area.col-md-10.col-xs-12.no-padding  
                     span ＋
                     | ADD INFORMATION
 
@@ -48,8 +47,8 @@ li#application
         .col-md-12
             label.col-md-3.col-xs-12.control-label Total
             .col-md-8.col-xs-12.no-padding
-                input#total_assets_info.col-md-5.apply placeholder="$" disabled="true"
-                input#total_assets_num.col-md-5.apply placeholder="3" disabled="true"
+                input#total_liability_info.col-md-5.apply placeholder="$" disabled="true"
+                input#total_liability_num.col-md-5.apply placeholder="3" disabled="true"
 
 
 

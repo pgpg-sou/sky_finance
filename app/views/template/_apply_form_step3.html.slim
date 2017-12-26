@@ -2,43 +2,36 @@ li#application.col-md-12
     #nearest_information.col-md-12.col-xs-12
         .col-md-12
             label.col-md-4.col-xs-12.control-label 
-                | Nearest FirstName
+                | Nearest Relative first name
                 span *
             .col-md-8.col-xs-12.no-padding 
                 input#nearest_first_name.col-md-12.col-xs-12.apply.required placeholder="First Name" type="text" required="true" data-validation="required"
         .col-md-12
             label.col-md-4.col-xs-12.control-label 
-                | Nearest LastName
+                | last name
                 span *
             .col-md-8.col-xs-12.no-padding 
                 input#nearest_last_name.col-md-12.col-xs-12.apply.required placeholder="Last Name" type="text" required="true" data-validation="required"
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label 
-                | Nearest address
+                | address
                 span * 
             .col-md-8.col-xs-12.no-padding 
                 input#nearest_address.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="21A..." required="true"]
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label 
-                | Nearest phone Number 
+                | phone 
                 span *
             .col-md-8.col-xs-12.no-padding 
                 input#nearest_phone_number.col-md-12.col-xs-12.apply.form-control.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     "  required="true"]
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label 
-                | Nearest Relation ship
+                | relationship
                 span * 
             .col-md-8.col-xs-12.no-padding
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["friend","husband","wife","father","mother","son","daughter","brother","sister","grandfather","grandmother","grandson","granddaughter","uncle","aunt","cousin","nephew","niece","fatherInLaw","motherInLaw","brotherInLaw","sisterInLaw","defacto","other"], id_name: "relation_ship",is_other: false}
-
-        .col-md-12
-            label.col-md-4.col-xs-12.control-label 
-                | credit rating
-                span *
-            .col-md-8.col-xs-12.no-padding
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Excellent", "Good", "Not so Good", "Have difficult"], id_name: "credit_rating",is_other: false}
 
 
