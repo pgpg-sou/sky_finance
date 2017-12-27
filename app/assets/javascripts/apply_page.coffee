@@ -397,10 +397,34 @@ $(document).ready ->
 
 
     $('#add_income_area').click ->
-        $('#income_form').append('<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding">' +
+        $('#income_form').append(
+                                   '<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding">' +
+                                        '<div class="col-md-12">' +
+                                            '<ul id="income_other_period">' +
+                                                '<li class="btn btn-gray btn-rounded income_other" value="weekly">' + 
+                                                    '<a id="#tag">' +
+                                                        '<span class="glyphicon glyphicon-ok"></span>' +
+                                                        'weekly' +
+                                                    '</a>' +
+                                                '</li>' +
+                                                '<li class="btn btn-gray btn-rounded income_other" value="fortnightly">' + 
+                                                    '<a id="#tag">' +
+                                                        '<span class="glyphicon glyphicon-ok"></span>' +
+                                                        'fortnightly' +
+                                                    '</a>' +
+                                                '</li>' +
+                                                '<li class="btn btn-gray btn-rounded income_other" value="monthly">' + 
+                                                    '<a id="#tag">' +
+                                                        '<span class="glyphicon glyphicon-ok"></span>' +
+                                                        'monthly' +
+                                                    '</a>' +
+                                                '</li>' +
+                                            '</ul>' +
+                                        '</div>' +
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="asset name" id="income_name"/>' +
                                         '<input class="col-md-5 col-xs-5 apply" placeholder="$" id="income" onblur="update_income_information()"/>' +
-                                   '</div>')
+                                   '</div>'
+                                   )
 
     $('#add_morgage_area').click ->
         $('#morgages_other').append('<div class="col-md-8 col-xs-12 col-md-offset-3 no-padding no-padding ">' +

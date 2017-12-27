@@ -13,6 +13,9 @@ li#application
             label.col-md-4.col-xs-12.control-label Income  
             #income_form.custome_form
                 .col-md-8.col-xs-12.no-padding 
+                    .col-md-12
+                        = render partial: 'template/select_tag_form', locals: {select_tag_data: ["weekly", "fortnightly", "monthly"], id_name: "income_other_period",is_other: false}
+                        
                     input#income_name.col-md-5.col-xs-5.apply placeholder="asset name" type="text"
                     input#income.col-md-5.col-xs-5.apply placeholder="$" type="number"
 
@@ -37,5 +40,5 @@ li#application
                 input#liability_morgage.col-md-12.col-xs-12.apply placeholder="$Mortage rent" type="number" 
                 input#liability_creditcard.col-md-12.col-xs-12.apply placeholder="$Hp credit" type="number"
                 input#liability_bankod.col-md-12.col-xs-12.apply placeholder="$living " type="number" 
-
+                input#liability_insurance.col-md-12.col-xs-12.apply placeholder="$insurance " type="number" 
 
