@@ -313,6 +313,10 @@
       display: block;
       cursor: pointer;
       border: none;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+    color: red;
       &:hover {
         text-decoration: underline;
       }

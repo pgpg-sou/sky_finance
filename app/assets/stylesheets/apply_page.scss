@@ -239,7 +239,11 @@ ol > li > div.liability {
 .modal_p {
     font-size: 15px;
     line-height: 2.0;
-    color: #979797
+    color: #979797;
+    span {
+        color: red;
+        font-weight: bold;
+    }
 }
 
 h4#myModalLabel {
@@ -248,6 +252,7 @@ h4#myModalLabel {
 }
 #close_modal {
     padding: 7px 45px;
+    margin: 15px 0px;
     border-radius: 7px;
 }
 #click_to_upload{
