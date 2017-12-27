@@ -599,6 +599,8 @@ $(document).ready ->
     $("div.dropzone_front").dropzone({ 
         url: "/home/upload_file",
         maxFiles: 1,
+        maxFilesize: 2,
+        acceptedFiles: 'image/*',
         thumbnailWidth: 460,
         thumbnailHeight: 280,
         addRemoveLinks: true, 
@@ -637,6 +639,8 @@ $(document).ready ->
         url: "/home/upload_driver_licence_back",
         thumbnailWidth: 460,
         thumbnailHeight: 280,
+        maxFilesize: 2,
+        acceptedFiles: 'image/*',
         addRemoveLinks: true, 
         dictRemoveFile:'remove',
         maxFiles: 1,
@@ -655,6 +659,8 @@ $(document).ready ->
         maxFiles: 2,
         thumbnailWidth: 460,
         thumbnailHeight: 280,
+        maxFilesize: 2,
+        acceptedFiles: 'image/*',
         addRemoveLinks: true, 
         dictRemoveFile:'remove',
         success: (file, data) ->
