@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   
   post 'home/apply_mail'
 
+  root :to => 'home#index' 
+
 end

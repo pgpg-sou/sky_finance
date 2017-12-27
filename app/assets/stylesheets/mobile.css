@@ -1,2 +1,296 @@
+@charset "UTF-8";
+@media only screen and (max-width: 999px){
+
+/*nav*/
+
+.menu-trigger {
+    width: 70px !important;
+    height: 48px !important;
+}
+
+.menu-trigger span:nth-of-type(2) {
+    top: 25px !important;
+}
+
+.gblnv_block ul li a {
+    font-size: 3em !important;
+    line-height: 390% !important;
+}
+
+.active span:nth-of-type(1) {
+    top: 10px !important;
+}
+
+.active span:nth-of-type(2) {
+    top: 22px !important;
+}
+
+/*set your budget*/
+
+.large-calculator .main-calc-section .calculator-title h2 {
+    font-size: 4em;
+    margin: 1em 0;
+}
+
+.large-calculator .main-calc-section .amount-to-borrow-form label {
+    font-size: 3em;
+}
+
+.large-calculator .main-calc-section .amount-to-borrow-form .form-control-borrow-mini {
+    font-size: 3em;
+    line-height: 2.2;
+}
+
+.large-calculator .borrow-group{
+	height: auto;
+}
+
+.large-calculator .borrow-group .borrow-mini-section input{
+	height: auto;
+    width: calc(100% - 10%);
+}
+
+.large-calculator .borrow-group .borrow-mini-section span {
+    height: auto;
+    width: auto;
+    font-size: 3.5em;
+    margin-left: 2%;
+    margin-right: 1%;
+}
+
+.large-calculator .borrow-group svg{
+	width: auto !important;
+	height: auto !important;
+}
+
+.large-calculator .borrow-group a {
+    width: 12% !important;
+}
+
+.slider.slider-horizontal {
+    height: 60px;
+}
+
+.slider.slider-horizontal .slider-track {
+    height: 34px;
+}
+
+.slider-handle {
+    top: 9px;
+    width: 65px;
+    height: 65px;
+}
+
+.large-calculator .main-calc-section .pay-back-group {
+    height: auto;
+}
+
+.large-calculator .main-calc-section .pay-back-group svg{
+    width: auto !important;
+	height: auto !important;
+}
+
+.large-calculator .main-calc-section .pay-back-group a {
+    width: 12% !important;
+}
+
+.large-calculator .main-calc-section .pay-back-group div.text-holder span {
+    font-size: 3em;
+    line-height: 2;
+}
+
+.large-calculator .main-calc-section .amount-to-borrow-form p {
+    font-size: 3em;
+}
+
+.large-calculator .select-p-text {
+    width: 30%;
+    height: 8vw;
+}
+
+.calc-main-buttons {
+    display: inherit;
+}
+
+.calc-main-buttons .right-padd-off {
+    padding: 0 2%;
+    width: 100%;
+}
+
+.calc-main-buttons .left-padd-off {
+    padding: 0 2%;
+    display: inline-block;
+    width: 100%;
+}
+
+.large-calculator .main-calc-section .large-calc-custom-repayments .down-arrow-container {
+    width: 47%;
+    margin-top: -30px;
+}
+
+.large-calculator .main-calc-section .large-calc-custom-repayments .down-arrow-inset {
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 35px solid #442F70;
+}
+
+.large-calculator .main-calc-section .down-arrow-borrow {
+    margin: -1px auto 0;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 35px solid #E5E5E5;
+}
+
+.large-calculator .main-calc-section .large-calc-custom-repayments span.exact-repayment {
+    font-size: 2.5em;
+    line-height: 0.7;
+    padding: 3% 0;
+}
+
+.large-calculator .main-calc-section .large-calc-custom-repayments .large-calc-custom-repayments-text p span {
+    font-size: 1.2em;
+    margin-right: 3%;
+}
+
+.large-calculator .main-calc-section .large-calc-custom-repayments .large-calc-custom-repayments-text p {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+.large-calculator .main-calc-section .large-calc-custom-repayments {
+    height: auto;
+    padding: 3%;
+    font-size: 2em;
+    line-height: 2;
+}
+
+.large-calculator .main-calc-section .large-calc-custom-apply {
+    height: auto;
+    padding: 3%;
+    font-size: 2em;
+    line-height: 2;
+}
+
+.large-calculator .main-calc-section .tablet-ratings {
+    display: inline-block;
+    width: 100%;
+}
+
+.large-calculator .main-calc-section .tablet-ratings p {
+    font-size: 3em;
+    text-align: left;
+    margin-left: 4%;
+    border-bottom: 1px solid;
+    width: 92%;
+}
 
 
+
+}
+
+@media (max-width: 1200px) and (min-width: 768px){
+
+.large-calculator .brand-icons-calc p {
+    font-size: 2em;
+}
+
+.large-calculator .representative-example h3 {
+    font-size: 2.5em;
+    padding: 4% 0;
+}
+
+.large-calculator .representative-example p {
+    line-height: 2em;
+    font-size: 2.5em;
+}
+
+#your-questions h2 {
+    font-size: 4em;
+    margin-top: 10px;
+}
+
+#your-questions .question-and-answers-desktop h3 {
+    font-size: 3em;
+    line-height: 1.2;
+}
+
+#your-questions .question-and-answers-desktop p {
+    font-size: 2.5em;
+    margin-bottom: 10%;
+}
+
+.col-sm-offset-2 {
+    width: 100%;
+    margin-left: 0;
+}
+
+.col-xs-6 {/*これは後でマークアップ差し替え*/
+    width: 100% !important;
+}
+
+#expert-section .expert-body h2 {
+    font-size: 2.5em;
+    margin-bottom: 2%;
+}
+
+#expert-section .expert-body .complaint-buttons {
+    width: 100%;
+}
+
+#expert-section .expert-body .questions-buttons .btn-blue {
+    font-size: 4em;
+    height: auto;
+    padding: 3% 0;
+    padding-left: 0;
+}
+
+#expert-section .expert-body .questions-buttons .btn-green {
+    font-weight: 800;
+    padding-top: 6px;
+    font-size: 4em;
+    height: auto;
+    padding: 5% 0;
+}
+
+#expert-section .expert-body .secondary-buttons-section p {
+    font-size: 3em !important;
+    height: auto !important;
+}
+
+#expert-section .expert-body .secondary-buttons-section a {
+    font-size: 3em;
+    padding: 4% 0;
+    height: auto;
+}
+
+/*footer*/
+
+.main-footer-area .desktop-footer p {
+    font-size: 2.5em;
+    margin-top: 6%;
+}
+
+.footer-featured-buttons a {
+    font-size: 3em;
+    width: 100%;
+    margin: 0 0 1% 0;
+    padding: 3% 0;
+}
+
+.main-footer-area .desktop-footer ul {
+    margin-top: 2%;
+}
+
+.main-footer-area .desktop-footer ul li {
+    font-size: 3.5em;
+}
+
+.main-footer-area .desktop-footer ul li a {
+    border-right: 0;
+    line-height: 1.4;
+    text-align: left;
+}
+
+}
