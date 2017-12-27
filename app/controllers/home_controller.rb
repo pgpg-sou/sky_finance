@@ -279,6 +279,10 @@ class HomeController < ApplicationController
             end
         end
 
+        match = line.scan(/\w{2}\d{6}/)
+        if match.length != 0
+            driver_licence["driver_licence_no"] = match.last
+        end
 
      end
      puts driver_licence
