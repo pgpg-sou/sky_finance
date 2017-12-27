@@ -226,9 +226,6 @@
     margin-left: 0;
 }
 
-.col-xs-6 {/*これは後でマークアップ差し替え*/
-    width: 100% !important;
-}
 
 #expert-section .expert-body h2 {
     font-size: 2.5em;
