@@ -104,11 +104,12 @@ div.modal.fade id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModal
             .modal-body 
                 .row
                     .col-md-12
-                        .col-md-12
-                            p.modal_p ①画像認識で【名前】【。。。】【。。。】を読み取ります。
-                            p.modal_p ②読み取り結果を表示しますが、画像によっては間違った文字を読み取る可能性があります。
-                            p.modal_p ③挿入された文字をチェックして頂き、修正がある場合は修正してください。
-                    .col-md-12
+                        .col-md-12.text-center
+                            p.modal_p 
+                                | 提出書類が
+                                span 斜めにならない
+                                | ように、真上から撮影してください
+                            p.modal_p ピントをしっかり合わせ、ぼけないように撮影してください
                         .col-md-6.col-sm-6.col-xs-6
                             .uploaad_smple
                                 h2 FRONT SIDE 
@@ -117,7 +118,11 @@ div.modal.fade id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModal
                             .uploaad_smple
                                 h2 BACK SIDE 
                                 img src="#{image_path('sample_back.png')}"
-                        
+                    .col-md-12
+                        .col-md-12
+                            p.modal_p ①画像認識で【名前】【誕生日】【ドライバーライセンス情報】を読み取ります。
+                            p.modal_p ②読み取り結果を表示しますが、画像によっては間違った文字を読み取る可能性があります。
+                            p.modal_p ③挿入された文字をチェックして頂き、修正がある場合は修正してください。                        
                     .col-md-12.text-center
                         button#close_modal type="button" class="btn btn-primary btn-lg" data-dismiss="modal" close
 

@@ -277,7 +277,7 @@ nav{
 
 nav img{
 	float: none;
-	width: 110px;
+	width: 140px;
 }
 
 /* nav ul{
@@ -442,7 +442,15 @@ header.top{
 }
 
 
-}
+header.other{
+	width: 100%;
+	background: url(image_path('bg_mainvisual.png'));
+	background-size: cover;
+	background-position: inherit;
+	background-repeat: no-repeat;
+	height: 120px;
+	text-align: center;
+}}
 
 
 @media only screen and (max-width: 481px){
@@ -456,10 +464,18 @@ header.top{
     background-size: 100%;
     background-position: inherit;
     background-repeat: no-repeat;
-    min-height: 250px;
+    min-height: 50px;
     text-align: center;
 }
-
+header.other{
+	width: 100%;
+	background: url(image_path('bg_mainvisual.png'));
+	background-size: cover;
+	background-position: inherit;
+	background-repeat: no-repeat;
+	height: 120px;
+	text-align: center;
+}
 
 
 /*---------------

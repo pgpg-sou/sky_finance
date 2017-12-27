@@ -465,6 +465,18 @@ $(document).ready ->
         $(this).addClass('active')
 
 
+    $('ul#income_other_period li').click ->
+        $('ul#income_other_period li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+    
+    $(document).on('click', 'li.income_other', () ->
+        $(this).parent().find("li.income_other").each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+    )
+
+
     $('ul#title_tag_list li').click ->
         $('ul#title_tag_list li').each ->
             $(this).removeClass('active')

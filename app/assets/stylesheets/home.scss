@@ -450,6 +450,7 @@ ul#previous_living_period,
  ul#director_person_home_owner,
  ul#director_person_driver_type,
  ul#director_person_title,
+ ul#income_other_period
   {
     margin: 0;
     padding: 0;
@@ -1088,12 +1089,18 @@ input#director_person_expire_date
         margin-top: 15px;
     }
     #close_modal {
-        padding: 20px 80px;
+        padding: 30px 80px;
         font-size: 30px;
         border-radius: 7px;
     }
 
 
+    .dropzone .dz-preview .dz-remove, .visa_dropzone .dz-preview .dz-remove, .dropzone_front .dz-preview .dz-remove, .dropzone_back .dz-preview .dz-remove {
+        padding: 10px;
+        font-size: 35px;
+        font-weight: bold;
+        color: red;
+    }
 
 }
 
