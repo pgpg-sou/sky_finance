@@ -224,19 +224,32 @@ ol > li > div.liability {
 .uploaad_smple {
     box-sizing: border-box;
     min-height: 130px;
-    border: 2px dashed #cbcbcb;
+    border: 2px dashed #979797;
     background: white;
     padding: 16px 16px;
     margin: 15px 0px;
+    border-radius: 20px;
     h2 {
-        color: #666;
+        color: #979797;
         font-size: 22px;
+        padding-bottom: 25px;
     }
+    
 }
-h4#myModalLabel {
-    font-size: 24px;
+.modal_p {
+    font-size: 15px;
+    line-height: 2.0;
+    color: #979797
 }
 
+h4#myModalLabel {
+    font-size: 24px;
+    color: #979797;
+}
+#close_modal {
+    padding: 7px 45px;
+    border-radius: 7px;
+}
 .modal-footer {
     background-color: white;
     border:none; 
