@@ -1077,6 +1077,22 @@ input#director_person_expire_date
         padding-left: 0px;
         padding-right: 0px;
     }
+    a#selected_import {
+        color: red;
+        font-size: 36px;
+    }
+    #click_to_upload{
+        margin-top: 30px;
+        padding: 20px 80px;
+        font-size: 30px;
+    }
+    #close_modal {
+        padding: 20px 80px;
+        font-size: 30px;
+        border-radius: 7px;
+    }
+
+
 
 }
 
