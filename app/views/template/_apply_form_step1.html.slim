@@ -2,8 +2,11 @@
 li#application
     #about_information.col-md-12.col-xs-12
         .col-md-12.col-xs-12.about_information
-            label.col-md-4.col-xs-12.control-label Driver Licence Imageas
+            label.col-md-4.col-xs-12.control-label 
+                | Driver Licence Imageas
             .col-md-8.col-xs-12.no-padding
+                .col-md-12.text-center 
+                    a#selected_import data-toggle="modal" data-target="#confirm" style="color:red; " Before upload please read!! 
                 #licence_front.col-md-6.col-xs-12 
                     div class="dropzone_front needsclick dz-clickable"
                         div.dz-message.needsclick
@@ -162,5 +165,7 @@ li#application
 
             .col-md-8.col-xs-12.no-padding 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["citizen", "resident", "work visa", "working holiday", "visitor visa", "student visa", "other"], id_name: "residential_status",is_other: false}
+
+
 
 

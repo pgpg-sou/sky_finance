@@ -56,7 +56,7 @@
                     .step.row
                         .col-md-12
                             h3.col-md-10 Enter your personal info
-                            = render 'template/apply_form_step1'
+                            = render 'template/apply_form_step7'
   
                     .step.row
                         .col-md-12
@@ -93,3 +93,30 @@
                     button.forward[type="button" name="forward"] Next >
 
             form#wrapped[name="example-2" action="survey_send_2.php" method="POST"]
+
+
+div.modal.fade id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    .modal-dialog.modal-md role="document"
+        .modal-content style="border-radius: 3px;"
+            .modal-header style="background-color: #FFF;border-radius: 3px 3px 0px 0px; border-bottom:none"
+                button.close data-dismiss="modal" aria-label="Close"
+                h4#myModalLabel.modal-title.text-center  UPLOAD INFORMATION
+            .modal-body 
+                .row
+                    .col-md-12
+                        p ①画像認識で【名前】【。。。】【。。。】を読み取ります。
+                        p ②読み取り結果を表示しますが、画像によっては間違った文字を読み取る可能性があります。
+                        p ③挿入された文字をチェックして頂き、修正がある場合は修正してください。
+                    .col-md-12.no-padding
+                        .col-md-6
+                            .uploaad_smple
+                                h2 FRONT SIDE 
+                        .col-md-6
+                            .uploaad_smple
+                                h2 BACK SIDE 
+                        
+                    .col-md-12.text-center
+                        button type="button" class="btn btn-primary btn-lg" data-dismiss="modal" CLOSE
+
+
+

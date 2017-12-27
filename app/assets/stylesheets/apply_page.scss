@@ -221,5 +221,23 @@ ol > li > div.liability {
     height: 30px
 }
 
+.uploaad_smple {
+    box-sizing: border-box;
+    min-height: 130px;
+    border: 2px dashed #cbcbcb;
+    background: white;
+    padding: 16px 16px;
+    margin: 15px 0px;
+    h2 {
+        color: #666;
+        font-size: 22px;
+    }
+}
+h4#myModalLabel {
+    font-size: 24px;
+}
 
-
+.modal-footer {
+    background-color: white;
+    border:none; 
+}
