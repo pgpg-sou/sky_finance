@@ -1111,6 +1111,16 @@ input#director_person_expire_date
         color: red;
     }
 
+
+    #form_tag_error {
+        p {
+            color: red;
+            font-size: 36px;
+            font-weight: bold;
+        }
+    }
+
+
 }
 
 @media (min-width: 200px) {
