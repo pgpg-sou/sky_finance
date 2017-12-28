@@ -5,7 +5,7 @@ li#application
                 | Tenancy
                 span * 
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Boarding", "Renting", "Living with Parent", "Living with Relative", "Owner Mortage", "Home owner FreeHold", "Other"], id_name: "tenancy_status",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Boarding", "Renting", "Living with Parent", "Living with Relative", "Owner Mortage", "Home owner FreeHold", "Other"], id_name: "tenancy_status",is_other: false, ul_class: "select_form_tag"}
 
 
         .col-md-12[style="position: inherit"]
@@ -20,7 +20,7 @@ li#application
                 | How long have you lived at this address?
                 span * 
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "3 year"], id_name: "living_period",is_other: true}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["less than 1 year", "1 year", "2 year", "3 year"], id_name: "living_period",is_other: true, ul_class: "select_form_tag"}
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Previous address(if less than 2 years at current address)
@@ -30,7 +30,7 @@ li#application
         .col-md-12
             label.col-md-4.col-xs-12.control-label How long have you lived at this address?
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "3 year"], id_name: "previous_living_period",is_other: true}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["less than 1 year","1 year", "2 year", "3 year"], id_name: "previous_living_period",is_other: true, ul_class: "select_form_tag"}
 
 
     #work_information.col-md-12.col-xs-12
@@ -70,14 +70,14 @@ li#application
                 | Current Employer Type
                 span * 
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["fullTime","commissionEarner","contractWorker","selfEmployed","partTime","casual","seasonal","beneficiary","student","retire","unemployed"], id_name: "employtype",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["fullTime","commissionEarner","contractWorker","selfEmployed","partTime","casual","seasonal","beneficiary","student","retire","unemployed"], id_name: "employtype",is_other: false, ul_class: "select_form_tag"}
 
         .col-md-12
             label.col-md-4.col-xs-12.control-label 
                 | How long have you worked at this company?
                 span *
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "3 year"], id_name: "how_long_work",is_other: true}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["less than 1 year","1 year", "2 year", "3 year"], id_name: "how_long_work",is_other: true, ul_class: "select_form_tag"}
 
 
     #previous_work_information.col-md-12.col-xs-12
@@ -98,7 +98,7 @@ li#application
             label.col-md-4.col-xs-12.control-label 
                 | Previous Employer Type
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["fullTime","commissionEarner","contractWorker","selfEmployed","partTime","casual","seasonal","beneficiary","student","retire","unemployed"], id_name: "previous_employtype",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["fullTime","commissionEarner","contractWorker","selfEmployed","partTime","casual","seasonal","beneficiary","student","retire","unemployed"], id_name: "previous_employtype",is_other: false, ul_class: ""}
 
 
 
@@ -106,7 +106,7 @@ li#application
         .col-md-12
             label.col-md-4.col-xs-12.control-label How long have you worked at previous company?
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "3 year"], id_name: "how_long_work_previous",is_other: true}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "3 year"], id_name: "how_long_work_previous",is_other: true, ul_class: ""}
 
 
 

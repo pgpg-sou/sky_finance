@@ -17,11 +17,6 @@ $(document).ready ->
 
 
 
-    
-
-
-
-
 ############################################################################
 ############# 合計を出すプログラム 
 ############################################################################
@@ -596,44 +591,47 @@ $(document).ready ->
 
 
     Dropzone.autoDiscover = false
-    $("div.dropzone_front").dropzone({ 
-        url: "/home/upload_file",
-        maxFiles: 1,
-        maxFilesize: 2,
-        acceptedFiles: 'image/*',
-        thumbnailWidth: 460,
-        thumbnailHeight: 280,
-        addRemoveLinks: true, 
-        dictRemoveFile:'remove',
-        success: (file, data) ->
-          $("div.dropzone_front").addClass("active")
-          driver_licence = $.parseJSON(data["driver_licence"])
-          words = data["words"]
-          window.post_form_data["driver_licence_front_image"] = file.dataURL
-          
-          $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
-          $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
-          $('input#date_of_birth').val(driver_licence["birth_date"]).addClass("valid")
-           
-          $('input#driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
-          $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
-          $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
-          $('input#driver_licence_country').val(driver_licence["licence_country"]).addClass("valid")
+    front_dropzone = new Dropzone(
+        "div.dropzone_front",
+        {
+            url: "/home/upload_file",
+            maxFiles: 1,
+            maxFilesize: 2,
+            acceptedFiles: 'image/*',
+            thumbnailWidth: 460,
+            thumbnailHeight: 280,
+            addRemoveLinks: true, 
+            dictRemoveFile:'remove',
+            success: (file, data) ->
+              $("div.dropzone_front").addClass("active")
+              driver_licence = $.parseJSON(data["driver_licence"])
+              words = data["words"]
+              window.post_form_data["driver_licence_front_image"] = file.dataURL
+              
+              $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
+              $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
+              $('input#date_of_birth').val(driver_licence["birth_date"]).addClass("valid")
+               
+              $('input#driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
+              $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
+              $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
+              $('input#driver_licence_country').val(driver_licence["licence_country"]).addClass("valid")
 
-          
-          if driver_licence["licence_type"] == "LEARNER"
-              $('ul#driver_licence li').each ->
-                  $(this).removeClass('active')
-              $('ul#driver_licence > li:nth-child(1)').addClass('active')
-          else if driver_licence["licence_type"] == "RESTRICTED"
-              $('ul#driver_licence li').each ->
-                  $(this).removeClass('active')
-              $('ul#driver_licence > li:nth-child(2)').addClass('active')
-          else 
-              $('ul#driver_licence li').each ->
-                  $(this).removeClass('active')
-              $('ul#driver_licence > li:nth-child(4)').addClass('active')
-    })
+              
+              if driver_licence["licence_type"] == "LEARNER"
+                  $('ul#driver_licence li').each ->
+                      $(this).removeClass('active')
+                  $('ul#driver_licence > li:nth-child(1)').addClass('active')
+              else if driver_licence["licence_type"] == "RESTRICTED"
+                  $('ul#driver_licence li').each ->
+                      $(this).removeClass('active')
+                  $('ul#driver_licence > li:nth-child(2)').addClass('active')
+              else 
+                  $('ul#driver_licence li').each ->
+                      $(this).removeClass('active')
+                  $('ul#driver_licence > li:nth-child(4)').addClass('active')
+        }
+    )
 
     $("div.dropzone_back").dropzone({ 
         url: "/home/upload_driver_licence_back",
@@ -694,6 +692,66 @@ $(document).ready ->
 
 
     })
+
+
+
+
+
+    
+    #$('#show-camera-tab').on('click', ()->
+    #    $("#tab-handle-camera").tab('show');
+    #);
+
+    #video = $("#camera-video")[0];
+
+    #navigator.getUserMedia({ "video": true }, (stream) -> 
+    #  video.src = window.URL.createObjectURL(stream) || stream; 
+    #  video.play(); 
+    #, (e)->
+    #  console.log(e);
+    #  alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
+    #); 
+ 
+
+    #dataURItoBlob = (dataURI) ->
+    #    byteString;
+    #    if (dataURI.split(',')[0].indexOf('base64') >= 0)
+    #        byteString = atob(dataURI.split(',')[1]);
+    #    else
+    #        byteString = unescape(dataURI.split(',')[1]);
+
+    #    mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+    #    ia = new Uint8Array(byteString.length);
+    #    for  i in [0..byteString.length]
+    #        ia[i] = byteString.charCodeAt(i);
+    #    
+
+    #    return new Blob([ia], {type:mimeString});
+
+    #$('#save-capture').on('click', ()->
+    #  captureCanvas = $("#capture-canvas")[0]; 
+    #  video = $("#camera-video")[0];
+
+    #  captureCanvas.width = video.width;
+    #  captureCanvas.height = video.height;
+    #  context = captureCanvas.getContext("2d");
+    #  context.drawImage(video, 0, 0, video.width, video.height);
+    #  dataUrl = captureCanvas.toDataURL('image/jpeg', 100);
+    #  
+    #  $("#camera-video").css('display': "none")
+    #  $("#capture_confirm").css('display': "block")
+    #  $("#options").css("display", "none")
+
+    #  capuredFile = dataURItoBlob(dataUrl);
+
+    #  front_dropzone.addFile(capuredFile);
+    #  front_dropzone.processQueue();
+
+    #);
+
+
+
 
 
 

@@ -450,7 +450,10 @@ ul#previous_living_period,
  ul#director_person_home_owner,
  ul#director_person_driver_type,
  ul#director_person_title,
- ul#income_other_period
+ ul#income_other_period,
+ ul#expences_hp_credit,
+ ul#expences_living,
+ ul#expences_morgage
   {
     margin: 0;
     padding: 0;
@@ -627,7 +630,13 @@ ul.af_list li.af_item {
     padding: 10px 15px;
 }
 
-
+#form_tag_error {
+    p {
+        color: red;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
 
 /*============================================================================================*/
 /* 5.  MEDIA QUERIES */

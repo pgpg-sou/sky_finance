@@ -34,7 +34,7 @@ li#application
                 | Title
                 span * 
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Mr", "Mrs", "Miss", "Ms"], id_name: "title",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Mr", "Mrs", "Miss", "Ms"], id_name: "title",is_other: false, ul_class: "select_form_tag"}
 
         .col-md-12.col-xs-12.about_information
             label.col-md-4.col-xs-12.control-label  
@@ -64,7 +64,7 @@ li#application
                 | Gender
                 span * 
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["male", "female", "unknown"], id_name: "gender",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["male", "female", "unknown"], id_name: "gender",is_other: false, ul_class: "select_form_tag"}
 
 
     #material_information.col-md-12.col-xs-12
@@ -73,7 +73,7 @@ li#application
                 | Material status
                 span * 
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["single", "married", "defacto", "divorced", "separated", "widowed", "unknown"], id_name: "material_status",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["single", "married", "defacto", "divorced", "separated", "widowed", "unknown"], id_name: "material_status",is_other: false, ul_class: "select_form_tag"}
 
         .col-md-12.material_information
             label.col-md-4.col-xs-12.control-label 
@@ -122,7 +122,7 @@ li#application
                 span * 
 
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Learners", "Restrictad", "International", "Full"], id_name: "driver_licence",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Learners", "Restrictad", "International", "Full"], id_name: "driver_licence",is_other: false, ul_class: "select_form_tag"}
 
 
         .col-md-12.driver_information
@@ -166,7 +166,7 @@ li#application
                 span * 
 
             .col-md-8.col-xs-12.no-padding 
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["citizen", "resident", "work visa", "working holiday", "visitor visa", "student visa", "other"], id_name: "residential_status",is_other: false}
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["citizen", "resident", "work visa", "working holiday", "visitor visa", "student visa", "other"], id_name: "residential_status",is_other: false, ul_class: "select_form_tag"}
 
 
 
