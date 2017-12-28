@@ -126,5 +126,29 @@ div.modal.fade id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModal
                     .col-md-12.text-center
                         button#close_modal type="button" class="btn btn-primary btn-lg" data-dismiss="modal" close
 
+div.modal.fade id="capture" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    .modal-dialog.modal-md role="document"
+        .modal-content style="border-radius: 3px;"
+            .modal-header style="background-color: #FFF;border-radius: 3px 3px 0px 0px; border-bottom:none"
+                button.close data-dismiss="modal" aria-label="Close"
+                h4#myModalLabel.modal-title.text-center  UPLOAD IMAGES
+            .modal-body 
+                .row
+                    .col-md-12.text-center 
+                        #tab-handle-camera
+                            video id="camera-video" width="640" height="450"  autoplay="true"
+                        #capture_confirm style="display:none"
+                            h3 この写真を使いますか？
+                            canvas id="capture-canvas" 
+                            .col-md-12.text-center 
+                            button#close_modal.btn.btn-primary.btn-lg type="button" data-dismiss="modal" Cancel
+                                button#try_again.btn.btn-primary.btn-lg try again
+                                button#upload_capture.btn.btn-primary.btn-lg Used 
+
+                        #options.col-md-12.text-center 
+                            button#close_modal.btn.btn-primary.btn-lg type="button" data-dismiss="modal" Cancel
+                            button#save-capture.btn.btn-primary.btn-lg Save 
+
+
 
 

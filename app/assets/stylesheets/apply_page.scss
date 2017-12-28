@@ -250,7 +250,7 @@ h4#myModalLabel {
     font-size: 24px;
     color: #979797;
 }
-#close_modal {
+#close_modal, #save-capture {
     padding: 7px 45px;
     margin: 15px 0px;
     border-radius: 7px;
@@ -263,3 +263,24 @@ h4#myModalLabel {
     background-color: white;
     border:none; 
 }
+#tab-handle-camera {
+    video {
+        border-radius: 7px;
+        width: 80%
+    }
+}
+#capture_confirm {
+    h3 {
+        font-size: 28px;
+        color: #979797;
+        padding: 10px 0px;
+    }
+    #capture-canvas {
+        border-radius: 7px;
+        width: 80%
+    }
+}
+
+
+
+

@@ -89,7 +89,7 @@ class HomeController < ApplicationController
         render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
         #labels = annotation.labels.inject([]){|arr, label| arr << label.description}
     rescue Exception => e
-        puts e.message
+        render :json => {"words" => "error"}
     end
   end
 
@@ -100,14 +100,10 @@ class HomeController < ApplicationController
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
 	end
-
-
-
     vision = Google::Cloud::Vision.new(
         project: "46e9b8fc7d619db1971ff5d604b4858c5a95f33b",
         keyfile: Rails.root.to_s + "/lib/assets/spray-46e9b8fc7d61.json"
     )
-
 
     begin
         image = vision.image output_path
@@ -116,7 +112,6 @@ class HomeController < ApplicationController
         @driver_licence = driver_licence_back_crop(annotation.text)
     rescue
     end
-
 
     render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
   end

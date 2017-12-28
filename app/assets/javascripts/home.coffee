@@ -460,12 +460,14 @@ $(document).ready ->
 
 
     $('ul#recommend_tag_list li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#recommend_tag_list li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
 
     $('ul#income_other_period li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#income_other_period li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
@@ -478,83 +480,121 @@ $(document).ready ->
 
 
     $('ul#title_tag_list li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#title_tag_list li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
 
     $('ul#material_status li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#material_status li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
 
     $('ul#title li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#title li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
 
     $('ul#gender li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#gender li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#residential_status li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#residential_status li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
 
     $('ul#driver_licence li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#driver_licence li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#tenancy_status li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#tenancy_status li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#living_period li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#living_period li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#previous_living_period li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#previous_living_period li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#employtype li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#employtype li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#how_long_work li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#how_long_work li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#how_long_work_previous li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#how_long_work_previous li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#credit_rating li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#credit_rating li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#relation_ship li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#relation_ship li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
     $('ul#previous_employtype li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#previous_employtype li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
+
+
+    $('ul#expences_morgage li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#expences_morgage li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#expences_hp_credit li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#expences_hp_credit li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#expences_living li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#expences_living li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+
+
 
 
     $('ul#supplies li').click ->

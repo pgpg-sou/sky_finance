@@ -1,7 +1,9 @@
 
 
+ul id="#{id_name}" class="#{ul_class}"
+    #form_tag_error.col-md-12.text-center style="display:none"
+        p you must select this select form
 
-ul id="#{id_name}"
     - select_tag_data.each do |g|
         li.btn.btn-gray.btn-rounded value="#{g}"
             a#tag 
