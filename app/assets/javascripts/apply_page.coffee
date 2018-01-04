@@ -711,37 +711,37 @@ $(document).ready ->
         capture_canvas_element_id = "#capture-canvas"
         save_capture_element_id = "#save-capture"
 
-        video = $(camera_element_id)[0];
-        navigator.getUserMedia({ "video": true }, (stream) -> 
-          video.src = window.URL.createObjectURL(stream) || stream; 
-          video.play(); 
-        , (e)->
-          console.log(e);
-          alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
-        ); 
- 
+
     )
     $('#back_capture_button').click( ->
         modal_type = "back"
         camera_element_id = "#camera-video-back"
         capture_canvas_element_id = "#capture-canvas-back"
         save_capture_element_id = "#save-capture-back"
-        video = $(camera_element_id)[0];
-
-        navigator.getUserMedia({ "video": true }, (stream) -> 
-          video.src = window.URL.createObjectURL(stream) || stream; 
-          video.play(); 
-        , (e)->
-          console.log(e);
-          alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
-        ); 
-     
+    
 
     )
     $('#visa_capture_button').click( ->
         modal_type = "visa"
     )
-    
+    video = $("#camera-video")[0];
+
+    navigator.getUserMedia({ "video": true }, (stream) -> 
+      video.src = window.URL.createObjectURL(stream) || stream; 
+      video.play(); 
+    , (e)->
+      console.log(e);
+      alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
+    ); 
+    video = $("#camera-video-back")[0];
+    navigator.getUserMedia({ "video": true }, (stream) -> 
+      video.src = window.URL.createObjectURL(stream) || stream; 
+      video.play(); 
+    , (e)->
+      console.log(e);
+      alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
+    ); 
+
 
 
     dataURItoBlob = (dataURI) ->
