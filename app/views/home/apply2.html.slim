@@ -131,24 +131,48 @@ div.modal.fade id="capture" tabindex="-1" role="dialog" aria-labelledby="myModal
         .modal-content style="border-radius: 3px;"
             .modal-header style="background-color: #FFF;border-radius: 3px 3px 0px 0px; border-bottom:none"
                 button.close data-dismiss="modal" aria-label="Close"
-                h4#myModalLabel.modal-title.text-center  UPLOAD IMAGES
+                h4#myModalLabel.modal-title.text-center  Capture Licence Front Image
             .modal-body 
                 .row
                     .col-md-12.text-center 
                         #tab-handle-camera
                             video id="camera-video" width="640" height="450"  autoplay="true"
                         #capture_confirm style="display:none"
-                            h3 この写真を使いますか？
+                            h3 Does this photo use?
                             canvas id="capture-canvas" 
                             .col-md-12.text-center 
-                            button#close_modal.btn.btn-primary.btn-lg type="button" data-dismiss="modal" Cancel
-                                button#try_again.btn.btn-primary.btn-lg try again
+                                button#close_modal.btn.btn-primary.btn-lg type="button" data-dismiss="modal" Cancel
+                                button#try_again.btn.btn-primary.btn-lg style="margin: 10px " try again
                                 button#upload_capture.btn.btn-primary.btn-lg Used 
 
                         #options.col-md-12.text-center 
                             button#close_modal.btn.btn-primary.btn-lg type="button" data-dismiss="modal" Cancel
-                            button#save-capture.btn.btn-primary.btn-lg Save 
+                            button#save-capture.btn.btn-primary.btn-lg style="margin-left: 10px" Save 
 
 
+
+
+div.modal.fade id="back_capture" tabindex="-1" role="dialog" aria-labelledby="back_licence_modal"
+    .modal-dialog.modal-md role="document"
+        .modal-content style="border-radius: 3px;"
+            .modal-header style="background-color: #FFF;border-radius: 3px 3px 0px 0px; border-bottom:none"
+                button.close data-dismiss="modal" aria-label="Close"
+                h4#myModalLabel.modal-title.text-center  Capture Licence Back Image
+            .modal-body 
+                .row
+                    .col-md-12.text-center 
+                        #tab-handle-camera-back
+                            video id="camera-video-back" width="640" height="450"  autoplay="true"
+                        #capture_confirm-back style="display:none"
+                            h3 Does this photo use?
+                            canvas id="capture-canvas-back" 
+                            .col-md-12.text-center 
+                                button#close_modal-back.btn.btn-primary.btn-lg type="button" data-dismiss="modal" Cancel
+                                button#try_again-back.btn.btn-primary.btn-lg style="margin: 10px " try again
+                                button#upload_capture-back.btn.btn-primary.btn-lg Used 
+
+                        #options-back.col-md-12.text-center 
+                            button#close_modal-back.btn.btn-primary.btn-lg type="button" data-dismiss="modal" Cancel
+                            button#save-capture-back.btn.btn-primary.btn-lg style="margin-left: 10px" Save 
 
 

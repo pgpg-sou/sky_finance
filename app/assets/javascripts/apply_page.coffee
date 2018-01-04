@@ -633,22 +633,24 @@ $(document).ready ->
         }
     )
 
-    $("div.dropzone_back").dropzone({ 
-        url: "/home/upload_driver_licence_back",
-        thumbnailWidth: 460,
-        thumbnailHeight: 280,
-        maxFilesize: 2,
-        acceptedFiles: 'image/*',
-        addRemoveLinks: true, 
-        dictRemoveFile:'remove',
-        maxFiles: 1,
-        success: (file, data) ->
-          $("div.dropzone_back").addClass("active")
-          window.post_form_data["driver_licence_back_image"] = file.dataURL
-          driver_licence = $.parseJSON(data["driver_licence"])
-          $("input#drivers_licence_expire_date").val(driver_licence["expire_date"])
-
-    })
+    back_dropzone = new Dropzone(
+        "div.dropzone_back",
+        { 
+            url: "/home/upload_driver_licence_back",
+            thumbnailWidth: 460,
+            thumbnailHeight: 280,
+            maxFilesize: 2,
+            acceptedFiles: 'image/*',
+            addRemoveLinks: true, 
+            dictRemoveFile:'remove',
+            maxFiles: 1,
+            success: (file, data) ->
+              $("div.dropzone_back").addClass("active")
+              window.post_form_data["driver_licence_back_image"] = file.dataURL
+              driver_licence = $.parseJSON(data["driver_licence"])
+              $("input#drivers_licence_expire_date").val(driver_licence["expire_date"])
+        }
+    ) 
 
 
 
@@ -696,62 +698,134 @@ $(document).ready ->
 
 
 
+    modal_type = ""
+    camera_element_id = ""
+    capture_canvas_element_id = ""
+    save_capture_element_id = ""
 
-    
-    #$('#show-camera-tab').on('click', ()->
-    #    $("#tab-handle-camera").tab('show');
-    #);
 
-    #video = $("#camera-video")[0];
+    modal_type = ""
+    $('#front_capture_button').click( ->
+        modal_type = "front"
+        camera_element_id = "#camera-video"
+        capture_canvas_element_id = "#capture-canvas"
+        save_capture_element_id = "#save-capture"
 
-    #navigator.getUserMedia({ "video": true }, (stream) -> 
-    #  video.src = window.URL.createObjectURL(stream) || stream; 
-    #  video.play(); 
-    #, (e)->
-    #  console.log(e);
-    #  alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
-    #); 
+        video = $(camera_element_id)[0];
+        navigator.getUserMedia({ "video": true }, (stream) -> 
+          video.src = window.URL.createObjectURL(stream) || stream; 
+          video.play(); 
+        , (e)->
+          console.log(e);
+          alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
+        ); 
  
+    )
+    $('#back_capture_button').click( ->
+        modal_type = "back"
+        camera_element_id = "#camera-video-back"
+        capture_canvas_element_id = "#capture-canvas-back"
+        save_capture_element_id = "#save-capture-back"
+        video = $(camera_element_id)[0];
 
-    #dataURItoBlob = (dataURI) ->
-    #    byteString;
-    #    if (dataURI.split(',')[0].indexOf('base64') >= 0)
-    #        byteString = atob(dataURI.split(',')[1]);
-    #    else
-    #        byteString = unescape(dataURI.split(',')[1]);
+        navigator.getUserMedia({ "video": true }, (stream) -> 
+          video.src = window.URL.createObjectURL(stream) || stream; 
+          video.play(); 
+        , (e)->
+          console.log(e);
+          alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
+        ); 
+     
 
-    #    mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-
-    #    ia = new Uint8Array(byteString.length);
-    #    for  i in [0..byteString.length]
-    #        ia[i] = byteString.charCodeAt(i);
-    #    
-
-    #    return new Blob([ia], {type:mimeString});
-
-    #$('#save-capture').on('click', ()->
-    #  captureCanvas = $("#capture-canvas")[0]; 
-    #  video = $("#camera-video")[0];
-
-    #  captureCanvas.width = video.width;
-    #  captureCanvas.height = video.height;
-    #  context = captureCanvas.getContext("2d");
-    #  context.drawImage(video, 0, 0, video.width, video.height);
-    #  dataUrl = captureCanvas.toDataURL('image/jpeg', 100);
-    #  
-    #  $("#camera-video").css('display': "none")
-    #  $("#capture_confirm").css('display': "block")
-    #  $("#options").css("display", "none")
-
-    #  capuredFile = dataURItoBlob(dataUrl);
-
-    #  front_dropzone.addFile(capuredFile);
-    #  front_dropzone.processQueue();
-
-    #);
+    )
+    $('#visa_capture_button').click( ->
+        modal_type = "visa"
+    )
+    
 
 
+    dataURItoBlob = (dataURI) ->
+        byteString;
+        if (dataURI.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(dataURI.split(',')[1]);
+        else
+            byteString = unescape(dataURI.split(',')[1]);
+
+        mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+        ia = new Uint8Array(byteString.length);
+        for  i in [0..byteString.length]
+            ia[i] = byteString.charCodeAt(i);
+        
+
+        return new Blob([ia], {type:mimeString});
+
+    capuredFile = ""
+    $('#save-capture').on('click', ()->
+      captureCanvas = $(capture_canvas_element_id)[0]; 
+      video = $(camera_element_id)[0];
+
+      captureCanvas.width = video.width;
+      captureCanvas.height = video.height;
+      context = captureCanvas.getContext("2d");
+      context.drawImage(video, 0, 0, video.width, video.height);
+      dataUrl = captureCanvas.toDataURL('image/jpeg', 100);
+      
+      $("#tab-handle-camera").css('display': "none")
+      $("#capture_confirm").css('display': "block")
+      $("#options").css("display", "none")
+
+      capuredFile = dataURItoBlob(dataUrl);
+    );
+
+    $('#save-capture-back').on('click', ()->
+      captureCanvas = $(capture_canvas_element_id)[0]; 
+      video = $(camera_element_id)[0];
+
+      captureCanvas.width = video.width;
+      captureCanvas.height = video.height;
+      context = captureCanvas.getContext("2d");
+      context.drawImage(video, 0, 0, video.width, video.height);
+      dataUrl = captureCanvas.toDataURL('image/jpeg', 100);
+      
+      $("#tab-handle-camera-back").css('display': "none")
+      $("#capture_confirm-back").css('display': "block")
+      $("#options-back").css("display", "none")
+
+      capuredFile = dataURItoBlob(dataUrl);
+    );
+
+    $('#try_again').on('click', ()->
+      captureCanvas = $(capture_canvas_element_id)[0]; 
+      video = $(camera_element_id)[0];
+
+      $("#tab-handle-camera").css('display': "block")
+      $("#capture_confirm").css('display': "none")
+      $("#options").css("display", "block")
+    );
+    $('#try_again-back').on('click', ()->
+      captureCanvas = $(capture_canvas_element_id)[0]; 
+      video = $(camera_element_id)[0];
+
+      $("#tab-handle-camera-back").css('display': "block")
+      $("#capture_confirm-back").css('display': "none")
+      $("#options-back").css("display", "block")
+    );
 
 
+
+    $('#upload_capture').on('click', ()->
+      front_dropzone.addFile(capuredFile);
+      front_dropzone.processQueue();
+
+      $('#capture').modal("hide")
+    );
+
+    $('#upload_capture-back').on('click', ()->
+      back_dropzone.addFile(capuredFile);
+      back_dropzone.processQueue();
+
+      $('#back_capture').modal("hide")
+    );
 
 
