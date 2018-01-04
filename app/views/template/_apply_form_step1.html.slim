@@ -7,16 +7,18 @@ li#application
             .col-md-8.col-xs-12.no-padding
                 .col-md-12.text-center 
                     a#selected_import data-toggle="modal" data-target="#confirm" style="color:red; " Before upload please read!! 
-                #licence_front.col-md-6.col-xs-12 
+                #licence_front.col-md-6.col-xs-12.text-center 
                     div class="dropzone_front needsclick dz-clickable"
                         div.dz-message.needsclick
                             img src="#{image_path('sample_front.png')}"
                             button#click_to_upload.btn.btn-primary  Click to Upload
-                #licence_back.col-md-6.col-xs-12
+                    a#front_capture_button.hidden-sm data-toggle="modal" data-target="#capture" style="color:red; "  Licence Front Capture
+                #licence_back.col-md-6.col-xs-12.text-center 
                     div class="dropzone_back needsclick dz-clickable"
                         div.dz-message.needsclick
                             img src="#{image_path('sample_back.png')}"
                             button#click_to_upload.btn.btn-primary  Click to Upload
+                    a#back_capture_button.hidden-sm data-toggle="modal" data-target="#back_capture" style="color:red;"  Licence Back Capture
 
 
         .col-md-12.col-xs-12.about_information

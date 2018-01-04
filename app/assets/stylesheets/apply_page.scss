@@ -250,12 +250,12 @@ h4#myModalLabel {
     font-size: 24px;
     color: #979797;
 }
-#close_modal, #save-capture {
+#close_modal, #save-capture, #try_again,#upload_capture,#close_modal-back, #try_again-back, #upload_capture-back, #save-capture-back  {
     padding: 7px 45px;
     margin: 15px 0px;
     border-radius: 7px;
 }
-#click_to_upload{
+#click_to_upload {
     margin-top: 10px;
 }
 
@@ -263,19 +263,19 @@ h4#myModalLabel {
     background-color: white;
     border:none; 
 }
-#tab-handle-camera {
+#tab-handle-camera, #tab-handle-camera-back {
     video {
         border-radius: 7px;
         width: 80%
     }
 }
-#capture_confirm {
+#capture_confirm, #capture_confirm-back {
     h3 {
         font-size: 28px;
         color: #979797;
         padding: 10px 0px;
     }
-    #capture-canvas {
+    #capture-canvas, #capture-canvas-back {
         border-radius: 7px;
         width: 80%
     }
