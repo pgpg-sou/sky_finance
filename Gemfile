@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'capistrano'
+
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 gem 'rails-jquery-autocomplete'
