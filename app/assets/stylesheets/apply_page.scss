@@ -70,7 +70,7 @@ ol > li.radio.income {
 #mortage_rent_board, #loans_and_hps, #credit_card,
 #living, #child_support,
 #home, #rental_property, #investment, #money_in_bank, #vehicle,
-#furniture, #jewelry, #other, #total_assets {
+#furniture, #jewelry, #other,  {
     padding: 10px 6px;
     font: 700 12px/12px Arial;
     width: 100px;
@@ -194,13 +194,20 @@ ol > li > div.liability {
 #add_liability,
 #add_loan,
 #add_morgage_area,
-#add_outgoing_area {
+#add_outgoing_area,
+#add_assets,
+#add_liability_area {
     height: 40px;
     border-radius: 8px;
-    border: 4px dotted grey;
+    border: 4px dotted #E3E3E3;
     text-align: center;
     font-size: 21px;
-    padding-top: 5px;
+    color: #E3E3E3;
+    font-weight: bold;
+    span {
+    font-weight: bold;
+    font-size: 23px;
+    }
 }
 
 .apply[disabled], .apply[readonly]  {
@@ -213,6 +220,67 @@ ol > li > div.liability {
 .space {
     height: 30px
 }
+
+.uploaad_smple {
+    box-sizing: border-box;
+    min-height: 130px;
+    border: 2px dashed #979797;
+    background: white;
+    padding: 16px 16px;
+    margin: 15px 0px;
+    border-radius: 20px;
+    h2 {
+        color: #979797;
+        font-size: 22px;
+        padding-bottom: 25px;
+    }
+    
+}
+.modal_p {
+    font-size: 15px;
+    line-height: 2.0;
+    color: #979797;
+    span {
+        color: red;
+        font-weight: bold;
+    }
+}
+
+h4#myModalLabel {
+    font-size: 24px;
+    color: #979797;
+}
+#close_modal, #save-capture, #try_again,#upload_capture,#close_modal-back, #try_again-back, #upload_capture-back, #save-capture-back  {
+    padding: 7px 45px;
+    margin: 15px 0px;
+    border-radius: 7px;
+}
+#click_to_upload {
+    margin-top: 10px;
+}
+
+.modal-footer {
+    background-color: white;
+    border:none; 
+}
+#tab-handle-camera, #tab-handle-camera-back {
+    video {
+        border-radius: 7px;
+        width: 80%
+    }
+}
+#capture_confirm, #capture_confirm-back {
+    h3 {
+        font-size: 28px;
+        color: #979797;
+        padding: 10px 0px;
+    }
+    #capture-canvas, #capture-canvas-back {
+        border-radius: 7px;
+        width: 80%
+    }
+}
+
 
 
 

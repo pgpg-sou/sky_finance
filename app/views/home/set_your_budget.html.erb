@@ -4,20 +4,7 @@
 
 		<nav id="breadcrumb" class="hidden-xs">
 	        <div class="container">
-	            <ol class="breadcrumb" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-	                                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-	                            <a itemprop="item" href="/">
-	                                <span itemprop="name">Home</span>
-	                            </a>
-	                        <meta itemprop="position" content="1">
-	                    </li>
-	                    <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-	                            <a itemprop="item" href="/car-finance-calculator">
-	                                <span itemprop="name">Calculator</span>
-	                            </a>
-	                        <meta itemprop="position" content="2">
-	                    </li>
-	            </ol>
+
 	        </div>
 	    </nav>
 				<section class="large-calculator calculator-page-calc main-calc-scroll calculator-widget">
@@ -32,7 +19,7 @@
             <style>.car-svg{fill: #695e93;}</style>
           </defs>
           <title>Asset 1</title>
-          <g id="Layer_2" data-name="Layer 2">
+          <g id="Layer_2"  class="hidden-sm"  data-name="Layer 2">
             <g id="Car">
               <path class="car-svg" d="M2.11,71.7c4.71,2.69,12.21,4,20.46,5.28,0-.58-.09-1.17-.09-1.76a25.58,25.58,0,1,1,51.16,0c0,.6,0,1.18-.09,1.77h76.2c0-.59-.09-1.17-.09-1.77a25.58,25.58,0,1,1,51.16,0c0,.58,0,1.15-.09,1.72,10.15-1,15.11-1.41,16.75-1.87,3.15-.9,4.17-6.07,4.94-9.89h-.2c1.43-15-2.89-24.32-2.89-24.32-3.2-7.58-38.17-13.2-48.14-17.47-11.8-5.06-36.32-20-51.68-22C98.81-1.3,71.06.23,61.32,3.39a312.42,312.42,0,0,0-38.2,16c-10.79,4-20.27,5.12-20.56,6.18-4.38,16.18-2,28.09-1,34.15l-1,2C.75,63-.16,70.22,2.11,71.7Zm199.2-32.13c6.52.82,13,1.8,13.7,2.92,1.41,2.35,2.25,8.54,2.25,8.54s-9.92-5.5-12.36-7C201.53,42,195.92,38.89,201.31,39.56ZM101.14,26.94,99.53,6.66a171.59,171.59,0,0,1,18.89,1.22c9.47,1.22,24.42,8.88,35.34,14.48,5,2.58,6.61,6.33-3.83,6.06C139.07,28.15,120,27.56,101.14,26.94ZM57.78,25.51l1.73-14.08c3.32-1.19,5.35-1.82,5.41-1.84C69.81,8,80.86,6.86,92.62,6.65l1.59,20.06ZM44.67,17.36c3.93-1.73,7.52-3.18,10.57-4.35L53.72,25.37l-7.5-.25C37.62,24.83,40.53,19.19,44.67,17.36Z"></path>
               <path class="car-svg" d="M155.05,75.22A20.19,20.19,0,1,0,175.25,55,20.19,20.19,0,0,0,155.05,75.22Zm11.51,0a8.68,8.68,0,1,1,8.67,8.68A8.68,8.68,0,0,1,166.57,75.22Z"></path>
@@ -44,7 +31,7 @@
 									</div>
 									<div class="amount-to-borrow-form" role="form">
 										<div class="row">
-											<div class="col-xs-12 col-sm-6 col-lg-7">
+											<div class="col-xs-12 col-sm-12 col-lg-7">
 												<div class="form-group eight-below">
 													<label for="Amount-to-borrow-large" class="large-calc__label-left">Amount to borrow</label>
 													<div class="borrow-group">
@@ -105,7 +92,7 @@
 
 												</div>
 											</div>
-											<div class="col-xs-12 col-sm-6 col-lg-5">
+											<div class="col-xs-12 col-sm-12 col-lg-5">
 												<div class="form-group">
 													<label for="to-bay-back-over-large">To pay back over</label>
 													<div class="pay-back-group">
@@ -230,7 +217,7 @@
 												</button>
 											</div>
 											<div class="col-xs-12 col-sm-6 col-md-12 left-padd-off">
-												<a href="<%= home_apply_path() %>" class="btn btn-green large-calc-custom-apply" data-ga-item="" data-ga-label="Apply now" data-ga-action="Apply now" data-ga-category="Calculator" data-ga-event="Calculator">
+												<a href="<%= home_apply2_path() %>" class="btn btn-green large-calc-custom-apply" data-ga-item="" data-ga-label="Apply now" data-ga-action="Apply now" data-ga-category="Calculator" data-ga-event="Calculator">
 													<div class="apply">Apply now
 														<i class="fa fa-chevron-right apply-now-custom-chevron" aria-hidden="true"></i>
 													</div>
@@ -327,8 +314,9 @@
 				            <p>Our car finance calculator provides a quick and easy way to see just how cheap a car loan could be, no matter whether you have an excellent, good, fair or poor credit history. It will give you an approximate guide as to how much you’ll be paying each month and over the time period you want. This means you can feel comfortable that the amount you want to pay for your new car if affordable. If not, simply tweak the amount you want to borrow to bring your estimated monthly payments to an amount you feel happy with.</p>
 				            <p>At CarFinance 247 we are experienced in obtaining what we consider are the best car loan rates for all individual circumstances from our large panel of lenders. We have long standing relationships with our lenders, which means we can access great deals on your behalf.</p>
 				            <p>Please try out our car loan calculator now and see how cheap buying a new or used car may be!</p>
-				            <p style="font-style: italic; margin: 25px 0; font-size: 13px;">* This car finance calculator is for illustration purposes. All figures given on the calculator are estimates only. The interest rate that you receive from your loan provider can vary significantly depending on your personal circumstances. If you have poor credit you are deemed to be a higher risk to the lender, hence the reason for higher monthly payments. All rates are correct as of December 2016.</p>
-				            <button style="display: block; margin: 0 auto; padding: 10px 15px; margin-top: 5px;" class="btn btn-blue scroll-to-element mini-calc-btn-scroller" data-scroll-target="#large-calculator">
+				            <p style="font-style: italic; margin: 25px 0; ">* This car finance calculator is for illustration purposes. All figures given on the calculator are estimates only. The interest rate that you receive from your loan provider can vary significantly depending on your personal circumstances. If you have poor credit you are deemed to be a higher risk to the lender, hence the reason for higher monthly payments. All rates are correct as of December 2016.</p>
+
+				            <button style="display: block; margin: 0 auto;  margin-top: 5px;" class="btn btn-blue scroll-to-element mini-calc-btn-scroller calculate_button" data-scroll-target="#large-calculator">
 
 				                <img class="hidden-sm" src="<%= image_path('calc.png') %>" style="margin-right: 10px;" alt="white calculator">
 

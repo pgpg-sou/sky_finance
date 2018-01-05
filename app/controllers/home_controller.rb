@@ -39,6 +39,15 @@ class HomeController < ApplicationController
   def apply3
       render :layout => 'apply2'
   end
+
+  def application_saver
+      @application = params.to_json
+      logger.debug "sample"
+      logger.debug @application
+
+    
+      render :json => {"driver_licence" => @application}
+  end
   
   def apply_mail
       @application = params.to_json
@@ -80,7 +89,7 @@ class HomeController < ApplicationController
         render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
         #labels = annotation.labels.inject([]){|arr, label| arr << label.description}
     rescue Exception => e
-        puts e.message
+        render :json => {"words" => "error"}
     end
   end
 
@@ -91,21 +100,20 @@ class HomeController < ApplicationController
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
 	end
-
     vision = Google::Cloud::Vision.new(
         project: "46e9b8fc7d619db1971ff5d604b4858c5a95f33b",
         keyfile: Rails.root.to_s + "/lib/assets/spray-46e9b8fc7d61.json"
     )
+
     begin
         image = vision.image output_path
         annotation = vision.annotate image, document: true, text: true
 
         @driver_licence = driver_licence_back_crop(annotation.text)
-
-        render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
-    rescue Exception => e
-        puts e.message
+    rescue
     end
+
+    render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
   end
 
   def upload_file_visa
@@ -183,21 +191,13 @@ class HomeController < ApplicationController
 
 
   def driver_licence_back_crop(text)
-     licence_keyword = {"Surname" => "last_name", "First Names" => "first_name", "Date of birth" => "birth_date", "Licence" => "driver_licence_no", "Version" => "card_version_no"}
-
      document = text.to_str
      driver_licence = Hash.new 
 
-     hit_label = ""
      document.each_line do |line|
-        puts line.to_s
-
-        if hit_label != ""
-            driver_licence[hit_label] = line.to_s
-            hit_label = ""
-        end
-        
-        licence_keyword.each do |keyword, label|
+        match = line.scan(/\d{2}\-\d{2}\-\d{4}/)
+        if match.length != 0
+            driver_licence["expire_date"] = match.last.gsub("-", "/")
         end
      end
      puts driver_licence
@@ -274,6 +274,10 @@ class HomeController < ApplicationController
             end
         end
 
+        match = line.scan(/\w{2}\d{6}/)
+        if match.length != 0
+            driver_licence["driver_licence_no"] = match.last
+        end
 
      end
      puts driver_licence
