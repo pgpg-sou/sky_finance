@@ -13,7 +13,7 @@ common
 -------------------------*/
 
 .layout {
-    max-width: 1000px;
+    max-width: 1100px;
     width: 100%;
     height: auto;
     margin: 0px auto;
@@ -273,12 +273,11 @@ a{
 -------------------------*/
 
 nav{
-	position: fixed;
 }
 
 nav img{
 	float: none;
-	width: 110px;
+	width: 140px;
 }
 
 /* nav ul{
@@ -307,16 +306,16 @@ a.menu-trigger:hover{
 }
 .menu-trigger {
   position: absolute;
-  width: 34px;
+  width: 50px;
   height: 28px;
-  right: 15px;
-  top: 18px;
+  right: 30px;
+  top: 30px;
 }
 .menu-trigger span {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 5px;
   background-color: #fff;
   border-radius: 4px;
 }
@@ -324,10 +323,10 @@ a.menu-trigger:hover{
   top: 0;
 }
 .menu-trigger span:nth-of-type(2) {
-  top: 12px;
+  top: 15px;
 }
 .menu-trigger span:nth-of-type(3) {
-  bottom: 0;
+  bottom: -7px;
 }
 
 .menu-trigger.active {
@@ -443,7 +442,15 @@ header.top{
 }
 
 
-}
+header.other{
+	width: 100%;
+	background: url(image_path('bg_mainvisual.png'));
+	background-size: cover;
+	background-position: inherit;
+	background-repeat: no-repeat;
+	height: 120px;
+	text-align: center;
+}}
 
 
 @media only screen and (max-width: 481px){
@@ -457,10 +464,18 @@ header.top{
     background-size: 100%;
     background-position: inherit;
     background-repeat: no-repeat;
-    min-height: 250px;
+    min-height: 50px;
     text-align: center;
 }
-
+header.other{
+	width: 100%;
+	background: url(image_path('bg_mainvisual.png'));
+	background-size: cover;
+	background-position: inherit;
+	background-repeat: no-repeat;
+	height: 120px;
+	text-align: center;
+}
 
 
 /*---------------

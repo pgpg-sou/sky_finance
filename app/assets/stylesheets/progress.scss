@@ -1,5 +1,5 @@
 $mainColor: #49CCB4;
-$baseColor: #666;
+$baseColor: #fff;
 
 
 .wizard-progress{
@@ -16,7 +16,7 @@ $baseColor: #666;
     overflow: visible;
     position:relative;
     font-size: 14px;
-    color: $baseColor;
+    color: #666;
     font-weight: bold;
     padding-left: 20px; 
     
@@ -43,21 +43,21 @@ $baseColor: #666;
       left: 50%;
       margin-left: -18px;
         p {
-            color: #fff;
+            color: #E3E3E3;
             font-size: 30px;
         }
     }
     
     &.complete{
       &:before{
-        background-color: $mainColor;
+        background-color: white;
       }
       .node{
-        border-color: $mainColor;
-        background-color: $mainColor;
+        border-color: white;
+        background-color: white;
         
         p {
-            color: #fff;
+            color: #49CCB4;
             font-size: 30px;
         }
       }
@@ -65,16 +65,17 @@ $baseColor: #666;
     
     &.in-progress{
       &:before{
-        background: $mainColor;
-        background: -moz-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
-        background: -webkit-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
-        background: linear-gradient(to right,  $mainColor 0%, $baseColor 100%);
+        background: white;
+        //background: -moz-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
+        //background: -webkit-linear-gradient(left,  $mainColor 0%, $baseColor 100%);
+        //background: linear-gradient(to right,  $mainColor 0%, $baseColor 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(     startColorstr='#{$mainColor}', endColorstr='#{$baseColor}',GradientType=1 );
       }
       .node{
+        background-color: $mainColor;
         border-color: $mainColor;
         p {
-            color: #fff;
+            color: white;
             font-size: 30px;
         }
 

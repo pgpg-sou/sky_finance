@@ -42,8 +42,31 @@ jQuery(function($) {
 					beforeSelect: function( event, state ) {
 						if (!state.isMovingForward)
   						 return true;
+                        
 						var inputs = $(this).wizard('state').step.find(':input');
-						return !inputs.length || !!inputs.valid();
+                        var ul_tags = $(this).wizard('state').step.find('ul.select_form_tag');
+                        var active_li_num = 0 
+                        var is_active_ul = false 
+                        $(this).wizard('state').step.find('ul.select_form_tag').each( function() {
+                            var li_num = $(this).find('li').length 
+                            var is_act = false 
+                            $(this).find('li').each(function() {
+                                if($(this).hasClass('active')) {
+                                    active_li_num += 1 
+                                    is_act = true 
+                                }
+                            })
+                            if(is_act == false) {
+                                $(this).find('#form_tag_error').css("display", "block")
+                            } else {
+                                $(this).find('#form_tag_error').css("display", "none")
+                            }
+                        })
+                        if(ul_tags.length == active_li_num) {
+                            is_active_ul = true 
+                        }
+
+						return (!inputs.length || !!inputs.valid()) && is_active_ul
 					}
 
 				}).validate({
@@ -61,9 +84,9 @@ jQuery(function($) {
 				$("#survey_container").wizard({
 					afterSelect: function( event, state ) {
                         var next_step_state = false 
+                        // progress部分の処理
                         if(state["isMovingForward"] == false && state["stepIndex"] == 5) {
                             $('.wizard-progress .w_step').last().removeClass("complete").addClass("in-progress")
-
                         } else if(state["isMovingForward"] == true) {
                             $('.wizard-progress .w_step').each(function() {
                                 if(next_step_state == true) {
@@ -89,7 +112,7 @@ jQuery(function($) {
                                 }
                             })
                         }
-                        
+                        $("html,body").animate({scrollTop:0},"300");
 
 
 

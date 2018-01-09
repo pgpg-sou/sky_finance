@@ -1,36 +1,33 @@
 
-#application.col-md-12
-    #about_you
-        #company_information.col-md-12.col-xs-12
+#business_application.col-md-12
+    #director
+        #about_information.col-md-12.col-xs-12
             .col-md-12
                 label.col-md-4.col-xs-12.control-label Company Director Count
                 .col-md-8
                     input#company_director_count.col-md-12.col-xs-12.apply.form-control.required placeholder="  "
-        
+ 
+        #director_information.col-md-12.col-xs-12 style="display:none"
             .col-md-12
                 label.col-md-4.col-xs-12.control-label Director Person Title
+                .col-md-8.col-xs-12 
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Director", "CEO", "COO", "CFO", "CTO", "CMO"], id_name: "director_person_title",is_other: false}
+
+            .col-md-12.col-xs-12
+                label.col-md-4.col-xs-12.control-label  
+                    | Director Name
+                    span * 
                 .col-md-8
-                    input#director_person_title.col-md-12.col-xs-12.apply.form-control.required placeholder="  "
-        
-            .col-md-12
-                label.col-md-4.col-xs-12.control-label Director FirstName
-                .col-md-8
-                    input#director_person_first_name.col-md-12.col-xs-12.apply.form-control.required  type="text" placeholder="  "
-        
-            .col-md-12
-                label.col-md-4.col-xs-12.control-label Director MiddleName
-                .col-md-8
-                    input#director_person_middle_name.col-md-12.col-xs-12.apply.form-control.required  type="text" placeholder="  "
-        
-            .col-md-12
-                label.col-md-4.col-xs-12.control-label Director Last Name
-                .col-md-8
-                    input#director_person_last_name.col-md-12.col-xs-12.apply.form-control.required
+                    input#director_person_first_name.col-md-3.col-sm-12.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="First Name" type="text" required="true"]
+                    input#director_person_middle_name.col-md-3.col-sm-12.col-xs-12.apply[name="first_name" placeholder="Middle Name " type="text" ]
+                    input#director_person_last_name.col-md-3.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="Sur Name" type="text" required="true"]
+
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label Director Home Owner
-                .col-md-8
-                    input#director_person_home_owner.col-md-12.col-xs-12.apply.form-control.required
+                .col-md-8.col-xs-12 
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Yes", "No"], id_name: "director_person_home_owner",is_other: false}
+
 
         
             .col-md-12
@@ -48,7 +45,7 @@
             .col-md-12
                 label.col-md-4.col-sm-12.col-xs-12.control-label Director Date Of Birth
                 .col-md-8
-                    input#director_person_date_of_birth.col-md-12.col-xs-12.apply.required[data-validation="required"]
+                    input#director_person_date_of_birth.col-md-4.col-xs-12.apply.required[data-validation="required"]
 
         
             .col-md-12
@@ -78,14 +75,16 @@
         
             .col-md-12
                 label.col-md-4.col-xs-12.control-label DirectorDriversLicenceType
-                .col-md-8
-                    input#director_person_driver_type.col-md-12.col-xs-12.apply.form-control.required
-        
+                .col-md-8.col-xs-12 
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Learners", "Restrictad", "International", "Full"], id_name: "director_person_driver_type",is_other: false}
+
+
             .col-md-12
                 label.col-md-4.col-xs-12.control-label DirectorDriversLicenceExpireDate
                 .col-md-8
                     input#director_person_expire_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy"]
 
+        #director_form
         
 
 

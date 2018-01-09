@@ -217,13 +217,15 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 	display:inline-block;
 	cursor:pointer;
 	font-weight:600;
-	text-transform:uppercase;
 	outline:none;
-	background:#282828;
+	background:#49CCB4;
 	position:relative;
+
+    border-radius: 3px;
+    font-size: 22px;
    } 
    
-.backward {padding:7px 20px 7px 30px;} 
+.backward {padding:20px 70px 20px 70px;} 
 
  button[disabled].backward, button[disabled].forward {
 	border:none;
@@ -232,7 +234,6 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 }
 
 .backward:before {
-	 content: "\f053"; 
     font-family: FontAwesome;
     text-decoration: inherit;
     position: absolute;
@@ -243,9 +244,8 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 	font-size:9px
    } 
  
-.forward {padding:7px 30px 7px 20px;}  
+.forward {padding:20px 70px 20px 70px;}  
    .forward:before {
-	 content: "\f054"; 
     font-family: FontAwesome;
     text-decoration: inherit;
     position: absolute;
@@ -256,7 +256,7 @@ a.button_medium_2:hover {background:#00aeef; color:#fff; border:2px solid  #00ae
 	font-size:9px
    } 
    
-.backward:hover, .forward:hover {background:#00aeef; color:#fff;}
+.backward:hover, .forward:hover {background:#49CCB4; color:#fff;}
 
 
 /** Header ==================== **/
@@ -342,7 +342,7 @@ ul#footer-nav li {
 /** Form area ============================= **/
 #top-wizard {
 	text-align:center;
-	padding:45px 120px;
+	padding:45px 45px;
 	background-color:#FAFAFA;
 	border-bottom:1px solid #e7e7e7;
 	position:relative;
@@ -383,14 +383,15 @@ ul#footer-nav li {
 	 z-index:9;
 	 position:relative;
 }
-#middle-wizard {
+#wrapped {
 	padding: 50px 125px 35px 125px;
+}
+#middle-wizard {
+	padding: 0px;
 }
 #bottom-wizard {
 	text-align:center;
 	padding:15px 120px;
-	border-top:1px solid #e7e7e7;
-	background-color:#f3f3f3;
 }
 #complete{
 	text-align:center;
@@ -411,8 +412,8 @@ ul#footer-nav li {
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	font-size:18px;
-	border:2px solid  #8dc63f;
-	color:#8dc63f;
+	border:2px solid  #49CCB4;
+	color:#49CCB4;
 	padding:15px 35px;
 	text-decoration:none; 
 	transition: background .5s ease; 
@@ -426,7 +427,7 @@ ul#footer-nav li {
 	outline:none;
 	background:#fff;
 }
-#complete button:hover{background:#00aeef; color:#fff; border:2px solid  #00aeef;}
+#complete button:hover{background:#49CCB4; color:#fff; border:2px solid  #49CCB4;}
 
 
 /** Featuers and Question boxes ============================= **/
@@ -779,15 +780,22 @@ ul.data-list-2 li label.error {
 
 @media (min-width: 768px) and (max-width: 1200px) {
 
-#middle-wizard {padding: 40px 20px 35px 20px;}
+#middle-wizard {padding: 0px;}
+#wrapped {
+	padding: 14px;
+
+}
 #application label {
     font-size: 27px;
 }
 }
 @media (min-width: 768px) and (max-width: 979px) {
 
-#middle-wizard {padding: 40px 10px 35px 10px;}
+#middle-wizard {padding: 0px;}
 #contact { background:none;}
+#wrapped {
+	padding: 14px;
+}
 
 #footer_2 {text-align:center;}
 #contact { background:none;}
