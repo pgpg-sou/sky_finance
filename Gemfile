@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'capistrano'
+gem 'capistrano', '~> 3.5.0'
+  gem 'capistrano-rails'
+  gem 'rvm-capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'

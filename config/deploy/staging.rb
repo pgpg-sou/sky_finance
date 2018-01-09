@@ -59,16 +59,3 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
-
-
-
-set :ssh_options, {
-  port: 22,
-  forward_agent: true,
-  keys: ['~/.ssh/sky_finance'],
-}
-
-set :deploy_target, 'app'
-set :branch, :master
-
-
