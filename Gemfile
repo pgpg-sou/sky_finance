@@ -16,7 +16,7 @@ gem 'google-cloud-translate'
 
 gem 'html2slim'
 gem 'slim-rails'
-gem 'roadie-rails', '~> 1.0'
+gem 'roadie-rails', '1.2.0'
 
 #gem 'jquery-validation-rails'
 gem "jquery-form-validator-rails"
@@ -54,7 +54,7 @@ gem 'unicorn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', '9.0.6'
 end
 
 group :development do
