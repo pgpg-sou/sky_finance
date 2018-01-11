@@ -1,10 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'capistrano', '~> 3.5.0'
-  gem 'capistrano-rails'
-  gem 'rvm-capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano3-unicorn'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
@@ -60,6 +55,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'capistrano', '~> 3.9'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-rails'
+  gem 'rvm-capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
+
+
 end
 
 group :development do
