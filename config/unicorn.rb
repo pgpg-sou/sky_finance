@@ -8,8 +8,8 @@ current_path = "/var/www/sky_finance/current"
 
 # ソケット経由で通信する
 # ここがcapistranoの設定と合致していないと失敗する
-listen '/tmp/sockets/unicorn.sock'
-pid '/tmp/pids/unicorn.pid'
+listen File.expand_path('tmp/sockets/unicorn.sock', shared_path)
+pid File.expand_path('tmp/pids/unicorn.pid', shared_path)
 
 
 # capistrano 用に RAILS_ROOT を指定

@@ -27,7 +27,7 @@ set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
 # 5回分のreleasesを保持する
 set :keep_releases, 5
 
-set :unicorn_config_path, "config/unicorn.conf"
+set :unicorn_config_path, "config/unicorn.rb"
 
 
 
