@@ -22,8 +22,8 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
 
-  config.action_controller.asset_host = 'http://18.217.216.168/'
-  config.action_mailer.default_url_options = { host: '18.217.216.168'}
+  config.action_controller.asset_host = 'http://18.220.125.81/'
+  config.action_mailer.default_url_options = { host: '18.220.125.81'}
   config.action_mailer.asset_host = config.action_controller.asset_host
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
