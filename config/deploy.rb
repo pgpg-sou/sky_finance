@@ -27,6 +27,9 @@ set :unicorn_pid, "#{shared_path}/tmp/pids/unicorn.pid"
 # 5回分のreleasesを保持する
 set :keep_releases, 5
 
+set :unicorn_config_path, "config/unicorn.conf"
+
+
 
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
@@ -36,6 +39,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       execute :mkdir, '-p', release_path.join('tmp')
       execute :touch, release_path.join('tmp/restart.txt')
+      invoke 'unicorn:stop'
     end
   end
 
