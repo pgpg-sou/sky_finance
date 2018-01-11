@@ -39,7 +39,6 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       execute :mkdir, '-p', release_path.join('tmp')
       execute :touch, release_path.join('tmp/restart.txt')
-      invoke 'unicorn:stop'
     end
   end
 

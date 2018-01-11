@@ -59,3 +59,17 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server '18.220.125.81', user: 'deploy', roles: %w{app}
+
+set :ssh_options, {
+  port: 22,
+  forward_agent: true,
+  keys: ['~/.ssh/sky_finance_deploy.pem'],
+}
+
+set :deploy_target, 'app'
+set :branch, :master
+
+
+
