@@ -469,7 +469,7 @@ $(document).ready ->
 
 
     $('#joint_applicant_exist li').click( ->
-        if $(this).text() == "Yes"
+        if $(this).text().indexOf("Yes")
             $(".joint").css("display", "block")
         else
             $(".joint").css("display", "none")
