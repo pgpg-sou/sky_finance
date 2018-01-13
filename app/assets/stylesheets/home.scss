@@ -145,6 +145,32 @@ input#driver_licence,
 input#driver_licence_version,
 input#driver_licence_country,
 input#drivers_licence_expire_date, 
+
+
+
+input#joint_applicant_e_mail_address,
+input#joint_applicant_first_name,
+input#joint_applicant_middle_name,
+input#joint_applicant_sur_name,
+input#joint_applicant_dependentsCount, 
+input#joint_applicant_dependentsAge,
+input#joint_applicant_home_phone,
+input#joint_applicant_date_of_birth,
+input#joint_applicant_driver_licence,
+input#joint_applicant_driver_licence_version,
+input#joint_applicant_driver_licence_country,
+input#joint_applicant_drivers_licence_expire_date, 
+input#joint_applicant_citizen_ship,
+input#joint_applicant_last_entry_date,
+input#joint_applicant_visa_expire_date, 
+
+
+
+
+
+
+
+
 input#citizen_ship,
 input#last_entry_date,
 input#visa_expire_date, 
@@ -453,7 +479,16 @@ ul#previous_living_period,
  ul#income_other_period,
  ul#expences_hp_credit,
  ul#expences_living,
- ul#expences_morgage
+ ul#expences_morgage,
+ ul#joint_applicant_residential_status,
+ ul#joint_applicant_driver_licence,
+ ul#joint_applicant_material_status,
+ ul#joint_applicant_gender,
+ ul#joint_applicant_title,
+
+
+ul#joint_applicant_exist
+
   {
     margin: 0;
     padding: 0;
@@ -875,6 +910,18 @@ input#driver_licence,
 input#driver_licence_version,
 input#driver_licence_country,
 input#drivers_licence_expire_date, 
+
+
+
+input#joint_applicant_first_name,
+input#joint_applicant_middle_name,
+input#joint_applicant_sur_name,
+input#joint_applicant_dependentsCount, 
+input#joint_applicant_dependentsAge,
+input#joint_applicant_home_phone,
+
+
+
 input#citizen_ship,
 input#last_entry_date,
 input#visa_expire_date, 

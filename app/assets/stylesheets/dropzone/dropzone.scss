@@ -232,7 +232,7 @@
 }
 
 
-.dropzone, .visa_dropzone, .dropzone_front, .dropzone_back {
+.dropzone, .visa_dropzone, .joint_visa_dropzone,  .passport_dropzone, .dropzone_front, .dropzone_front_joint, .dropzone_back_joint, .dropzone_back, .joint_passport_dropzone  {
   box-sizing: border-box;
   * {
     box-sizing: border-box;
@@ -518,7 +518,7 @@
 
 
 @media (min-width: 768px) and (max-width: 1200px) {
-    .dropzone, .visa_dropzone, .dropzone_front, .dropzone_back {
+    .dropzone, .visa_dropzone, .dropzone_front, .dropzone_back, .passport_dropzone {
         box-sizing: border-box;
         min-height: 250px;
         border: 2px dashed #cbcbcb;
@@ -532,7 +532,7 @@
             font-size: 1.5em;
         }
     }
-    .dropzone .dz-message, .visa_dropzone .dz-message, .dropzone_front .dz-message, .dropzone_back .dz-message {
+    .dropzone .dz-message, .visa_dropzone .dz-message, .dropzone_front .dz-message, .dropzone_back .dz-message, .passport_dropzone .dz-message {
         text-align: center;
         margin: 4.0em 0;
     }
