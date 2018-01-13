@@ -93,6 +93,17 @@ class HomeController < ApplicationController
     end
   end
 
+  def upload_passport_file
+    uploaded_file = params[:file]
+	output_path = Rails.root.join('public', uploaded_file.original_filename)
+	
+	File.open(output_path, 'w+b') do |fp|
+	  fp.write  uploaded_file.read
+	end
+
+    render :json => {}
+  end
+
   def upload_driver_licence_back 
     uploaded_file = params[:file]
 	output_path = Rails.root.join('public', uploaded_file.original_filename)

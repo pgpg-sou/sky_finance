@@ -465,6 +465,13 @@ $(document).ready ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
+    $('ul#joint_applicant_exist li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#joint_applicant_exist li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
 
     $('ul#income_other_period li').click ->
         $(this).parent().find('#form_tag_error').css('display', "none")
@@ -589,6 +596,37 @@ $(document).ready ->
     $('ul#expences_living li').click ->
         $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#expences_living li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+    $('ul#joint_applicant_residential_status li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#joint_applicant_residential_status li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#joint_applicant_driver_licence li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#joint_applicant_driver_licence li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#joint_applicant_material_status li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#joint_applicant_material_status li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#joint_applicant_gender li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#joint_applicant_gender li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+    $('ul#joint_applicant_title li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#joint_applicant_title li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 

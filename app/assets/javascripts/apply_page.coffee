@@ -468,6 +468,13 @@ $(document).ready ->
     )
 
 
+    $('#joint_applicant_exist li').click( ->
+        if $(this).text() == "Yes"
+            $(".joint").css("display", "block")
+        else
+            $(".joint").css("display", "none")
+
+    )
 
 
 
@@ -616,7 +623,6 @@ $(document).ready ->
               $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
               $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
               $('input#driver_licence_country').val(driver_licence["licence_country"]).addClass("valid")
-
               
               if driver_licence["licence_type"] == "LEARNER"
                   $('ul#driver_licence li').each ->
@@ -632,6 +638,48 @@ $(document).ready ->
                   $('ul#driver_licence > li:nth-child(4)').addClass('active')
         }
     )
+
+    joint_front_dropzone = new Dropzone(
+        "div.dropzone_front_joint",
+        {
+            url: "/home/upload_file",
+            maxFiles: 1,
+            maxFilesize: 2,
+            acceptedFiles: 'image/*',
+            thumbnailWidth: 460,
+            thumbnailHeight: 280,
+            addRemoveLinks: true, 
+            dictRemoveFile:'remove',
+            success: (file, data) ->
+              $("div.dropzone_front_joint").addClass("active")
+              driver_licence = $.parseJSON(data["driver_licence"])
+              words = data["words"]
+              window.post_form_data["joint_driver_licence_front_image"] = file.dataURL
+              
+              $('input#joint_applicant_first_name').val(driver_licence["first_name"]).addClass("valid")
+              $('input#joint_applicant_sur_name').val(driver_licence["last_name"]).addClass("valid")
+              $('input#joint_applicant_date_of_birth').val(driver_licence["birth_date"]).addClass("valid")
+               
+              $('input#joint_applicant_driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
+              $('input#joint_applicant_driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
+              $('input#joint_applicant_drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
+              $('input#joint_applicant_driver_licence_country').val(driver_licence["licence_country"]).addClass("valid")
+              
+              if driver_licence["licence_type"] == "LEARNER"
+                  $('ul#joint_applicant_driver_licence li').each ->
+                      $(this).removeClass('active')
+                  $('ul#joint_applicant_driver_licence > li:nth-child(1)').addClass('active')
+              else if driver_licence["licence_type"] == "RESTRICTED"
+                  $('ul#joint_applicant_driver_licence li').each ->
+                      $(this).removeClass('active')
+                  $('ul#joint_applicant_driver_licence > li:nth-child(2)').addClass('active')
+              else 
+                  $('ul#joint_applicant_driver_licence li').each ->
+                      $(this).removeClass('active')
+                  $('ul#joint_applicant_driver_licence > li:nth-child(4)').addClass('active')
+        }
+    )
+
 
     back_dropzone = new Dropzone(
         "div.dropzone_back",
@@ -651,6 +699,100 @@ $(document).ready ->
               $("input#drivers_licence_expire_date").val(driver_licence["expire_date"])
         }
     ) 
+
+
+    back_dropzone = new Dropzone(
+        "div.dropzone_back_joint",
+        { 
+            url: "/home/upload_driver_licence_back",
+            thumbnailWidth: 460,
+            thumbnailHeight: 280,
+            maxFilesize: 2,
+            acceptedFiles: 'image/*',
+            addRemoveLinks: true, 
+            dictRemoveFile:'remove',
+            maxFiles: 1,
+            success: (file, data) ->
+              $("div.dropzone_back_joint").addClass("active")
+              window.post_form_data["joint_driver_licence_back_image"] = file.dataURL
+              driver_licence = $.parseJSON(data["driver_licence"])
+              $("input#joint_applicant_drivers_licence_expire_date").val(driver_licence["expire_date"])
+        }
+    ) 
+
+    passport_dropzone = new Dropzone(
+        "div.passport_dropzone",
+        { 
+            url: "/home/upload_passport_file",
+            thumbnailWidth: 460,
+            thumbnailHeight: 280,
+            maxFilesize: 2,
+            acceptedFiles: 'image/*',
+            addRemoveLinks: true, 
+            dictRemoveFile:'remove',
+            maxFiles: 1,
+            success: (file, data) ->
+              window.post_form_data["possport_image"] = file.dataURL
+        }
+    )
+    joint_passport_dropzone = new Dropzone(
+        "div.joint_passport_dropzone",
+        { 
+            url: "/home/upload_passport_file",
+            thumbnailWidth: 460,
+            thumbnailHeight: 280,
+            maxFilesize: 2,
+            acceptedFiles: 'image/*',
+            addRemoveLinks: true, 
+            dictRemoveFile:'remove',
+            maxFiles: 1,
+            success: (file, data) ->
+              window.post_form_data["possport_image"] = file.dataURL
+        }
+    )
+
+
+
+
+    $("div.joint_visa_dropzone").dropzone({ 
+        url: "/home/upload_file_visa",
+        maxFiles: 2,
+        thumbnailWidth: 460,
+        thumbnailHeight: 280,
+        maxFilesize: 2,
+        acceptedFiles: 'image/*',
+        addRemoveLinks: true, 
+        dictRemoveFile:'remove',
+        success: (file, data) ->
+          $("div.joint_visa_dropzone").addClass("active")
+          visa_licence = $.parseJSON(data["visa_licence"])
+          words = data["words"]
+          window.post_form_data["joint_visa_image"] = file.dataURL
+          
+          $('input#joint_applicant_visa_expire_date').val(visa_licence["expire_date"]).addClass("valid")
+          $('input#joint_applicant_citizen_ship').val(visa_licence["citizen_ship"]).addClass("valid")
+
+          if visa_licence["visa_type"] == "Student Visa"
+              $('ul#joint_applicant_residential_status li').each ->
+                  $(this).removeClass('active')
+              $('ul#joint_applicant_residential_status > li:nth-child(3)').addClass('active')
+          else if visa_licence["visa_type"] == "Work Visa"
+              $('ul#joint_applicant_residential_status li').each ->
+                  $(this).removeClass('active')
+              $('ul#joint_applicant_residential_status > li:nth-child(3)').addClass('active')
+
+
+          if visa_licence["gender"] == "Female"
+              $('ul#joint_applicant_gender li').each ->
+                  $(this).removeClass('active')
+              $('ul#joint_applicant_gender > li:nth-child(2)').addClass('active')
+          else if visa_licence["gender"] == "Male"
+              $('ul#joint_applicant_gender li').each ->
+                  $(this).removeClass('active')
+              $('ul#joint_applicant_gender > li:nth-child(1)').addClass('active')
+
+    })
+
 
 
 
@@ -691,8 +833,6 @@ $(document).ready ->
                   $(this).removeClass('active')
               $('ul#gender > li:nth-child(1)').addClass('active')
 
-
-
     })
 
 
@@ -711,6 +851,15 @@ $(document).ready ->
         capture_canvas_element_id = "#capture-canvas"
         save_capture_element_id = "#save-capture"
 
+        video = $("#camera-video")[0];
+
+        navigator.getUserMedia({ "video": true }, (stream) -> 
+          video.src = window.URL.createObjectURL(stream) || stream; 
+          video.play(); 
+        , (e)->
+          console.log(e);
+        ); 
+
 
     )
     $('#back_capture_button').click( ->
@@ -720,29 +869,19 @@ $(document).ready ->
         save_capture_element_id = "#save-capture-back"
     
 
+        video = $("#camera-video-back")[0];
+        navigator.getUserMedia({ "video": true }, (stream) -> 
+          video.src = window.URL.createObjectURL(stream) || stream; 
+          video.play(); 
+        , (e)->
+          console.log(e);
+        ); 
+
+
     )
     $('#visa_capture_button').click( ->
         modal_type = "visa"
     )
-    video = $("#camera-video")[0];
-
-    navigator.getUserMedia({ "video": true }, (stream) -> 
-      video.src = window.URL.createObjectURL(stream) || stream; 
-      video.play(); 
-    , (e)->
-      console.log(e);
-      alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
-    ); 
-    video = $("#camera-video-back")[0];
-    navigator.getUserMedia({ "video": true }, (stream) -> 
-      video.src = window.URL.createObjectURL(stream) || stream; 
-      video.play(); 
-    , (e)->
-      console.log(e);
-      alert("摄像头打开失败\n\r" + e.name +"\n\r" + e.message);
-    ); 
-
-
 
     dataURItoBlob = (dataURI) ->
         byteString;

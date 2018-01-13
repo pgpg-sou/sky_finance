@@ -43,8 +43,8 @@ jQuery(function($) {
 						if (!state.isMovingForward)
   						 return true;
                         
-						var inputs = $(this).wizard('state').step.find(':input');
-                        var ul_tags = $(this).wizard('state').step.find('ul.select_form_tag');
+						var inputs = $(this).wizard('state').step.find(':input:visible');
+                        var ul_tags = $(this).wizard('state').step.find('ul.select_form_tag:visible');
                         var active_li_num = 0 
                         var is_active_ul = false 
                         $(this).wizard('state').step.find('ul.select_form_tag').each( function() {
