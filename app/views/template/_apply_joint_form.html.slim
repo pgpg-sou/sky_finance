@@ -1,0 +1,188 @@
+
+
+
+li#application
+    #about_information.col-md-12.col-xs-12
+        .col-md-12.col-xs-12.about_information
+            label.col-md-4.col-xs-12.control-label 
+                | Is there Joint?
+
+            .col-md-8.col-xs-12.no-padding 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Yes", "No"], id_name: "joint_applicant_exist",is_other: false, ul_class: "select_form_tag"}
+
+
+
+
+li#application.joint style="display:none"
+    #about_information.col-md-12.col-xs-12
+        .col-md-12.col-xs-12.about_information
+            label.col-md-4.col-xs-12.control-label 
+                | Driver Licence Imageas
+            .col-md-8.col-xs-12.no-padding
+                .col-md-12.text-center 
+                    a#selected_import data-toggle="modal" data-target="#confirm" style="color:red; " Before upload please read!! 
+                #licence_front.col-md-6.col-xs-12.text-center 
+                    div class="dropzone_front_joint needsclick dz-clickable"
+                        div.dz-message.needsclick
+                            img src="#{image_path('sample_front.png')}"
+                            button#click_to_upload.btn.btn-primary  Click to Upload
+                #licence_back.col-md-6.col-xs-12.text-center 
+                    div class="dropzone_back_joint needsclick dz-clickable"
+                        div.dz-message.needsclick
+                            img src="#{image_path('sample_back.png')}"
+                            button#click_to_upload.btn.btn-primary  Click to Upload
+
+
+        .col-md-12.col-xs-12.about_information
+            label.col-md-4.col-xs-12.control-label Visa Image
+            .col-md-8.col-xs-12.no-padding
+                div class="joint_visa_dropzone needsclick dz-clickable"
+                    div.dz-message.needsclick
+                        p Upload here Visa Image 
+                        small 
+                            | (.png .jpg 1MB)
+
+
+        .col-md-12.col-xs-12.about_information
+            label.col-md-4.col-xs-12.control-label Passport Image
+            .col-md-8.col-xs-12.no-padding
+                div class="joint_passport_dropzone needsclick dz-clickable"
+                    div.dz-message.needsclick
+                        p Upload here Passport Image 
+                        small 
+                            | (.png .jpg 1MB)
+
+
+
+        .col-md-12.col-xs-12.about_information
+            label.col-md-4.col-xs-12.control-label 
+                | Title
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Mr", "Mrs", "Miss", "Ms"], id_name: "joint_applicant_title",is_other: false, ul_class: "select_form_tag"}
+
+        .col-md-12.col-xs-12.about_information
+            label.col-md-4.col-xs-12.control-label  
+                | Name
+                span * 
+            input#joint_applicant_first_name.col-md-2.col-sm-12.col-xs-12.apply.required[name="joint_applicant_first_name" data-validation="required" placeholder="First Name" type="text" required="true"]
+            input#joint_applicant_middle_name.col-md-2.col-sm-12.col-xs-12.apply[name="first_name" placeholder="Middle Name " type="text" ]
+            input#joint_applicant_sur_name.col-md-2.col-xs-12.apply.required[name="first_name" data-validation="required" placeholder="Sur Name" type="text" required="true"]
+
+        .col-md-12.about_information
+            label.col-md-4.col-xs-12.control-label 
+                | E-mail Address
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_e_mail_address.col-md-12.col-xs-12.apply.form-control name="e_mail_address" type="email" required="true" placeholder="e-mail"
+
+        .col-md-12.about_information
+            label.col-md-4.col-xs-12.control-label 
+                | Date of Birth
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_date_of_birth.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
+
+
+        .col-md-12.about_information
+            label.col-md-4.col-xs-12.control-label 
+                | Gender
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["male", "female", "unknown"], id_name: "joint_applicant_gender",is_other: false, ul_class: "select_form_tag"}
+
+
+    #material_information.col-md-12.col-xs-12
+        .col-md-12.material_information
+            label.col-md-4.col-xs-12.control-label 
+                | Material status
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["single", "married", "defacto", "divorced", "separated", "widowed", "unknown"], id_name: "joint_applicant_material_status",is_other: false, ul_class: "select_form_tag"}
+
+
+        .col-md-12.material_information
+            label.col-md-4.col-xs-12.control-label  
+                | Phone Number
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_home_phone.col-md-12.col-xs-12.apply.form-control.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     " required="true"]
+
+    #driver_information.col-md-12.col-xs-12
+        .col-md-12.driver_information
+            label.col-md-4.col-sm-12.col-xs-12.control-label 
+                | Driver Licence Number
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_driver_licence.col-md-12.col-xs-12.apply.form-control[data-validation="required" required="true"  placeholder="Driver licence number"]
+
+        .col-md-12.driver_information
+            label.col-md-4.col-sm-12.col-xs-12.control-label 
+                | Driver Licence Version
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_driver_licence_version.col-md-12.col-xs-12.form-control.apply[data-validation="required" required="true" placeholder="Driver licence version"]
+
+        .col-md-12.driver_information
+            label.col-md-4.col-sm-12.col-xs-12.control-label 
+                | Driver Licence Country
+                span * 
+
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_driver_licence_country.col-md-12.col-xs-12.apply[data-validation="required"  required="true" placeholder="Driver licence country"]
+
+        .col-md-12.driver_information
+            label.col-md-4.col-xs-12.control-label 
+                | Driver Licence type
+                span * 
+
+            .col-md-8.col-xs-12.no-padding 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["Learners", "Restrictad", "International", "Full"], id_name: "joint_applicant_driver_licence",is_other: false, ul_class: "select_form_tag"}
+
+
+        .col-md-12.driver_information
+            label.col-md-4.col-xs-12.control-label 
+                | Driver Licence Expire Date
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_drivers_licence_expire_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
+
+
+
+        .col-md-12.driver_information
+            label.col-md-4.col-xs-12.control-label 
+                | Citizen ship
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_citizen_ship.col-md-12.col-xs-12.apply.form-control.required[data-validation="required" required="true" placeholder="CITIZEN"]
+
+
+
+
+        .col-md-12.driver_information
+            label.col-md-4.col-xs-12.control-label 
+                | Last Entry Date
+                span * 
+
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_last_entry_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
+        .col-md-12.driver_information
+            label.col-md-4.col-xs-12.control-label 
+                | Visa Expire Date
+                span * 
+
+            .col-md-8.col-xs-12.no-padding 
+                input#joint_applicant_visa_expire_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
+
+
+        .col-md-12.driver_information
+            label.col-md-4.col-xs-12.control-label 
+                | Residential status
+                span * 
+
+            .col-md-8.col-xs-12.no-padding 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["citizen", "resident", "work visa", "working holiday", "visitor visa", "student visa", "other"], id_name: "joint_applicant_residential_status",is_other: false, ul_class: "select_form_tag"}
+
+
+
+
