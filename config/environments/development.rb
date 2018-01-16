@@ -22,8 +22,8 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
 
-  config.action_controller.asset_host = 'http://localhost:3000/'
-  config.action_mailer.default_url_options = { host: 'localhost:3000'}
+  config.action_controller.asset_host = 'http://skyfinance.nz/'
+  config.action_mailer.default_url_options = { host: 'skyfinance.nz'}
   config.action_mailer.asset_host = config.action_controller.asset_host
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
@@ -37,7 +37,7 @@ Rails.application.configure do
   }
 
 
-
+  #config.force_ssl = true
 
 
   # Raise an error on page load if there are pending migrations.

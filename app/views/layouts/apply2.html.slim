@@ -6,6 +6,9 @@ html.wf-lato-n4-active.wf-montserrat-n4-active.wf-lato-n9-active.wf-montserrat-n
     = stylesheet_link_tag    'apply2', media: 'all', 'data-turbolinks-track' => false
     = javascript_include_tag 'apply2', 'data-turbolinks-track' => false
     = csrf_meta_tags
+    = render 'template/zopim'
+
+
   body
     = yield
     = render 'template/footer'

@@ -44,6 +44,9 @@ class HomeController < ApplicationController
       @application = params.to_json
       logger.debug "sample"
       logger.debug @application
+      data = Post.new
+      data.data = @application.to_s
+      data.save 
 
     
       render :json => {"driver_licence" => @application}
