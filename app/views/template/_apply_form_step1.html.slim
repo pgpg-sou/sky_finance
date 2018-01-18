@@ -104,7 +104,7 @@ li#application
                 | Phone Number
                 span * 
             .col-md-8.col-xs-12.no-padding 
-                input#home_phone.col-md-12.col-xs-12.apply.form-control.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     " required="true"]
+                input#home_phone.col-md-12.col-xs-12.apply.form-control.required placeholder="phone number"
 
     #driver_information.col-md-12.col-xs-12
         .col-md-12.driver_information
@@ -155,22 +155,19 @@ li#application
                 input#citizen_ship.col-md-12.col-xs-12.apply.form-control.required[data-validation="required" required="true" placeholder="CITIZEN"]
 
 
-
-
         .col-md-12.driver_information
             label.col-md-4.col-xs-12.control-label 
                 | Last Entry Date
-                span * 
 
             .col-md-8.col-xs-12.no-padding 
-                input#last_entry_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
+                input#last_entry_date.col-md-12.col-xs-12.apply.form-control.input-mask[ data-mask="99/99/9999" placeholder="dd/mm/yyyy" ]
+
         .col-md-12.driver_information
             label.col-md-4.col-xs-12.control-label 
                 | Visa Expire Date
-                span * 
 
             .col-md-8.col-xs-12.no-padding 
-                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.required.input-mask[data-validation="required" data-mask="99/99/9999" placeholder="dd/mm/yyyy" required="true"]
+                input#visa_expire_date.col-md-12.col-xs-12.apply.form-control.input-mask[ data-mask="99/99/9999" placeholder="dd/mm/yyyy" ]
 
 
         .col-md-12.driver_information
@@ -180,6 +177,42 @@ li#application
 
             .col-md-8.col-xs-12.no-padding 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["citizen", "resident", "work visa", "working holiday", "visitor visa", "student visa", "other"], id_name: "residential_status",is_other: false, ul_class: "select_form_tag"}
+
+
+    #nearest_information.col-md-12.col-xs-12
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label 
+                | Nearest Relative first name
+                span *
+            .col-md-8.col-xs-12.no-padding 
+                input#nearest_first_name.col-md-12.col-xs-12.apply.required placeholder="First Name" type="text" required="true" data-validation="required"
+        .col-md-12
+            label.col-md-4.col-xs-12.control-label 
+                | last name
+                span *
+            .col-md-8.col-xs-12.no-padding 
+                input#nearest_last_name.col-md-12.col-xs-12.apply.required placeholder="Last Name" type="text" required="true" data-validation="required"
+
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label 
+                | address
+                span * 
+            .col-md-8.col-xs-12.no-padding 
+                input#nearest_address.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="21A..." required="true"]
+
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label 
+                | phone 
+                span *
+            .col-md-8.col-xs-12.no-padding 
+                input#nearest_phone_number.col-md-12.col-xs-12.apply.form-control.required placeholder="phone number"
+
+        .col-md-12[style="position: inherit"]
+            label.col-md-4.col-xs-12.control-label 
+                | relationship
+                span * 
+            .col-md-8.col-xs-12.no-padding
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["friend","husband","wife","father","mother","son","daughter","brother","sister","grandfather","grandmother","grandson","granddaughter","uncle","aunt","cousin","nephew", "boyfrend", "girlfriend","niece","fatherInLaw","motherInLaw","brotherInLaw","sisterInLaw","defacto","other"], id_name: "relation_ship",is_other: false, ul_class: "select_form_tag"}
 
 
 

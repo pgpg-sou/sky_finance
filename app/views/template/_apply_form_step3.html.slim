@@ -1,37 +1,21 @@
 li#application.col-md-12
     #nearest_information.col-md-12.col-xs-12
         .col-md-12
-            label.col-md-4.col-xs-12.control-label 
-                | Nearest Relative first name
-                span *
-            .col-md-8.col-xs-12.no-padding 
-                input#nearest_first_name.col-md-12.col-xs-12.apply.required placeholder="First Name" type="text" required="true" data-validation="required"
-        .col-md-12
-            label.col-md-4.col-xs-12.control-label 
-                | last name
-                span *
-            .col-md-8.col-xs-12.no-padding 
-                input#nearest_last_name.col-md-12.col-xs-12.apply.required placeholder="Last Name" type="text" required="true" data-validation="required"
+            p style="font-size: 1.3em;" Privacy Act 1993: I/We: 
+            p a) warrant that the information provided in this application is true and correct; 
+            p b) authorize Sky Finance Limited or any of its agents (“Sky Finance") to contact my/our employer, any credit agency and any other source (each a "Source") to obtain, check and exchange (both now and in the future) information in connection with this application and any agreement that I/we may hereafter enter into with Sky Finance; 
+            p c) acknowledge that my/our signature on this application shall operate as an authority to each Source to provide Sky Finance with any information about me/us which Sky Finance may require in connection with this application or any such agreement; 
+            p d) acknowledge that this application will form part of any agreement I/we may hereafter enter into with Sky Finance and that the authorization set out above will be deemed to be incorporated into that agreement; 
+            p e) authorize Sky Finance or any related company to store and process the information provided in this application to contact you with product information, event invitations and/or customer care related material. 
+            p f) You are entitled, under the provisions of the Privacy Act 1993, to: 
+            p 　(a) have access to personal information held by Sky Finance about you; 
+            p 　(b) request correction of any personal information held by Sky Finance about you; in either case in accordance with the provisions of that Act. 
 
-        .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label 
-                | address
-                span * 
-            .col-md-8.col-xs-12.no-padding 
-                input#nearest_address.col-md-12.col-xs-12.apply.required[data-validation="required" placeholder="21A..." required="true"]
+            .col-md-12 style="padding-top: 20px;"
+                .col-md-1.col-xs-12.no-padding 
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: [""], id_name: "joint_applicant_exist",is_other: false, ul_class: "select_form_tag"}
+                p.col-md-11.col-xs-12 style="font-size: 1.3em;"
+                    | I agree to the privacy statement
 
-        .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label 
-                | phone 
-                span *
-            .col-md-8.col-xs-12.no-padding 
-                input#nearest_phone_number.col-md-12.col-xs-12.apply.form-control.required.input-mask-phone[data-validation="required" data-mask="(999) 999-9999" placeholder="(   )    -     "  required="true"]
-
-        .col-md-12[style="position: inherit"]
-            label.col-md-4.col-xs-12.control-label 
-                | relationship
-                span * 
-            .col-md-8.col-xs-12.no-padding
-                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["friend","husband","wife","father","mother","son","daughter","brother","sister","grandfather","grandmother","grandson","granddaughter","uncle","aunt","cousin","nephew", "boyfrend", "girlfriend","niece","fatherInLaw","motherInLaw","brotherInLaw","sisterInLaw","defacto","other"], id_name: "relation_ship",is_other: false, ul_class: "select_form_tag"}
 
 
