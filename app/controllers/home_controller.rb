@@ -12,6 +12,10 @@ class HomeController < ApplicationController
       render :layout => 'other_page'
   end
 
+  def finance
+      render :layout => 'other_page'
+  end
+
   def how_it_works
       render :layout => 'other_page'
   end

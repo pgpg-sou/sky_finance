@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'home/about_us'
   get 'home/how_it_works'
+  get 'home/finance'
   
   get 'home/help_and_advice'
   get 'home/apply2'
