@@ -12,6 +12,22 @@ class HomeController < ApplicationController
       render :layout => 'other_page'
   end
 
+  def business_leasing
+      render :layout => 'other_page'
+  end
+
+  def business_finance
+      render :layout => 'other_page'
+  end
+
+  def vehicle_finance
+      render :layout => 'other_page'
+  end
+
+  def personal_finance
+      render :layout => 'other_page'
+  end
+
   def finance
       render :layout => 'other_page'
   end

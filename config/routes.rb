@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+
+  get 'home/business_leasing'
+  get 'home/business_finance'
+  get 'home/personal_finance'
+  get 'home/vehicle_finance'
+
   get 'business/search'
   post 'business/search'
   post 'home/application_saver'
