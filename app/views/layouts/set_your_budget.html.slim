@@ -1,0 +1,15 @@
+
+doctype html
+html.wf-lato-n4-active.wf-montserrat-n4-active.wf-lato-n9-active.wf-montserrat-n7-active.wf-lato-n7-active.wf-lato-n3-active.wf-active
+  head
+    title
+      | Skyfinance
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'set_your_budget', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    = render 'template/zopim'
+
+  body
+    = yield
+    = render 'template/footer'

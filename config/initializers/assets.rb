@@ -6,6 +6,7 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( other_page.js ) 
 Rails.application.config.assets.precompile += %w( apply.css ) 
 Rails.application.config.assets.precompile += %w( apply.js ) 
+Rails.application.config.assets.precompile += %w( set_your_budget.js ) 
 
 Rails.application.config.assets.precompile += %w( apply2.css )
 Rails.application.config.assets.precompile += %w( apply2.js ) 

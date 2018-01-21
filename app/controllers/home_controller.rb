@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   end
 
   def set_your_budget
+      render :layout => 'set_your_budget'
   end
 
   def about_us
