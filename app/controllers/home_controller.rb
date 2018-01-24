@@ -13,6 +13,26 @@ class HomeController < ApplicationController
       render :layout => 'other_page'
   end
 
+  def lpi_insurance
+
+      render :layout => 'other_page'
+  end
+  def gap_insurance
+
+      render :layout => 'other_page'
+  end
+
+  def vehicle_insurance
+
+      render :layout => 'other_page'
+  end
+  
+  def break_down_insurance
+
+      render :layout => 'other_page'
+  end
+
+
   def business_leasing
       render :layout => 'other_page'
   end

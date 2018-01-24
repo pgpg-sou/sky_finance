@@ -27,6 +27,11 @@
     color: white;
     border: 1px solid white;
 }
+
+span.arrow {
+    transform: rotate( -90deg );
+
+}
 #application, #business_application {
     .col-sm-10 {
         padding-bottom: 20px;
