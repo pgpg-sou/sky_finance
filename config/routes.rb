@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'home/lpi_insurance'
+  get 'home/gap_insurance'
+  get 'home/vehicle_insurance'
+  get 'home/break_down_insurance'
+
 
   get 'home/business_leasing'
   get 'home/business_finance'
