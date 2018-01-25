@@ -1,16 +1,29 @@
 nav
   .layout
-    ul.pc
+    ul#fade-in.pc.dropmenu
       li.active
         a href="#{home_index_path}" Home
-      li
-        a href="#{home_set_your_budget_path}" Set your budget
 
       li
         a href="" Finance
+        ul
+            li.submenu
+                a href="#{home_business_leasing_path}" Business leasing 
+                a href="#{home_business_finance_path}" Business finance 
+                a href="#{home_personal_finance_path}" Personal finance 
+                a href="#{home_vehicle_finance_path}" Vehicle finance
+
 
       li
         a href="" Insurance
+        ul
+            li.submenu
+                a href="#{home_lpi_insurance_path}" LPI Insurance
+                a href="#{home_gap_insurance_path}" GAP Insurance 
+                a href="#{home_vehicle_insurance_path}" Vehicle Insurance 
+                a href="#{home_break_down_insurance_path}" Breakdown Insurance 
+
+
       li
         a href="#{home_how_it_works_path}" How it works
       li
@@ -26,14 +39,28 @@ nav
     ul.gblnv_list
       li.active
         a href="#{home_index_path}" Home
-      li
-        a href="#{home_set_your_budget_path}" Set your budget
 
       li
         a href="" Finance
+        ul
+            li.submenu
+                a href="#{home_business_leasing_path}" Business leasing 
+                a href="#{home_business_finance_path}" Business finance 
+                a href="#{home_personal_finance_path}" Personal finance 
+                a href="#{home_vehicle_finance_path}" Vehicle finance
+
 
       li
         a href="" Insurance
+        ul
+            li.submenu
+                a href="#{home_lpi_insurance_path}" LPI Insurance
+                a href="#{home_gap_insurance_path}" GAP Insurance 
+                a href="#{home_vehicle_insurance_path}" Vehicle Insurance 
+                a href="#{home_break_down_insurance_path}" Breakdown Insurance 
+
+
+
       li
         a href="#{home_how_it_works_path}" How it works
       li
@@ -53,7 +80,9 @@ header.top
                     img src="#{image_path('large_logo.png')}" 
 
                 a href="#{home_apply2_path}"
-                    btn.btn.btn-lg.btn-primary Apply now ▶︎
+                    btn.btn.btn-lg.btn-primary 
+                        | Apply now 
+                        span.arrow ▲
                 
  
             .top_about.col-md-6.col-xs-12

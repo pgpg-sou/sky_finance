@@ -30,6 +30,124 @@ common
 
 }
 
+.dropmenu{
+}
+.dropmenu:before, .dropmenu:after{
+  content: "";
+}
+.dropmenu:after{
+}
+.dropmenu li{
+  position: relative;
+  text-align: center;
+  width: 16%
+}
+
+.dropmenu li.submenu {
+    padding: 15px 0px;
+    a {
+        font-size: 18px;
+        font-weight: 300;
+
+    }
+}
+
+.dropmenu li a{
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.dropmenu li ul{
+  list-style: none;
+  position: absolute;
+  z-index: 9999;
+}
+.dropmenu li ul li{
+  width: 150%;
+}
+.dropmenu li ul li a{
+  padding: 13px 15px;
+  /*border-top: 1px solid #7c8c0e;*/
+  background: rgba(255,255,255,0.4);
+  text-align: left;
+}
+
+#fade-in li ul{
+  visibility: hidden;
+  opacity: 0;
+  transition: 0s;
+}
+#fade-in li:hover ul{
+  visibility: visible;
+  opacity: 1;
+}
+#fade-in li ul li a{
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s;
+}
+#fade-in li:hover ul li a{
+  visibility: visible;
+  opacity: 1;
+}
+
+
+
+.dropmenu-other {
+}
+.dropmenu-other:before, .dropmenu-other:after{
+  content: "";
+}
+.dropmenu-other:after{
+}
+.dropmenu-other li{
+  position: relative;
+  text-align: center;
+  width: 15%;
+  padding: 35px 10px;
+}
+
+.dropmenu-other li.submenu {
+    padding: 15px 0px;
+    a {
+        font-size: 18px;
+        font-weight: 300;
+
+    }
+}
+
+.dropmenu-other li a{
+  display: block;
+  line-height: 1;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+.dropmenu-other li ul{
+  list-style: none;
+  position: absolute;
+  z-index: 9999;
+}
+.dropmenu-other li ul li{
+  width: 150%;
+}
+.dropmenu-other li ul li a{
+  padding: 13px 15px;
+  /*border-top: 1px solid #7c8c0e;*/
+  background: rgba(255,255,255,0.4);
+  text-align: left;
+}
+
+
+
+
+
+
+
 
 .main_top {
     padding: 0px 60px;
