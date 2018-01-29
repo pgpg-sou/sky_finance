@@ -6,6 +6,22 @@
 $(document).ready ->
     #$.validate();
 
+
+    $('span').click( ->
+        $(this).next('ul li ul').slideToggle('fast');
+    )
+
+    $('ul li ul li').click((e) -> 
+        $(this).children('ul li ul').slideToggle('fast');
+        e.stopPropagation();
+    )
+
+
+
+
+
+
+
     initAF = () -> 
         widget = new AddressFinder.Widget(
             document.getElementById('postal_address'),
