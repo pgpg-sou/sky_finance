@@ -1,4 +1,44 @@
+
+
+
 @charset "UTF-8";
+
+
+
+
+
+
+.large-calculator .representative-example h3.about {
+    font-size: 3.0em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.large-calculator .representative-example p.about_num {
+    font-size: 3.0em;
+    color: white;
+    font-weight: bold;
+    line-height: 1.8em;
+}
+.large-calculator .representative-example h3.about_shadow {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #7E9CAE;
+    line-height: 1.2em;
+}
+
+.large-calculator .representative-example p.about_shadow_num {
+    font-size: 3em;
+    font-weight: bold;
+    color: #7E9CAE;
+    line-height: 1.2em;
+}
+
+
+
+
+
+
 @media only screen and (max-width: 999px){
 
 /*nav*/
@@ -204,7 +244,22 @@
     font-size: 2.5em;
     padding: 4% 0;
 }
-
+.large-calculator .representative-example h3.about {
+    font-size: 5em;
+    padding: 10px 0px;
+}
+.large-calculator .representative-example p.about_num {
+    font-size: 5em;
+    padding: 0;
+}
+.large-calculator .representative-example h3.about_shadow {
+    font-size: 2.2em;
+    padding: 0;
+}
+.large-calculator .representative-example p.about_shadow_num {
+    font-size: 5em;
+    padding: 0;
+}
 .large-calculator .representative-example p {
     line-height: 2em;
     font-size: 2.5em;

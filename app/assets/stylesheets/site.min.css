@@ -10032,9 +10032,13 @@ nav#mobile-nav #mobile-navigation .youtube-svg-holder:hover .youtube-svg {
 	}
 }
 .large-calculator .representative-example h3 {
-	font-size: 1.2em;
-	text-align: center
+    font-size: 2.6em;
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
+
+
 @media only screen and (min-width: 992px) {
 	.large-calculator .brand-icons-calc .paragon-logo-container svg {
 		width: 90%;
@@ -10054,8 +10058,10 @@ nav#mobile-nav #mobile-navigation .youtube-svg-holder:hover .youtube-svg {
 .large-calculator .representative-example p {
 	font-family: Montserrat, sans-serif;
 	font-size: 1em;
-	color: #7c7c7c;
-	line-height: 1.4em
+    line-height: 2em;
+    text-align: center;
+    color: white;
+}
 }
 @media only screen and (min-width: 321px) {
 	.large-calculator .representative-example p {
