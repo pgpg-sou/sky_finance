@@ -146,7 +146,7 @@ jQuery(function($) {
                 $('p#c_nearest_relation').text(f_d["relation_ship"])
 
                
-                if(f_d["joint_applicant_exist"] == "No") {
+                if(f_d["joint_applicant_exist"] == "No" || f_d["joint_applicant_exist"] == "") {
                     $('#c_joint_form').css("display", "none")
                     $('#c_there_joint').text(f_d["joint_applicant_exist"])
                 } else {
@@ -242,9 +242,9 @@ jQuery(function($) {
                 console.log(other)
                 $('p#c_income_other').html(other)
                 $('p#c_total_income').text(undefined_str(f_d["total_income_num"]) + " Incomes 　 $" + undefined_str(f_d["total_income_other"]))
-                $('p#c_income_expence').text(undefined_str(f_d["expences_morgage"]) + "   $ " + undefined_str(f_d["liability_morgage"]))
-                $('p#c_income_hpcredit').text(undefined_str(f_d["expences_hp_credit"]) + "   $ " + undefined_str(f_d["liability_creditcard"]))
-                $('p#c_income_living').text(undefined_str(f_d["expences_living"]) + "   $ " + undefined_str(f_d["liability_bankod"]))
+                $('p#c_income_expence').text(undefined_str(f_d["expences_morgage_period"]) + "   $ " + undefined_str(f_d["expences_morgage"]))
+                $('p#c_income_hpcredit').text(undefined_str(f_d["expences_hp_credit_period"]) + "   $ " + undefined_str(f_d["expences_creditcard"]))
+                $('p#c_income_living').text(undefined_str(f_d["expences_living_period"]) + "   $ " + undefined_str(f_d["expences_bankod"]))
                 $('p#c_income_insurance').text("$ " + undefined_str(f_d["liability_insurance"]))
             }
         }

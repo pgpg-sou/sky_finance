@@ -36,13 +36,13 @@ li#application
             .col-md-8.col-xs-12.no-padding 
 
                 .col-md-12
-                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["weekly", "fortnightly", "monthly"], id_name: "expences_morgage",is_other: false, ul_class: ""}
-                input#liability_morgage.col-md-12.col-xs-12.apply placeholder="$Mortage rent" type="number" 
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["weekly", "fortnightly", "monthly"], id_name: "expences_morgage_period",is_other: false, ul_class: ""}
+                input#expences_morgage.col-md-12.col-xs-12.apply placeholder="$Mortage rent" type="number" 
                 .col-md-12
-                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["weekly", "fortnightly", "monthly"], id_name: "expences_hp_credit",is_other: false, ul_class: ""}
-                input#liability_creditcard.col-md-12.col-xs-12.apply placeholder="$Hp credit" type="number"
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["weekly", "fortnightly", "monthly"], id_name: "expences_hp_credit_period",is_other: false, ul_class: ""}
+                input#expences_creditcard.col-md-12.col-xs-12.apply placeholder="$Hp credit" type="number"
                 .col-md-12
-                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["weekly", "fortnightly", "monthly"], id_name: "expences_living",is_other: false, ul_class: ""}
-                input#liability_bankod.col-md-12.col-xs-12.apply placeholder="$living " type="number" 
-                input#liability_insurance.col-md-12.col-xs-12.apply placeholder="$insurance " type="number" 
+                    = render partial: 'template/select_tag_form', locals: {select_tag_data: ["weekly", "fortnightly", "monthly"], id_name: "expences_living_period",is_other: false, ul_class: ""}
+                input#expences_bankod.col-md-12.col-xs-12.apply placeholder="$living " type="number" 
+                input#expences_insurance.col-md-12.col-xs-12.apply placeholder="$insurance " type="number" 
 
