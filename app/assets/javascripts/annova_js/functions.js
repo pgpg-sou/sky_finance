@@ -239,7 +239,6 @@ jQuery(function($) {
                         })
                     });
                 }
-                console.log(other)
                 $('p#c_income_other').html(other)
                 $('p#c_total_income').text(undefined_str(f_d["total_income_num"]) + " Incomes 　 $" + undefined_str(f_d["total_income_other"]))
                 $('p#c_income_expence').text(undefined_str(f_d["expences_morgage_period"]) + "   $ " + undefined_str(f_d["expences_morgage"]))
