@@ -597,21 +597,21 @@ $(document).ready ->
         $(this).addClass('active')
 
 
-    $('ul#expences_morgage li').click ->
+    $('ul#expences_morgage_period li').click ->
         $(this).parent().find('#form_tag_error').css('display', "none")
-        $('ul#expences_morgage li').each ->
+        $('ul#expences_morgage_period li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
-    $('ul#expences_hp_credit li').click ->
+    $('ul#expences_hp_credit_period li').click ->
         $(this).parent().find('#form_tag_error').css('display', "none")
-        $('ul#expences_hp_credit li').each ->
+        $('ul#expences_hp_credit_period li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
-    $('ul#expences_living li').click ->
+    $('ul#expences_living_period li').click ->
         $(this).parent().find('#form_tag_error').css('display', "none")
-        $('ul#expences_living li').each ->
+        $('ul#expences_living_period li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
@@ -643,6 +643,13 @@ $(document).ready ->
     $('ul#joint_applicant_title li').click ->
         $(this).parent().find('#form_tag_error').css('display', "none")
         $('ul#joint_applicant_title li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+    $('ul#agree_conset_policy li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#agree_conset_policy li').each ->
             $(this).removeClass('active')
         $(this).addClass('active')
 
