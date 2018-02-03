@@ -618,7 +618,7 @@ $(document).ready ->
               $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
               $('input#date_of_birth').val(driver_licence["birth_date"]).addClass("valid")
                
-              $('input#driver_licence').val(driver_licence["driver_licence_no"]).addClass("valid")
+              $('input#driver_licence_number').val(driver_licence["driver_licence_no"]).addClass("valid")
               $('input#driver_licence_version').val(driver_licence["card_version_no"]).addClass("valid")
               $('input#drivers_licence_expire_date').val(driver_licence["expire_date"]).addClass("valid")
               $('input#driver_licence_country').val(driver_licence["licence_country"]).addClass("valid")
