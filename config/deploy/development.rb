@@ -60,7 +60,9 @@
 #     # password: "please use keys"
 #   }
 
-server '18.220.125.81', user: 'deploy', roles: %w{app}
+#server '18.220.125.81', user: 'deploy', roles: %w{app}
+server '18.221.114.170', user: 'deploy', roles: %w{app}
+
 
 set :ssh_options, {
   port: 22,

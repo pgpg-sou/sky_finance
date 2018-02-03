@@ -284,4 +284,117 @@ h4#myModalLabel {
 
 
 
+#confirmation_form {
+    margin: 0 auto;
+    padding: 0;
+
+   li {
+       #content {
+           padding: 5px 0px;
+           border-bottom: solid 2px #efefef;
+           p.column {
+               font-weight: bold;
+               color: #999999;
+               line-height: 1.9;
+           }
+           p.message {
+               color: #999999;
+               line-height: 1.9;
+           }
+       }
+   }
+
+   ul {
+       background: #fff;
+       border-right: solid 3px #efefef;
+       border-bottom: solid 3px #efefef;
+       list-style: none;
+       border-left: solid 3px #efefef;
+       margin-bottom: 15px;
+       //padding: 40px 20px;
+   }
+
+
+    input {
+        display: none;
+    }
+
+}
+
+#confirmation_form a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #000;
+    line-height: 1;
+    border-bottom: solid 2px #efefef;
+}
+
+label.ac_label {
+    display: block;
+    margin: 0 0 2px 0;
+    line-height: 1;
+    color :#30225d;
+    background :#fff;
+    padding: 15px 0px;
+    border: solid 3px #efefef;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+#confirmation_form li {
+    max-height: 0;
+    overflow-y: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    text-align: left;
+}
+
+#menu_bar01:checked ~ #links01 li,
+#menu_bar02:checked ~ #links02 li, 
+#menu_bar03:checked ~ #links03 li,
+#menu_bar04:checked ~ #links04 li,
+#menu_bar05:checked ~ #links05 li,
+#menu_bar06:checked ~ #links06 li,
+#menu_bar07:checked ~ #links07 li,
+{
+    max-height: 160px;
+    opacity: 1;
+    padding: 7px 30px;
+}
+#menu_bar01:checked ~ ul#links01,
+#menu_bar02:checked ~ ul#links02, 
+#menu_bar03:checked ~ ul#links03,
+#menu_bar04:checked ~ ul#links04,
+#menu_bar05:checked ~ ul#links05,
+#menu_bar06:checked ~ ul#links06,
+#menu_bar07:checked ~ ul#links07,
+{
+    //padding: 7px 30px;
+    padding: 40px 20px;
+}
+
+.btn-edit {
+    border: none;
+    color: #fff;
+    padding: 12px 22px;
+    text-decoration: none;
+    transition: background .5s ease;
+    -moz-transition: background .5s ease;
+    -webkit-transition: background .5s ease;
+    -o-transition: background .5s ease;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 600;
+    outline: none;
+    background: #CCCCCC;
+    position: relative;
+    border-radius: 5px;
+    font-size: 22px;
+}
 

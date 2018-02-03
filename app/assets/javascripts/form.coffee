@@ -4,9 +4,17 @@ $(document).ready ->
 
     $('button.forward').click( ->
         $(".step.wizard-step.current li#application input").each( ->
-            if $(this).parent().parent().hasClass("custom_form")
+            if $(this).attr("id") == "dependentsAge"
+                result = ""
+                $("input#dependentsAge").each( ->
+                    result += $(this).val() + ","
+                )
+                window.post_form_data["dependentsAge"] = result.slice(0,-1)
+
+            else if $(this).parent().parent().hasClass("custom_form")
             else 
                 window.post_form_data[$(this).attr('id')] = $(this).val()
+
         )
         $(".step.wizard-step.current li#application ul").each( ->
             if $(this).find("li.active").hasClass('other')
@@ -17,14 +25,36 @@ $(document).ready ->
         $(".step.wizard-step.current .custome_form").each( ->
             custom_data = new Object
             key = ""
-            $(this).find("input").each( (index, element) ->
-                if (index % 2) == 0
-                    key = $(this).val()
-                else 
-                    custom_data[key] = $(this).val()
-                    key = ""
-            )
-            window.post_form_data[$(this).attr("id")] = custom_data
+            
+            if $(this).attr("id") == "income_form"
+                $(this).find('div#i_form').each((i, val) ->
+                    k = "income_other_" + i
+
+                    d = new Object
+                    $(this).find("ul").each( ->
+                        d["period_"] = $(this).find("li.active").attr("value")
+                    )
+
+                    $(this).find("input").each( (index, element) ->
+                        if (index % 2) == 0
+                            key = $(this).val()
+                        else 
+                            d[key] = $(this).val()
+                            key = ""
+                    )
+                    custom_data[k] = d
+                )
+
+                window.post_form_data[$(this).attr("id")] = custom_data
+            else 
+                $(this).find("input").each( (index, element) ->
+                    if (index % 2) == 0
+                        key = $(this).val()
+                    else 
+                        custom_data[key] = $(this).val()
+                        key = ""
+                )
+                window.post_form_data[$(this).attr("id")] = custom_data
         )
 
         console.log window.post_form_data

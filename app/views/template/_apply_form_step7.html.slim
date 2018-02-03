@@ -1,4 +1,3 @@
-
 li#application
     #outgoing_information.col-md-12.col-xs-12
         .col-md-12
@@ -12,7 +11,7 @@ li#application
         .col-md-12
             label.col-md-4.col-xs-12.control-label Income  
             #income_form.custome_form
-                .col-md-8.col-xs-12.no-padding 
+                #i_form.col-md-8.col-xs-12.no-padding 
                     .col-md-12
                         = render partial: 'template/select_tag_form', locals: {select_tag_data: ["weekly", "fortnightly", "monthly"], id_name: "income_other_period",is_other: false, ul_class: ""}
                         
@@ -23,8 +22,6 @@ li#application
                 p#add_income_area.col-md-10.col-xs-12.no-padding  
                     span ＋
                     | ADD INFORMATION
-
-
 
         .col-md-12
             label.col-md-4.col-xs-12.control-label Total

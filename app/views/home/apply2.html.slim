@@ -37,7 +37,7 @@
                     .node
                       p 3
                   .w_step
-                    | Nearest Info
+                    | cosent 
                     .node
                       p 4
                   .w_step
@@ -65,33 +65,33 @@
                     .step.row
                         .col-md-12
                             h3.col-md-10 Enter your personal info
-                            = render 'template/apply_form_step1'
+                            //= render 'template/apply_form_step1'
 
                     .step.row
                         .col-md-12
                             h3.col-md-10 Enter your Joint info
-                            = render 'template/apply_joint_form'
+                            //= render 'template/apply_joint_form'
  
   
                     .step.row
                         .col-md-12
                             h3 Please rate your overall satisfaction about the service provided.
-                            = render 'template/apply_form_step2'
+                    //        = render 'template/apply_form_step2'
   
                     .step.row
                         .col-md-12
                             h3  Nearest Relative Information
-                            = render 'template/apply_form_step3'
+                    //        = render 'template/apply_form_step3'
 
                     .step.row
                         .col-md-12
                             h3 Assets Information
-                            = render 'template/apply_form_step4'
+                            //= render 'template/apply_form_step4'
  
                     .step.row
                         .col-md-12
                             h3 Liability(balance of any cost that you have to pay off)
-                            = render 'template/apply_form_step6'
+                    //        = render 'template/apply_form_step6'
 
                     .step.row
                         .col-md-12
@@ -101,6 +101,49 @@
                     #complete.submit.step
                         i.icon-check
                         h3 Application complete! Thank you for you time.
+
+                        #confirmation_form 
+                            label.ac_label for="menu_bar01" YOUR INFORMATION
+                            input#menu_bar01.accordion type="checkbox"
+                            ul#links01
+                                = render 'template/confirmation/c_form_1'
+
+                            label.ac_label for="menu_bar02" JOINT INFORMATION
+                            input#menu_bar02.accordion type="checkbox"
+                            ul#links02
+                                = render 'template/confirmation/c_form_2'
+
+                            label.ac_label for="menu_bar03" WORK INFORMATION
+                            input#menu_bar03.accordion type="checkbox"
+                            ul#links03
+                                = render 'template/confirmation/c_form_3'
+
+                            label.ac_label for="menu_bar04" Consent Policy
+                            input#menu_bar04.accordion type="checkbox"
+                            ul#links04
+
+                                li
+                                    #content.col-md-12
+                                        .col-md-5
+                                            p.column I agree to the privacy statement
+                                        .col-md-7
+                                            p#c_driver_country.message Yes
+
+                            label.ac_label for="menu_bar05" ASSETS INFORMATION
+                            input#menu_bar05.accordion type="checkbox"
+                            ul#links05
+                                = render 'template/confirmation/c_form_5'
+                                
+                            label.ac_label for="menu_bar06" LIABILITY INFORMATION
+                            input#menu_bar06.accordion type="checkbox"
+                            ul#links06
+                                = render 'template/confirmation/c_form_6'
+
+                            label.ac_label for="menu_bar07" OTHER INFORMATION
+                            input#menu_bar07.accordion type="checkbox"
+                            ul#links07
+                                = render 'template/confirmation/c_form_7'
+
                         button#application_submit.submit Submit the application
 
                 #bottom-wizard

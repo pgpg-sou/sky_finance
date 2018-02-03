@@ -89,6 +89,7 @@ class HomeController < ApplicationController
       data.data = @application.to_s
       data.save 
 
+
     
       render :json => {"driver_licence" => @application}
   end

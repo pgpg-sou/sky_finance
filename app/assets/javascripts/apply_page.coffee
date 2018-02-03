@@ -393,7 +393,7 @@ $(document).ready ->
 
     $('#add_income_area').click ->
         $('#income_form').append(
-                                   '<div class="col-md-8 col-xs-12 col-md-offset-4 no-padding">' +
+                                   '<div id="i_form" class="col-md-8 col-xs-12 col-md-offset-4 no-padding">' +
                                         '<div class="col-md-12">' +
                                             '<ul id="income_other_period">' +
                                                 '<li class="btn btn-gray btn-rounded income_other" value="weekly">' + 
@@ -960,5 +960,12 @@ $(document).ready ->
 
       $('#back_capture').modal("hide")
     );
+
+
+    $('#c_edit').click( ->
+        if $(this).attr("value") == "step_1"
+            console.log("sample")
+    )
+
 
 
