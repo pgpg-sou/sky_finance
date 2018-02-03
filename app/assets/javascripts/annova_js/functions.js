@@ -150,6 +150,7 @@ jQuery(function($) {
                     $('#c_joint_form').css("display", "none")
                     $('#c_there_joint').text(f_d["joint_applicant_exist"])
                 } else {
+                    $('#c_joint_form').css("display", "block")
                     $('#c_there_joint').text(f_d["joint_applicant_exist"])
                     $('p#c_joint_title').text(undefined_str(f_d["joint_applicant_title"]) + " " + undefined_str(f_d["joint_applicant_first_name"]) + " " + undefined_str(f_d["joint_applicant_middle_name"]) + " " + undefined_str(f_d["joint_applicant_sur_name"]))
                     $('p#c_joint_gender').text(f_d["joint_applicant_gender"])
