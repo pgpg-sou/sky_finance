@@ -407,7 +407,7 @@ ul#footer-nav li {
 	font-size:160px;
 	padding:0;
 }
-#complete button{
+#complete a{
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -427,7 +427,7 @@ ul#footer-nav li {
 	outline:none;
 	background:#fff;
 }
-#complete button:hover{background:#49CCB4; color:#fff; border:2px solid  #49CCB4;}
+#complete a:hover{background:#49CCB4; color:#fff; border:2px solid  #49CCB4;}
 
 
 /** Featuers and Question boxes ============================= **/

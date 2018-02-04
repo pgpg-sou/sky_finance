@@ -1,6 +1,9 @@
+require 'securerandom'
+require 'socket'
 
 class HomeController < ApplicationController
   protect_from_forgery :except => [:apply_mail]
+
 
   def index
   end
@@ -83,15 +86,17 @@ class HomeController < ApplicationController
 
   def application_saver
       @application = params.to_json
-      logger.debug "sample"
-      logger.debug @application
       data = Post.new
       data.data = @application.to_s
-      data.save 
-
-
-    
-      render :json => {"driver_licence" => @application}
+      
+      begin 
+          data.save!
+          error_mail("【新規申し込み】", @application.to_s)
+          render :json => {"data" => data, "status" => "200"} 
+      rescue Exception => e
+          error_mail("【新規申し合わせエラー】", "エラー: #{e.class} : #{e.message.to_s}")
+          render :json => {"status"=> "500"}
+      end
   end
   
   def apply_mail
@@ -103,8 +108,12 @@ class HomeController < ApplicationController
   end
 
   def upload_file
+    file_image_url = get_domain(request)
+
     uploaded_file = params[:file]
-	output_path = Rails.root.join('public', uploaded_file.original_filename)
+    file_name = "driver_licence_" + SecureRandom.hex(64) + ".jpg"
+	output_path = Rails.root.join('public/uploads', file_name)
+    file_image_url += file_name
 	
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
@@ -130,6 +139,8 @@ class HomeController < ApplicationController
                 end
             end
         end
+        @driver_licence["file_name"] = file_name
+        @driver_licence["file_image_url"] = file_image_url
 
         render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
         #labels = annotation.labels.inject([]){|arr, label| arr << label.description}
@@ -140,18 +151,29 @@ class HomeController < ApplicationController
 
   def upload_passport_file
     uploaded_file = params[:file]
-	output_path = Rails.root.join('public', uploaded_file.original_filename)
+    file_image_url = get_domain(request)
 	
+    file_name = "passport_" + SecureRandom.hex(64) + ".jpg"
+    output_path = Rails.root.join('public/uploads', file_name) 
+    file_image_url += file_name
+	
+    @driver_licence = Hash.new
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
 	end
+    @driver_licence["file_name"] = file_name
+    @driver_licence["file_image_url"] = file_image_url
 
-    render :json => {}
+    render :json => {"result" => @driver_licence.to_json}
   end
 
   def upload_driver_licence_back 
     uploaded_file = params[:file]
-	output_path = Rails.root.join('public', uploaded_file.original_filename)
+    file_image_url = get_domain(request)
+
+    file_name = "driver_licence_back_" + SecureRandom.hex(64) + ".jpg"
+	output_path = Rails.root.join('public/uploads', file_name)
+    file_image_url += file_name
 	
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
@@ -168,13 +190,19 @@ class HomeController < ApplicationController
         @driver_licence = driver_licence_back_crop(annotation.text)
     rescue
     end
+    @driver_licence["file_name"] = file_name
+    @driver_licence["file_image_url"] = file_image_url
 
     render :json => {"driver_licence" => @driver_licence.to_json, "words" => @word_data}
   end
 
   def upload_file_visa
     uploaded_file = params[:file]
-	output_path = Rails.root.join('public', uploaded_file.original_filename)
+    file_image_url = get_domain(request)
+    file_name = "visa_" + SecureRandom.hex(64) + ".jpg"
+	output_path = Rails.root.join('public/uploads', file_name)
+
+    file_image_url += file_name 
 	
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
@@ -199,8 +227,8 @@ class HomeController < ApplicationController
                 end
             end
         end
-
-        render :json => {"words" => @word_data, "visa_licence" => @visa_licence.to_json}
+        
+        render :json => {"words" => @word_data, "visa_licence" => @visa_licence.to_json, "file_name" => file_name, "file_image_url" => file_image_url}
         #labels = annotation.labels.inject([]){|arr, label| arr << label.description}
     rescue Exception => e
         puts e.message
@@ -212,7 +240,40 @@ class HomeController < ApplicationController
 
 
 
-  private 
+  private
+ 
+  def error_mail( sub, message)
+      mail = Mail.new do
+        from    'ito@fig-leaves.bz'
+        to      'itosouplus@gmail.com'
+        subject sub
+        body    message
+      end
+      mail.charset = 'UTF-8'
+
+      mail.delivery_method :smtp, { address:   'smtp.gmail.com',
+                    port:      587,
+                    domain:    'gmail.com',
+                    user_name: 'figbugreport@gmail.com',
+                    password:  '^v:m\OnCmTF2^>RxMP8@',
+  	      password:  'ygrygwbxomeebokp' }
+
+      mail.deliver!
+  end
+ 
+ 
+  
+  def get_domain(request) 
+    file_image_url = ""
+    if request.domain == "localhost"
+        file_image_url = "http://localhost:3000/uploads/"
+    else
+        file_image_url = "http://#{request.domain}/uploads/"
+    end
+    return file_image_url
+
+
+  end
 
   def visa_crop(text)
      visa_variable = {"Visa expiry:" => "expire_date", "Passport No: " => "passport_no", "Citizenship: " => "citizen_ship", "Sex:" => "gender" }

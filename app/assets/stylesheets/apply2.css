@@ -37,5 +37,12 @@
 
  *= require progress.scss
  *= require mobile.scss
+ *= require sweetalert/icons/success.css 
+ *= require sweetalert/icons/error.css 
+ *= require sweetalert/icons/info.css
+ *= require sweetalert/icons/warning.css
+ *= require sweetalert/sweetalert.css
+
+
 
  */

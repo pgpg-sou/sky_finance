@@ -612,7 +612,8 @@ $(document).ready ->
               $("div.dropzone_front").addClass("active")
               driver_licence = $.parseJSON(data["driver_licence"])
               words = data["words"]
-              window.post_form_data["driver_licence_front_image"] = file.dataURL
+              window.post_form_data["driver_licence_front_image"] = driver_licence["file_name"]
+              window.post_form_data["driver_licence_front_image_url"] = driver_licence["file_image_url"]
               
               $('input#first_name').val(driver_licence["first_name"]).addClass("valid")
               $('input#sur_name').val(driver_licence["last_name"]).addClass("valid")
@@ -652,7 +653,9 @@ $(document).ready ->
               $("div.dropzone_front_joint").addClass("active")
               driver_licence = $.parseJSON(data["driver_licence"])
               words = data["words"]
-              window.post_form_data["joint_driver_licence_front_image"] = file.dataURL
+              #window.post_form_data["joint_driver_licence_front_image"] = file.dataURL
+              window.post_form_data["driver_licence_joint_front_image"] = driver_licence["file_name"]
+              window.post_form_data["driver_licence_joint_front_image_url"] = driver_licence["file_image_url"]
               
               $('input#joint_applicant_first_name').val(driver_licence["first_name"]).addClass("valid")
               $('input#joint_applicant_sur_name').val(driver_licence["last_name"]).addClass("valid")
@@ -691,8 +694,10 @@ $(document).ready ->
             maxFiles: 1,
             success: (file, data) ->
               $("div.dropzone_back").addClass("active")
-              window.post_form_data["driver_licence_back_image"] = file.dataURL
+              #window.post_form_data["driver_licence_back_image"] = file.dataURL
               driver_licence = $.parseJSON(data["driver_licence"])
+              window.post_form_data["driver_licence_back_image"] = driver_licence["file_name"]
+              window.post_form_data["driver_licence_back_image_url"] = driver_licence["file_image_url"]
               $("input#drivers_licence_expire_date").val(driver_licence["expire_date"])
         }
     ) 
@@ -710,7 +715,10 @@ $(document).ready ->
             maxFiles: 1,
             success: (file, data) ->
               $("div.dropzone_back_joint").addClass("active")
-              window.post_form_data["joint_driver_licence_back_image"] = file.dataURL
+              #window.post_form_data["joint_driver_licence_back_image"] = file.dataURL
+              driver_licence = $.parseJSON(data["driver_licence"])
+              window.post_form_data["driver_licence_joint_back_image"] = driver_licence["file_name"]
+              window.post_form_data["driver_licence_joint_back_image_url"] = driver_licence["file_image_url"]
               driver_licence = $.parseJSON(data["driver_licence"])
               $("input#joint_applicant_drivers_licence_expire_date").val(driver_licence["expire_date"])
         }
@@ -728,7 +736,11 @@ $(document).ready ->
             dictRemoveFile:'remove',
             maxFiles: 1,
             success: (file, data) ->
-              window.post_form_data["possport_image"] = file.dataURL
+              #window.post_form_data["possport_image"] = file.dataURL
+              driver_licence = $.parseJSON(data["result"])
+              window.post_form_data["passport_image"] = driver_licence["file_name"]
+              window.post_form_data["passport_image_url"] = driver_licence["file_image_url"]
+
         }
     )
     joint_passport_dropzone = new Dropzone(
@@ -743,7 +755,10 @@ $(document).ready ->
             dictRemoveFile:'remove',
             maxFiles: 1,
             success: (file, data) ->
-              window.post_form_data["possport_image"] = file.dataURL
+              #window.post_form_data["possport_image"] = file.dataURL
+              driver_licence = $.parseJSON(data["result"])
+              window.post_form_data["joint_passport_image"] = driver_licence["file_name"]
+              window.post_form_data["joint_passport_image_url"] = driver_licence["file_image_url"]
         }
     )
 
@@ -762,7 +777,9 @@ $(document).ready ->
           $("div.joint_visa_dropzone").addClass("active")
           visa_licence = $.parseJSON(data["visa_licence"])
           words = data["words"]
-          window.post_form_data["joint_visa_image"] = file.dataURL
+          #window.post_form_data["joint_visa_image"] = file.dataURL
+          window.post_form_data["driver_licence_joint_visa_image"] = data["file_name"]
+          window.post_form_data["driver_licence_joint_visa_image_url"] = data["file_image_url"]
           
           $('input#joint_applicant_visa_expire_date').val(visa_licence["expire_date"]).addClass("valid")
           $('input#joint_applicant_citizen_ship').val(visa_licence["citizen_ship"]).addClass("valid")
@@ -803,7 +820,9 @@ $(document).ready ->
           $("div.visa_dropzone").addClass("active")
           visa_licence = $.parseJSON(data["visa_licence"])
           words = data["words"]
-          window.post_form_data["visa_image"] = file.dataURL
+          #window.post_form_data["visa_image"] = file.dataURL
+          window.post_form_data["driver_licence_visa_image"] = data["file_name"]
+          window.post_form_data["driver_licence_visa_image_url"] = data["file_image_url"]
           
           $('input#visa_expire_date').val(visa_licence["expire_date"]).addClass("valid")
           $('input#citizen_ship').val(visa_licence["citizen_ship"]).addClass("valid")

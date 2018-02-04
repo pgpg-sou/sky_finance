@@ -29,14 +29,10 @@
 //= require annova_js/retina.js
 //= require annova_js/owl.carousel.js
 
-//= require annova_js/fancybox/source/jquery.fancybox.pack.js
-//= require annova_js/fancybox/source/helpers/jquery.fancybox-media.js 
-//= require annova_js/fancy_func.js
+//= require sweetalert/sweetalert2.js
 
 //= require form
-
 //= require annova_js/functions.js 
-
 //= require jasny-bootstrap.js
 //= require validate/jquery.validate.min.js
 //= require jquery.form-validator
@@ -55,4 +51,5 @@
 //= require apply_page
 
 //= require business
+
 

@@ -60,7 +60,7 @@
 
 
 
-            form#wrapped[type="POST" ]
+            form#wrapped
                 #middle-wizard 
                     .step.row
                         .col-md-12
@@ -76,17 +76,17 @@
                     .step.row
                         .col-md-12
                             h3 Please rate your overall satisfaction about the service provided.
-                    //        = render 'template/apply_form_step2'
+                            = render 'template/apply_form_step2'
   
                     .step.row
                         .col-md-12
                             h3  Nearest Relative Information
-                    //        = render 'template/apply_form_step3'
+                            = render 'template/apply_form_step3'
 
                     .step.row
                         .col-md-12
                             h3 Assets Information
-                            //= render 'template/apply_form_step4'
+                            = render 'template/apply_form_step4'
  
                     .step.row
                         .col-md-12
@@ -96,7 +96,7 @@
                     .step.row
                         .col-md-12
                             h3 Revenue balance information
-                            //= render 'template/apply_form_step7'
+                            = render 'template/apply_form_step7'
  
                     #complete.submit.step
                         i.icon-check
@@ -144,13 +144,12 @@
                             ul#links07
                                 = render 'template/confirmation/c_form_7'
 
-                        button#application_submit.submit Submit the application
+                        a#application_submit Submit the application
 
                 #bottom-wizard
                     button.backward[type="button" name="backward" style="margin-right: 15px;"] < Prev
                     button.forward[type="button" name="forward"] Next >
 
-            form#wrapped[name="example-2" action="survey_send_2.php" method="POST"]
 
 
 div.modal.fade id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
