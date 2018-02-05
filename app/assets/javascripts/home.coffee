@@ -654,6 +654,13 @@ $(document).ready ->
         $(this).addClass('active')
 
 
+    $('ul#rating li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#rating li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
 
 
 

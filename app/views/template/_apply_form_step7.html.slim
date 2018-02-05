@@ -46,3 +46,10 @@ li#application
                 input#expences_bankod.col-md-12.col-xs-12.apply placeholder="$living " type="number" 
                 input#expences_insurance.col-md-12.col-xs-12.apply placeholder="$insurance " type="number" 
 
+
+    #expence_information.col-md-12.col-xs-12
+        .col-md-12
+            label.col-md-12.col-xs-12.control-label Please rate your overall satisfaction about the service provided.
+            .col-md-12.col-xs-12.no-padding 
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: [ "too bad", "bad", "normal", "good", "very good"], id_name: "rating",is_other: false, ul_class: ""}
+
