@@ -45,5 +45,5 @@ li#application
                 | How long are you planning to pay off the amount of your finance?
                 span *
             .col-md-12.col-xs-12.no-padding 
-                input#how_long_pay_off.col-md-8.col-xs-12.apply placeholder="$year" type="number" required="true"
+                = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "3 year", "4 year", "5 year"], id_name: "how_long_pay_off",is_other: false, ul_class: "select_form_tag"}
                 

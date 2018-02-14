@@ -662,6 +662,14 @@ $(document).ready ->
 
 
 
+    $('ul#how_long_pay_off li').click ->
+        $(this).parent().find('#form_tag_error').css('display', "none")
+        $('ul#how_long_pay_off li').each ->
+            $(this).removeClass('active')
+        $(this).addClass('active')
+
+
+
 
 
 
