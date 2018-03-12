@@ -1,5 +1,6 @@
 require 'securerandom'
 require 'socket'
+require 'RMagick'
 
 class HomeController < ApplicationController
   protect_from_forgery :except => [:apply_mail]
@@ -119,6 +120,15 @@ class HomeController < ApplicationController
 	  fp.write  uploaded_file.read
 	end
 
+
+    scale  = 0.5
+    original = Magick::Image.read(output_path).first
+    image = original.resize(scale)
+    image.write(output_path) 
+
+
+
+
     vision = Google::Cloud::Vision.new(
         project: "46e9b8fc7d619db1971ff5d604b4858c5a95f33b",
         keyfile: Rails.root.to_s + "/lib/assets/spray-46e9b8fc7d61.json"
@@ -161,6 +171,15 @@ class HomeController < ApplicationController
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
 	end
+
+    scale  = 0.5
+    original = Magick::Image.read(output_path).first
+    image = original.resize(scale)
+    image.write(output_path) 
+
+
+
+
     @driver_licence["file_name"] = file_name
     @driver_licence["file_image_url"] = file_image_url
 
@@ -178,6 +197,15 @@ class HomeController < ApplicationController
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
 	end
+
+
+    scale  = 0.5
+    original = Magick::Image.read(output_path).first
+    image = original.resize(scale)
+    image.write(output_path) 
+
+
+
     vision = Google::Cloud::Vision.new(
         project: "46e9b8fc7d619db1971ff5d604b4858c5a95f33b",
         keyfile: Rails.root.to_s + "/lib/assets/spray-46e9b8fc7d61.json"
@@ -207,6 +235,13 @@ class HomeController < ApplicationController
 	File.open(output_path, 'w+b') do |fp|
 	  fp.write  uploaded_file.read
 	end
+
+    scale  = 0.5
+    original = Magick::Image.read(output_path).first
+    image = original.resize(scale)
+    image.write(output_path) 
+
+
 
     vision = Google::Cloud::Vision.new(
         project: "46e9b8fc7d619db1971ff5d604b4858c5a95f33b",

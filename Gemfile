@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'zopim_rails'
+gem 'rmagick'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
