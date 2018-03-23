@@ -118,7 +118,7 @@
                             ul#links03
                                 = render 'template/confirmation/c_form_3'
 
-                            label.ac_label for="menu_bar04" Consent Policy
+                            label.ac_label for="menu_bar04" CONSENT POLICY
                             input#menu_bar04.accordion type="checkbox"
                             ul#links04
 
@@ -163,10 +163,8 @@ div.modal.fade id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModal
                     .col-md-12
                         .col-md-12.text-center
                             p.modal_p 
-                                | 提出書類が
-                                span 斜めにならない
-                                | ように、真上から撮影してください
-                            p.modal_p ピントをしっかり合わせ、ぼけないように撮影してください
+                                | Please scan the document from right above. Not on an angle
+                            p.modal_p Please make sure the image is clear and in focus.
                         .col-md-6.col-sm-6.col-xs-6
                             .uploaad_smple
                                 h2 FRONT SIDE 
@@ -177,9 +175,9 @@ div.modal.fade id="confirm" tabindex="-1" role="dialog" aria-labelledby="myModal
                                 img src="#{image_path('back.jpg')}"
                     .col-md-12
                         .col-md-12
-                            p.modal_p ①画像認識で【名前】【誕生日】【ドライバーライセンス情報】を読み取ります。
-                            p.modal_p ②読み取り結果を表示しますが、画像によっては間違った文字を読み取る可能性があります。
-                            p.modal_p ③挿入された文字をチェックして頂き、修正がある場合は修正してください。                        
+                            p.modal_p ①The image recognition system will read your name, date of birth and drivers licence information
+                            p.modal_p ②The information will be automatically filled in the boxes below. However, there may be errors if the image is unclear.
+                            p.modal_p ③Please check the auto-filled information and make corrections if necessary.
                     .col-md-12.text-center
                         button#close_modal type="button" class="btn btn-primary btn-lg" data-dismiss="modal" close
 

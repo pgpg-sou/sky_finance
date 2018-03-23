@@ -84,15 +84,13 @@ li#application
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label Previous Company
             .col-md-8.col-xs-12.no-padding 
-                input#previous_company.col-md-12.col-xs-12.apply[ placeholder="previous company"]
+                input#previous_company.col-md-12.col-xs-12.apply[placeholder="Previous company"]
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label 
                 | Previous Company Occupation
             .col-md-8.col-xs-12.no-padding 
-                input#previous_occupation.col-md-12.col-xs-12.apply[data-validation="required" placeholder="Web Director" ]
-
-
+                input#previous_occupation.col-md-12.col-xs-12.apply[data-validation="required" placeholder="Web director" ]
 
         .col-md-12[style="position: inherit"]
             label.col-md-4.col-xs-12.control-label 
@@ -100,11 +98,8 @@ li#application
             .col-md-8.col-xs-12.no-padding 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["fullTime","commissionEarner","contractWorker","selfEmployed","partTime","casual","seasonal","beneficiary","student","retire","unemployed"], id_name: "previous_employtype",is_other: false, ul_class: ""}
 
-
-
-
         .col-md-12
-            label.col-md-4.col-xs-12.control-label how long did you work at previous company
+            label.col-md-4.col-xs-12.control-label How long did you work at previous company
             .col-md-8.col-xs-12.no-padding 
                 = render partial: 'template/select_tag_form', locals: {select_tag_data: ["1 year", "2 year", "3 year"], id_name: "how_long_work_previous",is_other: true, ul_class: ""}
 
